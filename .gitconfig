@@ -13,3 +13,5 @@
 [alias]
     graph = log --all --graph --decorate --oneline
     l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[fetch]
+	prune = true
