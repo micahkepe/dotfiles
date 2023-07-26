@@ -4,8 +4,8 @@
 	process = git-lfs filter-process
 	required = true
 [user]
-	name = MicahKepe
-	email = mik3@rice.edu
+	name = micahkepe
+	email = micahkepe@gmail.com
 [core]
 	autocrlf = input
 	excludesfile = /Users/micahkepe/.gitignore_global
