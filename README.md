@@ -13,7 +13,7 @@ xcode-select --install
 ### 2. Clone Dotfiles Repo
 Clone your dotfiles repository into a new hidden directory.
 ```bash
-git clone https://github.com/yourusername/dotfiles.git ~/.dotfiles
+git clone https://github.com/micahkepe/dotfiles.git ~/.dotfiles
 ```
 
 ### 3. Run Bootstrap Script
