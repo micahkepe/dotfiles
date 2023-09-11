@@ -28,8 +28,20 @@ Only if it's not already installed.
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-### 5. Install Packages and Apps with Homebrew
+### 5. Install Useful Command Line Tools
+```bash
+brew install ack awscli bat colima diff-so-fancy docker docker-compose jq localstack n nmap node nvm tldr tree watch wget yarn zsh-completions
+```
+
+### 6. Install Oh My Zsh
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+### 7. Install Packages and Apps with Homebrew
 If you have a Brewfile in your dotfiles:
 ```bash
 brew bundle install --file ~/.dotfiles/Brewfile
 ```
+
+**Note**: After the setup, ensure to open a new terminal session or ``` source  ~/.zshrc ``` for all changes to take effect.
