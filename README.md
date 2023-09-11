@@ -16,28 +16,37 @@ Clone your dotfiles repository into a new hidden directory.
 git clone https://github.com/micahkepe/dotfiles.git ~/.dotfiles
 ```
 
-### 3. Run Bootstrap Script
-This will create the necessary symlinks for your configurations.
-```bash
-bash ~/.dotfiles/bootstrap.sh
-```
-
-### 4. Install Homebrew
+### 3. Install Homebrew
 Only if it's not already installed.
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-
-### 5. Install Oh My Zsh
+### 4. Install Oh My Zsh
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-### 6. Install Packages and Apps with Homebrew (Command-Line Tools, Docker, etc.)
+### 5. Install Packages and Apps with Homebrew (Command-Line Tools, Docker, etc.)
 If you have a Brewfile in your dotfiles:
 ```bash
 brew bundle install --file ~/.dotfiles/Brewfile
 ```
+
+### 6. Install HammerSpoon
+```bash
+brew install --cask hammerspoon
+```
+
+### 7. Run Bootstrap Script
+This will create the necessary symlinks for your configurations.
+```bash
+bash ~/.dotfiles/bootstrap.sh
+```
+
+
+
+
+
 
 **Note**: After the setup, ensure to open a new terminal session or ``` source  ~/.zshrc ``` for all changes to take effect.
