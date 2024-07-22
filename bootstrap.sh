@@ -21,6 +21,7 @@ symlink $DOTFILES_DIR/.gitconfig ~/.gitconfig
 symlink $DOTFILES_DIR/.vimrc ~/.vimrc
 symlink $DOTFILES_DIR/.zshrc ~/.zshrc
 symlink $DOTFILES_DIR/.hammerspoon ~/.hammerspoon
+symlink $DOTFILES_DIR/nvim ~/.config/nvim
 # add more here as needed
 
 echo "Dotfiles linked successfully!"
