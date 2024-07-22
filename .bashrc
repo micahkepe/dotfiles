@@ -10,7 +10,17 @@
 #
 #
 ######################################################################
+
+########################
+#  ALIASES
+########################
+
+# Command Aliases
 alias dc='cd'
 alias ll='ls -al'
 alias gs='git status'
 alias v='vim'
+
+# Search command line history
+alias h='history | grep'
+

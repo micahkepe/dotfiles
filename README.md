@@ -2,6 +2,14 @@
 
 This README provides steps to set up dotfiles and configurations on a new machine.
 
+## Prerequisites
+
+Before starting, ensure that the following are installed:
+- Git
+- Homebrew
+- Oh My Zsh 
+- Hammerspoon
+
 ## Setup Steps
 
 ### 1. Install Apple Command Line Tools
@@ -44,9 +52,10 @@ This will create the necessary symlinks for your configurations.
 bash ~/.dotfiles/bootstrap.sh
 ```
 
+### 8. Source Shell Configuration
+Either open a new terminal session or source the configuration files with:
+```bash
+source ~/.zshrc
+```
 
-
-
-
-
-**Note**: After the setup, ensure to open a new terminal session or ``` source  ~/.zshrc ``` for all changes to take effect.
+And that's it! If you have any suggestions or questions feel free to open an issue or contact me.

@@ -1,3 +1,13 @@
+############################################################                                             
+#     
+#     ███████╗███████╗██╗  ██╗██████╗  ██████╗
+#     ╚══███╔╝██╔════╝██║  ██║██╔══██╗██╔════╝
+#       ███╔╝ ███████╗███████║██████╔╝██║     
+#      ███╔╝  ╚════██║██╔══██║██╔══██╗██║     
+#     ███████╗███████║██║  ██║██║  ██║╚██████╗
+#     ╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝
+#
+############################################################                                             
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -108,6 +118,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias gs="git status"
+alias dc='cd'
+alias ll='ls -al'
+alias v='vim'
+
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

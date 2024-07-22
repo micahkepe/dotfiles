@@ -1,3 +1,12 @@
+" 
+"	██╗   ██╗██╗███╗   ███╗██████╗  ██████╗
+"	██║   ██║██║████╗ ████║██╔══██╗██╔════╝
+"	██║   ██║██║██╔████╔██║██████╔╝██║     
+"	╚██╗ ██╔╝██║██║╚██╔╝██║██╔══██╗██║     
+" 	╚████╔╝ ██║██║ ╚═╝ ██║██║  ██║╚██████╗
+"	  ╚═══╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝
+                                       
+
 " Comments in Vimscript start with a `"`.
 
 " If you open this file in Vim, it'll be syntax highlighted for you.
@@ -79,5 +88,9 @@ inoremap <Right> <ESC>:echoe "Use l"<CR>
 inoremap <Up>    <ESC>:echoe "Use k"<CR>
 inoremap <Down>  <ESC>:echoe "Use j"<CR>
 
+" CtrlP Plugin Shortcuts
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
+" Set yank register to allow for clipboard.
+set clipboard=unnamedplus,unnamed,autoselect
