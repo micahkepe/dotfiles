@@ -2,15 +2,6 @@
 
 This README provides steps to set up dotfiles and configurations on a new machine.
 
-## Prerequisites
-
-Before starting, ensure that the following are installed:
-- Git
-- Homebrew
-- Oh My Zsh 
-- Hammerspoon
-- Lua Language Server 
-
 ## Setup Steps
 
 ### 1. Install Apple Command Line Tools
@@ -25,38 +16,50 @@ Clone your dotfiles repository into a new hidden directory.
 git clone https://github.com/micahkepe/dotfiles.git ~/.dotfiles
 ```
 
-### 3. Install Homebrew
+### 3. Initialize and Update Submodules
+Initialize and update the git submodules to include dependencies like Vundle and YouCompleteMe.
+```bash
+cd ~./dotfiles
+git submodule update --init --recursive
+```
+
+### 4. Install Homebrew
 Only if it's not already installed.
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-### 4. Install Oh My Zsh
+### 5. Install Oh My Zsh
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-### 5. Install Packages and Apps with Homebrew (Command-Line Tools, Docker, etc.)
+### 6. Install Packages and Apps with Homebrew (Command-Line Tools, Docker, etc.)
 If you have a Brewfile in your dotfiles:
 ```bash
 brew bundle install --file ~/.dotfiles/Brewfile
 ```
 
-### 6. Install HammerSpoon
+### 7. Install HammerSpoon
 ```bash
 brew install --cask hammerspoon
 ```
 
-### 7. Run Bootstrap Script
+### 8. Run Bootstrap Script
 This will create the necessary symlinks for your configurations.
 ```bash
 bash ~/.dotfiles/bootstrap.sh
 ```
 
-### 8. Source Shell Configuration
+### 9. Source Shell Configuration
 Either open a new terminal session or source the configuration files with:
 ```bash
 source ~/.zshrc
 ```
 
 And that's it! If you have any suggestions or questions feel free to open an issue or contact me.
+
+## Troubleshooting
+
+For YCM server shut down errors, ensure that the `install.py` script is installed via the system Python installation (`/opt/homebrew/bin/python3 ./install.py --all) and **NOT** the conda installation. Additionally, you may need to install `setuptools` (`brew install python-setuptools`).
+
