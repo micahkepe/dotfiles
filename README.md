@@ -47,18 +47,13 @@ brew bundle install --file ~/.dotfiles/Brewfile
 brew install --cask hammerspoon
 ```
 
-### 7. Install Lua Language Server
-```bash
-brew install lua-language-server
-```
-
-### 8. Run Bootstrap Script
+### 7. Run Bootstrap Script
 This will create the necessary symlinks for your configurations.
 ```bash
 bash ~/.dotfiles/bootstrap.sh
 ```
 
-### 9. Source Shell Configuration
+### 8. Source Shell Configuration
 Either open a new terminal session or source the configuration files with:
 ```bash
 source ~/.zshrc
