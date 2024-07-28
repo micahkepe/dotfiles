@@ -38,6 +38,9 @@ Plugin 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 Plugin 'valloric/youcompleteme'
 Plugin 'github/copilot.vim'
+Plugin 'preservim/nerdtree'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -56,6 +59,10 @@ filetype plugin indent on    " required
 " Turn on syntax highlighting.
 
 syntax on
+
+" Start NERDTree automatically when Vim starts up and put the cursor back in
+" the other window.
+autocmd VimEnter * NERDTree | wincmd p
 
 " Disable the default Vim startup message.
 set shortmess+=I
@@ -99,6 +106,9 @@ set incsearch
 " Unbind some useless/annoying default key bindings.
 nmap Q <Nop> " 'Q' in normal mode enters Ex mode. You almost never want this.
 
+" Set leader to space.
+let mapleader = "\<Space>"
+
 " Disable audible bell because it's annoying.
 set noerrorbells visualbell t_vb=
 
@@ -125,6 +135,13 @@ inoremap <Down>  <ESC>:echoe "Use j"<CR>
 " CtrlP Plugin Shortcuts
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
+" NERDTree Mappings and Configuration
+nnoremap <C-n> :NERDTreeToggle<CR>
+nnoremap <leader>e :NERDTreeFocus<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+let NERDTreeShowHidden=1 " Show hidden files in NERDTree
 
 " Set yank register to allow for clipboard.
 set clipboard=unnamedplus,unnamed,autoselect
