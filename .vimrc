@@ -37,6 +37,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugins go here ↓
 " Keep Plugin commands between vundle#begin/end.
 Plugin 'valloric/youcompleteme'
+Plugin 'github/copilot.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
