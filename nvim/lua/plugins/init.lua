@@ -42,53 +42,6 @@ return {
     },
   },
 
-  {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    event = "InsertEnter",
-    config = function()
-      require("copilot").setup {
-        suggestion = { enabled = false },
-        panel = { enabled = false },
-        filetypes = {
-          markdown = true, -- enable copilot for markdown files
-          ["."] = true,
-          sh = function()
-            if string.match(vim.fs.basename(vim.api.nvim_buf_get_name(0)), "^%.env.*") then
-              -- disable for .env files
-              return false
-            end
-            return true
-          end,
-        },
-        server_opts_overrides = {
-          settings = {
-            inlineSuggestEnable = true,
-          },
-        },
-      }
-    end,
-  },
-
-  {
-    "hrsh7th/nvim-cmp",
-    dependencies = {
-      {
-        "zbirenbaum/copilot-cmp",
-        config = function()
-          require("copilot_cmp").setup()
-        end,
-      },
-    },
-    opts = {
-      sources = {
-        { name = "nvim_lsp" },
-        { name = "luasnip" },
-        { name = "buffer" },
-        { name = "nvim_lua" },
-        { name = "path" },
-        { name = "copilot" },
-      },
-    },
-  },
+  -- Custom Copilot plugin for better compatibility with NVChad 
+  { require "plugins.copilot" }
 }
