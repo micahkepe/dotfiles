@@ -4,8 +4,7 @@
 "	██║   ██║██║██╔████╔██║██████╔╝██║     
 "	╚██╗ ██╔╝██║██║╚██╔╝██║██╔══██╗██║     
 " 	╚████╔╝ ██║██║ ╚═╝ ██║██║  ██║╚██████╗
-"	  ╚═══╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝
-                                       
+"	  ╚═══╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝ ╚══════╝                         
 
 " Comments in Vimscript start with a `"`.
 
@@ -41,6 +40,7 @@ Plugin 'github/copilot.vim'
 Plugin 'preservim/nerdtree'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plugin 'iamcco/markdown-preview.nvim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -142,6 +142,10 @@ nnoremap <leader>e :NERDTreeFocus<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 let NERDTreeShowHidden=1 " Show hidden files in NERDTree
+
+" Vim Terminal Mappings
+" Open terminal in bottom of window
+nnoremap <leader>h :below terminal<CR>
 
 " Set yank register to allow for clipboard.
 set clipboard=unnamedplus,unnamed,autoselect
