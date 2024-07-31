@@ -13,6 +13,7 @@
 [user]
 	name = micahkepe
 	email = micahkepe@gmail.com
+
 [core]
 	autocrlf = input
 	excludesfile = /Users/micahkepe/.gitignore_global
@@ -23,3 +24,7 @@
 
 [fetch]
 	prune = true  # Automatically prune deleted branches when fetching
+  
+[init]
+	defaultBranch = main
+
