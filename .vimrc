@@ -3,12 +3,8 @@
 "	██║   ██║██║████╗ ████║██╔══██╗██╔════╝
 "	██║   ██║██║██╔████╔██║██████╔╝██║     
 "	╚██╗ ██╔╝██║██║╚██╔╝██║██╔══██╗██║     
-" 	╚████╔╝ ██║██║ ╚═╝ ██║██║  ██║╚██████╗
-"	  ╚═══╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝ ╚══════╝                         
-
-" Comments in Vimscript start with a `"`.
-
-" If you open this file in Vim, it'll be syntax highlighted for you.
+"  ╚████╔╝ ██║██║ ╚═╝ ██║██║  ██║╚██████╗
+"	  ╚═══╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝                         
 
 " Vim is based on Vi. Setting `nocompatible` switches from the default
 " Vi-compatibility mode and enables useful Vim functionality. This
@@ -56,8 +52,9 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-" Turn on syntax highlighting.
 
+
+" Turn on syntax highlighting.
 syntax on
 
 " Start NERDTree automatically when Vim starts up and put the cursor back in
@@ -69,14 +66,6 @@ set shortmess+=I
 
 " Show line numbers.
 set number
-
-" This enables relative line numbering mode. With both number and
-" relativenumber enabled, the current line shows the true line number, while
-" all other lines (above and below) are numbered relative to the current line.
-" This is useful because you can tell, at a glance, what count is needed to
-" jump up or down to a particular line, by {count}k to go up or {count}j to go
-" down.
-set relativenumber
 
 " Always show the status line at the bottom, even if you only have one window open.
 set laststatus=2
@@ -147,5 +136,15 @@ let NERDTreeShowHidden=1 " Show hidden files in NERDTree
 " Open terminal in bottom of window
 nnoremap <leader>h :below terminal<CR>
 
+" This enables relative line numbering mode. With both number and
+" relativenumber enabled, the current line shows the true line number, while
+" all other lines (above and below) are numbered relative to the current line.
+" This is useful because you can tell, at a glance, what count is needed to
+" jump up or down to a particular line, by {count}k to go up or {count}j to go
+" down.
+" Toggle relative line numbering with <leader>rn
+nnoremap <leader>rn :set invrelativenumber<CR>
+
 " Set yank register to allow for clipboard.
 set clipboard=unnamedplus,unnamed,autoselect
+

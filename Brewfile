@@ -1,96 +1,95 @@
+tap "heroku/brew"
 tap "homebrew/bundle"
 tap "homebrew/core"
-# Search tool like grep, but optimized for programmers
 brew "ack"
-# New file format for still image compression
 brew "jpeg-xl"
-# Codec library for encoding and decoding AV1 video streams
 brew "aom"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@1.1"
-# Interpreted, interactive, object-oriented programming language
+brew "pycparser"
+brew "cffi"
+brew "cryptography"
 brew "python@3.11"
-# Official Amazon AWS command-line interface
 brew "awscli"
-# Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
-# Validating, recursive, caching DNS resolver
+brew "python@3.12"
+brew "glib"
+brew "cairo"
+brew "harfbuzz"
+brew "bfg"
+brew "cmake"
+brew "cmatrix"
 brew "unbound"
-# GNU Transport Layer Security (TLS) Library
 brew "gnutls"
-# C library SSHv1/SSHv2 client and server protocols
 brew "libssh"
-# Emulator for x86 and PowerPC
 brew "qemu"
-# Linux virtual machines
 brew "lima"
-# Container runtimes on MacOS (and Linux) with minimal setup
 brew "colima"
-# Good-lookin' diffs with diff-highlight and more
 brew "diff-so-fancy"
-# Pack, ship and run any application as a lightweight container
 brew "docker"
-# Isolated development environments using Docker
 brew "docker-compose"
-# Free lossless audio codec
+brew "docutils"
+brew "folly"
+brew "fizz"
+brew "wangle"
+brew "fbthrift"
+brew "fb303"
+brew "edencommon"
 brew "flac"
-# Image processing and image analysis library
 brew "leptonica"
-# Multi-format archive and compression library
-brew "libarchive"
-# OCR (Optical Character Recognition) engine
+brew "libass"
+brew "libmicrohttpd"
+brew "librist"
+brew "pango"
 brew "tesseract"
-# Play, record, convert, and stream audio and video
 brew "ffmpeg"
-# Library for encoding and decoding .avif files
 brew "libavif"
-# Graphics library to dynamically manipulate images
 brew "gd"
-# Image manipulation
+brew "git"
+brew "git-lfs"
+brew "go"
 brew "netpbm"
-# GNU triangulated surface library
 brew "gts"
-# Library to render SVG files using Cairo
 brew "librsvg"
-# Graph visualization software from AT&T and Bell Labs
 brew "graphviz"
-# Improved top (interactive process viewer)
 brew "htop"
-# Lightweight and flexible command-line JSON processor
+brew "libheif"
+brew "imagemagick"
+brew "ios-deploy"
 brew "jq"
-# C library implementing the SSH2 protocol
 brew "libssh2"
-# C library for reading, creating, and modifying zip archives
 brew "libzip"
-# Fully functional local AWS cloud stack
 brew "localstack"
-# Node version management
+brew "lua-language-server"
+brew "mono"
 brew "n"
-# Port scanning utility for large networks
+brew "neofetch"
+brew "neovim"
 brew "nmap"
-# Manage multiple Node.js versions
+brew "node"
 brew "nvm"
-# Fast, disk space efficient package manager
+brew "openssl@1.1"
+brew "openvino"
 brew "pnpm"
-# Cross-platform library for audio I/O
 brew "portaudio"
-# Static analysis and lint tool, for (ba)sh scripts
+brew "python-setuptools"
+brew "rbenv"
+brew "ripgrep"
 brew "shellcheck"
-# Simplified and community-driven man pages
+brew "telnet"
 brew "tldr"
-# Terminal multiplexer
 brew "tmux"
-# Display directories as trees (with optional color/HTML output)
 brew "tree"
-# Executes a program periodically, showing output fullscreen
+brew "vim"
+brew "vscode-langservers-extracted"
+brew "w3m"
 brew "watch"
-# Internet file retriever
+brew "watchman"
 brew "wget"
-# JavaScript package manager
 brew "yarn"
-# Additional completion definitions for zsh
+brew "zola"
 brew "zsh-completions"
-# Terminal emulator as alternative to Apple's Terminal app
+brew "heroku/brew/heroku"
+cask "font-fira-code-nerd-font"
 cask "iterm2"
-# Administration and development platform for PostgreSQL
+cask "ngrok"
 cask "pgadmin4"
+cask "zulu@17"

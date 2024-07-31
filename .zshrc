@@ -122,6 +122,9 @@ alias dc='cd'
 alias ll='ls -al'
 alias v='vim'
 
+# Directory Aliases
+alias ..='cd ..'
+alias ...='cd ../..'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

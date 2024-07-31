@@ -7,7 +7,6 @@ return {
     end,
   },
 
-  -- These are some examples, uncomment them if you want to see them work!
   {
     "neovim/nvim-lspconfig",
     config = function()
@@ -42,6 +41,17 @@ return {
     },
   },
 
-  -- Custom Copilot plugin for better compatibility with NVChad 
-  { require "plugins.copilot" }
+  {
+    "iamcco/markdown-preview.nvim",
+    ft = "markdown",
+    build = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+    config = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
+  },
+
+  -- Custom Copilot plugin for better compatibility with NVChad
+  { require "plugins.copilot" },
 }

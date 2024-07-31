@@ -21,6 +21,7 @@ alias ll='ls -al'
 alias gs='git status'
 alias v='vim'
 
-# Search command line history
-alias h='history | grep'
+# Directory Aliases
+alias ..='cd ..'
+alias ...='cd ../..'
 
