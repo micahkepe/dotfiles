@@ -54,4 +54,9 @@ return {
 
   -- Custom Copilot plugin for better compatibility with NVChad
   { require "plugins.copilot" },
+
+  -- Add wilder.nvim plugin
+  {
+    "gelguy/wilder.nvim",
+  },
 }
