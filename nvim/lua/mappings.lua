@@ -15,6 +15,3 @@ map("t", "<ESC>", "<C-\\><C-n>")
 
 -- Map mp to open markdown preview
 map("n", "<leader>mp", "<cmd>MarkdownPreview<cr>")
-
--- Git Fugitive mappings
-map("n", "<leader>gs", "<cmd>Git<cr>", { desc = "Git status" })
