@@ -59,7 +59,7 @@ syntax on
 
 " Start NERDTree automatically when Vim starts up and put the cursor back in
 " the other window.
-autocmd VimEnter * NERDTree | wincmd p
+" autocmd VimEnter * NERDTree | wincmd p
 
 " Disable the default Vim startup message.
 set shortmess+=I
