@@ -25,6 +25,8 @@ require("lazy").setup({
       -- Override nvim-tree settings
       local nvim_tree_options = require "nvchad.configs.nvimtree"
       nvim_tree_options.filters.dotfiles = false
+      nvim_tree_options.git = { enable = true }
+      nvim_tree_options.filters.git_ignored = false
     end,
   },
 
