@@ -56,4 +56,8 @@ return {
   { require "plugins.copilot" },
 
   { "tpope/vim-fugitive" },
+
+  { "nvim-lua/plenary.nvim" },
+
+  { "nvim-lua/popup.nvim" },
 }
