@@ -27,6 +27,7 @@ require("lazy").setup({
       nvim_tree_options.filters.dotfiles = false
       nvim_tree_options.git = { enable = true }
       nvim_tree_options.filters.git_ignored = false
+      nvim_tree_options.filters.custom = { "^\\.git", "DS_Store" }
     end,
   },
 
