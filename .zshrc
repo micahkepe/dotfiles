@@ -142,3 +142,6 @@ if [ -f '/Users/micahkepe/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/micah
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/micahkepe/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/micahkepe/google-cloud-sdk/completion.zsh.inc'; fi
 
+# Shell integrgation install for oh-my-zsh
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+

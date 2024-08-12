@@ -23,6 +23,7 @@ symlink $DOTFILES_DIR/.vim ~/.vim
 symlink $DOTFILES_DIR/.zshrc ~/.zshrc
 symlink $DOTFILES_DIR/.hammerspoon ~/.hammerspoon
 symlink $DOTFILES_DIR/nvim ~/.config/nvim
+Symlink $DOTFILES_DIR/neofetch ~/.config/neofetch
 # add more here as needed
 
 echo "Dotfiles linked successfully!"
