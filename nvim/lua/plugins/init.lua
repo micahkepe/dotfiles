@@ -63,4 +63,7 @@ return {
 
   -- Custom image.nvim setup
   { require "plugins.image-nvim" },
+
+  -- Wilder.nvim for better command-line history
+  { require "plugins.wilder" },
 }
