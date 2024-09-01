@@ -60,4 +60,7 @@ return {
   { "nvim-lua/plenary.nvim" },
 
   { "nvim-lua/popup.nvim" },
+
+  -- Custom image.nvim setup
+  { require "plugins.image-nvim" },
 }
