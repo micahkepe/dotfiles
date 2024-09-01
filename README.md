@@ -6,40 +6,6 @@ My personal dotfiles for macOS. This repository contains my configurations for N
 
 **Note**: This repository is a work in progress and is constantly being updated. Additionally, if you want to give these dotfiles a try, I recommend forking and reviewing the code before giving them a whirl.
 
-## Features
-
-<details> 
-<summary>NVChad Neovim Configuration</summary>
-</br>
-NVChad is a Neovim configuration that provides a clean and minimal setup for development. It includes plugins like Telescope, LSP, and Treesitter for a modern development experience. On top of the already versatile configuration, I have added my own plugins, mappings, and customizations. 
-</details>
-
----
-
-<details>
-<summary>Vim Setup</summary>
-</br>
-I have since switched to Neovim, but I have included my old Vim configuration for reference. It replicates a lot of the features of NVChad.
-</details>
-
----
-
-<details>
-<summary>Hammerspoon Configuration</summary>
-</br>
-Hammerspoon is a powerful automation tool for macOS that allows you to script and automate tasks. I have included a configuration that provides window management that I cannot live without.
-</details>
-
----
-
-<details>
-<summary>Terminal Configurations (Zsh, Bash, etc.)</summary>
-</br>
-Personal configurations including aliases, themes, etc. for the terminal.
-</details>
-
----
-
 ## Setup Steps
 
 ### 1. Install Apple Command Line Tools
