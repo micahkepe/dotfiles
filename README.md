@@ -77,6 +77,27 @@ Either open a new terminal session or source the configuration files with:
 source ~/.zshrc
 ```
 
+### 10. (Optional) Set Fish to Default Shell
+
+To set [Fish](https://fishshell.com/) to be your default shell, first add the following line to `/etc/shells`:
+
+```
+/opt/homrebew/bin/fish
+```
+
+Then, run the following command:
+
+```bash
+chsh -s /opt/homebrew/bin/fish
+```
+
+If necessary, change following line in the `~/.config/fish/config.fish` file in the `Advanced` section:
+
+```
+# shell .
+shell /opt/homebrew/bin/fish
+```
+
 And that's it! If you have any suggestions or questions feel free to open an issue or contact me.
 
 ## Troubleshooting

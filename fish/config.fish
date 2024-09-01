@@ -1,3 +1,4 @@
+set -gx PATH /opt/homebrew/bin $PATH
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
