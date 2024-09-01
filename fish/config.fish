@@ -7,3 +7,8 @@ if test -f /Users/micahkepe/anaconda3/bin/conda
 end
 # <<< conda initialize <<<
 
+# ALIASES
+alias gs="git status"
+alias ga="git add"
+alias gc="git commit"
+alias gp="git push"

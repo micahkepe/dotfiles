@@ -31,7 +31,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Plugins go here ↓
 " Keep Plugin commands between vundle#begin/end.
-Plugin 'valloric/youcompleteme'
+" Plugin 'valloric/youcompleteme' -- python install script is broken
 Plugin 'github/copilot.vim'
 Plugin 'preservim/nerdtree'
 Plugin 'ryanoasis/vim-devicons'
