@@ -6,7 +6,16 @@ local capabilities = require("nvchad.configs.lspconfig").capabilities
 local lspconfig = require "lspconfig"
 local servers = { "html", "cssls" }
 
--- Add Golang LSP
+-- lsps with default config
+for _, lsp in ipairs(servers) do
+  lspconfig[lsp].setup {
+    on_attach = on_attach,
+    on_init = on_init,
+    capabilities = capabilities,
+  }
+end
+
+-- Golang LSP
 lspconfig.gopls.setup {
   on_attach = on_attach,
   on_init = on_init,
@@ -23,16 +32,21 @@ lspconfig.gopls.setup {
   },
 }
 
--- lsps with default config
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    on_attach = on_attach,
-    on_init = on_init,
-    capabilities = capabilities,
-  }
-end
+-- Rust LSP
+lspconfig.rust_analyzer.setup {
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+}
 
--- typescript
+-- Python LSP
+lspconfig.pyright.setup {
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+}
+
+-- Typescript LSP
 lspconfig.tsserver.setup {
   on_attach = on_attach,
   on_init = on_init,
