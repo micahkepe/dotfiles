@@ -28,4 +28,15 @@ M.ui = {
   },
 }
 
+M.mason = {
+  cmd = true,
+  pkgs = {
+    -- Add packages you want Mason to install
+    "lua-language-server", -- Example package for Lua
+    "pyright", -- Python LSP
+    "gopls", -- Go LSP
+    -- Add more tools you need here
+  },
+}
+
 return M
