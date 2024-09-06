@@ -109,6 +109,17 @@ dap.configurations.go = {
     mode = "test",
     program = "./${relativeFileDirname}",
   },
+  {
+    type = "delve",
+    name = "Debug main.go with args",
+    request = "launch",
+    program = "${workspaceFolder}/main.go",
+    args = function()
+      local args = vim.fn.input "Args: "
+      return vim.split(args, " ")
+    end,
+    cwd = "${workspaceFolder}",
+  },
 }
 
 -- Python
@@ -152,6 +163,26 @@ dap.configurations.python = {
       -- debugpy supports launching an application with a different interpreter then the one used to launch debugpy itself.
       -- The code below looks for a `venv` or `.venv` folder in the current directly and uses the python within.
       -- You could adapt this - to for example use the `VIRTUAL_ENV` environment variable.
+      local cwd = vim.fn.getcwd()
+      if vim.fn.executable(cwd .. "/venv/bin/python") == 1 then
+        return cwd .. "/venv/bin/python"
+      elseif vim.fn.executable(cwd .. "/.venv/bin/python") == 1 then
+        return cwd .. "/.venv/bin/python"
+      else
+        return "/usr/bin/python3"
+      end
+    end,
+  },
+  {
+    type = "python",
+    request = "launch",
+    name = "Launch file with arguments",
+    program = "${file}",
+    args = function()
+      local args = vim.fn.input "Args: "
+      return vim.split(args, " ")
+    end,
+    pythonPath = function()
       local cwd = vim.fn.getcwd()
       if vim.fn.executable(cwd .. "/venv/bin/python") == 1 then
         return cwd .. "/venv/bin/python"
