@@ -25,6 +25,7 @@ symlink $DOTFILES_DIR/.hammerspoon ~/.hammerspoon
 symlink $DOTFILES_DIR/nvim ~/.config/nvim
 symlink $DOTFILES_DIR/neofetch ~/.config/neofetch
 symlink $DOTFILES_DIR/fish ~/.config/fish
+symlink $DOTFILES_DIR/tmux/.tmux.conf ~/.tmux.conf
 # add more here as needed
 
 echo "Dotfiles linked successfully!"
