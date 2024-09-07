@@ -75,7 +75,7 @@ return {
           -- Make sure you have an html treesitter parser installed
           -- ~/github/dotfiles-latest/neovim/nvim-lazyvim/lua/plugins/treesitter.lua
           html = {
-            enabled = true,
+            enabled = false,
           },
           -- This is disabled by default
           -- Detect and render images referenced in CSS files
