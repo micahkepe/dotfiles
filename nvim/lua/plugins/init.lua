@@ -97,4 +97,15 @@ return {
   { "theHamsta/nvim-dap-virtual-text" }, -- for better visuals on debugger UI
 
   { "rcarriga/nvim-notify" },
+
+  {
+    "folke/todo-comments.nvim",
+    lazy = false,
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
+  },
 }

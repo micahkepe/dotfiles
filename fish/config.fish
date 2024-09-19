@@ -1,3 +1,4 @@
+# Homebrew
 set -gx PATH /opt/homebrew/bin $PATH
 
 # Set GOBIN to the go bin directory
