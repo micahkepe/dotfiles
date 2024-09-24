@@ -119,4 +119,13 @@ return {
       -- refer to the configuration section below
     },
   },
+
+  -- Better quickfix window
+  {
+    "kevinhwang91/nvim-bqf",
+    ft = "qf",
+    config = function()
+      require("bqf").setup()
+    end,
+  },
 }
