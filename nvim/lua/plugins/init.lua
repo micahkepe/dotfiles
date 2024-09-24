@@ -7,6 +7,7 @@ return {
     end,
   },
 
+  -- LSP and completion
   {
     "neovim/nvim-lspconfig",
     config = function()
@@ -15,6 +16,7 @@ return {
     end,
   },
 
+  -- Easy LSP installation and management
   {
     "williamboman/mason.nvim",
     opts = {
@@ -28,6 +30,7 @@ return {
     },
   },
 
+  -- treesitter for better syntax highlighting
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
@@ -41,6 +44,7 @@ return {
     },
   },
 
+  -- Markdown preview
   {
     "iamcco/markdown-preview.nvim",
     ft = "markdown",
@@ -55,10 +59,13 @@ return {
   -- Custom Copilot plugin for better compatibility with NVChad
   { require "plugins.copilot" },
 
+  -- Git displays (diffs, signs, etc)
   { "tpope/vim-fugitive", cmd = { "Git" } },
 
+  -- Neovim async functions in lua
   { "nvim-lua/plenary.nvim" },
 
+  -- Popup windows
   { "nvim-lua/popup.nvim" },
 
   -- Custom image.nvim setup
@@ -67,6 +74,7 @@ return {
   -- Wilder.nvim for better command-line history
   { require "plugins.wilder" },
 
+  -- Golang support
   {
     "ray-x/go.nvim",
     dependencies = { -- optional packages
@@ -94,10 +102,13 @@ return {
     end,
   },
 
-  { "theHamsta/nvim-dap-virtual-text" }, -- for better visuals on debugger UI
+  -- for better visuals on debugger UI
+  { "theHamsta/nvim-dap-virtual-text" },
 
+  -- Notification manager
   { "rcarriga/nvim-notify" },
 
+  -- Highlighting tags like TODO, FiX, etc.
   {
     "folke/todo-comments.nvim",
     lazy = false,
