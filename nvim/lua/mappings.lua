@@ -63,3 +63,17 @@ if dap_ok and dapui_ok then
 else
   require "notify"("nvim-dap or dap-ui not installed!", "warning")
 end
+
+-- Sioyek PDF viewer mappings
+vim.api.nvim_create_user_command("OpenPDFWithSioyek", function()
+  local current_file = vim.fn.expand "%:p"
+  if current_file:match "%.pdf$" then
+    -- Open the PDF file with Sioyek (can be changed to any other PDF viewer)
+    vim.fn.system('open -a sioyek "' .. current_file .. '"')
+  else
+    vim.notify("Current file is not a PDF", vim.log.levels.WARN)
+  end
+end, {})
+
+-- Map <leader>sp to open PDF with Sioyek
+map("n", "<leader>sp", ":OpenPDFWithSioyek<CR>", { noremap = true, silent = true, desc = "Open PDF with Sioyek" })
