@@ -71,6 +71,8 @@ vim.api.nvim_create_user_command("OpenFileInViewer", function()
 end, {})
 
 -- Map <leader>sv to open file in standard viewer
+-- NOTE: if cursor is on the file name Nvim Tree, you can simply press `sv` to open the file in the default viewer
+-- since the leader key is already used by Nvim Tree.
 map("n", "<leader>sv", ":OpenFileInViewer<CR>", { noremap = true, silent = true, desc = "Open file in default viewer" })
 
 -- Sioyek PDF viewer mappings
