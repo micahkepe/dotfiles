@@ -1,0 +1,37 @@
+# OpenSSH server configuration file
+
+# Use this configuration as a template. Modify settings as per your environment.
+
+Include /etc/ssh/sshd_config.d/*
+
+# Custom SSH port (change as needed)
+Port 2222  # Change this to a non-default port for better security
+
+# Disable root login for security
+PermitRootLogin no
+
+# Use key-based authentication only
+PasswordAuthentication no
+PubkeyAuthentication yes
+AuthorizedKeysFile .ssh/authorized_keys
+
+# Client settings
+ClientAliveInterval 300
+ClientAliveCountMax 0
+
+# Disable X11 forwarding for security
+X11Forwarding no
+
+# Use PAM for additional authentication checks
+UsePAM no
+
+# Add your environment-specific rules here:
+# Match User, Match Address, etc.
+# Example:
+# Match Address 192.168.0.0/24
+#     AllowTcpForwarding no
+#     PermitTTY no
+
+# Additional logging or other options
+LogLevel VERBOSE
+
