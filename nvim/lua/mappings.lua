@@ -88,11 +88,3 @@ end, {})
 
 -- Map <leader>sp to open PDF with Sioyek
 map("n", "<leader>sp", ":OpenPDFWithSioyek<CR>", { noremap = true, silent = true, desc = "Open PDF with Sioyek" })
-
--- Create a keymapping to toggle the colorcolumn
-vim.keymap.set(
-  "n",
-  "<leader>tc",
-  ":lua toggle_colorcolumn()<CR>",
-  { noremap = true, silent = true, desc = "Toggle ColorColumn" }
-)
