@@ -88,3 +88,8 @@ end, {})
 
 -- Map <leader>sp to open PDF with Sioyek
 map("n", "<leader>sp", ":OpenPDFWithSioyek<CR>", { noremap = true, silent = true, desc = "Open PDF with Sioyek" })
+
+-- Toggle colorcolumn for editor ruler at 80 characters
+map("n", "<leader>er", function()
+  vim.g.toggle_virtcolumn()
+end, { desc = "Toggle virtcolumn at 80 characters" })

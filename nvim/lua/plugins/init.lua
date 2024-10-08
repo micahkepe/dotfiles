@@ -128,4 +128,7 @@ return {
       require("bqf").setup()
     end,
   },
+
+  -- Vertical line at 80 character
+  { require "plugins.virtcolumn" },
 }
