@@ -131,4 +131,10 @@ return {
 
   -- Vertical line at 80 character
   { require "plugins.virtcolumn" },
+
+  -- NVChad's development plugin
+  { "nvchad/volt", lazy = true },
+
+  -- NVChad's menu plugin
+  { "nvchad/menu", lazy = true },
 }
