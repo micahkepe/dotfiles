@@ -131,4 +131,8 @@ return {
 
   -- Vertical line at 80 character
   { require "plugins.virtcolumn" },
+
+  -- "tabout" for going past closing groups like quotes, brackets, etc with tab
+  -- while still in Insert mode
+  { require "plugins.tabout" },
 }

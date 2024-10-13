@@ -17,7 +17,7 @@ return {
           accept = "<C-f>", -- accept the current suggestion in full
           accept_word = "<C-w>", -- accept the current word
           accept_line = "<C-l>", -- accept the current line
-          -- Cycle through suggestions 
+          -- Cycle through suggestions
           next = "<C-n>",
           prev = "<C-p>",
           dismiss = "<C-x>",
@@ -48,7 +48,7 @@ return {
     event = "VeryLazy",
     opts = function(_, opts)
       local function copilot_indicator()
-        local clients = vim.lsp.get_clients({ name = "copilot" })
+        local clients = vim.lsp.get_clients { name = "copilot" }
         local copilot_active = #clients > 0
         return copilot_active and "󰚩 " or ""
       end
