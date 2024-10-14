@@ -110,3 +110,9 @@ end, {})
 -- window management
 map("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
 map("n", "<leader>sd", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
+
+-- maintain visual context on page navigation and searching
+map("n", "<C-d>", "<C-d>zz") -- Keeps cursor centered when going down the page
+map("n", "<C-u>", "<C-u>zz") -- Keeps cursor centered when going up the page
+map("n", "n", "nzzzv") -- Keeps the search result in the center after jumping to next result
+map("n", "N", "Nzzzv") -- Keeps the search result in the center after jumping to previous result
