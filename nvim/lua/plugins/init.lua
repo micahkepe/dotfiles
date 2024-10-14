@@ -56,9 +56,6 @@ return {
     end,
   },
 
-  -- Custom Copilot plugin for better compatibility with NVChad
-  { require "plugins.copilot" },
-
   -- Git displays (diffs, signs, etc)
   { "tpope/vim-fugitive", cmd = { "Git" } },
 
@@ -67,12 +64,6 @@ return {
 
   -- Popup windows
   { "nvim-lua/popup.nvim" },
-
-  -- Custom image.nvim setup
-  { require "plugins.image-nvim" },
-
-  -- Wilder.nvim for better command-line history
-  { require "plugins.wilder" },
 
   -- Golang support
   {
@@ -111,13 +102,11 @@ return {
   -- Highlighting tags like TODO, FiX, etc.
   {
     "folke/todo-comments.nvim",
-    lazy = false,
+    event = { "BufReadPost", "BufNewFile" }, -- Load on buffer read
     dependencies = { "nvim-lua/plenary.nvim" },
-    opts = {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    },
+    config = function()
+      require("todo-comments").setup {}
+    end,
   },
 
   -- Better quickfix window
@@ -129,10 +118,32 @@ return {
     end,
   },
 
-  -- Vertical line at 80 character
-  { require "plugins.virtcolumn" },
+  {
+    "christoomey/vim-tmux-navigator",
+    cmd = {
+      "TmuxNavigateLeft",
+      "TmuxNavigateDown",
+      "TmuxNavigateUp",
+      "TmuxNavigateRight",
+      "TmuxNavigatePrevious",
+    },
+    keys = {
+      { "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
+      { "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
+      { "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
+      { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
+      { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+    },
+  },
 
-  -- "tabout" for going past closing groups like quotes, brackets, etc with tab
-  -- while still in Insert mode
-  { require "plugins.tabout" },
+  -- Better looking input boxes
+  { "stevearc/dressing.nvim", event = "VeryLazy" },
+
+  -- Split maximizer
+  {
+    "szw/vim-maximizer",
+    keys = {
+      { "<leader>sm", "<cmd>MaximizerToggle<CR>", desc = "Maximize/minimize a split" },
+    },
+  },
 }

@@ -10,6 +10,7 @@ return {
     vim.g.virtcolumn_enabled = true
 
     -- Function to check if virtcolumn should be disabled for current buffer
+    -- FIX: this still isn't working for the terminal buffer
     local function should_disable_virtcolumn()
       local buftype = vim.bo.buftype
       local filetype = vim.bo.filetype

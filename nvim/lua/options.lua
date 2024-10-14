@@ -1,7 +1,5 @@
 require "nvchad.options"
 
--- add yours here!
-
 local o = vim.o
 local opt = vim.opt
 
@@ -16,3 +14,9 @@ opt.ignorecase = true -- ignore case letters when searching
 opt.smartcase = true -- match case if capital letter is present
 opt.incsearch = true -- show search matches as you type
 opt.inccommand = "split" -- show live preview of substitute commands
+
+-- disable swapfile
+opt.swapfile = false
+
+-- clipboard
+opt.clipboard:append "unnamedplus"
