@@ -10,7 +10,7 @@ return {
     build = ":Copilot auth",
     opts = {
       suggestion = {
-        enabled = false, -- disable by default because it's mega annoying
+        enabled = true,
         auto_trigger = true,
         debounce = 75,
         keymap = {
