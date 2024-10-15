@@ -4,9 +4,16 @@ local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
-local servers = { "html", "cssls" }
 
--- lsps with default config
+-- LSP Servers with no configuration needed
+local servers = {
+  "html",
+  "cssls",
+  "rust_analyzer",
+  "pyright",
+  "ts_ls",
+}
+
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
@@ -14,6 +21,8 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
+
+-- Finicky LSPs that have additional configuration
 
 -- Golang LSP
 lspconfig.gopls.setup {
@@ -30,27 +39,6 @@ lspconfig.gopls.setup {
       staticcheck = true,
     },
   },
-}
-
--- Rust LSP
-lspconfig.rust_analyzer.setup {
-  on_attach = on_attach,
-  on_init = on_init,
-  capabilities = capabilities,
-}
-
--- Python LSP
-lspconfig.pyright.setup {
-  on_attach = on_attach,
-  on_init = on_init,
-  capabilities = capabilities,
-}
-
--- Typescript LSP
-lspconfig.ts_ls.setup { -- tsserver deprecated
-  on_attach = on_attach,
-  on_init = on_init,
-  capabilities = capabilities,
 }
 
 -- Tailwind CSS LSP

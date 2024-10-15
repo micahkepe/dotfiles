@@ -20,3 +20,6 @@ opt.swapfile = false
 
 -- clipboard
 opt.clipboard:append "unnamedplus"
+
+-- text wrapping
+o.wrap = false

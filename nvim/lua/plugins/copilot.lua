@@ -11,7 +11,7 @@ return {
     opts = {
       suggestion = {
         enabled = true,
-        auto_trigger = true,
+        auto_trigger = false, -- won't trigger until `next` or `prev` keymap used in Insert mode
         debounce = 75,
         keymap = {
           accept = "<C-f>", -- accept the current suggestion in full
