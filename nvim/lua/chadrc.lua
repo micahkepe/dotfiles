@@ -4,16 +4,16 @@
 ---@type ChadrcConfig
 local M = {}
 
+-- colorscheme
 M.base46 = {
   theme = "onedark",
+  hl_override = {
+    -- override comment highlighting to be more visible
+    ["@comment"] = { italic = true, fg = "white" },
+  },
 }
 
 M.ui = {
-  hl_override = {
-    Comment = { italic = true },
-    ["@comment"] = { italic = true },
-  },
-
   cmp = {
     format_colors = {
       tailwind = true,
