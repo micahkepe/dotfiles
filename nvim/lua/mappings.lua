@@ -105,11 +105,11 @@ vim.keymap.set("n", "<RightMouse>", function()
 end, {})
 
 -- window management
-map("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
+map("n", "<leader>v", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
 map("n", "<leader>sd", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
 map("n", "<leader>se", "<C-w>=", { desc = "Equalize splits" }) -- equalize split layouts
 -- can't use <leader>sh since that is used by LSPs to signature help
-map("n", "<leader>ss", "<cmd>split<CR>", { desc = "Split window horizontally" }) -- split window horizobtally
+map("n", "<leader>s", "<cmd>split<CR>", { desc = "Split window horizontally" }) -- split window horizobtally
 
 -- maintain visual context on page navigation and searching
 map("n", "<C-d>", "<C-d>zz") -- Keeps cursor centered when going down the page
