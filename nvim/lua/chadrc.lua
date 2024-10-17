@@ -9,7 +9,10 @@ M.base46 = {
   theme = "onedark",
   hl_override = {
     -- override comment highlighting to be more visible
-    ["@comment"] = { italic = true, fg = "white" },
+    ["@comment"] = { italic = true, fg = "nord_blue" },
+
+    -- make windows panes more distinguishable
+    ["WinSeparator"] = { fg = "grey_fg2" },
   },
 }
 
