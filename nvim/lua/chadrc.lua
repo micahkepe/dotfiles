@@ -9,7 +9,8 @@ M.base46 = {
   theme = "palenight",
   hl_override = {
     -- override comment highlighting to be more visible
-    ["@comment"] = { italic = true, fg = "nord_blue" },
+    ["@comment"] = { italic = true, fg = "nord_blue" }, -- treesitter comment highlighting
+    ["Comment"] = { italic = true, fg = "nord_blue" }, -- NVChad comment group
 
     -- make windows panes more distinguishable
     ["WinSeparator"] = { fg = "grey_fg2" },
