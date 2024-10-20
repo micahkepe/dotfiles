@@ -128,3 +128,6 @@ map("n", "<leader>hp", "<cmd>lua require'gitsigns'.preview_hunk()<CR>", { desc =
 map("n", "<leader>hb", "<cmd>lua require'gitsigns'.blame_line()<CR>", { desc = "Blame line" })
 map("n", "<leader>hS", "<cmd>lua require'gitsigns'.stage_buffer()<CR>", { desc = "Stage buffer" })
 map("n", "<leader>hU", "<cmd>lua require'gitsigns'.reset_buffer_index()<CR>", { desc = "Reset buffer index" })
+
+-- undo tree
+map("n", "<leader>u", ":UndotreeToggle<cr>", { desc = "Toggle undo tree" })

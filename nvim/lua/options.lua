@@ -23,3 +23,11 @@ opt.clipboard:append "unnamedplus"
 
 -- text wrapping
 o.wrap = false
+
+-- undo history
+opt.undofile = true
+local keyset = vim.keymap.set
+keyset("i", ",", ",<C-g>U")
+keyset("i", ".", ".<C-g>U")
+keyset("i", "!", "!<C-g>U")
+keyset("i", "?", "?<C-g>U")
