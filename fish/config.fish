@@ -13,6 +13,7 @@ alias ga="git add"
 alias gc="git commit"
 alias gp="git push"
 alias v="vim"
+alias python="python3"
 
 # Using the Fish shell in SSH w/ Kitty terminal emulator
 #
