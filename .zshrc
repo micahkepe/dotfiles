@@ -145,3 +145,6 @@ if [ -f '/Users/micahkepe/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users
 # Shell integrgation install for oh-my-zsh
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"

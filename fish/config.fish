@@ -7,13 +7,16 @@ set -gx GOBIN $HOME/go/bin
 # Add the go bin directory to the PATH
 set -gx PATH $PATH $GOBIN
 
+# pyenv setup
+set -Ux PYENV_ROOT $HOME/.pyenv
+fish_add_path $PYENV_ROOT/bin
+
 # ALIASES
 alias gs="git status"
 alias ga="git add"
 alias gc="git commit"
 alias gp="git push"
 alias v="vim"
-alias python="python3"
 
 # Using the Fish shell in SSH w/ Kitty terminal emulator
 #
