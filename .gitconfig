@@ -17,6 +17,7 @@
 [core]
 	autocrlf = input
 	excludesfile = /Users/micahkepe/.gitignore_global
+	editor = nvim
 
 [alias]
     graph = log --all --graph --decorate --oneline

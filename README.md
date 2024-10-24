@@ -99,9 +99,3 @@ shell /opt/homebrew/bin/fish
 ```
 
 And that's it! If you have any suggestions or questions feel free to open an issue or contact me.
-
-## Troubleshooting
-
-For YCM server shut down errors, ensure that the `install.py` script is installed via the system Python installation (`/opt/homebrew/bin/python3 ./install.py --all`) and **NOT** the conda installation. Additionally, you may need to install `setuptools` (`brew install python-setuptools`).
-
-For MarkdownPreview, if the build fails, run `:Lazy load markdown-preview.nvim` and then `:call mkdp#util#install()` in Neovim.

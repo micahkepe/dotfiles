@@ -32,12 +32,10 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Plugins go here ↓
 " Keep Plugin commands between vundle#begin/end.
-" Plugin 'valloric/youcompleteme' -- python install script is broken
 Plugin 'github/copilot.vim'
 Plugin 'preservim/nerdtree'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plugin 'iamcco/markdown-preview.nvim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
