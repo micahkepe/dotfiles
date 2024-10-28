@@ -131,3 +131,11 @@ map("n", "<leader>hU", "<cmd>lua require'gitsigns'.reset_buffer_index()<CR>", { 
 
 -- undo tree
 map("n", "<leader>u", ":UndotreeToggle<cr>", { desc = "Toggle undo tree" })
+
+-- Map <leader>ff to search for files with hidden files shown
+map(
+  "n",
+  "<leader>ff",
+  ":Telescope find_files find_command=rg,--ignore,--hidden,--files<CR>",
+  { desc = "Find files including hidden ones" }
+)
