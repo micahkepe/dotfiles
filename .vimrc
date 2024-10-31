@@ -36,6 +36,7 @@ Plugin 'github/copilot.vim'
 Plugin 'preservim/nerdtree'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plugin 'fladson/vim-kitty'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

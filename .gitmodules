@@ -19,3 +19,6 @@
 [submodule ".vim/bundle/markdown-preview.nvim"]
 	path = .vim/bundle/markdown-preview.nvim
 	url = https://github.com/iamcco/markdown-preview.nvim
+[submodule ".vim/bundle/vim-kitty"]
+	path = .vim/bundle/vim-kitty
+	url = https://github.com/fladson/vim-kitty
