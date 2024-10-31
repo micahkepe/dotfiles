@@ -7,6 +7,7 @@ local M = {}
 -- colorscheme
 M.base46 = {
   theme = "palenight",
+  transparency = true,
   hl_override = {
     -- override comment highlighting to be more visible
     ["@comment"] = { italic = true, fg = "nord_blue" }, -- treesitter comment highlighting

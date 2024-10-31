@@ -136,6 +136,10 @@ map("n", "<leader>u", ":UndotreeToggle<cr>", { desc = "Toggle undo tree" })
 map(
   "n",
   "<leader>ff",
-  ":Telescope find_files find_command=rg,--ignore,--hidden,--files<CR>",
-  { desc = "Find files including hidden ones" }
+  ":Telescope find_files find_command=rg,--ignore,--hidden,--files,--glob,!.git,--glob,!node_modules<CR>",
+  { desc = "Find files including hidden ones, ignoring .git and node_modules" }
 )
+
+-- Better navigation when lines are wrapped
+map("n", "j", "(v:count ? 'j' : 'gj')", { expr = true })
+map("n", "k", "(v:count ? 'k' : 'gk')", { expr = true })
