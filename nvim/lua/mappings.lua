@@ -10,7 +10,7 @@ map("n", "<C-k>", "<cmd>TmuxNavigateUp<cr>", { desc = "Navigate up" })
 map("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>", { desc = "Navigate right" })
 map("n", "<C-\\>", "<cmd>TmuxNavigatePrevious<cr>", { desc = "Navigate previous" })
 
-map("n", ";", ":", { desc = "CMD enter command mode" })
+-- Quick escape from insert mode
 map("i", "jk", "<ESC>")
 
 -- Map <C-s> to save
@@ -151,3 +151,7 @@ map(
 -- Better navigation when lines are wrapped
 map("n", "j", "(v:count ? 'j' : 'gj')", { expr = true })
 map("n", "k", "(v:count ? 'k' : 'gk')", { expr = true })
+
+-- Autosession mappings
+map("n", "<leader>ws", "<cmd>SessionSave<CR>", { desc = "Save session for auto session root dir" })
+map("n", "<leader>wr", "<cmd>SessionRestore<CR>", { desc = "Restore session for cwd" })
