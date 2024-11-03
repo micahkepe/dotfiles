@@ -30,6 +30,12 @@ export PATH=$PATH:$GOBIN
 # Homebrew path 
 export PATH="/opt/homebrew/bin:$PATH"
 
+# zsh-autocomplete 
+source /opt/homebrew/Cellar/zsh-autocomplete/24.09.04/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+bindkey              '^I'         menu-complete
+bindkey "$terminfo[kcbt]" reverse-menu-complete
+bindkey -M menuselect '^M' .accept-line
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME

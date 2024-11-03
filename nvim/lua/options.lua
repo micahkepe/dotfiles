@@ -32,6 +32,9 @@ keyset("i", ".", ".<C-g>U")
 keyset("i", "!", "!<C-g>U")
 keyset("i", "?", "?<C-g>U")
 
+-- set spelllang
+opt.spelllang = "en_us"
+
 local enable_providers = {
   "python3_provider",
   "node_provider",
