@@ -30,6 +30,9 @@ export PATH=$PATH:$GOBIN
 # Homebrew path 
 export PATH="/opt/homebrew/bin:$PATH"
 
+# fnm path
+eval "$(fnm env --use-on-cd --shell zsh)"
+
 # zsh-autocomplete 
 source /opt/homebrew/Cellar/zsh-autocomplete/24.09.04/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 bindkey              '^I'         menu-complete
@@ -73,7 +76,7 @@ ZSH_THEME="robbyrussell"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.

@@ -5,6 +5,23 @@ local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
 
+-- Overriding NVChad's lspconfig setup to make diagnostics to make it more like
+-- Visual Studio Code (no inline, underlined, window on cursor hold, etc.)
+--#region
+
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+  virtual_text = false, -- no inline diagnostics
+  underline = true, -- underline the offending code
+})
+
+-- update diagnostics more frequently
+vim.o.updatetime = 250
+
+-- Open diagnostics automatically on cursor hold
+vim.cmd [[autocmd cursorhold,cursorholdi * lua vim.diagnostic.open_float(nil, {focus=false})]]
+
+--#endregion
+
 -- LSP Servers with no configuration needed
 local servers = {
   "html",
