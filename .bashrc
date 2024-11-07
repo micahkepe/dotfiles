@@ -24,6 +24,7 @@ alias dc='cd'
 alias ll='ls -al'
 alias gs='git status'
 alias v='vim'
+alias tmux-sessionizer='~/.dotfiles/tmux/tmux-sessionizer.sh'
 
 # Directory Aliases
 alias ..='cd ..'

@@ -138,6 +138,7 @@ alias gs="git status"
 alias dc='cd'
 alias ll='ls -al'
 alias v='vim'
+alias tmux-sessionizer="~/.dotfiles/tmux/tmux-sessionizer.sh"
 
 
 export NVM_DIR="$HOME/.nvm"
