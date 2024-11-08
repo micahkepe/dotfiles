@@ -175,4 +175,15 @@ return {
       { "<leader>p", "<cmd>PasteImage<cr>", desc = "Paste image from system clipboard" },
     },
   },
+
+  -- Auto save when leaving INSERT mode
+  {
+    "pocco81/auto-save.nvim",
+    lazy = false,
+    config = function()
+      require("auto-save").setup {
+        execution_message = { message = "" },
+      }
+    end,
+  },
 }

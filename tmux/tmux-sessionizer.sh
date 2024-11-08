@@ -20,7 +20,7 @@ if [[ $# -eq 1 ]]; then
 else
     # if no directory is passed in, use fzf to select one
     # NOTE: change the directories to search in the find command as you wish
-    selected=$(FZF_TMUX=1 find ~/coding-projects ~/rice-courses -mindepth 1 -maxdepth 1 -type d | fzf)
+    selected=$(FZF_TMUX=1 find ~/coding-projects ~/ ~/vislang/ ~/rice-courses -mindepth 1 -maxdepth 1 -type d | fzf)
 fi
 
 # exit if no directory is selected from fzf

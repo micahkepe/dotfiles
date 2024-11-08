@@ -155,3 +155,6 @@ map("n", "k", "(v:count ? 'k' : 'gk')", { expr = true })
 -- Autosession mappings
 map("n", "<leader>ws", "<cmd>SessionSave<CR>", { desc = "Save session for auto session root dir" })
 map("n", "<leader>wr", "<cmd>SessionRestore<CR>", { desc = "Restore session for cwd" })
+
+-- Toggle auto-saving
+map("n", "<leader>as", ":ASToggle<CR>", { desc = "Toggle auto-saving" })
