@@ -181,9 +181,7 @@ return {
     "pocco81/auto-save.nvim",
     lazy = false,
     config = function()
-      require("auto-save").setup {
-        execution_message = { message = "" },
-      }
+      require("auto-save").setup {}
     end,
   },
 }
