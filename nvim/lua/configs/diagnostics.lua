@@ -7,7 +7,7 @@ M.setup = function()
   })
 
   -- Set the update time for diagnostics
-  -- vim.o.updatetime = 250
+  vim.o.updatetime = 250
 
   -- Automatically show diagnostics on cursor hold
   vim.cmd [[
