@@ -69,17 +69,6 @@ else
   require "notify"("nvim-dap or dap-ui not installed!", "warning")
 end
 
--- Open file in default viewer
-vim.api.nvim_create_user_command("OpenFileInViewer", function()
-  local current_file = vim.fn.expand "%:p"
-  vim.fn.system('open "' .. current_file .. '"')
-end, {})
-
--- Map <leader>sv to open file in standard viewer
--- NOTE: if cursor is on the file name Nvim Tree, you can simply press `sv` to open the file in the default viewer
--- since the leader key is already used by Nvim Tree.
-map("n", "<leader>sv", ":OpenFileInViewer<CR>", { noremap = true, silent = true, desc = "Open file in default viewer" })
-
 -- Sioyek PDF viewer mappings
 vim.api.nvim_create_user_command("OpenPDFWithSioyek", function()
   local current_file = vim.fn.expand "%:p"
