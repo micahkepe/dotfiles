@@ -25,7 +25,7 @@ alias ll='ls -al'
 alias gs='git status'
 alias v='vim'
 alias tmux-sessionizer='~/.dotfiles/tmux/tmux-sessionizer.sh'
-alias sd="cd ~ && cd \$(find * -type d | fzf)"
+alias sd="cd \$(find * -type d | fzf)"
 
 # Directory Aliases
 alias ..='cd ..'
