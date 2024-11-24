@@ -146,6 +146,7 @@ alias dc='cd'
 alias ll='ls -al'
 alias v='vim'
 alias tmux-sessionizer="~/.dotfiles/tmux/tmux-sessionizer.sh"
+alias sd="cd ~ && cd \$(find * -type d | fzf)"
 
 
 export NVM_DIR="$HOME/.nvm"

@@ -18,6 +18,7 @@ alias gc="git commit"
 alias gp="git push"
 alias v="vim"
 alias tmux-sessionizer="~/.dotfiles/tmux/tmux-sessionizer.sh"
+alias sd "cd ~ && cd (find * -type d | fzf)"
 
 # Using the Fish shell in SSH w/ Kitty terminal emulator
 #
