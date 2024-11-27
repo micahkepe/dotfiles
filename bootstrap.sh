@@ -26,6 +26,8 @@ symlink $DOTFILES_DIR/nvim ~/.config/nvim
 symlink $DOTFILES_DIR/neofetch ~/.config/neofetch
 symlink $DOTFILES_DIR/fish ~/.config/fish
 symlink $DOTFILES_DIR/tmux/.tmux.conf ~/.tmux.conf
+symlink $DOTFILES_DIR/wezterm ~/.config/wezterm 
+symlink ~/.wezterm.lua $DOTFILES_DIR/wezterm/wezterm.lua
 # add more here as needed
 
 echo "Dotfiles linked successfully!"
