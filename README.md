@@ -2,9 +2,13 @@
 
 ![Preview of my NVChad setup for reference.](images/nvim.png)
 
-My personal dotfiles for macOS. This repository contains my configurations for Neovim, Vim, Hammerspoon, and the terminal. I have included a bootstrap script that will create the necessary symlinks for the configurations.
+My personal dotfiles for macOS. This repository contains my configurations for
+Neovim, Vim, Hammerspoon, and the terminal. I have included a bootstrap script
+that will create the necessary symlinks for the configurations.
 
-**Note**: This repository is a work in progress and is constantly being updated. Additionally, if you want to give these dotfiles a try, I recommend forking and reviewing the code before giving them a whirl.
+**Note**: This repository is a work in progress and is constantly being updated.
+Additionally, if you want to give these dotfiles a try, I recommend forking and
+reviewing the code before giving them a whirl.
 
 ## Setup Steps
 
@@ -26,7 +30,8 @@ git clone https://github.com/micahkepe/dotfiles.git ~/.dotfiles
 
 ### 3. Initialize and Update Submodules
 
-Initialize and update the git submodules to include dependencies like Vundle and YouCompleteMe.
+Initialize and update the git submodules to include dependencies like Vundle and
+YouCompleteMe.
 
 ```bash
 cd ~./dotfiles
@@ -79,7 +84,8 @@ source ~/.zshrc
 
 ### 10. (Optional) Set Fish to Default Shell
 
-To set [Fish](https://fishshell.com/) to be your default shell, first add the following line to `/etc/shells`:
+To set [Fish](https://fishshell.com/) to be your default shell, first add the
+following line to `/etc/shells`:
 
 ```
 /opt/homrebew/bin/fish
@@ -91,11 +97,13 @@ Then, run the following command:
 chsh -s /opt/homebrew/bin/fish
 ```
 
-If necessary, change following line in the `~/.config/fish/config.fish` file in the `Advanced` section:
+If necessary, change following line in the `~/.config/fish/config.fish` file in
+the `Advanced` section:
 
 ```
 # shell .
 shell /opt/homebrew/bin/fish
 ```
 
-And that's it! If you have any suggestions or questions feel free to open an issue or contact me.
+And that's it! If you have any suggestions or questions feel free to open an
+issue or contact me.
