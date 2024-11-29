@@ -10,10 +10,10 @@ local diagnostics = require "configs.diagnostics"
 diagnostics.setup()
 
 -- LSP Servers with no configuration needed
+-- NOTE: Rust lsp setup managed by `mrcjkb/rustaceanvim` plugin
 local servers = {
   "html",
   "cssls",
-  "rust_analyzer",
   "pyright",
   "ts_ls",
 }
