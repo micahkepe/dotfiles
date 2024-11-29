@@ -37,7 +37,7 @@
 		            & $x-$axis $\cup$ $y-$axis
 	\end{tabular}}
 \thm{}{If $x\in$ open set $V$ then $\exists$ $\delta>0$ such that $B_{\delta}(x)\subset V$}
-\begin{myproof}By openness of $V$, $x\in B_r(u)\subset V$
+\begin{proof}By openness of $V$, $x\in B_r(u)\subset V$
 	\begin{center}
 		\begin{tikzpicture}
 			\draw[red] (0,0) circle [x radius=3.5cm, y radius=2cm] ;
@@ -53,8 +53,6 @@
 	Given $x\in B_r(u)\subset V$, we want $\delta>0$ such that $x\in B_{\delta} (x)\subset B_r(u)\subset V$. Let $d=d(u,x)$. Choose $\delta $ such that $d+\delta<r$ (e.g. $\delta<\frac{r-d}{2}$)
 
 	If $y\in B_{\delta}(x)$ we will be done by showing that $d(u,y)<r$ but $$d(u,y)\leq d(u,x)+d(x,y)<d+\delta<r$$
-\end{myproof}
-
-
+\end{proof}
 
 \end{document}

@@ -190,17 +190,14 @@ return {
     "lervag/vimtex",
     lazy = false,
     init = function()
-      vim.g.vimtex_view_method = "sioyek"
-      vim.g.vimtex_view_sioyek_options = "--new-window"
-      vim.g.vimtex_quickfix_mode = 0
-      vim.g.tex_conceal = "abdmg"
+      require "configs.vimtex"
     end,
   },
 
   -- Rust setup
   {
     "mrcjkb/rustaceanvim",
-    version = "^5", -- Recommended
-    lazy = false, -- This plugin is already lazy
+    version = "^5",
+    lazy = false,
   },
 }
