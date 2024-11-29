@@ -34,6 +34,9 @@ export DYLD_LIBRARY_PATH="$(brew --prefix)/lib:$DYLD_LIBRARY_PATH"
 export GOBIN=$HOME/go/bin
 export PATH=$PATH:$GOBIN
 
+# MacTeX 
+export PATH=/Library/TeX/texbin:$PATH
+
 # Homebrew path 
 export PATH="/opt/homebrew/bin:$PATH"
 

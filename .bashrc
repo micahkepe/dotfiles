@@ -11,9 +11,20 @@
 #
 ######################################################################
 
+######################## 
+#  PATH SETUP
+########################
+
+# Cargo path
 . "$HOME/.cargo/env"
+
+# Go path
 export GOBIN=$HOME/go/bin
 export PATH=$PATH:$GOBIN
+
+# MacTeX 
+export PATH=/Library/TeX/texbin:$PATH
+
 
 ########################
 #  ALIASES

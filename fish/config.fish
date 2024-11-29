@@ -11,6 +11,9 @@ set -gx PATH $PATH $GOBIN
 set -Ux PYENV_ROOT $HOME/.pyenv
 fish_add_path $PYENV_ROOT/bin
 
+# MacTeX 
+set -gx PATH /Library/TeX/texbin $PATH
+
 # ALIASES
 alias gs="git status"
 alias ga="git add"

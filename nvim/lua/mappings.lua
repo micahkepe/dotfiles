@@ -147,3 +147,7 @@ map("n", "<leader>wr", "<cmd>SessionRestore<CR>", { desc = "Restore session for 
 
 -- Toggle auto-saving
 map("n", "<leader>as", ":ASToggle<CR>", { desc = "Toggle auto-saving" })
+
+-- VimTeX mappings
+map("n", "<leader>ll", "<cmd>VimtexCompile<CR>", { desc = "Compile LaTeX document" })
+map("n", "<leader>lv", "<cmd>VimtexView<CR>", { desc = "View LaTeX document" })
