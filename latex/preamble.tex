@@ -775,3 +775,45 @@
 	\@starttoc{toc}}
 \makeatother
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% CODE LISTINGS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\lstdefinelanguage{Rust}{
+    keywords={
+        fn, let, mut, struct, impl, trait, enum, match, if, else, return, break,
+        continue, where, for, in, type, move, ref, Option, Result, Some, None, Ok, Err
+    },
+    sensitive=true,
+    comment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    morestring=[b]",
+    morestring=[b]',
+    basicstyle=\ttfamily\footnotesize\color{mygr}, % Base text style
+    keywordstyle=\bfseries\color{myb},            % Keywords in blue
+    stringstyle=\color{myr},                      % Strings in red
+    commentstyle=\itshape\color{myg},             % Comments in green
+    numbers=left,
+    numberstyle=\tiny\color{myyellow},            % Line numbers in yellow-brown
+    stepnumber=1,
+    numbersep=8pt,
+    backgroundcolor=\color{gray!10},              % Light gray background
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    frame=single,                                 % Box frame around the code
+    framesep=5pt,
+    rulecolor=\color{mygr},                       % Border color for the frame
+    tabsize=4,                                    % Tab spacing
+    captionpos=b,
+    breaklines=true,
+    breakatwhitespace=false,
+    title=\lstname,
+    escapeinside={(*@}{@*)},                      % Allows escaping to LaTeX
+    emph={panic, println, dbg},                  % Highlight specific functions
+    emphstyle=\color{myp},                        % Highlighted functions in purple
+}
+
+
+\lstset{language=Rust}
