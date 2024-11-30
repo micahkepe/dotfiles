@@ -200,4 +200,17 @@ return {
     version = "^5",
     lazy = false,
   },
+
+  {
+    "L3MON4D3/LuaSnip",
+    dependencies = "rafamadriz/friendly-snippets",
+    opts = { history = true, updateevents = "TextChanged,TextChangedI" },
+    config = function(_, opts)
+      require("luasnip").config.set_config(opts)
+      require "nvchad.configs.luasnip"
+
+      -- Load custom LaTeX snippets
+      require("luasnip.loaders.from_lua").lazy_load { paths = "~/.config/nvim/lua/snippets/" }
+    end,
+  },
 }

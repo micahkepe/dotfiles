@@ -14,22 +14,6 @@ vim.api.nvim_create_autocmd("User", {
   command = "VimtexClean",
 })
 
-vim.api.nvim_create_autocmd("User", {
-  group = vim.api.nvim_create_augroup("VimTeX", { clear = true }),
-  pattern = "VimtexEventViewReverse",
-  callback = function()
-    -- Center text vertically
-    vim.cmd "normal! zz"
-
-    -- Move cursor to the last column
-    vim.fn.cursor(".", vim.fn.col "$")
-
-    -- Focus back to Kitty window
-    os.execute "kitty @ focus-window"
-  end,
-  desc = "VimTeX: Handle inverse search and return focus to Kitty",
-})
-
 -- Auto replace double quotes in LaTeX
 vim.api.nvim_create_autocmd("InsertLeave", {
   group = "VimTeX",
