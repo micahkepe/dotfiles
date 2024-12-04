@@ -33,8 +33,8 @@ return {
         "vimballPlugin",
         "zip",
         "zipPlugin",
-        "tutor",
-        -- "rplugin",
+        -- "tutor", -- NvChad commented this out, but I'd like to keep it
+        -- "rplugin", -- needed for `wilder.nvim` plugin
         "syntax",
         "synmenu",
         "optwin",
