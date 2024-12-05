@@ -28,6 +28,7 @@ symlink $DOTFILES_DIR/fish ~/.config/fish
 symlink $DOTFILES_DIR/tmux/.tmux.conf ~/.tmux.conf
 symlink $DOTFILES_DIR/wezterm ~/.config/wezterm 
 symlink ~/.wezterm.lua $DOTFILES_DIR/wezterm/wezterm.lua
+symlink $DOTFILES_DIR/spotify-player ~/.config/spotify-player
 # add more here as needed
 
 echo "Dotfiles linked successfully!"
