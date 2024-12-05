@@ -23,7 +23,7 @@ enable_media_control = false
 enable_streaming = "Always"
 enable_notify = false 
 enable_cover_image_cache = true
-default_device = "spotify-player"
+default_device = "Micah's MacBook Pro"
 notify_streaming_only = false
 seek_duration_secs = 5
 
