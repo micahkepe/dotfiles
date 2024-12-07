@@ -213,4 +213,15 @@ return {
       require("luasnip.loaders.from_lua").lazy_load { paths = "~/.config/nvim/lua/snippets/" }
     end,
   },
+
+  -- PlantUML syntax highlighting + preview
+  {
+    "weirongxu/plantuml-previewer.vim",
+    dependencies = {
+      "tyru/open-browser.vim",
+      "aklt/plantuml-syntax",
+    },
+    ft = "plantuml",
+    lazy = false,
+  },
 }
