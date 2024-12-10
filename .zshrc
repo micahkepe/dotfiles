@@ -149,19 +149,19 @@ alias dc='cd'
 alias ll='ls -al'
 alias v='vim'
 alias tmux-sessionizer="~/.dotfiles/tmux/tmux-sessionizer.sh"
-alias sd="cd \$(find * -type d | fzf)"
-
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# export PATH="/usr/local/bin:$PATH"
 
 eval "$(rbenv init -)"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/micahkepe/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/micahkepe/google-cloud-sdk/path.zsh.inc'; fi
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/micahkepe/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/micahkepe/google-cloud-sdk/completion.zsh.inc'; fi

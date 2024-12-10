@@ -22,7 +22,6 @@ alias gp="git push"
 alias v="vim"
 alias tmux-sessionizer="~/.dotfiles/tmux/tmux-sessionizer.sh"
 alias latex-template="~/.dotfiles/latex/latex-template.sh"
-alias sd "cd (find * -type d | fzf)"
 
 # Using the Fish shell in SSH w/ Kitty terminal emulator
 #
@@ -44,3 +43,5 @@ set -gx FNM_COREPACK_ENABLED "false";
 set -gx FNM_RESOLVE_ENGINES "false";
 set -gx FNM_ARCH "arm64";
 
+# Set up fzf key bindings
+fzf --fish | source

@@ -36,7 +36,6 @@ alias ll='ls -al'
 alias gs='git status'
 alias v='vim'
 alias tmux-sessionizer='~/.dotfiles/tmux/tmux-sessionizer.sh'
-alias sd="cd \$(find * -type d | fzf)"
 
 # Directory Aliases
 alias ..='cd ..'
@@ -45,3 +44,6 @@ alias ...='cd ../..'
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --bash)"
