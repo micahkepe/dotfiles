@@ -45,3 +45,7 @@ set -gx FNM_ARCH "arm64";
 
 # Set up fzf key bindings
 fzf --fish | source
+
+# fzf.fish key binding changes 
+# - change variables search to Ctrl-Alt-v
+fzf_configure_bindings --variables=\e\cv
