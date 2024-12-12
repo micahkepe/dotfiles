@@ -148,3 +148,6 @@ nnoremap <leader>rn :set invrelativenumber<CR>
 " Set yank register to allow for clipboard.
 set clipboard=unnamedplus,unnamed,autoselect
 
+" Format lines to 80 characters
+nnoremap <leader>8 :set tw=80<CR>gqap:set tw=0<CR>
+
