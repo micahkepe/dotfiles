@@ -18,6 +18,7 @@
 	autocrlf = input
 	excludesfile = /Users/micahkepe/.gitignore_global
 	editor = nvim
+	pager = diff-so-fancy | less --tabs=4 -RF
 
 [alias]
     graph = log --all --graph --decorate --oneline
@@ -37,3 +38,5 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
+[interactive]
+	diffFilter = diff-so-fancy --patch
