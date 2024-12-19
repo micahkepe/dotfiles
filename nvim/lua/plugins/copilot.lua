@@ -10,8 +10,8 @@ return {
     build = ":Copilot auth",
     opts = {
       suggestion = {
-        enabled = false, -- disable by default because I want to think
-        auto_trigger = false, -- won't trigger until `next` or `prev` keymap used in Insert mode
+        enabled = true,
+        auto_trigger = false, -- need to explicitly use "next" or "prev" to generate
         debounce = 75,
         keymap = {
           accept = "<C-f>", -- accept the current suggestion in full

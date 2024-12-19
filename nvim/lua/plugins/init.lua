@@ -99,7 +99,7 @@ return {
   -- Notification manager
   { "rcarriga/nvim-notify" },
 
-  -- Highlighting tags like TODO, FiX, etc.
+  -- Highlighting tags like TODO, FIX, NOTE etc.
   {
     "folke/todo-comments.nvim",
     event = { "BufReadPost", "BufNewFile" }, -- Load on buffer read
