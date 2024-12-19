@@ -10,14 +10,13 @@ return {
     build = ":Copilot auth",
     opts = {
       suggestion = {
-        enabled = true,
+        enabled = false, -- disable by default because I want to think
         auto_trigger = false, -- won't trigger until `next` or `prev` keymap used in Insert mode
         debounce = 75,
         keymap = {
           accept = "<C-f>", -- accept the current suggestion in full
           accept_word = "<C-w>", -- accept the current word
           accept_line = "<C-l>", -- accept the current line
-          -- Cycle through suggestions
           next = "<C-n>",
           prev = "<C-p>",
           dismiss = "<C-x>",
@@ -83,7 +82,6 @@ return {
   -- To use copilot with nvim-cmp, uncomment the following block
   -- This may be a better option if you prefer keeping "InsertEnter" event for copilot,
   -- however, Copilot's multiline suggestions are harder to read in the cmp menu.
-
   -- {
   --   "zbirenbaum/copilot.lua",
   --   cmd = "Copilot",

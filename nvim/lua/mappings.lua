@@ -10,9 +10,6 @@ map("n", "<C-k>", "<cmd>TmuxNavigateUp<cr>", { desc = "Navigate up" })
 map("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>", { desc = "Navigate right" })
 map("n", "<C-\\>", "<cmd>TmuxNavigatePrevious<cr>", { desc = "Navigate previous" })
 
--- Quick escape from insert mode
-map("i", "jk", "<ESC>")
-
 -- Map <C-s> to save
 map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
