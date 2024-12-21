@@ -224,4 +224,20 @@ return {
     ft = "plantuml",
     lazy = false,
   },
+
+  {
+    "ravibrock/regisfilter.nvim",
+    lazy = false,
+    opts = {
+      global_patterns = {
+        "%s+",
+      }, -- List of patterns to match for everything
+      register_patterns = {}, -- List of patterns to match for specific registers
+      ft_patterns = {}, -- List of patterns to match for specific filetypes
+      negative_match = true, -- Don't send to register if the pattern is matched
+      registers = { '"', "1", "-" }, -- List of registers to monitor (only need "1" for 1-9)
+      system_clipboard = "", -- Use the system clipboard (updates to vim.opt.clipboard if not empty)
+      remap_paste = true, -- Remap p and P to sync with clipboard settings
+    },
+  },
 }
