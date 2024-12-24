@@ -230,7 +230,9 @@ return {
     lazy = false,
     opts = {
       global_patterns = {
-        "%s+",
+        "%^s*$", -- whitespace
+        "^[ \t]*\n", -- whitespace with newline or tabs
+        "^.$", -- single character
       }, -- List of patterns to match for everything
       register_patterns = {}, -- List of patterns to match for specific registers
       ft_patterns = {}, -- List of patterns to match for specific filetypes
@@ -239,5 +241,13 @@ return {
       system_clipboard = "", -- Use the system clipboard (updates to vim.opt.clipboard if not empty)
       remap_paste = true, -- Remap p and P to sync with clipboard settings
     },
+  },
+
+  {
+    "micahkepe/merge.nvim",
+    lazy = false,
+    config = function()
+      require("merge").setup {}
+    end,
   },
 }
