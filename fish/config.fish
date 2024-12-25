@@ -19,9 +19,12 @@ alias gs="git status"
 alias ga="git add"
 alias gc="git commit"
 alias gp="git push"
+alias gd="git diff"
+alias gr="git restore"
 alias v="vim"
 alias tmux-sessionizer="~/.dotfiles/tmux/tmux-sessionizer.sh"
 alias latex-template="~/.dotfiles/latex/latex-template.sh"
+alias rm="trash"
 
 # Using the Fish shell in SSH w/ Kitty terminal emulator
 #

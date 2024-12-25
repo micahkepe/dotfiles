@@ -130,7 +130,7 @@ source $ZSH/oh-my-zsh.sh
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
 # else
-#   export EDITOR='mvim'
+#   export EDITOR='nvim'
 # fi
 
 # Compilation flags
@@ -145,10 +145,13 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias gs="git status"
-alias dc='cd'
-alias ll='ls -al'
+alias gc="git commit"
+alias ga="git add"
+alias gd="git diff"
+alias gr="git restore"
 alias v='vim'
 alias tmux-sessionizer="~/.dotfiles/tmux/tmux-sessionizer.sh"
+alias rm='trash'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

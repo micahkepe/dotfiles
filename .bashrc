@@ -30,16 +30,20 @@ export PATH=/Library/TeX/texbin:$PATH
 #  ALIASES
 ########################
 
-# Command Aliases
-alias dc='cd'
-alias ll='ls -al'
 alias gs='git status'
+alias gc='git commit'
+alias ga='git add'
+alias gp='git push'
+alias gd='git diff'
+alias gr='git restore'
 alias v='vim'
 alias tmux-sessionizer='~/.dotfiles/tmux/tmux-sessionizer.sh'
+alias rm='trash'
 
-# Directory Aliases
-alias ..='cd ..'
-alias ...='cd ../..'
+
+#######################
+#  MISC.
+#######################
 
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
