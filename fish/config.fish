@@ -49,3 +49,5 @@ fzf --fish | source
 # fzf.fish key binding changes 
 # - change variables search to Ctrl-Alt-v
 fzf_configure_bindings --variables=\e\cv
+
+zoxide init --cmd cd fish | source
