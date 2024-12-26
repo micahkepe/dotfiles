@@ -1,0 +1,29 @@
+# See: https://ghostty.org/docs/config/reference
+
+# Color theme
+theme = dark:catppuccin-mocha,light:catppuccin-latte
+
+# Font appearance 
+font-family = JetBrains Mono NL Semibold
+font-style-bold = JetBrains Mono NL Bold
+font-style-italic =  JetBrains Mono NL Italic 
+font-style-bold-italic = JetBrains Mono NL Bold Italic
+font-thicken = true
+adjust-cell-width = -4%
+font-size = 13
+
+# Option key for mac
+macos-option-as-alt = true
+
+# Windows 
+window-theme = ghostty
+
+# Security 
+macos-auto-secure-input = true
+macos-secure-input-indication = true
+
+# Misc.
+clipboard-trim-trailing-spaces = true
+confirm-close-surface = false
+quit-after-last-window-closed = true
+mouse-shift-capture = true
