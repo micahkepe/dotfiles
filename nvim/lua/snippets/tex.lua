@@ -3,11 +3,6 @@ local s = ls.snippet -- Create snippets
 local t = ls.text_node -- Text node
 local i = ls.insert_node -- Insert node
 local f = ls.function_node -- Function node
-local c = ls.choice_node -- Choice node
-local d = ls.dynamic_node -- Dynamic node
-local fmt = require("luasnip.extras.fmt").fmt -- Formatter
-local fmta = require("luasnip.extras.fmt").fmta -- Angle-bracket formatter
-local rep = require("luasnip.extras").rep -- Repeat text
 
 return {
   -- Begin-End Environment

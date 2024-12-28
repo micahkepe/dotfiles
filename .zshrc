@@ -5,16 +5,16 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-############################################################                                             
-#     
+############################################################
+#
 #     ███████╗███████╗██╗  ██╗██████╗  ██████╗
 #     ╚══███╔╝██╔════╝██║  ██║██╔══██╗██╔════╝
-#       ███╔╝ ███████╗███████║██████╔╝██║     
-#      ███╔╝  ╚════██║██╔══██║██╔══██╗██║     
+#       ███╔╝ ███████╗███████║██████╔╝██║
+#      ███╔╝  ╚════██║██╔══██║██╔══██╗██║
 #     ███████╗███████║██║  ██║██║  ██║╚██████╗
 #     ╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝
 #
-############################################################                                             
+############################################################
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/.local/bin:$HOME/bin:/usr/local/bin:$PATH
 
@@ -34,16 +34,16 @@ export DYLD_LIBRARY_PATH="$(brew --prefix)/lib:$DYLD_LIBRARY_PATH"
 export GOBIN=$HOME/go/bin
 export PATH=$PATH:$GOBIN
 
-# MacTeX 
+# MacTeX
 export PATH=/Library/TeX/texbin:$PATH
 
-# Homebrew path 
+# Homebrew path
 export PATH="/opt/homebrew/bin:$PATH"
 
 # fnm path
 eval "$(fnm env --use-on-cd --shell zsh)"
 
-# zsh-autocomplete 
+# zsh-autocomplete
 source /opt/homebrew/Cellar/zsh-autocomplete/24.09.04/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 bindkey              '^I'         menu-complete
 bindkey "$terminfo[kcbt]" reverse-menu-complete
