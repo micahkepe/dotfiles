@@ -11,7 +11,7 @@ set -gx PATH $PATH $GOBIN
 set -Ux PYENV_ROOT $HOME/.pyenv
 fish_add_path $PYENV_ROOT/bin
 
-# MacTeX 
+# MacTeX
 set -gx PATH /Library/TeX/texbin $PATH
 
 # ALIASES
@@ -49,7 +49,7 @@ set -gx FNM_ARCH "arm64";
 # Set up fzf key bindings
 fzf --fish | source
 
-# fzf.fish key binding changes 
+# fzf.fish key binding changes
 # - change variables search to Ctrl-Alt-v
 fzf_configure_bindings --variables=\e\cv
 

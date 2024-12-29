@@ -3,10 +3,10 @@
 # Color theme
 theme = dark:catppuccin-mocha,light:catppuccin-latte
 
-# Font appearance 
+# Font appearance
 font-family = JetBrains Mono NL Semibold
 font-style-bold = JetBrains Mono NL Bold
-font-style-italic =  JetBrains Mono NL Italic 
+font-style-italic =  JetBrains Mono NL Italic
 font-style-bold-italic = JetBrains Mono NL Bold Italic
 font-thicken = true
 adjust-cell-width = -4%
@@ -15,10 +15,10 @@ font-size = 13
 # Option key for mac
 macos-option-as-alt = true
 
-# Windows 
+# Windows
 window-theme = ghostty
 
-# Security 
+# Security
 macos-auto-secure-input = true
 macos-secure-input-indication = true
 
