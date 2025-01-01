@@ -56,6 +56,35 @@ hs.hotkey.bind({ "alt", "cmd" }, "f", function()
 	hs.window.focusedWindow():moveToUnit({ 0, 0, 1, 1 })
 end)
 
+-- vim-like bindings (also for split keyboard)
+-- NOTE: "alt" is the Option key on mac
+hs.hotkey.bind({ "cmd", "alt" }, "h", function()
+	moveWindowToGrid(1)
+end) -- Move window to left half
+hs.hotkey.bind({ "cmd", "alt" }, "l", function()
+	moveWindowToGrid(2)
+end) -- Move window to right half
+hs.hotkey.bind({ "cmd", "alt" }, "k", function()
+	moveWindowToGrid(3)
+end) -- Move window to top half
+hs.hotkey.bind({ "cmd", "alt" }, "j", function()
+	moveWindowToGrid(4)
+end) -- Move window to bottom half
+
+-- quarter of screen
+hs.hotkey.bind({ "shift", "alt", "cmd" }, "h", function()
+	hs.window.focusedWindow():moveToUnit({ 0, 0, 0.5, 0.5 })
+end)
+hs.hotkey.bind({ "shift", "alt", "cmd" }, "l", function()
+	hs.window.focusedWindow():moveToUnit({ 0.5, 0.5, 0.5, 0.5 })
+end)
+hs.hotkey.bind({ "shift", "alt", "cmd" }, "k", function()
+	hs.window.focusedWindow():moveToUnit({ 0.5, 0, 0.5, 0.5 })
+end)
+hs.hotkey.bind({ "shift", "alt", "cmd" }, "j", function()
+	hs.window.focusedWindow():moveToUnit({ 0, 0.5, 0.5, 0.5 })
+end)
+
 -- Window switching
 -- better than cmd + tab:
 --  * preview of the window
