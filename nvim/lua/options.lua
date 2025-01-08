@@ -2,6 +2,7 @@ require "nvchad.options"
 
 local o = vim.o
 local opt = vim.opt
+local keyset = vim.keymap.set
 
 -- Cursorline
 o.cursorlineopt = "both" -- to enable cursorline!
@@ -24,9 +25,14 @@ opt.clipboard:append "unnamedplus"
 -- text wrapping
 o.wrap = false
 
+-- retain yank register contents when pasting over visual selected content
+keyset("x", "<leader>p", [["_dP"]])
+
+-- yank from cursor position to end of line
+keyset("n", "<leader>Y", [["+Y]])
+
 -- undo history
 opt.undofile = true
-local keyset = vim.keymap.set
 keyset("i", ",", ",<C-g>U")
 keyset("i", ".", ".<C-g>U")
 keyset("i", "!", "!<C-g>U")
