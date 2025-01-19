@@ -15,5 +15,13 @@ else
     dir=$(pwd)
 fi
 
+# Copy the contents of the latex directory to the current directory
+mkdir $dir/config
+cp ~/.dotfiles/latex/config/*.tex $dir/config
+
+# Copy the .gitignore file to the current directory
+cp ~/.dotfiles/latex/.gitignore $dir
+
+# Copy remaining tex files
 cp ~/.dotfiles/latex/*.tex $dir
 

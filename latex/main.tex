@@ -1,8 +1,13 @@
 \documentclass{report}
 
-\input{preamble}
-\input{macros}
-\input{letterfonts}
+% ==============================
+
+% Configuration files for custom packages and macros
+\input{config/preamble}
+\input{config/macros}
+\input{config/letterfonts}
+
+% ==============================
 
 \title{\Huge{Some Class}\\Random Examples}
 \author{\huge{Your Name}}
@@ -12,7 +17,7 @@
 
 \maketitle
 \newpage% or \cleardoublepage
-% \pdfbookmark[<level>]{<title>}{<dest>}
+\pdfbookmark[<level>]{<title>}{<dest>}
 \pdfbookmark[section]{\contentsname}{toc}
 \tableofcontents
 \pagebreak
