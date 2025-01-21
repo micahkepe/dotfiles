@@ -148,3 +148,7 @@ map("n", "<leader>as", ":ASToggle<CR>", { desc = "Toggle auto-saving" })
 -- VimTeX mappings
 map("n", "<leader>ll", "<cmd>VimtexCompile<CR>", { desc = "Compile LaTeX document" })
 map("n", "<leader>lv", "<cmd>VimtexView<CR>", { desc = "View LaTeX document" })
+
+-- Map Shift+Enter to `k` in Normal mode for upwards navigation on split
+-- keyboard. Can't do normal holding of hjkl due to home row mods
+map("n", "<S-CR>", "k", { noremap = true })
