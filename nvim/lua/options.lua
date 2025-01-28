@@ -7,8 +7,8 @@ local keyset = vim.keymap.set
 -- Cursorline
 o.cursorlineopt = "both" -- to enable cursorline!
 
--- Make line numbers defaults
-o.number = true
+-- Set relative numbering
+opt.relativenumber = true
 
 -- Search and replace
 opt.ignorecase = true -- ignore case letters when searching

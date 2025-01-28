@@ -40,3 +40,6 @@
 	process = git-lfs filter-process
 [interactive]
 	diffFilter = diff-so-fancy --patch
+[credential "https://git.overleaf.com"]
+	username = micahkepe@gmail.com
+	helper = store
