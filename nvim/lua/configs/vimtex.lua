@@ -3,6 +3,17 @@ vim.g.vimtex_view_method = "sioyek"
 vim.g.vimtex_quickfix_mode = 0
 vim.g.tex_conceal = "abdmg"
 
+-- Enable shell-escape for VimTeX (needed for minted)
+vim.g.vimtex_compiler_latexmk = {
+  options = {
+    "-shell-escape", -- Enable shell escape for minted
+    "-verbose",
+    "-file-line-error",
+    "-synctex=1",
+    "-interaction=nonstopmode",
+  },
+}
+
 -- Autocommands for VimTeX
 vim.api.nvim_create_augroup("VimTeX", {})
 
@@ -12,21 +23,4 @@ vim.api.nvim_create_autocmd("User", {
   pattern = "VimtexEventCompileStopped",
   desc = "VimTeX: Clean up auxiliary files on exit",
   command = "VimtexClean",
-})
-
--- Auto replace double quotes in LaTeX
-vim.api.nvim_create_autocmd("InsertLeave", {
-  group = "VimTeX",
-  pattern = { "*.tex", "*.bib" },
-  desc = "VimTeX: Auto replace double quotes in current line with `` and ''",
-  callback = function()
-    local line, linenr = vim.fn.getline ".", vim.fn.line "."
-    local position = vim.api.nvim_win_get_cursor(0)[2] + 1
-    local _, quote_count = string.sub(line, 1, position):gsub('"', "")
-    vim.cmd 'silent! %s/\\"\\([^\\"]*\\)\\"/\\`\\`\\1\'\'/'
-    local new_line = vim.fn.getline(linenr)
-    if line ~= new_line then
-      vim.fn.cursor { linenr, position + quote_count }
-    end
-  end,
 })
