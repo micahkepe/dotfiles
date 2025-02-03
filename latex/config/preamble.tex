@@ -43,6 +43,19 @@
 \usepackage{tikzsymbols}
 \renewcommand\qedsymbol{$\blacksquare$}
 
+% Minted Package for Code Listings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{minted}
+\usemintedstyle{friendly} % Choose a style (e.g., friendly, colorful, etc.)
+\setminted{
+    linenos=true,          % Enable line numbers
+    frame=lines,           % Add a frame around the code
+    framesep=2mm,          % Frame padding
+    fontsize=\small,       % Font size for code
+    tabsize=4,             % Tab width
+    breaklines=true,       % Allow line breaking
+    breakanywhere=true     % Break lines anywhere
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SELF MADE COLORS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
