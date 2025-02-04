@@ -152,3 +152,8 @@ map("n", "<leader>lv", "<cmd>VimtexView<CR>", { desc = "View LaTeX document" })
 -- Map Shift+Enter to `k` in Normal mode for upwards navigation on split
 -- keyboard. Can't do normal holding of hjkl due to home row mods
 map("n", "<S-CR>", "k", { noremap = true })
+
+-- Snacks.nvim QoL mappings
+map("n", "<leader>gr", function()
+  require("snacks").gitbrowse.open { what = "repo" }
+end, { desc = "Open remote repo in default browser " })
