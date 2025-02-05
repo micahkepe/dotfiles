@@ -1,16 +1,21 @@
 -- vimtex setup
 vim.g.vimtex_view_method = "sioyek"
 vim.g.vimtex_quickfix_mode = 0
-vim.g.tex_conceal = "abdmg"
+vim.g.tex_conceal = "abdmg" -- Conceal some LaTeX code
+vim.g.matchup_override_vimtex = 1
+vim.g.vimtex_indent_on_ampersands = 0
 
--- Enable shell-escape for VimTeX (needed for minted)
+-- Documentation reference:
+--  https://us.mirrors.cicku.me/ctan/support/latexmk/latexmk.pdf
 vim.g.vimtex_compiler_latexmk = {
   options = {
-    "-shell-escape", -- Enable shell escape for minted
-    "-verbose",
-    "-file-line-error",
-    "-synctex=1",
-    "-interaction=nonstopmode",
+    "-shell-escape",
+    "-pdf",
+    "-pdflatex",
+    "-interaction=nonstopmode", -- Prevents LaTeX from stopping on errors
+    "-synctex=1", -- Enables forward/inverse search with sioyek
+    "-file-line-error", -- Shows errors with file and line number
+    "-quiet", -- Less aggressive than -silent, keeps critical warnings
   },
 }
 
