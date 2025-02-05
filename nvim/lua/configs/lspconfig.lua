@@ -1,22 +1,14 @@
 local on_attach = require("nvchad.configs.lspconfig").on_attach
 local on_init = require("nvchad.configs.lspconfig").on_init
-local capabilities = require("nvchad.configs.lspconfig").capabilities
-
 local lspconfig = require "lspconfig"
 local diagnostics = require "configs.diagnostics"
 
--- Diagnostics popup
+-- Use blink.cmp capabilities
+local capabilities = require("blink.cmp").get_lsp_capabilities()
+
 diagnostics.setup()
 
--- LSP Servers with no configuration needed
--- NOTE: Rust lsp setup managed by `mrcjkb/rustaceanvim` plugin
-local servers = {
-  "html",
-  "cssls",
-  "pyright",
-  "ts_ls",
-  "gdscript",
-}
+local servers = { "html", "cssls", "pyright", "tsserver", "gdscript" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -26,8 +18,6 @@ for _, lsp in ipairs(servers) do
   }
 end
 
--- Finicky LSPs that have additional configuration
-
 -- Golang LSP
 lspconfig.gopls.setup {
   on_attach = on_attach,
@@ -36,16 +26,13 @@ lspconfig.gopls.setup {
   cmd = { "gopls" },
   settings = {
     gopls = {
-      analyses = {
-        unusedparams = true,
-        shadow = true,
-      },
+      analyses = { unusedparams = true, shadow = true },
       staticcheck = true,
     },
   },
 }
 
--- Tailwind CSS LSP
+-- Tailwind CSS
 lspconfig.tailwindcss.setup {
   on_attach = on_attach,
   on_init = on_init,
