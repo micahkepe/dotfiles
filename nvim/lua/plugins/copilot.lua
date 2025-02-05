@@ -62,28 +62,33 @@ return {
     end,
   },
 
-  {
-    "hrsh7th/nvim-cmp",
-    dependencies = {
-      {
-        "zbirenbaum/copilot-cmp",
-        dependencies = "copilot.lua",
-        config = function()
-          require("copilot_cmp").setup()
-        end,
-      },
-    },
-    opts = function(_, opts)
-      local cmp = require "cmp"
-      opts.sources = cmp.config.sources {
-        { name = "nvim_lsp", group_index = 2 },
-        { name = "luasnip", group_index = 2 },
-        { name = "buffer", group_index = 2 },
-        { name = "nvim_lua", group_index = 2 },
-        { name = "path", group_index = 2 },
-      }
-    end,
-  },
+  -- NOTE: If you are using nvim-cmp, you can use copilot as a source for nvim-cmp
+  -- by uncommenting the following block. This will allow you to use copilot's
+  -- suggestions alongside other completion sources.
+  -- {
+  --   "hrsh7th/nvim-cmp",
+  --   dependencies = {
+  --     {
+  --       "zbirenbaum/copilot-cmp",
+  --       dependencies = "copilot.lua",
+  --       config = function()
+  --         require("copilot_cmp").setup()
+  --       end,
+  --     },
+  --   },
+  --   opts = function(_, opts)
+  --     local cmp = require "cmp"
+  --     opts.sources = cmp.config.sources {
+  --       { name = "nvim_lsp", group_index = 2 },
+  --       { name = "luasnip", group_index = 2 },
+  --       { name = "buffer", group_index = 2 },
+  --       { name = "nvim_lua", group_index = 2 },
+  --       { name = "path", group_index = 2 },
+  --     }
+  --   end,
+  -- },
+
+  ----------------------------------------------------------------------------
 
   -- OPTION 2: use copilot as a source for nvim-cmp (no ghost text)
   -- To use copilot with nvim-cmp, uncomment the following block
