@@ -126,14 +126,6 @@ map("n", "<leader>hU", "<cmd>lua require'gitsigns'.reset_buffer_index()<CR>", { 
 -- undo tree
 map("n", "<leader>u", ":UndotreeToggle<cr>", { desc = "Toggle undo tree" })
 
--- Map <leader>ff to search for files with hidden files shown
-map(
-  "n",
-  "<leader>ff",
-  ":Telescope find_files find_command=rg,--ignore,--hidden,--files,--glob,!.git,--glob,!node_modules<CR>",
-  { desc = "Find files including hidden ones, ignoring .git and node_modules" }
-)
-
 -- Better navigation when lines are wrapped
 map("n", "j", "(v:count ? 'j' : 'gj')", { expr = true })
 map("n", "k", "(v:count ? 'k' : 'gk')", { expr = true })
@@ -154,6 +146,32 @@ map("n", "<leader>lv", "<cmd>VimtexView<CR>", { desc = "View LaTeX document" })
 map("n", "<S-CR>", "k", { noremap = true })
 
 -- Snacks.nvim QoL mappings
+local snacks = require "snacks"
 map("n", "<leader>gr", function()
-  require("snacks").gitbrowse.open { what = "repo" }
-end, { desc = "Open remote repo in default browser " })
+  snacks.gitbrowse.open { what = "repo" }
+end, { desc = "Open remote repo in default browser" })
+
+-- switching to snacks.picker over Telescope
+-- Options reference:
+--  https://github.com/folke/snacks.nvim/blob/main/docs/picker.md
+map("n", "<leader>ff", function()
+  snacks.picker.smart()
+end, { desc = "Find files" })
+map("n", "<leader>w", function()
+  snacks.picker.grep()
+end, { desc = "Grep" })
+map("n", "<leader>fb", function()
+  snacks.picker.buffers()
+end, { desc = "Buffers" })
+map("n", "<leader>fr", function()
+  snacks.picker.recent()
+end, { desc = "Recent Files" })
+map("n", "<leader>fc", function()
+  snacks.picker.files { cwd = vim.fn.stdpath "config" }
+end, { desc = "Find Config Files" })
+map("n", "<leader>fo", function()
+  snacks.picker.oldfiles()
+end, { desc = "Old Files" })
+map("n", "<leader>fw", function()
+  snacks.picker.grep_word()
+end, { desc = "Find Word" })

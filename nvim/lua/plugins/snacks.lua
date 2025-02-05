@@ -9,5 +9,7 @@ return {
   opts = {
     scroll = { enabled = true },
     gitbrowse = { enabled = true },
+    picker = { enabled = true },
+    quickfile = { enabled = true },
   },
 }
