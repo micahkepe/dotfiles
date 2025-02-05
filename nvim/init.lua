@@ -32,6 +32,10 @@ require("lazy").setup({
   },
 
   { import = "plugins" },
+
+  -- NOTE: I now use `blink.cmp` as completion source
+  --  drank the Kool-Aid but it really is much faster
+  { "hrsh7th/nvim-cmp", enabled = false },
 }, lazy_config)
 
 -- disable Copilot on startup
