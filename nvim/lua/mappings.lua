@@ -147,7 +147,7 @@ map("n", "<S-CR>", "k", { noremap = true })
 
 -- Snacks.nvim QoL mappings
 local snacks = require "snacks"
-map("n", "<leader>gr", function()
+map("n", "<leader>gh", function()
   snacks.gitbrowse.open { what = "repo" }
 end, { desc = "Open remote repo in default browser" })
 
