@@ -66,37 +66,10 @@ else
   require "notify"("nvim-dap or dap-ui not installed!", "warning")
 end
 
--- Sioyek PDF viewer mappings
-vim.api.nvim_create_user_command("OpenPDFWithSioyek", function()
-  local current_file = vim.fn.expand "%:p"
-  if current_file:match "%.pdf$" then
-    -- Open the PDF file with Sioyek (can be changed to any other PDF viewer)
-    vim.fn.system('open -a sioyek "' .. current_file .. '"')
-  else
-    vim.notify("Current file is not a PDF", vim.log.levels.WARN)
-  end
-end, {})
-
--- Map <leader>sp to open PDF with Sioyek
-map("n", "<leader>sp", ":OpenPDFWithSioyek<CR>", { noremap = true, silent = true, desc = "Open PDF with Sioyek" })
-
 -- Toggle colorcolumn for editor ruler at 80 characters
 map("n", "<leader>er", function()
   vim.g.toggle_virtcolumn()
 end, { desc = "Toggle virtcolumn at 80 characters" })
-
--- Keyboard users
-vim.keymap.set("n", "<C-t>", function()
-  require("menu").open "default"
-end, {})
-
--- mouse users + nvimtree users!
-vim.keymap.set("n", "<RightMouse>", function()
-  vim.cmd.exec '"normal! \\<RightMouse>"'
-
-  local options = vim.bo.ft == "NvimTree" and "nvimtree" or "default"
-  require("menu").open(options, { mouse = true })
-end, {})
 
 -- window management
 map("n", "<leader>v", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
@@ -111,7 +84,7 @@ map("n", "<C-u>", "<C-u>zz") -- Keeps cursor centered when going up the page
 map("n", "n", "nzzzv") -- Keeps the search result in the center after jumping to next result
 map("n", "N", "Nzzzv") -- Keeps the search result in the center after jumping to previous result
 
--- gitsigns mappings
+-- GitSigns mappings
 map("n", "<leader>hn", "<cmd>lua require'gitsigns'.next_hunk()<CR>", { desc = "Next hunk" })
 map("n", "<leader>hp", "<cmd>lua require'gitsigns'.prev_hunk()<CR>", { desc = "Previous hunk" })
 map("n", "<leader>hs", "<cmd>lua require'gitsigns'.stage_hunk()<CR>", { desc = "Stage hunk" })
@@ -119,7 +92,7 @@ map("n", "<leader>hu", "<cmd>lua require'gitsigns'.undo_stage_hunk()<CR>", { des
 map("n", "<leader>hr", "<cmd>lua require'gitsigns'.reset_hunk()<CR>", { desc = "Reset hunk" })
 map("n", "<leader>hR", "<cmd>lua require'gitsigns'.reset_buffer()<CR>", { desc = "Reset buffer" })
 map("n", "<leader>hp", "<cmd>lua require'gitsigns'.preview_hunk()<CR>", { desc = "Preview hunk" })
-map("n", "<leader>hb", "<cmd>lua require'gitsigns'.blame_line()<CR>", { desc = "Blame line" })
+map("n", "<leader>gb", "<cmd>lua require'gitsigns'.blame_line()<CR>", { desc = "Blame line" })
 map("n", "<leader>hS", "<cmd>lua require'gitsigns'.stage_buffer()<CR>", { desc = "Stage buffer" })
 map("n", "<leader>hU", "<cmd>lua require'gitsigns'.reset_buffer_index()<CR>", { desc = "Reset buffer index" })
 
@@ -140,10 +113,6 @@ map("n", "<leader>as", ":ASToggle<CR>", { desc = "Toggle auto-saving" })
 -- VimTeX mappings
 map("n", "<leader>ll", "<cmd>VimtexCompile<CR>", { desc = "Compile LaTeX document" })
 map("n", "<leader>lv", "<cmd>VimtexView<CR>", { desc = "View LaTeX document" })
-
--- Map Shift+Enter to `k` in Normal mode for upwards navigation on split
--- keyboard. Can't do normal holding of hjkl due to home row mods
-map("n", "<S-CR>", "k", { noremap = true })
 
 -- Snacks.nvim QoL mappings
 local snacks = require "snacks"
