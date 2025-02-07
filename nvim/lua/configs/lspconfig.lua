@@ -45,6 +45,15 @@ lspconfig.gopls.setup {
   },
 }
 
+-- C LSP
+lspconfig.clangd.setup {
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+  cmd = { "clangd" }, -- Ensure clangd is being used
+  filetypes = { "c", "cpp", "objc", "objcpp" },
+}
+
 -- Tailwind CSS LSP
 lspconfig.tailwindcss.setup {
   on_attach = on_attach,
