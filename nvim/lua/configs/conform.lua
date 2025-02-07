@@ -5,6 +5,7 @@ local options = {
     html = { "prettier" },
     markdown = { "prettier" },
     javascript = { "prettier" },
+    c = { "clang-format" },
     typescript = { "prettier" },
   },
 
