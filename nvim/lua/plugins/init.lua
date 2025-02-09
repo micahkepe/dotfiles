@@ -241,6 +241,4 @@ return {
       vim.g.strip_whitespace_on_save = 0 -- LSP should handle on save
     end,
   },
-
-  { "ThePrimeagen/vim-be-good", lazy = false },
 }
