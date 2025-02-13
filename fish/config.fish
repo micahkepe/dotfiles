@@ -14,6 +14,9 @@ fish_add_path $PYENV_ROOT/bin
 # MacTeX
 set -gx PATH /Library/TeX/texbin $PATH
 
+# rvm
+set -gx PATH $HOME/.rvm/bin $PATH
+
 # ALIASES
 alias gs="git status"
 alias ga="git add"
