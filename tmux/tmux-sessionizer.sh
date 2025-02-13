@@ -1,18 +1,23 @@
 #!/usr/bin/env bash
 
-# Adapted from: https://github.com/ThePrimeagen/.dotfiles/blob/master/bin/.local/scripts/tmux-sessionizer
+# Adapted from:
+#   https://github.com/ThePrimeagen/.dotfiles/blob/master/bin/.local/scripts/tmux-sessionizer
 #
-# Description: 
-#   A script to create a new tmux session either by passing in a directory or 
+# Description:
+#   A script to create a new tmux session either by passing in a directory or
 #   selecting one with fzf. For ease of use, add this script to your $PATH and
 #   create an alias in your shell configuration file (e.g. .bashrc, .zshrc) like:
 #   alias tmux-sessionizer='tmux-sessionizer.sh'
 #
 #   Then you can simply run with `tmux-sessionizer`
 #
-# Usage: 
-#  tmux-sessionizer.sh [directory]
-#  tmux-sessionizer.sh
+# Usage:
+#   tmux-sessionizer.sh [directory]
+#   tmux-sessionizer.sh
+#
+#  Effects:
+#   - prompted with fzf menu to select the target diretory if not passed in
+#   - a new tmux session will be created with the truncated path as the name
 
 
 if [[ $# -eq 1 ]]; then

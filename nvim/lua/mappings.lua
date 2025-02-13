@@ -113,6 +113,7 @@ map("n", "<leader>as", ":ASToggle<CR>", { desc = "Toggle auto-saving" })
 -- VimTeX mappings
 map("n", "<leader>ll", "<cmd>VimtexCompile<CR>", { desc = "Compile LaTeX document" })
 map("n", "<leader>lv", "<cmd>VimtexView<CR>", { desc = "View LaTeX document" })
+map("n", "<leader>le", "<cmd>VimtexErrors<CR>", { desc = "Open LaTeX errors in Quickfix menu" })
 
 -- Snacks.nvim QoL mappings
 local snacks = require "snacks"

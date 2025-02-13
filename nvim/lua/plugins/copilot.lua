@@ -12,7 +12,7 @@ return {
     build = ":Copilot auth",
     opts = {
       suggestion = {
-        enabled = true,
+        enabled = false, -- turning this off because I am becoming lazy
         auto_trigger = false, -- need to explicitly use "next" or "prev" to generate
         debounce = 200,
         keymap = {
