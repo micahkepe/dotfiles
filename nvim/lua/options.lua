@@ -42,7 +42,8 @@ keyset("i", "?", "?<C-g>U")
 opt.spelllang = "en_us"
 
 -- Recommended options for `auto-session` plugin
-o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+o.sessionoptions =
+  "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
 local enable_providers = {
   "python3_provider",

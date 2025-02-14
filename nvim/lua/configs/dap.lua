@@ -60,8 +60,14 @@ dapui.setup {
 }
 
 -- nicer looking breakpoints
-vim.fn.sign_define("DapBreakpoint", { text = "🛑", texthl = "", linehl = "", numhl = "" })
-vim.fn.sign_define("DapStopped", { text = "➤", texthl = "", linehl = "", numhl = "" })
+vim.fn.sign_define(
+  "DapBreakpoint",
+  { text = "🛑", texthl = "", linehl = "", numhl = "" }
+)
+vim.fn.sign_define(
+  "DapStopped",
+  { text = "➤", texthl = "", linehl = "", numhl = "" }
+)
 
 -- Language-specific configurations
 -- See the nvim-dap documentation for more configurations
@@ -131,7 +137,10 @@ dap.adapters.python = function(cb, config)
     local host = (config.connect or config).host or "127.0.0.1"
     cb {
       type = "server",
-      port = assert(port, "`connect.port` is required for a python `attach` configuration"),
+      port = assert(
+        port,
+        "`connect.port` is required for a python `attach` configuration"
+      ),
       host = host,
       options = {
         source_filetype = "python",

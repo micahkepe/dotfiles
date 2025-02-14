@@ -133,7 +133,11 @@ return {
       { "<C-j>", "<cmd><C-U>TmuxNavigateDown<cr>", desc = "Navigate down" },
       { "<C-k>", "<cmd><C-U>TmuxNavigateUp<cr>", desc = "Navigate up" },
       { "<C-l>", "<cmd><C-U>TmuxNavigateRight<cr>", desc = "Navigate right" },
-      { "<C-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>", desc = "Navigate previous" },
+      {
+        "<C-\\>",
+        "<cmd><C-U>TmuxNavigatePrevious<cr>",
+        desc = "Navigate previous",
+      },
     },
   },
 
@@ -144,7 +148,11 @@ return {
   {
     "szw/vim-maximizer",
     keys = {
-      { "<leader>sm", "<cmd>MaximizerToggle<CR>", desc = "Maximize/minimize a split" },
+      {
+        "<leader>sm",
+        "<cmd>MaximizerToggle<CR>",
+        desc = "Maximize/minimize a split",
+      },
     },
   },
 
@@ -172,7 +180,11 @@ return {
     },
     keys = {
       -- suggested keymap
-      { "<leader>p", "<cmd>PasteImage<cr>", desc = "Paste image from system clipboard" },
+      {
+        "<leader>p",
+        "<cmd>PasteImage<cr>",
+        desc = "Paste image from system clipboard",
+      },
     },
   },
 
@@ -210,7 +222,9 @@ return {
       require "nvchad.configs.luasnip"
 
       -- Load custom LaTeX snippets
-      require("luasnip.loaders.from_lua").lazy_load { paths = "~/.config/nvim/lua/snippets/" }
+      require("luasnip.loaders.from_lua").lazy_load {
+        paths = "~/.config/nvim/lua/snippets/",
+      }
     end,
   },
 

@@ -8,7 +8,12 @@ map("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>", { desc = "Navigate left" })
 map("n", "<C-j>", "<cmd>TmuxNavigateDown<cr>", { desc = "Navigate down" })
 map("n", "<C-k>", "<cmd>TmuxNavigateUp<cr>", { desc = "Navigate up" })
 map("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>", { desc = "Navigate right" })
-map("n", "<C-\\>", "<cmd>TmuxNavigatePrevious<cr>", { desc = "Navigate previous" })
+map(
+  "n",
+  "<C-\\>",
+  "<cmd>TmuxNavigatePrevious<cr>",
+  { desc = "Navigate previous" }
+)
 
 -- Map <C-s> to save
 map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
@@ -27,11 +32,20 @@ if dap_ok and dapui_ok then
   map("n", "<leader>ds", function()
     dap.continue()
     dapui.toggle {}
-    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<C-w>=", false, true, true), "n", false) -- Spaces buffers evenly
+    vim.api.nvim_feedkeys(
+      vim.api.nvim_replace_termcodes("<C-w>=", false, true, true),
+      "n",
+      false
+    ) -- Spaces buffers evenly
   end, { desc = "Start debugging session" })
 
   -- Hover to get variable value
-  map("n", "<leader>dl", require("dap.ui.widgets").hover, { desc = "Hover to show variable value" })
+  map(
+    "n",
+    "<leader>dl",
+    require("dap.ui.widgets").hover,
+    { desc = "Hover to show variable value" }
+  )
 
   -- Continue execution
   map("n", "<leader>dc", dap.continue, { desc = "Continue execution" })
@@ -59,7 +73,11 @@ if dap_ok and dapui_ok then
     dap.clear_breakpoints()
     dapui.toggle {}
     dap.terminate()
-    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<C-w>=", false, true, true), "n", false)
+    vim.api.nvim_feedkeys(
+      vim.api.nvim_replace_termcodes("<C-w>=", false, true, true),
+      "n",
+      false
+    )
     require "notify"("Debugger session ended", "warn")
   end, { desc = "Terminate debugging session" })
 else
@@ -85,16 +103,66 @@ map("n", "n", "nzzzv") -- Keeps the search result in the center after jumping to
 map("n", "N", "Nzzzv") -- Keeps the search result in the center after jumping to previous result
 
 -- GitSigns mappings
-map("n", "<leader>hn", "<cmd>lua require'gitsigns'.next_hunk()<CR>", { desc = "Next hunk" })
-map("n", "<leader>hp", "<cmd>lua require'gitsigns'.prev_hunk()<CR>", { desc = "Previous hunk" })
-map("n", "<leader>hs", "<cmd>lua require'gitsigns'.stage_hunk()<CR>", { desc = "Stage hunk" })
-map("n", "<leader>hu", "<cmd>lua require'gitsigns'.undo_stage_hunk()<CR>", { desc = "Undo stage hunk" })
-map("n", "<leader>hr", "<cmd>lua require'gitsigns'.reset_hunk()<CR>", { desc = "Reset hunk" })
-map("n", "<leader>hR", "<cmd>lua require'gitsigns'.reset_buffer()<CR>", { desc = "Reset buffer" })
-map("n", "<leader>hp", "<cmd>lua require'gitsigns'.preview_hunk()<CR>", { desc = "Preview hunk" })
-map("n", "<leader>gb", "<cmd>lua require'gitsigns'.blame_line()<CR>", { desc = "Blame line" })
-map("n", "<leader>hS", "<cmd>lua require'gitsigns'.stage_buffer()<CR>", { desc = "Stage buffer" })
-map("n", "<leader>hU", "<cmd>lua require'gitsigns'.reset_buffer_index()<CR>", { desc = "Reset buffer index" })
+map(
+  "n",
+  "<leader>hn",
+  "<cmd>lua require'gitsigns'.next_hunk()<CR>",
+  { desc = "Next hunk" }
+)
+map(
+  "n",
+  "<leader>hp",
+  "<cmd>lua require'gitsigns'.prev_hunk()<CR>",
+  { desc = "Previous hunk" }
+)
+map(
+  "n",
+  "<leader>hs",
+  "<cmd>lua require'gitsigns'.stage_hunk()<CR>",
+  { desc = "Stage hunk" }
+)
+map(
+  "n",
+  "<leader>hu",
+  "<cmd>lua require'gitsigns'.undo_stage_hunk()<CR>",
+  { desc = "Undo stage hunk" }
+)
+map(
+  "n",
+  "<leader>hr",
+  "<cmd>lua require'gitsigns'.reset_hunk()<CR>",
+  { desc = "Reset hunk" }
+)
+map(
+  "n",
+  "<leader>hR",
+  "<cmd>lua require'gitsigns'.reset_buffer()<CR>",
+  { desc = "Reset buffer" }
+)
+map(
+  "n",
+  "<leader>hp",
+  "<cmd>lua require'gitsigns'.preview_hunk()<CR>",
+  { desc = "Preview hunk" }
+)
+map(
+  "n",
+  "<leader>gb",
+  "<cmd>lua require'gitsigns'.blame_line()<CR>",
+  { desc = "Blame line" }
+)
+map(
+  "n",
+  "<leader>hS",
+  "<cmd>lua require'gitsigns'.stage_buffer()<CR>",
+  { desc = "Stage buffer" }
+)
+map(
+  "n",
+  "<leader>hU",
+  "<cmd>lua require'gitsigns'.reset_buffer_index()<CR>",
+  { desc = "Reset buffer index" }
+)
 
 -- undo tree
 map("n", "<leader>u", ":UndotreeToggle<cr>", { desc = "Toggle undo tree" })
@@ -104,16 +172,36 @@ map("n", "j", "(v:count ? 'j' : 'gj')", { expr = true })
 map("n", "k", "(v:count ? 'k' : 'gk')", { expr = true })
 
 -- Autosession mappings
-map("n", "<leader>ws", "<cmd>SessionSave<CR>", { desc = "Save session for auto session root dir" })
-map("n", "<leader>wr", "<cmd>SessionRestore<CR>", { desc = "Restore session for cwd" })
+map(
+  "n",
+  "<leader>ws",
+  "<cmd>SessionSave<CR>",
+  { desc = "Save session for auto session root dir" }
+)
+map(
+  "n",
+  "<leader>wr",
+  "<cmd>SessionRestore<CR>",
+  { desc = "Restore session for cwd" }
+)
 
 -- Toggle auto-saving
 map("n", "<leader>as", ":ASToggle<CR>", { desc = "Toggle auto-saving" })
 
 -- VimTeX mappings
-map("n", "<leader>ll", "<cmd>VimtexCompile<CR>", { desc = "Compile LaTeX document" })
+map(
+  "n",
+  "<leader>ll",
+  "<cmd>VimtexCompile<CR>",
+  { desc = "Compile LaTeX document" }
+)
 map("n", "<leader>lv", "<cmd>VimtexView<CR>", { desc = "View LaTeX document" })
-map("n", "<leader>le", "<cmd>VimtexErrors<CR>", { desc = "Open LaTeX errors in Quickfix menu" })
+map(
+  "n",
+  "<leader>le",
+  "<cmd>VimtexErrors<CR>",
+  { desc = "Open LaTeX errors in Quickfix menu" }
+)
 
 -- Snacks.nvim QoL mappings
 local snacks = require "snacks"

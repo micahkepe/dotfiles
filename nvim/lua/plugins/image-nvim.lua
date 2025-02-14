@@ -22,8 +22,14 @@
 --
 -- -- Here I'm not using luaver, but instead installed lua and luarocks directly through
 -- -- homebrew
-package.path = package.path .. ";" .. vim.fn.expand "$HOME" .. "/.luarocks/share/lua/5.1/?/init.lua"
-package.path = package.path .. ";" .. vim.fn.expand "$HOME" .. "/.luarocks/share/lua/5.1/?.lua"
+package.path = package.path
+  .. ";"
+  .. vim.fn.expand "$HOME"
+  .. "/.luarocks/share/lua/5.1/?/init.lua"
+package.path = package.path
+  .. ";"
+  .. vim.fn.expand "$HOME"
+  .. "/.luarocks/share/lua/5.1/?.lua"
 
 return {
   {
@@ -106,7 +112,14 @@ return {
         tmux_show_only_in_active_window = true,
 
         -- render image files as images when opened
-        hijack_file_patterns = { "*.png", "*.jpg", "*.jpeg", "*.gif", "*.webp", "*.avif" },
+        hijack_file_patterns = {
+          "*.png",
+          "*.jpg",
+          "*.jpeg",
+          "*.gif",
+          "*.webp",
+          "*.avif",
+        },
       }
     end,
   },
