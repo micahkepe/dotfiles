@@ -63,7 +63,10 @@ return {
         vim.cmd [[silent! lua require('virtcolumn').setup_buffer()]]
       end
 
-      vim.notify("VirtColumn " .. (vim.g.virtcolumn_enabled and "enabled" or "disabled"), vim.log.levels.INFO)
+      vim.notify(
+        "VirtColumn " .. (vim.g.virtcolumn_enabled and "enabled" or "disabled"),
+        vim.log.levels.INFO
+      )
     end
 
     -- Initial setup

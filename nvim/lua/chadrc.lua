@@ -44,12 +44,32 @@ M.nvdash = {
   },
 
   buttons = {
-    { txt = "  Find File", keys = "ff", cmd = ":lua Snacks.picker.smart()<CR>" },
-    { txt = "  Recent Files", keys = "fr", cmd = "lua Snacks.picker.recent()<CR>" },
-    { txt = "󰈭  Find Word", keys = "fw", cmd = ":lua Snacks.picker.grep()<CR>" },
-    { txt = "󱥚  Themes", keys = "th", cmd = ":lua require('nvchad.themes').open()" },
+    {
+      txt = "  Find File",
+      keys = "ff",
+      cmd = ":lua Snacks.picker.smart()<CR>",
+    },
+    {
+      txt = "  Recent Files",
+      keys = "fr",
+      cmd = "lua Snacks.picker.recent()<CR>",
+    },
+    {
+      txt = "󰈭  Find Word",
+      keys = "fw",
+      cmd = ":lua Snacks.picker.grep()<CR>",
+    },
+    {
+      txt = "󱥚  Themes",
+      keys = "th",
+      cmd = ":lua require('nvchad.themes').open()",
+    },
     { txt = "  Mappings", keys = "ch", cmd = "NvCheatsheet" },
-    { txt = "  Open last session", keys = "l", cmd = ":SessionRestore<CR>" },
+    {
+      txt = "  Open last session",
+      keys = "l",
+      cmd = ":SessionRestore<CR>",
+    },
 
     { txt = "─", hl = "NvDashFooter", no_gap = true, rep = true },
 
@@ -57,7 +77,12 @@ M.nvdash = {
       txt = function()
         local stats = require("lazy").stats()
         local ms = math.floor(stats.startuptime) .. " ms"
-        return "  Loaded " .. stats.loaded .. "/" .. stats.count .. " plugins in " .. ms
+        return "  Loaded "
+          .. stats.loaded
+          .. "/"
+          .. stats.count
+          .. " plugins in "
+          .. ms
       end,
       hl = "NvDashFooter",
       no_gap = true,
