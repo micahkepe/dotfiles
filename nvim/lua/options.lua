@@ -14,6 +14,19 @@ opt.relativenumber = true
 o.spell = true
 o.spelllang = "en_us"
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = {
+    "NvTerm_float",
+    "terminal",
+    "help",
+    "gitcommit",
+    "*.log",
+  },
+  callback = function()
+    vim.wo.spell = false
+  end,
+})
+
 -- Search and replace
 opt.ignorecase = true -- ignore case letters when searching
 opt.smartcase = true -- match case if capital letter is present
