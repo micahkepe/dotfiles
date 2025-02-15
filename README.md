@@ -1,6 +1,6 @@
 # Micah's Dotfiles
 
-![Preview of my NVChad setup for reference.](images/nvim.png)
+![Preview of my NvChad setup for reference.](images/nvim.png)
 
 My personal dotfiles for macOS. This repository contains my configurations for
 Neovim, Vim, Hammerspoon, and the terminal. I have included a bootstrap script
@@ -60,7 +60,7 @@ If you have a Brewfile in your dotfiles:
 brew bundle install --file ~/.dotfiles/Brewfile
 ```
 
-### 7. Install HammerSpoon
+### 7. Install Hammerspoon
 
 ```bash
 brew install --cask hammerspoon
