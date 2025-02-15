@@ -40,3 +40,16 @@ configs
 smartcase
 ignorecase
 no
+syntex
+utf
+micahkepe
+github
+https
+filetype
+filetypes
+timestamps
+timestamp
+swapfile
+Cursorline
+cursorline
+init

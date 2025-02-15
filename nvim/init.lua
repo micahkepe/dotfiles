@@ -34,8 +34,7 @@ require("lazy").setup({
       nvim_tree_options.filters.dotfiles = false
       nvim_tree_options.git = { enable = true }
       nvim_tree_options.filters.git_ignored = false
-      nvim_tree_options.filters.custom =
-        { "^\\.git$", "DS_Store", "^\\.godot$" }
+      nvim_tree_options.filters.custom = { "^\\.git$", "DS_Store" }
     end,
   },
 
@@ -50,6 +49,13 @@ dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
 
 require "nvchad.autocmds"
+
+-- custom filetypes
+vim.filetype.add {
+  extension = {
+    log = "log", -- This sets the filetype for .log files
+  },
+}
 
 vim.schedule(function()
   require "mappings"
