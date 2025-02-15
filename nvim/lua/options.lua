@@ -10,6 +10,10 @@ o.cursorlineopt = "both" -- to enable cursorline!
 -- Set relative numbering
 opt.relativenumber = true
 
+-- Spelling
+o.spell = true
+o.spelllang = "en_us"
+
 -- Search and replace
 opt.ignorecase = true -- ignore case letters when searching
 opt.smartcase = true -- match case if capital letter is present
