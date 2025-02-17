@@ -12,7 +12,12 @@ return {
     gitbrowse = { enabled = true },
     picker = { enabled = true },
     quickfile = { enabled = true },
-    image = { enabled = true },
+    image = {
+      doc = {
+        float = true,
+        inline = false,
+      },
+    },
     input = { enabled = true },
     notifier = { enabled = false },
   },
