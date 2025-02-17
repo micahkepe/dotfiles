@@ -17,6 +17,8 @@ set -gx PATH /Library/TeX/texbin $PATH
 # rvm
 set -gx PATH $HOME/.rvm/bin $PATH
 
+export SNACKS_GHOSTTY=true
+
 # ALIASES
 alias gs="git status"
 alias ga="git add"

@@ -84,7 +84,7 @@ else
   require "notify"("nvim-dap or dap-ui not installed!", "warning")
 end
 
--- Toggle colorcolumn for editor ruler at 80 characters
+-- Toggle color column for editor ruler at 80 characters
 map("n", "<leader>er", function()
   vim.g.toggle_virtcolumn()
 end, { desc = "Toggle virtcolumn at 80 characters" })
@@ -94,7 +94,7 @@ map("n", "<leader>v", "<C-w>v", { desc = "Split window vertically" }) -- split w
 map("n", "<leader>sd", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
 map("n", "<leader>se", "<C-w>=", { desc = "Equalize splits" }) -- equalize split layouts
 -- can't use <leader>sh since that is used by LSPs to signature help
-map("n", "<leader>s", "<cmd>split<CR>", { desc = "Split window horizontally" }) -- split window horizobtally
+map("n", "<leader>s", "<cmd>split<CR>", { desc = "Split window horizontally" }) -- split window horizontally
 
 -- maintain visual context on page navigation and searching
 map("n", "<C-d>", "<C-d>zz") -- Keeps cursor centered when going down the page
@@ -212,6 +212,7 @@ end, { desc = "Open remote repo in default browser" })
 -- switching to snacks.picker over Telescope
 -- Options reference:
 --  https://github.com/folke/snacks.nvim/blob/main/docs/picker.md
+--  find mappings (prefixed with `f`)
 map("n", "<leader>ff", function()
   snacks.picker.smart()
 end, { desc = "Find files" })
@@ -233,3 +234,6 @@ end, { desc = "Old Files" })
 map("n", "<leader>fw", function()
   snacks.picker.grep_word()
 end, { desc = "Find Word" })
+map("n", "<leader>fd", function()
+  snacks.picker.diagnostics()
+end, { desc = "Find Diagnostics" })

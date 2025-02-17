@@ -55,9 +55,6 @@ keyset("i", ".", ".<C-g>U")
 keyset("i", "!", "!<C-g>U")
 keyset("i", "?", "?<C-g>U")
 
--- set spelllang
-opt.spelllang = "en_us"
-
 -- Recommended options for `auto-session` plugin
 o.sessionoptions =
   "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
