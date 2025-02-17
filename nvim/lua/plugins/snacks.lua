@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-doc-name
 -- QoL plugin collection
 -- For more information and options reference:
 --  https://github.com/folke/snacks.nvim?tab=readme-ov-file#-usage
@@ -11,5 +12,8 @@ return {
     gitbrowse = { enabled = true },
     picker = { enabled = true },
     quickfile = { enabled = true },
+    image = { enabled = true },
+    input = { enabled = true },
+    notifier = { enabled = false },
   },
 }

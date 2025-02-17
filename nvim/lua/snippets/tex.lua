@@ -1,8 +1,8 @@
-local ls = require "luasnip" -- Import LuaSnip
-local s = ls.snippet -- Create snippets
-local t = ls.text_node -- Text node
-local i = ls.insert_node -- Insert node
-local f = ls.function_node -- Function node
+local ls = require "luasnip"
+local s = ls.snippet
+local t = ls.text_node
+local i = ls.insert_node
+local f = ls.function_node
 
 return {
   -- Begin-End Environment
@@ -20,7 +20,7 @@ return {
   }),
 
   -- Inline Math
-  s("mk", {
+  s("im", {
     t "$",
     i(1),
     t "$",
@@ -31,15 +31,6 @@ return {
     t { "\\[", "\t" },
     i(1),
     t { "", "\\]" },
-  }),
-
-  -- Fraction
-  s("//", {
-    t "\\frac{",
-    i(1),
-    t "}{",
-    i(2),
-    t "}",
   }),
 
   -- Subscript
@@ -54,5 +45,11 @@ return {
     t "^{",
     i(1),
     t "}",
+  }),
+
+  -- Solution subsection
+  s("solsub", {
+    t { "\\subsection*{Solution}", "" },
+    i(1),
   }),
 }

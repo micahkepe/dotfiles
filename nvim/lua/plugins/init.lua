@@ -93,6 +93,12 @@ return {
     end,
   },
 
+  {
+    "williamboman/mason.nvim",
+    "mfussenegger/nvim-dap",
+    "jay-babu/mason-nvim-dap.nvim",
+  },
+
   -- for better visuals on debugger UI
   { "theHamsta/nvim-dap-virtual-text" },
 
@@ -140,9 +146,6 @@ return {
       },
     },
   },
-
-  -- Better looking input boxes
-  { "stevearc/dressing.nvim", event = "VeryLazy" },
 
   -- Split maximizer
   {
