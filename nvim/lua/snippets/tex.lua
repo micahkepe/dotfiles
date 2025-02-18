@@ -52,4 +52,11 @@ return {
     t { "\\subsection*{Solution}", "" },
     i(1),
   }),
+
+  -- Vertical space (in centimeters)
+  s("vs", {
+    t { "\\vspace{" },
+    i(1),
+    t { "cm}" },
+  }),
 }
