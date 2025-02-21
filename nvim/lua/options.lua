@@ -42,6 +42,9 @@ opt.clipboard:append "unnamedplus"
 -- text wrapping
 o.wrap = false
 
+-- ensure wild menu is set (plugin or otherwise)
+o.wildmenu = true
+
 -- retain yank register contents when pasting over visual selected content
 keyset("x", "<leader>p", [["_dP"]])
 
