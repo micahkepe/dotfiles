@@ -2,7 +2,7 @@ local dap_ok, dap = pcall(require, "dap")
 local dap_ui_ok, dapui = pcall(require, "dapui")
 
 if not (dap_ok and dap_ui_ok) then
-  require "notify"("nvim-dap or dap-ui not installed!", "warning") -- nvim-notify message
+  require "notify"("nvim-dap or dap-ui not installed!", "warning")
   return
 end
 
@@ -160,8 +160,7 @@ end
 
 dap.configurations.python = {
   {
-    -- The first three options are required by nvim-dap
-    type = "python", -- the type here established the link to the adapter definition: `dap.adapters.python`
+    type = "python",
     request = "launch",
     name = "Launch file",
 
@@ -170,9 +169,11 @@ dap.configurations.python = {
 
     program = "${file}", -- This configuration will launch the current file if used.
     pythonPath = function()
-      -- debugpy supports launching an application with a different interpreter then the one used to launch debugpy itself.
-      -- The code below looks for a `venv` or `.venv` folder in the current directly and uses the python within.
-      -- You could adapt this - to for example use the `VIRTUAL_ENV` environment variable.
+      -- debugpy supports launching an application with a different
+      -- interpreter then the one used to launch debugpy itself. The code
+      -- below looks for a `venv` or `.venv` folder in the current directly
+      -- and uses the python within. You could adapt this - to for example
+      -- use the `VIRTUAL_ENV` environment variable.
       local cwd = vim.fn.getcwd()
       if vim.fn.executable(cwd .. "/venv/bin/python") == 1 then
         return cwd .. "/venv/bin/python"
@@ -209,6 +210,55 @@ dap.configurations.python = {
 -- C/C++/Rust
 -- Taken/adapted from:
 --  https://github.com/mfussenegger/nvim-dap/wiki/C-C---Rust-(via--codelldb)
+--
+--  NOTE: To install codelldb and make it executable:
+--
+--  1. Install the latest codelldb release:
+--    https://github.com/vadimcn/codelldb/releases
+--
+--  2. Unzip and move the executable to your local bin:
+--    ```bash
+--    unzip codelldb*.vsix
+--    chmod + codelldb
+--    mv codelldb ~/.local/bin/
+--    ```
+--  3. In System Settings, make sure that in the privacy and security settings
+--    that you enable `codelldb` to be opened.
+--
+--  4. Add your local bin to your PATH:
+--
+--    Fish:
+--
+--    ```bash
+--    set -Ux fish_user_paths $HOME/.local/bin $fish_user_paths
+--    ```
+--
+--    Zsh/Bash:
+--
+--    ```bash
+--    export PATH="$HOME/.local/bin:$PATH"
+--    ```
+-- 5. Make sure that you also have `lldb` and `llvm`:
+--
+--    ```brew
+--    brew install lldb
+--    brew install llvm
+--    ```
+--
+--    Additionally, make these library findable by your shell.
+--
+--    Bash/Zsh:
+--
+--    ```bash
+--    export LIBLLDB_PATH="/opt/homebrew/opt/llvm/lib/liblldb.dylib"
+--    export DYLD_LIBRARY_PATH="$(dirname $LIBLLDB_PATH):$DYLD_LIBRARY_PATH"`
+--    ```
+--
+--    Fish:
+--
+--    ```bash
+--    set -Ux LIBLLDB_PATH /opt/homebrew/opt/llvm/lib/liblldb.dylib
+--    set -Ux DYLD_LIBRARY_PATH (dirname $LIBLLDB_PATH) $DYLD_LIBRARY_PATH
 dap.adapters.codelldb = {
   type = "executable",
   command = "codelldb", -- ensure in $PATH
