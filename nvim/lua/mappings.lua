@@ -203,6 +203,9 @@ map(
   { desc = "Open LaTeX errors in Quickfix menu" }
 )
 
+-- Spellwarn toggling
+map("n", "<leader>sw", ":Spellwarn toggle<CR>", { desc = "Toggle Spellwarn " })
+
 -- Snacks.nvim QoL mappings
 local snacks = require "snacks"
 map("n", "<leader>gh", function()

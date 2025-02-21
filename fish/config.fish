@@ -17,6 +17,14 @@ set -gx PATH /Library/TeX/texbin $PATH
 # rvm
 set -gx PATH $HOME/.rvm/bin $PATH
 
+# LLDB/LLVM things
+set -Ux LIBLLDB_PATH /opt/homebrew/opt/llvm/lib/liblldb.dylib
+set -Ux DYLD_LIBRARY_PATH (dirname $LIBLLDB_PATH) $DYLD_LIBRARY_PATH
+
+# Local commands
+set -Ux fish_user_paths $HOME/.local/bin $fish_user_paths
+
+# For snacks.nvim images
 export SNACKS_GHOSTTY=true
 
 # ALIASES

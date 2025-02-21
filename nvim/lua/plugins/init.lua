@@ -103,7 +103,7 @@ return {
   { "theHamsta/nvim-dap-virtual-text" },
 
   -- Notification manager
-  { "rcarriga/nvim-notify" },
+  { "rcarriga/nvim-notify", opts = { background_colour = "#000000" } },
 
   -- Highlighting tags like TODO, FIX, NOTE etc.
   {
