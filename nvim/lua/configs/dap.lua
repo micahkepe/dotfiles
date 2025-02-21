@@ -165,7 +165,8 @@ dap.configurations.python = {
     request = "launch",
     name = "Launch file",
 
-    -- Options below are for debugpy, see https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings for supported options
+    -- Options below are for debugpy, see:
+    --  https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings
 
     program = "${file}", -- This configuration will launch the current file if used.
     pythonPath = function()
@@ -185,6 +186,7 @@ dap.configurations.python = {
   {
     type = "python",
     request = "launch",
+    --  for supported options
     name = "Launch file with arguments",
     program = "${file}",
     args = function()
@@ -203,5 +205,33 @@ dap.configurations.python = {
     end,
   },
 }
+
+-- C/C++/Rust
+-- Taken/adapted from:
+--  https://github.com/mfussenegger/nvim-dap/wiki/C-C---Rust-(via--codelldb)
+dap.adapters.codelldb = {
+  type = "executable",
+  command = "codelldb", -- ensure in $PATH
+}
+
+dap.configurations.cpp = {
+  {
+    name = "Launch file",
+    type = "codelldb",
+    request = "launch",
+    program = function()
+      return vim.fn.input(
+        "Path to executable: ",
+        vim.fn.getcwd() .. "/",
+        "file"
+      )
+    end,
+    cwd = "${workspaceFolder}",
+    stopOnEntry = false,
+  },
+}
+
+dap.configurations.c = dap.configurations.cpp
+dap.configurations.rust = dap.configurations.cpp
 
 -- add more configurations for other languages here
