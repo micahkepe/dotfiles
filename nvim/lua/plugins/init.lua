@@ -10,6 +10,7 @@ return {
   -- LSP and completion
   {
     "neovim/nvim-lspconfig",
+    event = "BufReadPost",
     config = function()
       require("nvchad.configs.lspconfig").defaults()
       require "configs.lspconfig"
@@ -30,9 +31,10 @@ return {
     },
   },
 
-  -- treesitter for better syntax highlighting
+  -- better syntax highlighting
   {
     "nvim-treesitter/nvim-treesitter",
+    event = "BufReadPost",
     opts = {
       ensure_installed = {
         "vim",
@@ -48,6 +50,8 @@ return {
   {
     "iamcco/markdown-preview.nvim",
     ft = "markdown",
+    lazy = true,
+    cmd = "MarkdownPreview",
     build = function()
       vim.fn["mkdp#util#install"]()
     end,
@@ -57,10 +61,10 @@ return {
   },
 
   -- Git displays (diffs, signs, etc)
-  { "tpope/vim-fugitive", cmd = { "Git" } },
+  { "tpope/vim-fugitive", lazy = true, cmd = { "Git" } },
 
   -- Neovim async functions in lua
-  { "nvim-lua/plenary.nvim" },
+  { "nvim-lua/plenary.nvim", lazy = true },
 
   -- Popup windows
   { "nvim-lua/popup.nvim" },
@@ -84,6 +88,8 @@ return {
   -- debuggers
   {
     "rcarriga/nvim-dap-ui",
+    cmd = "DapToggleUI",
+    lazy = true,
     dependencies = {
       "mfussenegger/nvim-dap", -- DAP client
       "nvim-neotest/nvim-nio",
@@ -115,7 +121,7 @@ return {
     end,
   },
 
-  -- Better quickfix window
+  -- Better QuickFix window
   {
     "kevinhwang91/nvim-bqf",
     ft = "qf",
@@ -147,21 +153,24 @@ return {
     },
   },
 
-  -- Split maximizer
   {
-    "szw/vim-maximizer",
-    keys = {
-      {
-        "<leader>sm",
-        "<cmd>MaximizerToggle<CR>",
-        desc = "Maximize/minimize a split",
-      },
+    "echasnovski/mini.icons",
+    opts = {},
+    lazy = true,
+    specs = {
+      { "nvim-tree/nvim-web-devicons", enabled = false, optional = true },
     },
+    init = function()
+      package.preload["nvim-web-devicons"] = function()
+        require("mini.icons").mock_nvim_web_devicons()
+        return package.loaded["nvim-web-devicons"]
+      end
+    end,
   },
 
   {
     "kylechui/nvim-surround",
-    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    version = "*", -- latest version
     event = "VeryLazy",
     config = function()
       require("nvim-surround").setup {
@@ -171,25 +180,6 @@ return {
   },
 
   { "mbbill/undotree", lazy = true, cmd = "UndotreeToggle" }, -- see undo tree
-
-  -- Image drag and drop
-  -- For Mac: requires `pngpaste` (brew install pngpaste)
-  {
-    "HakonHarnes/img-clip.nvim",
-    event = "VeryLazy",
-    opts = {
-      -- add options here
-      -- or leave it empty to use the default settings
-    },
-    keys = {
-      -- suggested keymapping
-      {
-        "<leader>p",
-        "<cmd>PasteImage<cr>",
-        desc = "Paste image from system clipboard",
-      },
-    },
-  },
 
   -- Auto save when leaving INSERT mode
   {
@@ -239,20 +229,14 @@ return {
       "aklt/plantuml-syntax",
     },
     ft = "plantuml",
-    lazy = false,
-  },
-
-  {
-    "micahkepe/merge.nvim",
-    lazy = false,
-    config = function()
-      require("merge").setup {}
-    end,
+    cmd = "PlantUMLOpen",
+    lazy = true,
   },
 
   {
     "ntpeters/vim-better-whitespace",
     event = "BufReadPre",
+    lazy = true,
     config = function()
       vim.g.better_whitespace_enabled = 1
       vim.g.strip_whitespace_on_save = 0 -- LSP should handle on save
@@ -282,5 +266,10 @@ return {
       -- See also `vertical_bar_cursor_insert_mode` and `distance_stop_animating_vertical_bar`.
       smear_insert_mode = true,
     },
+  },
+
+  {
+    "dstein64/vim-startuptime",
+    event = "VeryLazy",
   },
 }

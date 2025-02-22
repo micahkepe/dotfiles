@@ -19,6 +19,6 @@ return {
       },
     },
     input = { enabled = true },
-    notifier = { enabled = false },
+    notifier = { enabled = true },
   },
 }
