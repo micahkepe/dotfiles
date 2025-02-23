@@ -10,7 +10,6 @@ return {
   -- LSP and completion
   {
     "neovim/nvim-lspconfig",
-    event = "BufReadPost",
     config = function()
       require("nvchad.configs.lspconfig").defaults()
       require "configs.lspconfig"
@@ -34,7 +33,6 @@ return {
   -- better syntax highlighting
   {
     "nvim-treesitter/nvim-treesitter",
-    event = "BufReadPost",
     opts = {
       ensure_installed = {
         "vim",
@@ -66,12 +64,10 @@ return {
   -- Neovim async functions in lua
   { "nvim-lua/plenary.nvim", lazy = true },
 
-  -- Popup windows
-  { "nvim-lua/popup.nvim" },
-
   -- Golang support
   {
     "ray-x/go.nvim",
+    lazy = true,
     dependencies = { -- optional packages
       "ray-x/guihua.lua",
       "neovim/nvim-lspconfig",
@@ -80,7 +76,6 @@ return {
     config = function()
       require("go").setup()
     end,
-    event = { "CmdlineEnter" },
     ft = { "go", "gomod" },
     build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
   },
@@ -193,7 +188,8 @@ return {
   -- LaTeX editing in the terminal
   {
     "lervag/vimtex",
-    lazy = false,
+    ft = { "tex" },
+    lazy = true,
     init = function()
       require "configs.vimtex"
     end,
@@ -266,10 +262,5 @@ return {
       -- See also `vertical_bar_cursor_insert_mode` and `distance_stop_animating_vertical_bar`.
       smear_insert_mode = true,
     },
-  },
-
-  {
-    "dstein64/vim-startuptime",
-    event = "VeryLazy",
   },
 }
