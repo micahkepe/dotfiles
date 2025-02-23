@@ -47,9 +47,6 @@ require("lazy").setup({
   { import = "plugins" },
 }, lazy_config)
 
--- disable Copilot on startup
-vim.cmd "Copilot disable"
-
 -- load theme
 dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")

@@ -1,51 +1,36 @@
-# Homebrew
-set -gx PATH /opt/homebrew/bin $PATH
+# Consolidated PATH setup
+set -gx PATH \
+    /opt/homebrew/bin \
+    $HOME/go/bin \
+    $HOME/.pyenv/bin \
+    /Library/TeX/texbin \
+    $HOME/.rvm/bin \
+    "/Users/micahkepe/.local/state/fnm_multishells/97325_1729710187621/bin" \
+    $HOME/.cargo/bin \
+    $PATH
 
-# Set GOBIN to the go bin directory
-set -gx GOBIN $HOME/go/bin
+# LLDB/LLVM setup (precompute dirname if static)
+set -gx LIBLLDB_PATH /opt/homebrew/opt/llvm/lib/liblldb.dylib
+set -g DYLD_LIBRARY_PATH /opt/homebrew/opt/llvm/lib $DYLD_LIBRARY_PATH
 
-# Add the go bin directory to the PATH
-set -gx PATH $PATH $GOBIN
-
-# pyenv setup
-set -Ux PYENV_ROOT $HOME/.pyenv
-fish_add_path $PYENV_ROOT/bin
-
-# MacTeX
-set -gx PATH /Library/TeX/texbin $PATH
-
-# rvm
-set -gx PATH $HOME/.rvm/bin $PATH
-
-# LLDB/LLVM things
-set -Ux LIBLLDB_PATH /opt/homebrew/opt/llvm/lib/liblldb.dylib
-set -Ux DYLD_LIBRARY_PATH (dirname $LIBLLDB_PATH) $DYLD_LIBRARY_PATH
-
-# Local commands
-set -Ux fish_user_paths $HOME/.local/bin $fish_user_paths
-
-# For snacks.nvim images
+# Snacks.nvim
 export SNACKS_GHOSTTY=true
 
-# ALIASES
-alias gs="git status"
-alias ga="git add"
-alias gc="git commit"
-alias gp="git push"
-alias gd="git diff"
-alias gr="git restore"
-alias v="vim"
-alias tmux-sessionizer="~/.dotfiles/tmux/tmux-sessionizer.sh"
-alias latex-template="~/.dotfiles/latex/latex-template.sh"
-alias rm="trash"
+# Aliases (static, minimal overhead)
+function gs; git status $argv; end
+function ga; git add $argv; end
+function gc; git commit $argv; end
+function gp; git push $argv; end
+function gd; git diff $argv; end
+function gr; git restore $argv; end
+function v; vim $argv; end
+function tmux-sessionizer; ~/.dotfiles/tmux/tmux-sessionizer.sh $argv; end
+function latex-template; ~/.dotfiles/latex/latex-template.sh $argv; end
+function rm; trash $argv; end
 
-# Using the Fish shell in SSH w/ Kitty terminal emulator
-#
-# DO NOT SET `TERM` to a value other than the Kitty default:
-#   https://sw.kovidgoyal.net/kitty/conf/#opt-kitty.term
+# Kitty SSH
 if test -n "$KITTY_WINDOW_ID"
-    # Alias for ssh to use kitty terminal emulator
-    alias ssh="kitty +kitten ssh"
+    function ssh; kitty +kitten ssh $argv; end
 end
 
 # fnm env setup for fish
