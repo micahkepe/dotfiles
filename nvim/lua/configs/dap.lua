@@ -232,6 +232,18 @@ dap.configurations.python = {
 --    ```bash
 --    export PATH="$HOME/.local/bin:$PATH"
 --    ```
+--
+--    Fish:
+--
+--    ```fish
+--    set -gx PATH \
+--        /opt/homebrew/bin \
+--        .
+--        .
+--        .
+--        $HOME/.local/bin \
+--        $PATH
+--    ```
 -- 5. Make sure that you also have `lldb` and `llvm`:
 --
 --    ```brew
@@ -239,7 +251,7 @@ dap.configurations.python = {
 --    brew install llvm
 --    ```
 --
---    Additionally, make these library findable by your shell.
+--    Additionally, make these libraries available to your shell:
 --
 --    Bash/Zsh:
 --
@@ -251,8 +263,9 @@ dap.configurations.python = {
 --    Fish:
 --
 --    ```bash
---    set -Ux LIBLLDB_PATH /opt/homebrew/opt/llvm/lib/liblldb.dylib
---    set -Ux DYLD_LIBRARY_PATH (dirname $LIBLLDB_PATH) $DYLD_LIBRARY_PATH
+--    set -gx LIBLLDB_PATH /opt/homebrew/opt/llvm/lib/liblldb.dylib
+--    set -g DYLD_LIBRARY_PATH (dirname $LIBLLDB_PATH) $DYLD_LIBRARY_PATH
+--
 dap.adapters.codelldb = {
   type = "executable",
   command = "codelldb", -- ensure in $PATH

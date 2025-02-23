@@ -7,6 +7,7 @@ set -gx PATH \
     $HOME/.rvm/bin \
     "/Users/micahkepe/.local/state/fnm_multishells/97325_1729710187621/bin" \
     $HOME/.cargo/bin \
+    $HOME/.local/bin \
     $PATH
 
 # LLDB/LLVM setup (precompute dirname if static)
@@ -17,6 +18,7 @@ set -g DYLD_LIBRARY_PATH /opt/homebrew/opt/llvm/lib $DYLD_LIBRARY_PATH
 export SNACKS_GHOSTTY=true
 
 # Aliases (static, minimal overhead)
+#   https://fishshell.com/docs/current/cmds/alias.html#alias-create-a-function
 function gs; git status $argv; end
 function ga; git add $argv; end
 function gc; git commit $argv; end
