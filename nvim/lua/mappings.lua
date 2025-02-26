@@ -203,8 +203,19 @@ map(
   { desc = "Open LaTeX errors in Quickfix menu" }
 )
 
+-- SPELLING
 -- Spellwarn toggling
 map("n", "<leader>sw", ":Spellwarn toggle<CR>", { desc = "Toggle Spellwarn " })
+
+-- Correct the previous spelling mistake with <C-l> in Insert mode
+-- Adapted from:
+--  https://castel.dev/post/lecture-notes-1/#correcting-spelling-mistakes-on-the-fly
+vim.api.nvim_set_keymap(
+  "i",
+  "<C-l>",
+  "<C-g>u<Esc>[s1z=`]a<C-g>u",
+  { noremap = true, silent = true }
+)
 
 -- Snacks.nvim QoL mappings
 local snacks = require "snacks"
