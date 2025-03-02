@@ -53,4 +53,8 @@ fzf --fish | source
 # - change variables search to Ctrl-Alt-v
 fzf_configure_bindings --variables=\e\cv
 
+# Set up zoxide
 zoxide init --cmd cd fish | source
+
+# pyenv setup
+pyenv init - fish | source
