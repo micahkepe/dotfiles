@@ -16,6 +16,7 @@ local servers = {
   "pyright",
   "ts_ls",
   "gdscript",
+  "texlab",
 }
 
 for _, lsp in ipairs(servers) do
