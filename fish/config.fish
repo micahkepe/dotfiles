@@ -10,15 +10,14 @@ set -gx PATH \
     $HOME/.local/bin \
     $PATH
 
-# LLDB/LLVM setup (precompute dirname if static)
+# LLDB/LLVM setup
 set -gx LIBLLDB_PATH /opt/homebrew/opt/llvm/lib/liblldb.dylib
-set -g DYLD_LIBRARY_PATH /opt/homebrew/opt/llvm/lib $DYLD_LIBRARY_PATH
+set -gx DYLD_LIBRARY_PATH /opt/homebrew/opt/llvm/lib $DYLD_LIBRARY_PATH
 
 # Snacks.nvim
-export SNACKS_GHOSTTY=true
+set -gx SNACKS_GHOSTTY true
 
-# Aliases (static, minimal overhead)
-#   https://fishshell.com/docs/current/cmds/alias.html#alias-create-a-function
+# Aliases
 function gs; git status $argv; end
 function ga; git add $argv; end
 function gc; git commit $argv; end
@@ -30,21 +29,31 @@ function tmux-sessionizer; ~/.dotfiles/tmux/tmux-sessionizer.sh $argv; end
 function latex-template; ~/.dotfiles/latex/latex-template.sh $argv; end
 function rm; trash $argv; end
 
+# Yazi function
+function y
+    set tmp (mktemp -t "yazi-cwd.XXXXXX")
+    yazi $argv --cwd-file="$tmp"
+    if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+        builtin cd -- "$cwd"
+    end
+    rm -f -- "$tmp"
+end
+
 # Kitty SSH
 if test -n "$KITTY_WINDOW_ID"
     function ssh; kitty +kitten ssh $argv; end
 end
 
-# fnm env setup for fish
-set -gx PATH "/Users/micahkepe/.local/state/fnm_multishells/97325_1729710187621/bin" $PATH;
-set -gx FNM_MULTISHELL_PATH "/Users/micahkepe/.local/state/fnm_multishells/97325_1729710187621";
-set -gx FNM_VERSION_FILE_STRATEGY "local";
-set -gx FNM_DIR "/Users/micahkepe/.local/share/fnm";
-set -gx FNM_LOGLEVEL "info";
-set -gx FNM_NODE_DIST_MIRROR "https://nodejs.org/dist";
-set -gx FNM_COREPACK_ENABLED "false";
-set -gx FNM_RESOLVE_ENGINES "false";
-set -gx FNM_ARCH "arm64";
+# fnm env setup
+set -gx PATH "/Users/micahkepe/.local/state/fnm_multishells/97325_1729710187621/bin" $PATH
+set -gx FNM_MULTISHELL_PATH "/Users/micahkepe/.local/state/fnm_multishells/97325_1729710187621"
+set -gx FNM_VERSION_FILE_STRATEGY "local"
+set -gx FNM_DIR "/Users/micahkepe/.local/share/fnm"
+set -gx FNM_LOGLEVEL "info"
+set -gx FNM_NODE_DIST_MIRROR "https://nodejs.org/dist"
+set -gx FNM_COREPACK_ENABLED "false"
+set -gx FNM_RESOLVE_ENGINES "false"
+set -gx FNM_ARCH "arm64"
 
 # Set up fzf key bindings
 fzf --fish | source
@@ -59,14 +68,5 @@ zoxide init --cmd cd fish | source
 # pyenv setup
 pyenv init - fish | source
 
-# Yazi
-function y
-	set tmp (mktemp -t "yazi-cwd.XXXXXX")
-	yazi $argv --cwd-file="$tmp"
-	if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
-		builtin cd -- "$cwd"
-	end
-	rm -f -- "$tmp"
-end
-
-export EDITOR="/opt/homebrew/bin/nvim"
+# Set Neovim as default editor
+set -gx EDITOR /opt/homebrew/bin/nvim
