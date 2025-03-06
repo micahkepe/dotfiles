@@ -39,13 +39,17 @@ brew bundle --file=~/.dotfiles/Brewfile
 symlink() {
     local src=$1 dst=$2
 
-    # If the file already exists, skip it
-    if [ -e "$dst" ]; then
-        echo "File $dst already exists. Skipping..."
-    else
-        echo "Linking $src to $dst"
-        ln -s $src $dst
+    # If the destination exists and is NOT a symlink, remove it
+    if [ -e "$dst" ] && [ ! -L "$dst" ]; then
+        echo "Removing existing directory $dst and replacing with a symlink..."
+        rm -rf "$dst"
+    elif [ -L "$dst" ]; then
+        echo "Removing broken symlink at $dst..."
+        rm "$dst"
     fi
+
+    echo "Linking $src to $dst"
+    ln -s "$src" "$dst"
 }
 
 # symlink configs
