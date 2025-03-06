@@ -29,16 +29,6 @@ function tmux-sessionizer; ~/.dotfiles/tmux/tmux-sessionizer.sh $argv; end
 function latex-template; ~/.dotfiles/latex/latex-template.sh $argv; end
 function rm; trash $argv; end
 
-# Yazi function
-function y
-    set tmp (mktemp -t "yazi-cwd.XXXXXX")
-    yazi $argv --cwd-file="$tmp"
-    if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
-        builtin cd -- "$cwd"
-    end
-    rm -f -- "$tmp"
-end
-
 # Kitty SSH
 if test -n "$KITTY_WINDOW_ID"
     function ssh; kitty +kitten ssh $argv; end
@@ -69,4 +59,4 @@ zoxide init --cmd cd fish | source
 pyenv init - fish | source
 
 # Set Neovim as default editor
-set -gx EDITOR /opt/homebrew/bin/nvim
+set -gx EDITOR nvim
