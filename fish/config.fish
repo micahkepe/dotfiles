@@ -60,3 +60,6 @@ pyenv init - fish | source
 
 # Set Neovim as default editor
 set -gx EDITOR nvim
+
+# Use Neovim for man pages
+ export MANPAGER='nvim +Man!'

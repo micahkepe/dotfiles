@@ -3,6 +3,7 @@ return {
   event = "VeryLazy",
   config = function()
     require("spellwarn").setup {
+      enable = false, -- disable diagnostics on startup
       ft_config = {
         gitcommit = false,
 
