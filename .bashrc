@@ -67,5 +67,8 @@ function y() {
 	rm -f -- "$tmp"
 }
 
+# Use Neovim as default editor
 export EDITOR="/opt/homebrew/bin/nvim"
 
+# Use Neovim for man pages
+ export MANPAGER='nvim +Man!'
