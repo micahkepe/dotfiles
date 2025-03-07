@@ -1,0 +1,36 @@
+% Define variables for easy customization
+\newcommand{\coursecode}{COURSECODE \#\#\#}
+\newcommand{\coursename}{COURSE NAME}
+\newcommand{\assignmenttitle}{Homework \%d: some title}
+\newcommand{\studentname}{Micah Kepe}
+\newcommand{\studentid}{mik3}
+\newcommand{\duedate}{CHANGE ME}
+
+% Assignment Information Setup
+\title{
+  \textbf{\coursecode\ \assignmenttitle} \\ % Combines course code and assignment title
+}
+
+\author{
+  \textbf{\studentname} (\textit{\studentid}) % Combines student name and ID
+}
+
+\date{\duedate}  % Uses the variable for the due date
+
+% Fancy Headers and Footers Configuration
+\fancyhf{} % Clear default header/footer
+\lhead{\small \textit{\coursecode}} % Uses variables for course code and name
+\rhead{\small \textit{\assignmenttitle}} % Uses variable for assignment title
+\cfoot{\thepage\ of \pageref{LastPage}} % Center Footer with page numbers
+
+% Hyperlink Setup Configuration
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  urlcolor=blue,
+  citecolor=black,
+  pdftitle={\coursecode\ \assignmenttitle}, % Uses course code and assignment title for PDF title
+  pdfauthor={\studentname}, % Uses student name for PDF author
+  pdfsubject={Homework Submission}, % Can remain static
+  pdfkeywords={LaTeX, \coursename, Homework} % Uses course name for keywords
+}
