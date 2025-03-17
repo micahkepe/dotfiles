@@ -103,9 +103,6 @@ return {
   -- for better visuals on debugger UI
   { "theHamsta/nvim-dap-virtual-text" },
 
-  -- Notification manager
-  { "rcarriga/nvim-notify", opts = { background_colour = "#000000" } },
-
   -- Highlighting tags like TODO, FIX, NOTE etc.
   {
     "folke/todo-comments.nvim",
@@ -261,6 +258,13 @@ return {
       -- Smear cursor in insert mode.
       -- See also `vertical_bar_cursor_insert_mode` and `distance_stop_animating_vertical_bar`.
       smear_insert_mode = true,
+    },
+  },
+
+  {
+    "lewis6991/gitsigns.nvim",
+    opts = {
+      sign_priority = 10, -- increased from default value so Harper doesn't interfere
     },
   },
 }

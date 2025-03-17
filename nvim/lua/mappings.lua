@@ -204,8 +204,6 @@ map(
 )
 
 -- SPELLING
--- Spellwarn toggling
-map("n", "<leader>sw", ":Spellwarn toggle<CR>", { desc = "Toggle Spellwarn " })
 
 -- Correct the previous spelling mistake with <C-l> in Insert mode
 -- Adapted from:
