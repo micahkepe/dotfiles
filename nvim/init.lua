@@ -53,13 +53,6 @@ dofile(vim.g.base46_cache .. "statusline")
 
 require "nvchad.autocmds"
 
--- custom filetypes
-vim.filetype.add {
-  extension = {
-    log = "log", -- This sets the filetype for .log files
-  },
-}
-
 vim.schedule(function()
   require "mappings"
 end)

@@ -1,3 +1,4 @@
+-- Helpful snippets for LaTeX documents
 local ls = require "luasnip"
 local s = ls.snippet
 local t = ls.text_node
@@ -20,14 +21,14 @@ return {
   }),
 
   -- Inline Math
-  s("im", {
+  s({ trig = "im", desc = "Inline math" }, {
     t "$",
     i(1),
     t "$",
   }),
 
   -- Display Math
-  s("dm", {
+  s({ trig = "dm", desc = "Display math" }, {
     t { "\\[", "\t" },
     i(1),
     t { "", "\\]" },
