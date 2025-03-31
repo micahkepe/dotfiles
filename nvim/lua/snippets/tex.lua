@@ -20,6 +20,15 @@ return {
     t "}",
   }),
 
+  -- Answer Box
+  s({ trig = "box", desc = "Centered box for answer" }, {
+    t { "\\[", "" },
+    t "\t\\boxed{",
+    i(1, "answer"),
+    t { "}", "" },
+    t { "\\]" },
+  }),
+
   -- Inline Math
   s({ trig = "im", desc = "Inline math" }, {
     t "$",

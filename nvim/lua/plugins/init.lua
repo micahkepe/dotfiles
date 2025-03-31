@@ -267,4 +267,8 @@ return {
       sign_priority = 10, -- increased from default value so Harper doesn't interfere
     },
   },
+
+  {
+    "rust-lang/rust.vim",
+  },
 }
