@@ -8,6 +8,7 @@ return {
   lazy = false,
   ---@type snacks.Config
   opts = {
+    bigfile = { enabled = true },
     scroll = { enabled = true },
     gitbrowse = { enabled = true },
     picker = { enabled = true },
@@ -17,6 +18,7 @@ return {
         float = true,
         inline = false,
       },
+      math = { enabled = false },
     },
     input = { enabled = true },
     notifier = { enabled = true },

@@ -3,10 +3,6 @@ local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
-local diagnostics = require "configs.diagnostics"
-
--- Diagnostics popup
-diagnostics.setup()
 
 -- LSP Servers with no configuration needed
 -- NOTE: Rust lsp setup managed by `mrcjkb/rustaceanvim` plugin

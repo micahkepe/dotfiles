@@ -1,7 +1,7 @@
 -- automatically creates a Vim session when Neovim opens for saving work
 return {
   "rmagatti/auto-session",
-  event = "VeryLazy",
+  lazy = false,
   config = function()
     local auto_session = require "auto-session"
     auto_session.setup {
