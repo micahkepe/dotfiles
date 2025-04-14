@@ -45,6 +45,10 @@ o.wrap = false
 -- ensure wild menu is set (plugin or otherwise)
 o.wildmenu = true
 
+-- appearance
+o.termguicolors = true
+o.background = "dark"
+
 -- retain yank register contents when pasting over visual selected content
 keyset("x", "<leader>p", [["_dP"]])
 
