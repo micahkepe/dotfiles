@@ -89,6 +89,14 @@ map("n", "<leader>er", function()
   vim.g.toggle_virtcolumn()
 end, { desc = "Toggle virtcolumn at 80 characters" })
 
+-- Remove whitespace in buffer
+map(
+  "n",
+  "<leader>ss",
+  ":StripWhitespace<CR>",
+  { desc = "Strip whitespace in current buffer" }
+)
+
 -- window management
 map("n", "<leader>v", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
 map("n", "<leader>sd", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
