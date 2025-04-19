@@ -264,3 +264,7 @@ end, { desc = "Find Help" })
 map("n", "<leader>sm", function()
   snacks.picker.marks()
 end, { desc = "Search Marks" })
+-- Lazygit
+map("n", "<leader>lg", function()
+  snacks.lazygit.open()
+end, { desc = "Open Lazygit" })

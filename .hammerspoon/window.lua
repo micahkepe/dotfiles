@@ -106,9 +106,9 @@ switcher_space = hs.window.switcher.new(hs.window.filter.new():setCurrentSpace(t
 hs.window.switcher.ui.showTitles = false -- no titles on preview panes
 
 -- bind to hotkeys; WARNING: at least one modifier key is required!
-hs.hotkey.bind("alt", "tab", "Next window", function()
+hs.hotkey.bind("alt", "tab", function()
 	switcher_space:next()
 end)
-hs.hotkey.bind("alt-shift", "tab", "Prev window", function()
+hs.hotkey.bind("alt-shift", "tab", function()
 	switcher_space:previous()
 end)
