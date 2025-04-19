@@ -7,7 +7,7 @@ local f = ls.function_node
 
 return {
   -- Begin-End Environment
-  s("beg", {
+  s({ "beg", desc = "Begin-End environment" }, {
     t "\\begin{",
     i(1, "environment"),
     t "}",
@@ -44,21 +44,21 @@ return {
   }),
 
   -- Subscript
-  s("sub", {
+  s({ "sub", desc = "Subscript" }, {
     t "_{",
     i(1),
     t "}",
   }),
 
   -- Superscript
-  s("sup", {
+  s({ "sup", desc = "Superscript" }, {
     t "^{",
     i(1),
     t "}",
   }),
 
   -- Solution subsection
-  s("solsub", {
+  s({ "solsub", desc = "Solution subsection" }, {
     t { "\\subsection*{Solution}", "" },
     i(1),
   }),
