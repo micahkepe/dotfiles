@@ -5,6 +5,9 @@
 -- Custom tile management
 require("window")
 
+-- Color wheel
+require("color")
+
 -- SPOONS
 
 -- ClipboardTool
@@ -16,6 +19,5 @@ spoon.ClipboardTool.paste_on_select = true
 spoon.ClipboardTool.frequency = 1.0 -- in seconds
 spoon.ClipboardTool:bindHotkeys({
 	show_clipboard = { { "cmd", "shift" }, "v" },
-	toggle_clipboard = { { "cmd", "shift" }, "c" },
 })
 spoon.ClipboardTool:start()

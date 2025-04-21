@@ -7,21 +7,21 @@ local i = ls.insert_node
 
 return {
   -- Rust code
-  s("rust", {
+  s({ trig = "rust", desc = "Insert Rust codeblock" }, {
     t { "```rust", "" },
     i(1),
     t { "", "```" },
   }),
 
   -- Bash code
-  s("bash", {
+  s({ trig = "bash", desc = "Insert Bash codeblock" }, {
     t { "```bash", "" },
     i(1),
     t { "", "```" },
   }),
 
   -- Inline code
-  s("ic", {
+  s({ trig = "ic", desc = "Inline code" }, {
     t { "`" },
     i(1),
     t { "`" },

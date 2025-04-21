@@ -271,4 +271,9 @@ return {
   {
     "rust-lang/rust.vim",
   },
+
+  -- Some semblance of Java support (just use IntelliJ)
+  {
+    "nvim-java/nvim-java",
+  },
 }

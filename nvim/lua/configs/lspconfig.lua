@@ -2,6 +2,9 @@ local on_attach = require("nvchad.configs.lspconfig").on_attach
 local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
+-- Java
+require("java").setup()
+
 local lspconfig = require "lspconfig"
 
 -- LSP Servers with no configuration needed
@@ -13,6 +16,7 @@ local servers = {
   "ts_ls",
   "gdscript",
   "texlab",
+  "jdtls",
 }
 
 for _, lsp in ipairs(servers) do
