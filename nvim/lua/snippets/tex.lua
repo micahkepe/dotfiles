@@ -3,25 +3,11 @@ local ls = require "luasnip"
 local s = ls.snippet
 local t = ls.text_node
 local i = ls.insert_node
-local f = ls.function_node
+-- local f = ls.function_node
 
 return {
-  -- Begin-End Environment
-  s({ "beg", desc = "Begin-End environment" }, {
-    t "\\begin{",
-    i(1, "environment"),
-    t "}",
-    t { "", "" },
-    i(2),
-    t { "", "\\end{" },
-    f(function(args)
-      return args[1][1]
-    end, { 1 }),
-    t "}",
-  }),
-
   -- Answer Box
-  s({ trig = "box", desc = "Centered box for answer" }, {
+  s({ trig = "box", desc = "Centered box for answer", priority = 1001 }, {
     t { "\\[", "" },
     t "\t\\boxed{",
     i(1, "answer"),
@@ -44,27 +30,27 @@ return {
   }),
 
   -- Subscript
-  s({ "sub", desc = "Subscript" }, {
+  s({ trig = "sub", desc = "Subscript" }, {
     t "_{",
     i(1),
     t "}",
   }),
 
   -- Superscript
-  s({ "sup", desc = "Superscript" }, {
+  s({ trig = "sup", desc = "Superscript" }, {
     t "^{",
     i(1),
     t "}",
   }),
 
   -- Solution subsection
-  s({ "solsub", desc = "Solution subsection" }, {
+  s({ trig = "solsub", desc = "Solution subsection" }, {
     t { "\\subsection*{Solution}", "" },
     i(1),
   }),
 
   -- Vertical space (in centimeters)
-  s("vs", {
+  s({ trig = "vs", desc = "Insert vertical space (in cm.)" }, {
     t { "\\vspace{" },
     i(1),
     t { "cm}" },
