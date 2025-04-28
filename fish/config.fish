@@ -18,10 +18,15 @@ set -gx DYLD_LIBRARY_PATH /opt/homebrew/opt/llvm/lib $DYLD_LIBRARY_PATH
 set -gx SNACKS_GHOSTTY true
 
 # ALIASES
-function gs; git status $argv; end
+function gs; git status --short $argv; end
 function ga; git add $argv; end
+function gap; git add --patch $argv; end
+function gi; git init $argv; end
 function gc; git commit $argv; end
+function gl; git log $argv; end
+function gcl; git clone $argv; end
 function gp; git push $argv; end
+function gu; git pull $argv; end
 function gd; git diff $argv; end
 function gr; git restore $argv; end
 function v; vim $argv; end

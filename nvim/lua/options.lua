@@ -5,7 +5,10 @@ local opt = vim.opt
 local keyset = vim.keymap.set
 
 -- Cursorline
-o.cursorlineopt = "both" -- to enable cursorline!
+o.cursorlineopt = "both"
+
+-- v0.11: Use rounded border around floating menus
+o.winborder = "rounded"
 
 -- Set relative numbering
 opt.relativenumber = true
