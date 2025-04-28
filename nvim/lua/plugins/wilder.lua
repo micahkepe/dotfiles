@@ -2,7 +2,6 @@ return {
   {
     "gelguy/wilder.nvim",
     event = "CmdlineEnter",
-    build = ":UpdateRemotePlugins",
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },

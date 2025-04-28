@@ -1,45 +1,69 @@
-#################################################################################
-#
-#
-#     ██████╗ ██╗████████╗ ██████╗ ██████╗ ███╗   ██╗███████╗██╗ ██████╗
-#    ██╔════╝ ██║╚══██╔══╝██╔════╝██╔═══██╗████╗  ██║██╔════╝██║██╔════╝
-#    ██║  ███╗██║   ██║   ██║     ██║   ██║██╔██╗ ██║█████╗  ██║██║  ███╗
-#    ██║   ██║██║   ██║   ██║     ██║   ██║██║╚██╗██║██╔══╝  ██║██║   ██║
-#    ╚██████╔╝██║   ██║   ╚██████╗╚██████╔╝██║ ╚████║██║     ██║╚██████╔╝
-#     ╚═════╝ ╚═╝   ╚═╝    ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝ ╚═════╝
-#
-#
-#################################################################################
+################################################################################
+##
+##     ██████╗ ██╗████████╗ ██████╗ ██████╗ ███╗   ██╗███████╗██╗ ██████╗
+##    ██╔════╝ ██║╚══██╔══╝██╔════╝██╔═══██╗████╗  ██║██╔════╝██║██╔════╝
+##    ██║  ███╗██║   ██║   ██║     ██║   ██║██╔██╗ ██║█████╗  ██║██║  ███╗
+##    ██║   ██║██║   ██║   ██║     ██║   ██║██║╚██╗██║██╔══╝  ██║██║   ██║
+##    ╚██████╔╝██║   ██║   ╚██████╗╚██████╔╝██║ ╚████║██║     ██║╚██████╔╝
+##     ╚═════╝ ╚═╝   ╚═╝    ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝ ╚═════╝
+##
+################################################################################
 [user]
-	name = micahkepe
-	email = micahkepe@gmail.com
+  name = micahkepe
+  email = micahkepe@gmail.com
+  signingkey = C70C4D88FB6083021F85406CAB69BDC16CBE5086
+
+[commit]
+  gpgSign = true
 
 [core]
-	autocrlf = input
-	excludesfile = /Users/micahkepe/.gitignore_global
-	editor = nvim
-	pager = diff-so-fancy | less --tabs=4 -RF
+  autocrlf = input
+  excludesfile = /Users/micahkepe/.gitignore_global
+  editor = nvim
+  pager = diff-so-fancy | less --tabs=4 -RF
+  preloadIndex = true
+  compression = 9
+  whitespace = trailing-space
 
 [alias]
-    graph = log --all --graph --decorate --oneline
-    l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  graph = log --all --graph --decorate --oneline
+  l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 
 [fetch]
-	prune = true  # Automatically prune deleted branches when fetching
+  prune = true
+
+[pull]
+  rebase = true
+
+[rebase]
+  missingCommitsCheck = warn
 
 [init]
-	defaultBranch = main
+  defaultBranch = main
+
+[push]
+  autoSetupRemote = true
 
 [http]
-	postBuffer = 157286400
+  postBuffer = 157286400
+
+[status]
+  branch = true
+  showStash = true
 
 [filter "lfs"]
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+
 [interactive]
-	diffFilter = diff-so-fancy --patch
+  diffFilter = diff-so-fancy --patch
+  singlekey = true
+
 [credential "https://git.overleaf.com"]
-	username = micahkepe@gmail.com
-	helper = store
+  username = micahkepe@gmail.com
+  helper = store
+
+[gpg]
+	program = /opt/homebrew/bin/gpg
