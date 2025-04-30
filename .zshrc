@@ -144,11 +144,16 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias gs="git status"
+alias gs="git status --short"
 alias gc="git commit"
+alias gi="git init"
+alias gcl="git clone"
 alias ga="git add"
+alias gap="git add --patch"
 alias gd="git diff"
 alias gr="git restore"
+alias gp="git push"
+alias gu="git pull"
 alias v='vim'
 alias tmux-sessionizer="~/.dotfiles/tmux/tmux-sessionizer.sh"
 alias rm='trash'
@@ -228,7 +233,9 @@ function y() {
 export EDITOR="/opt/homebrew/bin/nvim"
 
 # Use Neovim for man pages
- export MANPAGER='nvim +Man!'
+export MANPAGER='nvim +Man!'
 
+# GPG
+export GPG_TTY=$(tty)
 
 export STM32CubeMX_PATH=/Applications/STMicroelectronics/STM32CubeMX.app/Contents/Resources
