@@ -11,7 +11,7 @@
 [user]
   name = micahkepe
   email = micahkepe@gmail.com
-  signingkey = C70C4D88FB6083021F85406CAB69BDC16CBE5086
+  signingkey = 0CA0E777FE959BE23D99563A290BC0FA832F2CBF
 
 [commit]
   gpgSign = true

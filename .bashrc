@@ -25,19 +25,22 @@ export PATH=$PATH:$GOBIN
 # MacTeX
 export PATH=/Library/TeX/texbin:$PATH
 
-
 ########################
 #  ALIASES
 ########################
 
-alias gs='git status'
-alias gc='git commit'
-alias ga='git add'
-alias gp='git push'
-alias gd='git diff'
-alias gr='git restore'
+alias gs="git status --short"
+alias gc="git commit"
+alias gi="git init"
+alias gcl="git clone"
+alias ga="git add"
+alias gap="git add --patch"
+alias gd="git diff"
+alias gr="git restore"
+alias gp="git push"
+alias gu="git pull"
 alias v='vim'
-alias tmux-sessionizer='~/.dotfiles/tmux/tmux-sessionizer.sh'
+alias tmux-sessionizer="~/.dotfiles/tmux/tmux-sessionizer.sh"
 alias rm='trash'
 alias fabric='fabric-ai'
 
@@ -100,5 +103,8 @@ yt() {
 # Use Neovim as default editor
 export EDITOR="/opt/homebrew/bin/nvim"
 
+# GPG
+export GPG_TTY=$(tty)
+
 # Use Neovim for man pages
- export MANPAGER='nvim +Man!'
+export MANPAGER='nvim +Man!'

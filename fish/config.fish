@@ -87,4 +87,7 @@ pyenv init - fish | source
 set -gx EDITOR nvim
 
 # USE NEOVIM FOR MAN PAGES
- export MANPAGER='nvim +Man!'
+export MANPAGER='nvim +Man!'
+
+# GPG
+export GPG_TTY=$(tty)
