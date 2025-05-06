@@ -18,7 +18,7 @@ return {
 
   -- Easy LSP installation and management
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     opts = {
       ensure_installed = {
         "lua-language-server",
@@ -95,7 +95,7 @@ return {
   },
 
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     "mfussenegger/nvim-dap",
     "jay-babu/mason-nvim-dap.nvim",
   },
@@ -275,5 +275,22 @@ return {
   -- Some semblance of Java support (just use IntelliJ)
   {
     "nvim-java/nvim-java",
+  },
+
+  -----------------
+  -- LOCAL PLUGINS
+  -----------------
+  {
+    dir = "~/coding/plugins/todo.nvim",
+    lazy = false,
+    opts = {},
+    keys = {
+      {
+        "<leader>td",
+        ":Todo<CR>",
+        mode = "n",
+        { desc = "Open Todos scratch file" },
+      },
+    },
   },
 }
