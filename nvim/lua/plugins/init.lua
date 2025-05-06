@@ -282,7 +282,6 @@ return {
   -----------------
   {
     dir = "~/coding/plugins/todo.nvim",
-    lazy = false,
     opts = {},
     keys = {
       {
