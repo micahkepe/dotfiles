@@ -122,3 +122,6 @@ nnoremap <leader>8 :set tw=80<CR>gqap:set tw=0<CR>
 set wildmenu
 set wildmode=list:longest,full
 
+" Change cursor appearance on mode
+let &t_SI = "\e[6 q" " INSERT mode
+let &t_EI = "\e[2 q" " NORMAL mode
