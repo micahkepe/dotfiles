@@ -52,12 +52,7 @@ dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
 
 require "nvchad.autocmds"
--- ADDED: open diagnostic floating menu on cursor hold
-vim.api.nvim_create_autocmd("CursorHold", {
-  callback = function()
-    vim.diagnostic.open_float(nil, { focus = false })
-  end,
-})
+require "autocmds" -- additional autocommands
 
 vim.schedule(function()
   require "mappings"
