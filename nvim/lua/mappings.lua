@@ -267,7 +267,7 @@ end, { desc = "Search Marks" })
 map("n", "<leader>lg", function()
   snacks.lazygit.open()
 end, { desc = "Open Lazygit" })
-map("n", "<leader>th", function()
+map("n", "<leader>ht", function()
   snacks.terminal()
 end, { desc = "terminal new horizontal term" })
 
