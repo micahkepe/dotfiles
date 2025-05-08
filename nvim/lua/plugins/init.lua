@@ -283,6 +283,7 @@ return {
   {
     dir = "~/coding/plugins/todo.nvim",
     opts = {},
+    lazy = false,
     keys = {
       {
         "<leader>td",

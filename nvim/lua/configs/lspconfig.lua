@@ -124,3 +124,25 @@ vim.lsp.config("harper_ls", {
 })
 
 vim.lsp.enable "harper_ls"
+
+-- Lua
+-- https://github.com/neovim/nvim-lspconfig/blob/master/lsp/lua_ls.lua
+vim.lsp.config("lua_ls", {
+  settings = {
+    Lua = {
+      runtime = {
+        version = "LuaJIT",
+      },
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = {
+          vim.fn.expand "$VIMRUNTIME/lua",
+          "{3rd}/luv/library",
+          "{3rd}/busted/library",
+        },
+        checkThirdParty = false,
+      },
+    },
+  },
+})
+vim.lsp.enable "lua_ls"
