@@ -101,8 +101,7 @@ map(
 map("n", "<leader>v", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
 map("n", "<leader>sd", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
 map("n", "<leader>se", "<C-w>=", { desc = "Equalize splits" }) -- equalize split layouts
--- can't use <leader>sh since that is used by LSPs to signature help
-map("n", "<leader>s", "<cmd>split<CR>", { desc = "Split window horizontally" }) -- split window horizontally
+map("n", "<leader>h", "<cmd>split<CR>", { desc = "Split window horizontally" }) -- split window horizontally
 
 -- maintain visual context on page navigation and searching
 map("n", "<C-d>", "<C-d>zz") -- Keeps cursor centered when going down the page
@@ -268,3 +267,21 @@ end, { desc = "Search Marks" })
 map("n", "<leader>lg", function()
   snacks.lazygit.open()
 end, { desc = "Open Lazygit" })
+map("n", "<leader>th", function()
+  snacks.terminal()
+end, { desc = "terminal new horizontal term" })
+
+-- little Lua goodies a la teej
+map(
+  "n",
+  "<leader><leader>x",
+  "<cmd>source %<CR>",
+  { desc = "Execute the current Lua file" }
+)
+map("n", "<leader>lx", ":.lua<CR>", { desc = "Execute the current Lua line" })
+map(
+  "v",
+  "<leader>x",
+  ":lua<CR>",
+  { desc = "Execute the visually selected Lua line(s)" }
+)

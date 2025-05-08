@@ -2,11 +2,6 @@ local on_attach = require("nvchad.configs.lspconfig").on_attach
 local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
--- Java
-require("java").setup()
-
-local lspconfig = require "lspconfig"
-
 -- LSP Servers with no configuration needed
 -- NOTE: Rust lsp setup managed by `mrcjkb/rustaceanvim` plugin
 local servers = {
@@ -20,17 +15,19 @@ local servers = {
 }
 
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
+  vim.lsp.config(lsp, {
     on_attach = on_attach,
     on_init = on_init,
     capabilities = capabilities,
-  }
+  })
 end
+
+vim.lsp.enable(servers)
 
 -- Finicky LSPs that have additional configuration
 
 -- Golang LSP
-lspconfig.gopls.setup {
+vim.lsp.config("gopls", {
   on_attach = on_attach,
   on_init = on_init,
   capabilities = capabilities,
@@ -44,19 +41,21 @@ lspconfig.gopls.setup {
       staticcheck = true,
     },
   },
-}
+})
+vim.lsp.enable "gopls"
 
 -- C LSP
-lspconfig.clangd.setup {
+vim.lsp.config("clangd", {
   on_attach = on_attach,
   on_init = on_init,
   capabilities = capabilities,
   cmd = { "clangd" }, -- Ensure clangd is being used
   filetypes = { "c", "cpp", "objc", "objcpp" },
-}
+})
+vim.lsp.enable "clangd"
 
 -- Tailwind CSS LSP
-lspconfig.tailwindcss.setup {
+vim.lsp.config("tailwindcss", {
   on_attach = on_attach,
   on_init = on_init,
   capabilities = capabilities,
@@ -90,10 +89,11 @@ lspconfig.tailwindcss.setup {
       validate = true,
     },
   },
-}
+})
+vim.lsp.enable "tailwindcss"
 
 -- Harper LSP
-lspconfig.harper_ls.setup {
+vim.lsp.config("harper_ls", {
   settings = {
     ["harper-ls"] = {
       userDictPath = "",
@@ -121,4 +121,6 @@ lspconfig.harper_ls.setup {
       isolateEnglish = false,
     },
   },
-}
+})
+
+vim.lsp.enable "harper_ls"
