@@ -270,6 +270,9 @@ end, { desc = "Open Lazygit" })
 map("n", "<leader>ht", function()
   snacks.terminal()
 end, { desc = "terminal new horizontal term" })
+map("n", "gr", function()
+  snacks.picker.lsp_references()
+end, { nowait = true, desc = "Goto References" })
 
 -- little Lua goodies a la teej
 map(
