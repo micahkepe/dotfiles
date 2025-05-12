@@ -15,6 +15,7 @@ spoon.ClipboardTool.show_copied_alert = false
 spoon.ClipboardTool.paste_on_select = true
 spoon.ClipboardTool.deduplicate = true
 spoon.ClipboardTool.frequency = 1.0 -- in seconds
+spoon.ClipboardTool.show_in_menubar = false
 spoon.ClipboardTool:bindHotkeys({
 	show_clipboard = { { "cmd", "shift" }, "v" },
 })
