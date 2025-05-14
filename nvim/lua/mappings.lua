@@ -2,7 +2,7 @@ require "nvchad.mappings"
 
 local map = vim.keymap.set
 
--- override nvchad mappings for window navigation so I can use them for
+-- override NvChad mappings for window navigation so I can use them for
 -- vim-tmux-navigator
 map("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>", { desc = "Navigate left" })
 map("n", "<C-j>", "<cmd>TmuxNavigateDown<cr>", { desc = "Navigate down" })
@@ -37,7 +37,7 @@ if dap_ok and dapui_ok then
       "n",
       false
     ) -- Spaces buffers evenly
-  end, { desc = "Start debugging session" })
+  end, { desc = "Toggle debugging session" })
 
   -- Hover to get variable value
   map(
@@ -78,7 +78,7 @@ if dap_ok and dapui_ok then
       "n",
       false
     )
-    require "notify"("Debugger session ended", "warn")
+    vim.notify("Debugger session ended", vim.log.levels.INFO)
   end, { desc = "Terminate debugging session" })
 else
   require "notify"("nvim-dap or dap-ui not installed!", "warning")
@@ -273,6 +273,11 @@ end, { desc = "terminal new horizontal term" })
 map("n", "gr", function()
   snacks.picker.lsp_references()
 end, { nowait = true, desc = "Goto References" })
+
+-- LSP
+map("n", "<leader>ca", function()
+  vim.lsp.buf.code_action()
+end, { desc = "Show Code Actions" })
 
 -- little Lua goodies a la teej
 map(
