@@ -30,18 +30,13 @@ return {
     },
   },
 
-  -- better syntax highlighting
+  -- use treesitter to auto close and/or rename HTML tags
   {
-    "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = {
-        "vim",
-        "lua",
-        "vimdoc",
-        "html",
-        "css",
-      },
-    },
+    "windwp/nvim-ts-autotag",
+    event = { "BufRead", "BufNewFile" },
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
   },
 
   -- Markdown preview
@@ -195,8 +190,8 @@ return {
   -- Rust setup
   {
     "mrcjkb/rustaceanvim",
-    version = "^5",
-    lazy = false,
+    version = "^6",
+    ft = "rust",
   },
 
   {
@@ -283,7 +278,7 @@ return {
   {
     dir = "~/coding/plugins/todo.nvim",
     opts = {},
-    lazy = false,
+    cmd = "Todo",
     keys = {
       {
         "<leader>td",
