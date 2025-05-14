@@ -272,11 +272,8 @@ return {
     "nvim-java/nvim-java",
   },
 
-  -----------------
-  -- LOCAL PLUGINS
-  -----------------
   {
-    dir = "~/coding/plugins/todo.nvim",
+    "micahkepe/todo.nvim",
     opts = {},
     cmd = "Todo",
     keys = {
