@@ -81,7 +81,7 @@ if dap_ok and dapui_ok then
     vim.notify("Debugger session ended", vim.log.levels.INFO)
   end, { desc = "Terminate debugging session" })
 else
-  require "notify"("nvim-dap or dap-ui not installed!", "warning")
+  vim.notify("nvim-dap or dap-ui not installed!", vim.log.levels.WARN)
 end
 
 -- Toggle color column for editor ruler at 80 characters
