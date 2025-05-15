@@ -32,4 +32,7 @@ return {
 
   -- Left arrow
   s({ trig = "larr", desc = "Left arrow" }, { t { "&larr; " } }),
+
+  -- Checkbox
+  s({ trig = "checkbox", desc = "Checkbox item" }, { t { "- [ ] " } }),
 }
