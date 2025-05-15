@@ -81,7 +81,7 @@ return {
     cmd = "DapToggleUI",
     lazy = true,
     dependencies = {
-      "mfussenegger/nvim-dap", -- DAP client
+      "mfussenegger/nvim-dap",
       "nvim-neotest/nvim-nio",
     },
     config = function()
@@ -98,7 +98,7 @@ return {
   -- for better visuals on debugger UI
   { "theHamsta/nvim-dap-virtual-text" },
 
-  -- Highlighting tags like TODO, FIX, NOTE etc.
+  -- Highlighting tags like `TODO`, `FIX`, `NOTE` etc.
   {
     "folke/todo-comments.nvim",
     event = { "BufReadPost", "BufNewFile" }, -- Load on buffer read
