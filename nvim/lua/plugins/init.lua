@@ -285,4 +285,35 @@ return {
       },
     },
   },
+
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    build = ":Copilot auth",
+    opts = {
+      suggestion = {
+        enabled = true,
+        auto_trigger = false,
+      },
+      panel = { enabled = false },
+      filetypes = {
+        markdown = true,
+      },
+    },
+  },
+
+  {
+    "m4xshen/hardtime.nvim",
+    lazy = false,
+    dependencies = { "MunifTanjim/nui.nvim" },
+    opts = {
+      disable_mouse = false,
+      restriction_mode = "hint", -- non-blocking on violations
+      disabled_keys = {
+        ["<Up>"] = false,
+        ["<Down>"] = false,
+      },
+    },
+  },
 }

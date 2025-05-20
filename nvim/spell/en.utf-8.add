@@ -203,3 +203,6 @@ memoization
 treesitter
 tokenizer
 OpenAPI
+minimalistic
+disambiguates
+fixpoint
