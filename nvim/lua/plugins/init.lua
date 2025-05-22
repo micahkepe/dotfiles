@@ -316,4 +316,6 @@ return {
       },
     },
   },
+
+  { "tpope/vim-repeat" },
 }
