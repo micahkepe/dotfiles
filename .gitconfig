@@ -67,3 +67,10 @@
 
 [gpg]
 	program = /opt/homebrew/bin/gpg
+
+[maintenance]
+  auto = true
+  strategy = incremental
+
+[rerere]
+  enabled = true
