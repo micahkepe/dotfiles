@@ -39,10 +39,13 @@ alias gd="git diff"
 alias gr="git restore"
 alias gp="git push"
 alias gu="git pull"
-alias v='vim'
+alias v="vim"
 alias tmux-sessionizer="~/.dotfiles/tmux/tmux-sessionizer.sh"
-alias rm='trash'
-alias fabric='fabric-ai'
+alias rm="trash"
+alias tn="tmux new-session"
+alias ta="tmux attach-session"
+alias tl="tmux list-session"
+alias fabric="fabric-ai"
 
 #######################
 #  MISC.

@@ -33,6 +33,9 @@ function v; vim $argv; end
 function tmux-sessionizer; ~/.dotfiles/tmux/tmux-sessionizer.sh $argv; end
 function latex-template; ~/.dotfiles/latex/latex-template.sh $argv; end
 function rm; trash $argv; end
+function tn; tmux new-session; end
+function ta; tmux attach-session; end
+function tl; tmux list-session; end
 alias fabric="fabric-ai"
 
 # FABRIC

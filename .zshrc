@@ -154,10 +154,13 @@ alias gd="git diff"
 alias gr="git restore"
 alias gp="git push"
 alias gu="git pull"
-alias v='vim'
+alias v="vim"
 alias tmux-sessionizer="~/.dotfiles/tmux/tmux-sessionizer.sh"
-alias rm='trash'
-alias fabric='fabric-ai'
+alias rm="trash"
+alias tn="tmux new-session"
+alias ta="tmux attach-session"
+alias tl="tmux list-session"
+alias fabric="fabric-ai"
 
 # Loop through all files in the ~/.config/fabric/patterns directory
 for pattern_file in $HOME/.config/fabric/patterns/*; do
