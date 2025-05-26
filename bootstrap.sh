@@ -68,6 +68,7 @@ symlink $DOTFILES_DIR/wezterm ~/.config/wezterm
 symlink $DOTFILES_DIR/spotify-player ~/.config/spotify-player
 symlink $DOTFILES_DIR/ghostty ~/.config/ghostty
 symlink $DOTFILES_DIR/yazi ~/.config/yazi
+symlink $DOTFILES_DIR/karabiner ~/.config/karabiner
 # add more here as needed
 
 echo "Dotfiles linked successfully!"

@@ -1,0 +1,10 @@
+{
+    "profiles": [
+        {
+            "complex_modifications": { "parameters": { "basic.to_if_held_down_threshold_milliseconds": 150 } },
+            "name": "Default profile",
+            "selected": true,
+            "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
+        }
+    ]
+}
