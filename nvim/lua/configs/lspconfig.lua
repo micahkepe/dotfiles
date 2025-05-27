@@ -8,6 +8,7 @@ local servers = {
   "html",
   "cssls",
   "pyright",
+  "ruff",
   "ts_ls",
   "gdscript",
   "texlab",
