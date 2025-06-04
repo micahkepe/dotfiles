@@ -35,4 +35,48 @@ return {
 
   -- Checkbox
   s({ trig = "checkbox", desc = "Checkbox item" }, { t { "- [ ] " } }),
+
+  -- Zola template tags
+  s(
+    { trig = "more", desc = "Add Zola Summary Separator" },
+    { t { "<!-- more -->" } }
+  ),
+
+  -- Zola Page Frontmatter
+  -- Example:
+  --
+  -- +++
+  -- title = "Page title"
+  -- date = 2025-02-08
+  -- draft = true
+  --
+  -- [taxonomies]
+  -- categories = ["programming"]
+  -- tags = ["tools", "cli"]
+  --
+  -- [extra]
+  -- toc = true
+  -- +++
+  s({ trig = "frontmatter", desc = "Insert Basic Zola Page Frontmatter" }, {
+    t { "+++", "" },
+    t { 'title = "' },
+    i(1, "Page Title"),
+    t { '"', "" },
+    t { "date = " },
+    i(2, os.date "%Y-%m-%d"),
+    t { "", "draft = " },
+    i(3, "true"),
+    t { "", "", "[taxonomies]", "" },
+    t { "categories = [" },
+    i(4, '"programming"'),
+    t { "]", "" },
+    t { "tags = [" },
+    i(5, '"tools"'),
+    t { "]", "" },
+    t { "", "[extra]", "" },
+    t { "toc = " },
+    i(6, "true"),
+    t { "", "+++" },
+    i(0),
+  }),
 }

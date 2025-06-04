@@ -265,6 +265,7 @@ dap.configurations.python = {
 --    ```bash
 --    set -gx LIBLLDB_PATH /opt/homebrew/opt/llvm/lib/liblldb.dylib
 --    set -g DYLD_LIBRARY_PATH (dirname $LIBLLDB_PATH) $DYLD_LIBRARY_PATH
+--    ```
 --
 dap.adapters.codelldb = {
   type = "executable",
