@@ -7,7 +7,7 @@ local i = ls.insert_node
 
 return {
   -- Turbofish notation
-  s({ trig = "turbofish", desc = "Turbofish\n `::<_>`" }, {
+  s({ trig = ":tf", desc = "Turbofish\n `::<_>`" }, {
     t { "::<" },
     i(1, "_"),
     t { ">" },

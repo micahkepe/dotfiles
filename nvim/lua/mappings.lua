@@ -31,7 +31,6 @@ if dap_ok and dapui_ok then
   -- Start debugging session
   map("n", "<leader>ds", function()
     dap.continue()
-    dapui.toggle {}
     vim.api.nvim_feedkeys(
       vim.api.nvim_replace_termcodes("<C-w>=", false, true, true),
       "n",
@@ -53,6 +52,11 @@ if dap_ok and dapui_ok then
   -- Toggle breakpoint
   map("n", "<leader>db", dap.toggle_breakpoint, { desc = "Toggle breakpoint" })
 
+  -- Conditional breakpoint
+  map("n", "<leader>dB", function()
+    dap.set_breakpoint(vim.fn.input "Breakpoint condition: ")
+  end, { desc = "Set conditional breakpoint" })
+
   -- Step over
   map("n", "<leader>dn", dap.step_over, { desc = "Step over" })
 
@@ -65,13 +69,12 @@ if dap_ok and dapui_ok then
   -- Clear all breakpoints
   map("n", "<leader>dC", function()
     dap.clear_breakpoints()
-    require "notify"("Breakpoints cleared", "warn")
+    vim.notify("Breakpoints cleared", vim.log.levels.WARN)
   end, { desc = "Clear all breakpoints" })
 
   -- Terminate debugging session and clear breakpoints
   map("n", "<leader>de", function()
     dap.clear_breakpoints()
-    dapui.toggle {}
     dap.terminate()
     vim.api.nvim_feedkeys(
       vim.api.nvim_replace_termcodes("<C-w>=", false, true, true),
