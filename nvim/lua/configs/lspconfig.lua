@@ -7,6 +7,7 @@ local capabilities = require("nvchad.configs.lspconfig").capabilities
 local servers = {
   "html",
   "cssls",
+  "bashls",
   "pyright",
   "ruff",
   "ts_ls",
@@ -23,6 +24,7 @@ for _, lsp in ipairs(servers) do
   })
 end
 
+-- Enable all the servers
 vim.lsp.enable(servers)
 
 -- Finicky LSPs that have additional configuration
