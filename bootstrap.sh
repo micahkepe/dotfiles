@@ -20,6 +20,9 @@ if [[ "$1" == "--dry-run" ]]; then
   echo "Running in dry-run mode..."
 fi
 
+## Signal handling
+trap 'echo ""; echo "Exiting bootstrap script..."; exit 130' SIGINT SIGTERM
+
 ## Prerequisites checks
 echo "Step 1/4: Checking prerequisites..."
 
