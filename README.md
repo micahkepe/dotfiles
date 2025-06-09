@@ -20,7 +20,7 @@ packages.
 </details>
 
 <details>
-<summary>$\LaTeX$/ Vimtex</summary>
+<summary>Vimtex/ Sioyek</summary>
 
 ![LaTeX editing](./images/latex.png)
 
