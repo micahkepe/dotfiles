@@ -29,8 +29,8 @@ syntax on
 " Disable the default Vim startup message.
 set shortmess+=I
 
-" Show line numbers.
-set number
+" Show relative line numbers by default.
+set relativenumber
 
 " Always show the status line at the bottom, even if you only have one window open.
 set laststatus=2
