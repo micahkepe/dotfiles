@@ -14,6 +14,9 @@ set -gx PATH \
 set -gx LIBLLDB_PATH /opt/homebrew/opt/llvm/lib/liblldb.dylib
 set -gx DYLD_LIBRARY_PATH /opt/homebrew/opt/llvm/lib $DYLD_LIBRARY_PATH
 
+# Set JAVA_HOME environment variable
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-24.jdk/Contents/Home
+
 # SNACKS.NVIM
 set -gx SNACKS_GHOSTTY true
 
