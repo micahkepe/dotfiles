@@ -155,7 +155,6 @@ alias gr="git restore"
 alias gp="git push"
 alias gu="git pull"
 alias v="vim"
-alias tmux-sessionizer="~/.dotfiles/tmux/tmux-sessionizer.sh"
 alias rm="trash"
 function new_tmux_session() {
     if [ -z "$1" ]; then
@@ -165,7 +164,7 @@ function new_tmux_session() {
     tmux new-session -s "$1"
 }
 alias tn=new_tmux_session
-alias ta="tmux attach-session"
+alias ta="tmux attach"
 alias tl="tmux list-session"
 alias fabric="fabric-ai"
 

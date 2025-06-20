@@ -24,7 +24,7 @@ fi
 trap 'echo ""; echo "Exiting bootstrap script..."; exit 130' SIGINT SIGTERM
 
 ## Prerequisites checks
-echo "Step 1/4: Checking prerequisites..."
+echo "Step 1/5: Checking prerequisites..."
 
 ### Operating system
 if ! [[ $(uname -s) == "Darwin" ]]; then
@@ -73,7 +73,7 @@ if ! command -v git &>/dev/null; then
 fi
 
 ## Set up dotfiles repository
-echo "Step 2/4: Setting up dotfiles repository..."
+echo "Step 2/5: Setting up dotfiles repository..."
 
 # Set the dotfiles directory to `.dotfiles/` in the `$HOME` directory
 DOTFILES_DIR=$HOME/.dotfiles
@@ -96,7 +96,7 @@ else
 fi
 
 ## Install Homebrew packages
-echo "Step 3/4: Installing Homebrew packages..."
+echo "Step 3/5: Installing Homebrew packages..."
 
 if command -v brew &>/dev/null; then
   echo "Installing packages from Brewfile..."
@@ -104,7 +104,7 @@ if command -v brew &>/dev/null; then
 fi
 
 ## Symlink configurations
-echo "Step 4/4: Creating symlinks..."
+echo "Step 4/5: Creating symlinks..."
 
 #######################################
 # Symlink wrapper helper function
@@ -158,3 +158,15 @@ symlink "$DOTFILES_DIR"/mutt "$HOME"/.config/mutt
 # add more here as needed
 
 echo "Dotfiles linked successfully!"
+
+## Local scripts
+echo "Step 5/5: Make local scripts executeable..."
+
+LOCAL_BIN="$HOME"/.local/bin
+mkdir -p "$LOCAL_BIN"
+
+### tmux-sessionizer
+chmod +x "$DOTFILES_DIR"/tmux/tmux-sessionizer.sh
+cp -f "$DOTFILES_DIR"/tmux/tmux-sessionizer.sh ~/.local/bin/tmux-sessionizer
+
+echo "Local scripts made executeable!"
