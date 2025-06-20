@@ -16,7 +16,7 @@
 ########################
 
 # Cargo path
-. "$HOME/.cargo/env"
+export PATH=$PATH:"$HOME/.cargo/env"
 
 # Go path
 export GOBIN=$HOME/go/bin
@@ -40,8 +40,13 @@ alias gr="git restore"
 alias gp="git push"
 alias gu="git pull"
 alias v="vim"
-alias tmux-sessionizer="~/.dotfiles/tmux/tmux-sessionizer.sh"
 alias rm="trash"
+#######################################
+# Utility function to start a new tmux
+# session with the given name.
+# Arguments:
+#   $1: the session name
+#######################################
 function new_tmux_session() {
   if [ -z "$1" ]; then
     echo "Usage: new_tmux_session <session_name>"
@@ -49,6 +54,7 @@ function new_tmux_session() {
   fi
   tmux new-session -s "$1"
 }
+
 alias tn=new_tmux_session
 alias ta="tmux attach-session"
 alias tl="tmux list-session"

@@ -33,11 +33,11 @@ function gu; git pull $argv; end
 function gd; git diff $argv; end
 function gr; git restore $argv; end
 function v; vim $argv; end
-function tmux-sessionizer; ~/.dotfiles/tmux/tmux-sessionizer.sh $argv; end
 function latex-template; ~/.dotfiles/latex/latex-template.sh $argv; end
 function rm; trash $argv; end
 function tn; tmux new -s $argv; end
-function ta; tmux attach-session; end
+function ta; tmux attach $argv; end
+complete --command ta --wraps 'tmux attach'
 function tl; tmux list-session; end
 alias fabric="fabric-ai"
 

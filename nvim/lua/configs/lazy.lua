@@ -1,15 +1,8 @@
 return {
+  -- lazy on default for fast startup
   defaults = { lazy = true },
-  install = { colorscheme = { "nvchad" } },
 
-  ui = {
-    icons = {
-      ft = "",
-      lazy = "󰂠 ",
-      loaded = "",
-      not_loaded = "",
-    },
-  },
+  install = { colorscheme = { "nvchad" } },
 
   performance = {
     rtp = {
@@ -34,7 +27,6 @@ return {
         "zip",
         "zipPlugin",
         "tutor",
-        -- "rplugin", -- needed for `wilder.nvim` plugin
         "syntax",
         "synmenu",
         "optwin",

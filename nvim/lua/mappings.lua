@@ -15,6 +15,9 @@ map(
   { desc = "Navigate previous" }
 )
 
+-- tmux-sessionizer
+map("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+
 -- Map <C-s> to save
 map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
@@ -236,7 +239,7 @@ end, { desc = "Open remote repo in default browser" })
 --  https://github.com/folke/snacks.nvim/blob/main/docs/picker.md
 --  find mappings (prefixed with `f`)
 map("n", "<leader>ff", function()
-  snacks.picker.smart()
+  snacks.picker.smart { hidden = true }
 end, { desc = "Find files" })
 map("n", "<leader>w", function()
   snacks.picker.grep()
