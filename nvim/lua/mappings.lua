@@ -103,6 +103,9 @@ map(
   { desc = "Strip whitespace in current buffer" }
 )
 
+-- Cellular-automaton
+map("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>")
+
 -- window management
 map("n", "<leader>v", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
 map("n", "<leader>sd", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window

@@ -310,4 +310,6 @@ return {
   },
 
   { "tpope/vim-repeat" },
+
+  { "Eandrju/cellular-automaton.nvim", event = "VeryLazy" },
 }
