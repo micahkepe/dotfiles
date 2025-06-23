@@ -16,20 +16,16 @@
 " `vim -u foo`).
 set nocompatible
 
-" Some legacy thingy I forgot but turn this off.
-filetype off
+filetype plugin indent on
 
 " Turn on syntax highlighting.
 syntax on
-
-" Start NERDTree automatically when Vim starts up and put the cursor back in
-" the other window.
-" autocmd VimEnter * NERDTree | wincmd p
 
 " Disable the default Vim startup message.
 set shortmess+=I
 
 " Show relative line numbers by default.
+set number
 set relativenumber
 
 " Always show the status line at the bottom, even if you only have one window open.
@@ -57,9 +53,6 @@ set smartcase
 " Enable searching as you type, rather than waiting till you press enter.
 set incsearch
 
-" Unbind some useless/annoying default key bindings.
-nmap Q <Nop> " 'Q' in normal mode enters Ex mode. You almost never want this.
-
 " Set leader to space.
 let mapleader = "\<Space>"
 
@@ -70,51 +63,26 @@ set noerrorbells visualbell t_vb=
 " sometimes be convenient.
 set mouse+=a
 
-" Try to prevent bad habits like using the arrow keys for movement. This is
-" not the only possible bad habit. For example, holding down the h/j/k/l keys
-" for movement, rather than using more efficient movement commands, is also a
-" bad habit. The former is enforceable through a .vimrc, while we don't know
-" how to prevent the latter.
-" Do this in normal mode...
-nnoremap <Left>  :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up>    :echoe "Use k"<CR>
-nnoremap <Down>  :echoe "Use j"<CR>
-" ...and in insert mode
-inoremap <Left>  <ESC>:echoe "Use h"<CR>
-inoremap <Right> <ESC>:echoe "Use l"<CR>
-inoremap <Up>    <ESC>:echoe "Use k"<CR>
-inoremap <Down>  <ESC>:echoe "Use j"<CR>
-
-" CtrlP Plugin Shortcuts
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-
-" NERDTree Mappings and Configuration
-nnoremap <C-n> :NERDTreeToggle<CR>
-nnoremap <leader>e :NERDTreeFocus<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
-let NERDTreeShowHidden=1 " Show hidden files in NERDTree
-
 " Vim Terminal Mappings
 " Open terminal in bottom of window
 nnoremap <leader>h :below terminal<CR>
 
-" This enables relative line numbering mode. With both number and
-" relativenumber enabled, the current line shows the true line number, while
-" all other lines (above and below) are numbered relative to the current line.
-" This is useful because you can tell, at a glance, what count is needed to
-" jump up or down to a particular line, by {count}k to go up or {count}j to go
-" down.
 " Toggle relative line numbering with <leader>rn
-nnoremap <leader>rn :set invrelativenumber<CR>
+nnoremap <leader>rn :set relativenumber!<CR>
 
 " Set yank register to allow for clipboard.
 set clipboard=unnamedplus,unnamed,autoselect
 
-" Format lines to 80 characters
-nnoremap <leader>8 :set tw=80<CR>gqap:set tw=0<CR>
+" Window management
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+nnoremap <leader>sd :close<CR>
+
+" Terminal
+tnoremap <C-x> <C-w>N
 
 " Some tricks taken from this YouTube lecture:
 "   https://www.youtube.com/watch?v=XA2WjJbmmoM
@@ -125,3 +93,38 @@ set wildmode=list:longest,full
 " Change cursor appearance on mode
 let &t_SI = "\e[6 q" " INSERT mode
 let &t_EI = "\e[2 q" " NORMAL mode
+
+" No sluggish ESC
+if !has('nvim') && &ttimeoutlen == -1
+  set ttimeout
+  set ttimeoutlen=0
+endif
+
+" Display last line
+set display+=lastline
+if has('patch-7.4.2109')
+  set display+=truncate
+endif
+
+" Auto reload files when they are edited outside of Vim
+set autoread
+
+" Longer command history
+set history=1000
+
+" Better matching for %
+if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
+  runtime! macros/matchit.vim
+endif
+
+" vim-plug
+call plug#begin('~/.vim/plugged')
+Plug 'morhetz/gruvbox'
+Plug 'itchyny/lightline.vim'
+let g:lightline = { 'colorscheme': 'gruvbox' }
+call plug#end()
+
+" Appearance
+set termguicolors
+set background=dark
+colorscheme gruvbox
