@@ -90,10 +90,8 @@ else
   vim.notify("nvim-dap or dap-ui not installed!", vim.log.levels.WARN)
 end
 
--- Toggle color column for editor ruler at 80 characters
-map("n", "<leader>er", function()
-  vim.g.toggle_virtcolumn()
-end, { desc = "Toggle virtcolumn at 80 characters" })
+-- Adjust color column
+map("n", "<leader>er", ":set colorcolumn=", { desc = "Adjust colorcolumn" })
 
 -- Remove whitespace in buffer
 map(
@@ -242,7 +240,7 @@ end, { desc = "Open remote repo in default browser" })
 --  https://github.com/folke/snacks.nvim/blob/main/docs/picker.md
 --  find mappings (prefixed with `f`)
 map("n", "<leader>ff", function()
-  snacks.picker.smart { hidden = true }
+  snacks.picker.smart()
 end, { desc = "Find files" })
 map("n", "<leader>w", function()
   snacks.picker.grep()

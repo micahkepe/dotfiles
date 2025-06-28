@@ -90,13 +90,12 @@ return {
   },
 
   {
-    "mason-org/mason.nvim",
     "mfussenegger/nvim-dap",
     "jay-babu/mason-nvim-dap.nvim",
   },
 
   -- for better visuals on debugger UI
-  { "theHamsta/nvim-dap-virtual-text" },
+  { "theHamsta/nvim-dap-virtual-text", event = "VeryLazy", opts = {} },
 
   -- Highlighting tags like `TODO`, `FIX`, `NOTE` etc.
   {
@@ -309,7 +308,7 @@ return {
     opts = {},
   },
 
-  { "tpope/vim-repeat" },
+  { "tpope/vim-repeat", event = "VeryLazy" },
 
   { "Eandrju/cellular-automaton.nvim", event = "VeryLazy" },
 }

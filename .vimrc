@@ -31,6 +31,9 @@ set relativenumber
 " Always show the status line at the bottom, even if you only have one window open.
 set laststatus=2
 
+" No swapfile
+set noswapfile
+
 " The backspace key has slightly unintuitive behavior by default. For example,
 " by default, you can't backspace before the insertion point set with 'i'.
 " This configuration makes backspace behave more reasonably, in that you can
@@ -81,6 +84,21 @@ nnoremap <C-l> <C-w>l
 
 nnoremap <leader>sd :close<CR>
 
+" Save mapping
+nnoremap <C-s> :w<CR>
+
+" Yank all mapping
+nnoremap <C-c> :%y+<CR>
+
+" Close mapping
+nnoremap <C-x> :close<CR>
+
+" GitGutter mappings
+nnoremap <leader>hn :GitGutterNextHunk<CR>
+nnoremap <leader>hp :GitGutterPreviewHunk<CR>
+nnoremap <leader>hr :GitGutterUndoHunk<CR>
+nnoremap <leader>hs :GitGutterStageHunk<CR>
+
 " Terminal
 tnoremap <C-x> <C-w>N
 
@@ -121,6 +139,8 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'christoomey/vim-tmux-navigator'
 let g:lightline = { 'colorscheme': 'gruvbox' }
 call plug#end()
 
