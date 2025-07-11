@@ -76,7 +76,7 @@ fi
 echo "Step 2/5: Setting up dotfiles repository..."
 
 # Set the dotfiles directory to `.dotfiles/` in the `$HOME` directory
-DOTFILES_DIR=$HOME/.dotfiles
+DOTFILES_DIR=$HOME/dotfiles
 
 # Creating the dotfiles repository if it doesn't exist
 if [ ! -d "$DOTFILES_DIR" ]; then
@@ -134,14 +134,13 @@ symlink() {
   fi
 
   echo "Linking $src to $dst"
-  ln -s "$src" "$dst"
+  ln -sf "$src" "$dst"
 }
 
 echo "Linking dotfiles..."
 symlink "$DOTFILES_DIR"/.bashrc "$HOME"/.bashrc
 symlink "$DOTFILES_DIR"/.gitconfig "$HOME"/.gitconfig
 symlink "$DOTFILES_DIR"/.vimrc "$HOME"/.vimrc
-symlink "$DOTFILES_DIR"/.vim "$HOME"/.vim
 symlink "$DOTFILES_DIR"/.zshrc "$HOME"/.zshrc
 symlink "$DOTFILES_DIR"/.hammerspoon "$HOME"/.hammerspoon
 symlink "$DOTFILES_DIR"/nvim "$HOME"/.config/nvim
