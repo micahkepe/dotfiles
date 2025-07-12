@@ -47,12 +47,6 @@ require("lazy").setup({
     end,
   },
 
-  -- Disable telescope (migrated to snacks)
-  {
-    "nvim-telescope/telescope.nvim",
-    enabled = false,
-  },
-
   { import = "plugins" },
 }, lazy_config)
 

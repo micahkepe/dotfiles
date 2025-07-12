@@ -99,6 +99,9 @@ nnoremap <leader>hp :GitGutterPreviewHunk<CR>
 nnoremap <leader>hr :GitGutterUndoHunk<CR>
 nnoremap <leader>hs :GitGutterStageHunk<CR>
 
+" vim-better-whitespace mappings
+nnoremap <leader>ss :StripWhitespace<CR>
+
 " Terminal
 tnoremap <C-x> <C-w>N
 
@@ -141,6 +144,7 @@ Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'ntpeters/vim-better-whitespace'
 let g:lightline = { 'colorscheme': 'gruvbox' }
 call plug#end()
 
