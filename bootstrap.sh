@@ -168,6 +168,8 @@ mkdir -p "$LOCAL_BIN"
 ### tmux-sessionizer
 chmod +x "$DOTFILES_DIR"/tmux/tmux-sessionizer.sh
 cp -f "$DOTFILES_DIR"/tmux/tmux-sessionizer.sh ~/.local/bin/tmux-sessionizer
+chmod +x "$DOTFILES_DIR"/latex/latex-template.sh
+cp -f "$DOTFILES_DIR"/latex/latex-template.sh ~/.local/bin/latex-template
 
 ## vim-plug
 echo "Step 6/6: Installing vim-plug package manager..."
