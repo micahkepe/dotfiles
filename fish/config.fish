@@ -96,3 +96,7 @@ export MANPAGER='nvim +Man!'
 
 # GPG
 export GPG_TTY=$(tty)
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH

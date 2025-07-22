@@ -41,6 +41,7 @@ alias gp="git push"
 alias gu="git pull"
 alias v="vim"
 alias rm="trash"
+
 #######################################
 # Utility function to start a new tmux
 # session with the given name.
@@ -78,7 +79,8 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 # Yazi
 function y() {
-  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  local tmp
+  tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
   yazi "$@" --cwd-file="$tmp"
   if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
     builtin cd -- "$cwd" || exit
@@ -120,7 +122,8 @@ yt() {
 export EDITOR="/opt/homebrew/bin/nvim"
 
 # GPG
-export GPG_TTY=$(tty)
+GPG_TTY=$(tty)
+export GPG_TTY
 
 # Use Neovim for man pages
 export MANPAGER='nvim +Man!'
