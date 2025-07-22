@@ -44,17 +44,11 @@ export PATH="/opt/homebrew/bin:$PATH"
 # fnm path
 eval "$(fnm env --use-on-cd --shell zsh)"
 
-# zsh-autocomplete
-source /opt/homebrew/Cellar/zsh-autocomplete/24.09.04/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-bindkey              '^I'         menu-complete
-bindkey "$terminfo[kcbt]" reverse-menu-complete
-bindkey -M menuselect '^M' .accept-line
-
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load

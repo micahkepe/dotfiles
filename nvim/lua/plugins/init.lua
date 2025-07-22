@@ -311,4 +311,19 @@ return {
   { "tpope/vim-repeat", event = "VeryLazy" },
 
   { "Eandrju/cellular-automaton.nvim", event = "VeryLazy" },
+
+  -- Code completion (no native `autotrigger` option, so just use `cmd`
+  -- so that it is not triggered automatically on Neovim startup)
+  {
+    "supermaven-inc/supermaven-nvim",
+    cmd = "SupermavenStart",
+    config = function()
+      require("supermaven-nvim").setup {
+        keymaps = {
+          accept_suggestion = "<M-l>",
+          accept_word = "<M-w>", -- accept until end of next word
+        },
+      }
+    end,
+  },
 }

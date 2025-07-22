@@ -239,3 +239,6 @@ subtrees
 walkthrough
 AST
 XPath
+selectivity
+throughput
+lookarounds
