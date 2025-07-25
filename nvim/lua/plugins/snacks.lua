@@ -20,7 +20,6 @@ return {
       },
       math = { enabled = false },
     },
-    terminal = {},
     input = { enabled = true },
     notifier = { enabled = true },
     lazygit = { enabled = true },

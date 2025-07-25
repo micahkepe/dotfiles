@@ -39,6 +39,9 @@ function ta; tmux attach $argv; end
 complete --command ta --wraps 'tmux attach'
 function tl; tmux list-session; end
 alias fabric="fabric-ai"
+function brave; open -a "Brave Browser" $argv; end
+function chrome; open -a "Google Chrome" $argv; end
+function firefox; open -a "Firefox" $argv; end
 
 # FABRIC
 function yt
