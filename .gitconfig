@@ -30,6 +30,7 @@
   graph = log --all --graph --decorate --oneline
   l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   ignore = "!gi() { local IFS=','; curl -sL https://www.toptal.com/developers/gitignore/api/\"$*\"; }; gi"
+  open = "!git remote -v | awk '{print $2}' | sort -u | xargs open"
 
 [branch]
   sort = -committerdate
@@ -42,6 +43,7 @@
 
 [diff]
   algorithm = histogram
+  mnemonicPrefix = true
 
 [fetch]
   prune = true
@@ -81,7 +83,7 @@
   helper = store
 
 [gpg]
-	program = /opt/homebrew/bin/gpg
+  program = /opt/homebrew/bin/gpg
 
 [maintenance]
   auto = true
