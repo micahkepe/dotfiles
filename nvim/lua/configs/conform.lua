@@ -7,6 +7,7 @@ local options = {
     javascript = { "prettier" },
     c = { "clang-format" },
     typescript = { "prettier" },
+    json = { "prettier" },
   },
 
   format_on_save = {

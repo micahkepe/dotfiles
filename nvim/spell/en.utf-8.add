@@ -1,9 +1,12 @@
 8-bit
+AST
 AVL
+AWS
 Autocommands
 Benchmarking
 Bioinformatics
 Brewfile
+CSV
 Codegen
 Coercions
 Cursorline
@@ -26,6 +29,7 @@ Hamiltonians
 Hammerspoon
 Homebrew
 Injectivity
+JIT
 Kleene
 LaTeX
 Metaprogramming
@@ -39,6 +43,7 @@ NvChad
 Ok
 OpenAPI
 Popup
+Postfix
 Pseudocode
 QoL
 README
@@ -51,6 +56,7 @@ Repo
 SQLite
 Shaders
 Subadditivity
+Subsequences
 TODO
 TODOs
 TypeScript
@@ -58,13 +64,16 @@ UI
 Unary
 Unterminated
 Untracked
+VSCode
 VimTeX
 VimTex
 Vundle
 Whiteboarding
 Workspaces
+XPath
 YouCompleteMe
 Zsh
+algorithmically
 ancilla
 ansatz
 async
@@ -80,6 +89,7 @@ breakpoint
 cannot
 ciphertext
 ciphertexts
+codebase
 combinatorial
 commutativity
 compositeness
@@ -91,6 +101,7 @@ cumulative
 cursorline
 customizable
 cutscenes
+dataset
 datasets
 dealing
 decrement
@@ -120,6 +131,7 @@ frontend
 gif
 github
 gitignore
+hashable
 https
 if
 ignorecase
@@ -135,6 +147,7 @@ json
 latexmk
 lexing
 lookahead
+lookarounds
 lua
 macOS
 malloc
@@ -144,6 +157,7 @@ memoization
 metadata
 micahkepe
 minimalistic
+misconfigurations
 mutex
 no
 nondeterministic
@@ -159,6 +173,7 @@ pdflatex
 plaintext
 png
 polymorphism
+postfix
 precedences
 preprocessing
 procedurally
@@ -179,6 +194,7 @@ runnable
 runtime
 satisfiability
 schemas
+selectivity
 shader
 shaders
 sioyek
@@ -192,6 +208,7 @@ submodules
 substring
 subsubsection
 subtree
+subtrees
 swapfile
 symlinks
 syntex
@@ -200,12 +217,15 @@ teleportation
 teleported
 tex
 textbf
+throughput
 timestamp
 timestamps
 tmux
 tokenization
 tokenizer
 treesitter
+unary
+unescaped
 unitarity
 unordered
 unsized
@@ -214,6 +234,7 @@ variational
 venv
 viewport
 vimtex
+walkthrough
 we
 webapp
 whitespace
@@ -221,24 +242,3 @@ wikipedia
 wildcard
 wildcards
 x86
-algorithmically
-unescaped
-Postfix
-unary
-#umber
-postfix
-CSV
-codebase
-dataset
-Subsequences
-hashable
-misconfigurations
-JIT
-AWS
-subtrees
-walkthrough
-AST
-XPath
-selectivity
-throughput
-lookarounds
