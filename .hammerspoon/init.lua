@@ -1,11 +1,15 @@
 -- For more info on configuration: https://www.hammerspoon.org/docs/index.html
 
+----------------
 -- CUSTOM
+----------------
 
--- Custom tile management
+-- Tile management(ish) and quick window switching/focusing
 require("window")
 
+----------------
 -- SPOONS
+----------------
 
 -- ClipboardTool
 -- https://www.hammerspoon.org/Spoons/ClipboardTool.html
