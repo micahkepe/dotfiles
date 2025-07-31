@@ -38,6 +38,7 @@ o.wildmenu = true
 -- appearance
 o.termguicolors = true
 o.background = "dark"
+opt.colorcolumn = "80"
 
 -- retain yank register contents when pasting over visual selected content
 keyset("x", "<leader>p", [["_dP"]])

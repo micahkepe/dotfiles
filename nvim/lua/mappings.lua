@@ -182,6 +182,8 @@ map(
 map("n", "<leader>u", ":UndotreeToggle<cr>", { desc = "Toggle undo tree" })
 
 -- Better navigation when lines are wrapped
+-- When a count is provided (e.g., '5j'), then move by physical lines,
+-- otherwise default to move by display lines
 map("n", "j", "(v:count ? 'j' : 'gj')", { expr = true })
 map("n", "k", "(v:count ? 'k' : 'gk')", { expr = true })
 
