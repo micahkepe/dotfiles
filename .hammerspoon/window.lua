@@ -123,6 +123,8 @@ end)
 local appShortcuts = {
 	g = "Ghostty",
 	b = "Brave Browser",
+	z = "zoom.us",
+	p = "sioyek", -- for PDF
 }
 
 for shortcut, app in pairs(appShortcuts) do
