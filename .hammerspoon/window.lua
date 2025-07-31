@@ -1,3 +1,7 @@
+-- This file is collection of window management functions and keybinds
+-- for tiling and moving windows around the screen, as well as switching and
+-- focusing application windows.
+
 -- Window grid layout
 local grid = {
 	{ x = 0, y = 0, w = 0.5, h = 1 }, -- Left half
@@ -9,6 +13,9 @@ local grid = {
 -- Function to move the current window to a specific screen grid location
 local function moveWindowToGrid(location)
 	local win = hs.window.focusedWindow()
+	if not win then
+		return
+	end
 	local screen = win:screen()
 	local frame = screen:frame()
 
@@ -90,11 +97,9 @@ end)
 --  * preview of the window
 --  * can switch between minimized windows
 -- adapted from: https://www.hammerspoon.org/docs/hs.window.switcher.html
-
 -- set up windowfilter
 -- include minimized/hidden windows, current Space only
 switcher_space = hs.window.switcher.new(hs.window.filter.new():setCurrentSpace(true):setDefaultFilter({}))
-
 -- Other example options:
 -- -- default windowfilter: only visible windows, all Spaces
 -- switcher = hs.window.switcher.new()
@@ -112,3 +117,16 @@ end)
 hs.hotkey.bind("alt-shift", "tab", function()
 	switcher_space:previous()
 end)
+
+-- Application focus or launch
+-- CMD-ALT + <shortcut> to open application, or focus it if it already is open
+local appShortcuts = {
+	g = "Ghostty",
+	b = "Brave Browser",
+}
+
+for shortcut, app in pairs(appShortcuts) do
+	hs.hotkey.bind({ "cmd", "alt" }, shortcut, function()
+		hs.application.launchOrFocus(app)
+	end)
+end

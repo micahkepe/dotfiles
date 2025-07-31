@@ -148,6 +148,7 @@ latexmk
 lexing
 lookahead
 lookarounds
+lookbehinds
 lua
 macOS
 malloc
@@ -156,6 +157,7 @@ md
 memoization
 metadata
 micahkepe
+microbenckmark
 minimalistic
 misconfigurations
 mutex
@@ -174,6 +176,7 @@ plaintext
 png
 polymorphism
 postfix
+powerset
 precedences
 preprocessing
 procedurally
@@ -204,6 +207,7 @@ stateful
 strategy
 struct
 structs
+subformulas
 submodules
 substring
 subsubsection
