@@ -1,15 +1,13 @@
 -- For more info on configuration: https://www.hammerspoon.org/docs/index.html
-
-----------------
--- CUSTOM
-----------------
-
--- Tile management(ish) and quick window switching/focusing
-require("window")
+hs.autoLaunch(true)
+hs.automaticallyCheckForUpdates(true)
 
 ----------------
 -- SPOONS
 ----------------
+-- EmmyLua
+-- https://www.hammerspoon.org/Spoons/EmmyLua.html
+hs.loadSpoon("EmmyLua")
 
 -- ClipboardTool
 -- https://www.hammerspoon.org/Spoons/ClipboardTool.html
@@ -24,3 +22,9 @@ spoon.ClipboardTool:bindHotkeys({
 	show_clipboard = { { "cmd", "shift" }, "v" },
 })
 spoon.ClipboardTool:start()
+
+----------------
+-- CUSTOM
+----------------
+-- Tile management(ish) and quick window switching/focusing
+require("window")
