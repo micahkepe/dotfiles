@@ -125,10 +125,14 @@ local appShortcuts = {
 	b = "Brave Browser",
 	z = "zoom.us",
 	p = "sioyek", -- for PDF
+	m = "Spotify",
 }
 
 for shortcut, app in pairs(appShortcuts) do
 	hs.hotkey.bind({ "cmd", "alt" }, shortcut, function()
-		hs.application.launchOrFocus(app)
+		local success = hs.application.launchOrFocus(app)
+		if not success then
+			hs.alert.show("Failed to launch '" .. app .. "'.")
+		end
 	end)
 end
