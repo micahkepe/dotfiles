@@ -2,6 +2,10 @@
 -- for tiling and moving windows around the screen, as well as switching and
 -- focusing application windows.
 
+------------------------
+--- Window grid layout
+------------------------
+
 -- Window grid layout
 local grid = {
 	{ x = 0, y = 0, w = 0.5, h = 1 }, -- Left half
@@ -10,7 +14,9 @@ local grid = {
 	{ x = 0, y = 0.5, w = 1, h = 0.5 }, -- Bottom half
 }
 
--- Function to move the current window to a specific screen grid location
+--- Function to move the current window to a specific screen grid location
+---@param location integer The index of the grid location to move to
+---@return nil
 local function moveWindowToGrid(location)
 	local win = hs.window.focusedWindow()
 	if not win then
@@ -92,6 +98,10 @@ hs.hotkey.bind({ "shift", "alt", "cmd" }, "j", function()
 	hs.window.focusedWindow():moveToUnit({ 0, 0.5, 0.5, 0.5 })
 end)
 
+------------------------
+--- Window switching
+------------------------
+
 -- Window switching
 -- better than cmd + tab:
 --  * preview of the window
@@ -99,18 +109,10 @@ end)
 -- adapted from: https://www.hammerspoon.org/docs/hs.window.switcher.html
 -- set up windowfilter
 -- include minimized/hidden windows, current Space only
-switcher_space = hs.window.switcher.new(hs.window.filter.new():setCurrentSpace(true):setDefaultFilter({}))
--- Other example options:
--- -- default windowfilter: only visible windows, all Spaces
--- switcher = hs.window.switcher.new()
---
--- specialized switcher for your dozens of browser windows
--- switcher_browsers = hs.window.switcher.new({ "Brave", "Safari", "Google Chrome" })
-
--- Adjust default window switcher UI
+local switcher_space = hs.window.switcher.new(hs.window.filter.new():setCurrentSpace(true):setDefaultFilter({}))
 hs.window.switcher.ui.showTitles = false -- no titles on preview panes
 
--- bind to hotkeys; WARNING: at least one modifier key is required!
+-- bind to "alt-tab" hotkey
 hs.hotkey.bind("alt", "tab", function()
 	switcher_space:next()
 end)

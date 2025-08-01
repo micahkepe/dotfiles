@@ -1,3 +1,4 @@
 {
+  "$schema": "https://raw.githubusercontent.com/LuaLS/vscode-lua/refs/heads/master/setting/schema.json",
   "Lua.workspace.library": ["~/.hammerspoon/Spoons/EmmyLua.spoon/annotations"]
 }
