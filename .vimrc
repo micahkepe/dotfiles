@@ -28,7 +28,8 @@ set shortmess+=I
 set number
 set relativenumber
 
-" Always show the status line at the bottom, even if you only have one window open.
+" Always show the status line at the bottom, even if you only have one window
+" open.
 set laststatus=2
 
 " No swapfile
@@ -145,7 +146,9 @@ Plug 'itchyny/lightline.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'machakann/vim-highlightedyank'
 let g:lightline = { 'colorscheme': 'gruvbox' }
+let g:highlightedyank_highlight_duration = 100
 call plug#end()
 
 " Appearance

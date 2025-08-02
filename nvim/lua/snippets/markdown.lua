@@ -42,6 +42,20 @@ return {
     { t { "<!-- more -->" } }
   ),
 
+  -- Inline Math
+  s({ trig = "im", desc = "Inline math" }, {
+    t "$",
+    i(1),
+    t "$",
+  }),
+
+  -- Display Math
+  s({ trig = "dm", desc = "Display math" }, {
+    t { "\\[", "\t" },
+    i(1),
+    t { "", "\\]" },
+  }),
+
   -- Zola Page Frontmatter
   -- Example:
   --
