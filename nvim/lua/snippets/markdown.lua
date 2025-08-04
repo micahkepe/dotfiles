@@ -51,9 +51,9 @@ return {
 
   -- Display Math
   s({ trig = "dm", desc = "Display math" }, {
-    t { "\\[", "\t" },
+    t { "$$", "\t" },
     i(1),
-    t { "", "\\]" },
+    t { "", "$$" },
   }),
 
   -- Zola Page Frontmatter
