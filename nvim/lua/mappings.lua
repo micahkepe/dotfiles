@@ -306,3 +306,11 @@ map(
   ":lua<CR>",
   { desc = "Execute the visually selected Lua line(s)" }
 )
+
+-- RenderMarkdown mappings
+map(
+  "n",
+  "<leader>rmd",
+  ":RenderMarkdown buf_toggle<CR>",
+  { desc = "Toggle Markdown Rendering for the Current Buffer" }
+)

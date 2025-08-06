@@ -2,6 +2,7 @@
 
 # Color theme
 theme = dark:catppuccin-mocha,light:catppuccin-latte
+background-opacity = 1
 
 # Font appearance
 font-family = JetBrainsMonoNL NFM SemiBold
@@ -17,6 +18,7 @@ macos-option-as-alt = true
 
 # Windows
 window-theme = ghostty
+macos-titlebar-style = "native"
 
 # Security
 macos-auto-secure-input = true
@@ -27,3 +29,4 @@ clipboard-trim-trailing-spaces = true
 confirm-close-surface = false
 quit-after-last-window-closed = true
 mouse-shift-capture = true
+link-url = true
