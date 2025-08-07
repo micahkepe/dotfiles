@@ -4,6 +4,9 @@ local o = vim.o
 local opt = vim.opt
 local keyset = vim.keymap.set
 
+-- Git diff
+o.diffopt = "algorithm:histogram"
+
 -- Cursorline
 o.cursorlineopt = "both"
 
