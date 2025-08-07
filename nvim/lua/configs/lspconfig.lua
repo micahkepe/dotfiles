@@ -97,6 +97,7 @@ vim.lsp.enable "tailwindcss"
 
 -- Harper LSP
 vim.lsp.config("harper_ls", {
+  cmd = { "harper-ls", "--stdio" },
   settings = {
     ["harper-ls"] = {
       userDictPath = "",
@@ -125,8 +126,8 @@ vim.lsp.config("harper_ls", {
     },
   },
 })
-
-vim.lsp.enable "harper_ls"
+-- Disable Harper on startup, enable with explicit ":LspStart harper_ls"
+-- vim.lsp.enable "harper_ls"
 
 -- Lua
 -- https://github.com/neovim/nvim-lspconfig/blob/master/lsp/lua_ls.lua

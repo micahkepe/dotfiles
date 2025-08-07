@@ -322,18 +322,18 @@ return {
         },
       }
     end,
+  },
 
-    -- Markdown rendering
-    {
-      "MeanderingProgrammer/render-markdown.nvim",
-      dependencies = {
-        "nvim-treesitter/nvim-treesitter",
-        "echasnovski/mini.icons",
-      },
-      ft = { "markdown", "quarto" }, -- lazy-load on filetype
-      opts = {
-        enabled = false, -- off by default
-      },
+  -- Markdown rendering
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "echasnovski/mini.icons",
+    },
+    ft = { "markdown", "quarto" }, -- lazy-load on filetype
+    opts = {
+      enabled = false, -- off by default
     },
   },
 }
