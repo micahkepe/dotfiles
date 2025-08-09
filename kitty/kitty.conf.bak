@@ -19,12 +19,12 @@
 #: heavy. Setting them manually is useful for font families that have
 #: many weight variants like Book, Medium, Thick, etc. For example::
 
-font_family      MesloLGM Nerd Font
-bold_font        MesloLGM Nerd Font Bold
-italic_font      MesloLGM Nerd Font Italic
-bold_italic_font MesloLGM Nerd Font Bold Italic
+font_family      family="JetBrainsMonoNL Nerd Font Mono"
+bold_font        auto
+italic_font      auto
+bold_italic_font auto
 
-font_size 13.0
+font_size 14.0
 
 #: Font size (in pts).
 
@@ -307,8 +307,8 @@ font_size 13.0
 #: Stop blinking cursor after the specified number of seconds of
 #: keyboard inactivity. Set to zero to never stop blinking.
 
-#: Set this to a value larger than zero to enable a “cursor trail” animation. 
-#: This is an animation that shows a “trail” following the movement of the text 
+#: Set this to a value larger than zero to enable a “cursor trail” animation.
+#: This is an animation that shows a “trail” following the movement of the text
 #: cursor.
 cursor_trail 1
 
@@ -1159,11 +1159,11 @@ confirm_os_window_close 0
 #: Color scheme {{{
 
 # foreground #dddddd
-background #292C3F
+# background #292C3F
 
 #: The foreground and background colors.
 
-# background_opacity 1.0 
+# background_opacity 1.0
 
 #: The opacity of the background. A number between zero and one, where
 #: one is opaque and zero is fully transparent. This will only work if
@@ -1328,7 +1328,7 @@ dynamic_background_opacity yes
 #: }}}
 
 #: Advanced {{{
-  
+
 shell /opt/homebrew/bin/fish --login --interactive
 
 #: The shell program to execute. The default value of . means to use
@@ -1740,7 +1740,7 @@ macos_option_as_alt yes
 #: Disable this if you want kitty top-level OS windows to not be
 #: resizable on macOS.
 
-macos_thicken_font 0.4
+macos_thicken_font 0.1
 
 #: Draw an extra border around the font with the given width, to
 #: increase legibility at small font sizes on macOS. For example, a
@@ -2545,3 +2545,9 @@ map kitty_mod+left set_background_opacity 0.5
 #: }}}
 
 #: }}}
+
+
+# BEGIN_KITTY_THEME
+# Catppuccin-Mocha
+include current-theme.conf
+# END_KITTY_THEME
