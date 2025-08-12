@@ -155,6 +155,7 @@ symlink "$DOTFILES_DIR"/yazi "$HOME"/.config/yazi
 symlink "$DOTFILES_DIR"/karabiner "$HOME"/.config/karabiner
 symlink "$DOTFILES_DIR"/sioyek/prefs_user.config "$HOME"/Library/Application Support/sioyek/prefs_user.config
 symlink "$DOTFILES_DIR"/mutt "$HOME"/.config/mutt
+symlink "$DOTFILES_DIR"/btop "$HOME"/.config/btop
 # add more here as needed
 
 echo "Dotfiles linked successfully!"

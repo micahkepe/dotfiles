@@ -26,7 +26,7 @@ map("n", "<leader>mp", "<cmd>MarkdownPreview<cr>")
 
 -- Debugger mappings
 local dap_ok, dap = pcall(require, "dap")
-local dapui_ok, dapui = pcall(require, "dapui")
+local dapui_ok, _ = pcall(require, "dapui")
 
 if dap_ok and dapui_ok then
   -- Debugger keybindings

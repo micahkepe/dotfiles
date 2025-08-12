@@ -20,6 +20,9 @@ opt.relativenumber = true
 o.spell = true
 o.spelllang = "en_us"
 
+-- Confirmation dialog prompt
+o.confirm = true
+
 -- Search and replace
 opt.ignorecase = true -- ignore case letters when searching
 opt.smartcase = true -- match case if capital letter is present
