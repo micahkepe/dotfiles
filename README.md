@@ -69,6 +69,13 @@ Run the bootstrap script:
 cd ~/.dotfiles && ./bootstrap.sh
 ```
 
+## Other Goodies
+
+- [AutoRaise](https://github.com/sbmpost/AutoRaise) &rarr; FollowsFocusMouse
+  behavior for MacOS
+- [System Color Picker](https://apps.apple.com/us/app/system-color-picker/id1545870783?mt=12)
+  &rarr; color palette utility
+
 ---
 
 And that's it! If you have any suggestions or questions feel free to open an
