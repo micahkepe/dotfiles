@@ -1,6 +1,7 @@
 -- For more info on configuration: https://www.hammerspoon.org/docs/index.html
 hs.autoLaunch(true)
 hs.automaticallyCheckForUpdates(true)
+hs.ipc.cliInstall()
 
 ----------------
 -- SPOONS
@@ -13,6 +14,7 @@ hs.loadSpoon("EmmyLua")
 -- https://www.hammerspoon.org/Spoons/ClipboardTool.html
 hs.loadSpoon("ClipboardTool")
 spoon.ClipboardTool.max_size = false
+spoon.ClipboardTool.hist_size = 250
 spoon.ClipboardTool.show_copied_alert = false
 spoon.ClipboardTool.paste_on_select = true
 spoon.ClipboardTool.deduplicate = true

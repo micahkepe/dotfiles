@@ -334,6 +334,7 @@ return {
     ft = { "markdown", "quarto" }, -- lazy-load on filetype
     opts = {
       enabled = false, -- off by default
+      latex = { enabled = false },
     },
   },
 }
