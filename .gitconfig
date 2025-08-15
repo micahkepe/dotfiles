@@ -53,7 +53,7 @@
 
 [rebase]
   missingCommitsCheck = warn
-  autosquash = true
+  autoSquash = true
 
 [init]
   defaultBranch = main
