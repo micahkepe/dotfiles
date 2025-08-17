@@ -9,16 +9,55 @@
 # /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/micahkepe/dotfiles/refs/heads/main/bootstrap.sh)"
 # ```
 #
+# Usage:
+#   ./bootstrap.sh [--dry-run]
+#
 # AUTHOR      : Micah Kepe
 # DATE        : 2024-12-26
-# UPDATED     : 2025-07-11
+# UPDATED     : 2025-08-17
 
-## Optional arguments
 DRY_RUN=false
-if [[ "$1" == "--dry-run" ]]; then
-  DRY_RUN=true
+
+while [[ "$#" -gt 0 ]]; do
+  case "$1" in
+  -h | --help)
+    echo "Usage: bootstrap.sh [--dry-run]"
+    echo ""
+    echo "Options:"
+    echo "  --dry-run  : Dry run mode. Prints commands without executing them."
+    exit 0
+    ;;
+  --dry-run)
+    DRY_RUN=true
+    ;;
+  *)
+    echo "Unknown option: $1"
+    exit 1
+    ;;
+  esac
+  shift
+done
+
+if [[ "$DRY_RUN" == "true" ]]; then
   echo "Running in dry-run mode..."
+  echo "No changes will be made to your system unless you accept the prompts."
 fi
+
+#######################################
+# Exec-dry-run wrapper function
+# Arguments:
+#   $1: the command to execute
+# Effects:
+#   If DRY_RUN is true, prints the command to be executed.
+#   Otherwise, executes the command.
+#######################################
+exec-dry-run() {
+  if [[ "$DRY_RUN" == "true" ]]; then
+    echo "[DRY-RUN] Would execute: $*"
+  elif [[ "$DRY_RUN" == "false" ]]; then
+    eval "$*"
+  fi
+}
 
 ## Signal handling
 trap 'echo ""; echo "Exiting bootstrap script..."; exit 130' SIGINT SIGTERM
@@ -81,15 +120,14 @@ DOTFILES_DIR=$HOME/dotfiles
 # Creating the dotfiles repository if it doesn't exist
 if [ ! -d "$DOTFILES_DIR" ]; then
   echo "Cloning dotfiles..."
-  cd "$HOME" || exit
-  git clone https://github.com/micahkepe/dotfiles || {
+  exec-dry-run git clone https://github.com/micahkepe/dotfiles "$DOTFILES_DIR" || {
     echo "Error: Failed to clone dotfiles repo"
     exit 1
   }
 else
   # pull latest
-  cd "$DOTFILES_DIR" || exit
-  git pull || {
+  exec-dry-run cd "$DOTFILES_DIR" || exit
+  exec-dry-run git pull || {
     echo "Error: Failed to update dotfiles repo"
     exit 1
   }
@@ -100,7 +138,7 @@ echo "Step 3/6: Installing Homebrew packages..."
 
 if command -v brew &>/dev/null; then
   echo "Installing packages from Brewfile..."
-  brew bundle --file="$DOTFILES_DIR"/Brewfile
+  exec-dry-run brew bundle --file="$DOTFILES_DIR"/Brewfile
 fi
 
 ## Symlink configurations
@@ -115,7 +153,8 @@ echo "Step 4/6: Creating symlinks..."
 symlink() {
   local src=$1 dst=$2
 
-  if [[ "$DRY_RUN" == true ]]; then
+  # Check dry-run mode
+  if [[ "$DRY_RUN" == "true" ]]; then
     echo "[DRY-RUN] Would link $src to $dst"
     return
   fi
@@ -164,17 +203,17 @@ echo "Dotfiles linked successfully!"
 echo "Step 5/6: Make local scripts executeable..."
 
 LOCAL_BIN="$HOME"/.local/bin
-mkdir -p "$LOCAL_BIN"
+exec-dry-run mkdir -p "$LOCAL_BIN"
 
 ### tmux-sessionizer
-chmod +x "$DOTFILES_DIR"/tmux/tmux-sessionizer.sh
-cp -f "$DOTFILES_DIR"/tmux/tmux-sessionizer.sh ~/.local/bin/tmux-sessionizer
-chmod +x "$DOTFILES_DIR"/latex/latex-template.sh
-cp -f "$DOTFILES_DIR"/latex/latex-template.sh ~/.local/bin/latex-template
+exec-dry-run chmod +x "$DOTFILES_DIR"/tmux/tmux-sessionizer.sh
+exec-dry-run cp -f "$DOTFILES_DIR"/tmux/tmux-sessionizer.sh ~/.local/bin/tmux-sessionizer
+exec-dry-run chmod +x "$DOTFILES_DIR"/latex/latex-template.sh
+exec-dry-run cp -f "$DOTFILES_DIR"/latex/latex-template.sh ~/.local/bin/latex-template
 
 ## vim-plug
 echo "Step 6/6: Installing vim-plug package manager..."
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+exec-dry-run curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo "Local scripts made executeable!"
