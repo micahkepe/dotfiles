@@ -337,4 +337,13 @@ return {
       latex = { enabled = false },
     },
   },
+
+  {
+    "ravibrock/spellwarn.nvim",
+    event = "VeryLazy",
+    opts = {
+      -- don't enable diagnostics on startup
+      enable = false,
+    },
+  },
 }
