@@ -207,6 +207,8 @@ exec-dry-run mkdir -p "$LOCAL_BIN"
 
 ### tmux-sessionizer
 exec-dry-run chmod +x "$DOTFILES_DIR"/tmux/tmux-sessionizer.sh
+exec-dry-run chmod +x "$DOTFILES_DIR"/tmux/session-fzf.sh
+exec-dry-run chmod +x "$DOTFILES_DIR"/tmux/is-vim.sh
 exec-dry-run cp -f "$DOTFILES_DIR"/tmux/tmux-sessionizer.sh ~/.local/bin/tmux-sessionizer
 exec-dry-run chmod +x "$DOTFILES_DIR"/latex/latex-template.sh
 exec-dry-run cp -f "$DOTFILES_DIR"/latex/latex-template.sh ~/.local/bin/latex-template
