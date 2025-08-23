@@ -4,6 +4,11 @@ local o = vim.o
 local opt = vim.opt
 local keyset = vim.keymap.set
 
+-- Undo directory to persistent undo tree
+o.undodir = os.getenv "HOME" .. "/.vim/undodir"
+-- Auto restore and save undo history on buffer reads and writes
+o.undofile = true
+
 -- Git diff
 o.diffopt = "algorithm:histogram"
 
