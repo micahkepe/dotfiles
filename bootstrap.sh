@@ -14,7 +14,7 @@
 #
 # AUTHOR      : Micah Kepe
 # DATE        : 2024-12-26
-# UPDATED     : 2025-08-17
+# UPDATED     : 2025-08-22
 
 DRY_RUN=false
 
@@ -63,7 +63,7 @@ exec-dry-run() {
 trap 'echo ""; echo "Exiting bootstrap script..."; exit 130' SIGINT SIGTERM
 
 ## Prerequisites checks
-echo "Step 1/6: Checking prerequisites..."
+echo "Step 1/7: Checking prerequisites..."
 
 ### Operating system
 if ! [[ $(uname -s) == "Darwin" ]]; then
@@ -112,7 +112,7 @@ if ! command -v git &>/dev/null; then
 fi
 
 ## Set up dotfiles repository
-echo "Step 2/6: Setting up dotfiles repository..."
+echo "Step 2/7: Setting up dotfiles repository..."
 
 # Set the dotfiles directory to `.dotfiles/` in the `$HOME` directory
 DOTFILES_DIR=$HOME/dotfiles
@@ -134,7 +134,7 @@ else
 fi
 
 ## Install Homebrew packages
-echo "Step 3/6: Installing Homebrew packages..."
+echo "Step 3/7: Installing Homebrew packages..."
 
 if command -v brew &>/dev/null; then
   echo "Installing packages from Brewfile..."
@@ -142,7 +142,7 @@ if command -v brew &>/dev/null; then
 fi
 
 ## Symlink configurations
-echo "Step 4/6: Creating symlinks..."
+echo "Step 4/7: Creating symlinks..."
 
 #######################################
 # Symlink wrapper helper function
@@ -200,22 +200,25 @@ symlink "$DOTFILES_DIR"/btop "$HOME"/.config/btop
 echo "Dotfiles linked successfully!"
 
 ## Local scripts
-echo "Step 5/6: Make local scripts executeable..."
+echo "Step 5/7: Make local scripts executeable..."
 
 LOCAL_BIN="$HOME"/.local/bin
 exec-dry-run mkdir -p "$LOCAL_BIN"
-
-### tmux-sessionizer
 exec-dry-run chmod +x "$DOTFILES_DIR"/tmux/tmux-sessionizer.sh
 exec-dry-run chmod +x "$DOTFILES_DIR"/tmux/session-fzf.sh
 exec-dry-run chmod +x "$DOTFILES_DIR"/tmux/is-vim.sh
-exec-dry-run cp -f "$DOTFILES_DIR"/tmux/tmux-sessionizer.sh ~/.local/bin/tmux-sessionizer
+exec-dry-run cp -f "$DOTFILES_DIR"/tmux/tmux-sessionizer.sh "$HOME"/.local/bin/tmux-sessionizer
 exec-dry-run chmod +x "$DOTFILES_DIR"/latex/latex-template.sh
-exec-dry-run cp -f "$DOTFILES_DIR"/latex/latex-template.sh ~/.local/bin/latex-template
+exec-dry-run cp -f "$DOTFILES_DIR"/latex/latex-template.sh "$HOME"/.local/bin/latex-template
+echo "Local scripts made executeable!"
 
 ## vim-plug
-echo "Step 6/6: Installing vim-plug package manager..."
-exec-dry-run curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+echo "Step 6/7: Installing vim-plug package manager..."
+exec-dry-run curl -fLo "$HOME"/.vim/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-echo "Local scripts made executeable!"
+## tpm
+echo "Step 7/7: Installing tpm package manager..."
+exex-dry-run mkdir -p "$HOME"/.tmux/plugins
+exec-dry-run git clone https://github.com/tmux-plugins/tpm "$HOME"/.tmux/plugins/tpm
+exec-dry-run tmux source "$HOME"/.tmux.conf
