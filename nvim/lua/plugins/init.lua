@@ -53,9 +53,6 @@ return {
     end,
   },
 
-  -- Git displays (diffs, signs, etc)
-  { "tpope/vim-fugitive", lazy = true, cmd = { "Git" } },
-
   -- Neovim async functions in lua
   { "nvim-lua/plenary.nvim", lazy = true },
 
@@ -305,7 +302,9 @@ return {
     opts = {},
   },
 
+  -- Some gems from the the Vim plugin wizard
   { "tpope/vim-repeat", event = "VeryLazy" },
+  { "tpope/vim-speeddating", event = "VeryLazy" },
 
   { "Eandrju/cellular-automaton.nvim", event = "VeryLazy" },
 
