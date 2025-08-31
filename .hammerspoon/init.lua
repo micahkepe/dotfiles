@@ -3,6 +3,11 @@ hs.autoLaunch(true)
 hs.automaticallyCheckForUpdates(true)
 hs.ipc.cliInstall()
 
+-- Reloading config keybind
+hs.hotkey.bind({ "ctrl", "shift" }, "r", function()
+	hs.reload()
+end)
+
 ----------------
 -- SPOONS
 ----------------
@@ -23,6 +28,11 @@ spoon.ClipboardTool.show_in_menubar = false
 spoon.ClipboardTool:bindHotkeys({
 	show_clipboard = { { "cmd", "shift" }, "v" },
 })
+hs.hotkey.bind({ "ctrl", "shift" }, "x", function()
+	spoon.ClipboardTool:clearAll()
+	hs.alert.show("Clipboard history cleared")
+end)
+
 spoon.ClipboardTool:start()
 
 ----------------
