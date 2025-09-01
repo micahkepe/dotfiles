@@ -1,5 +1,5 @@
 return {
-  "echasnovski/mini.ai",
+  "nvim-mini/mini.ai",
   version = "*", -- Use latest stable version
   event = "BufReadPre",
   config = function()

@@ -287,6 +287,7 @@ return {
     lazy = false,
     dependencies = { "MunifTanjim/nui.nvim" },
     opts = {
+      enabled = false,
       disable_mouse = false,
       restriction_mode = "hint", -- non-blocking on violations
       disabled_keys = {
