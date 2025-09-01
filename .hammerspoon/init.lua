@@ -27,6 +27,8 @@ spoon.ClipboardTool.frequency = 1.0 -- in seconds
 spoon.ClipboardTool.show_in_menubar = false
 spoon.ClipboardTool:bindHotkeys({
 	show_clipboard = { { "cmd", "shift" }, "v" },
+	next_entry = { { "ctrl", "shift" }, "j" },
+	prev_entry = { { "ctrl", "shift" }, "k" },
 })
 hs.hotkey.bind({ "ctrl", "shift" }, "x", function()
 	spoon.ClipboardTool:clearAll()

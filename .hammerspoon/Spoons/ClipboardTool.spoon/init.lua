@@ -314,6 +314,7 @@ end
 
 -- Internal function - fill in the chooser options, including the control options
 function obj:_populateChooser(query)
+	query = query or ""
 	query = query:lower()
 	menuData = {}
 	for k, v in pairs(clipboard_history) do
@@ -330,15 +331,12 @@ function obj:_populateChooser(query)
 		end
 	end
 	if #menuData == 0 then
-		table.insert(
-			menuData,
-			{
-				text = "",
-				subText = "《Clipboard is empty》",
-				action = "none",
-				image = hs.image.imageFromName("NSCaution"),
-			}
-		)
+		table.insert(menuData, {
+			text = "",
+			subText = "《Clipboard is empty》",
+			action = "none",
+			image = hs.image.imageFromName("NSCaution"),
+		})
 	else
 		table.insert(
 			menuData,
@@ -512,6 +510,37 @@ function obj:toggleClipboard()
 	end
 end
 
+--- Clipboard:nextEntry()
+--- Method
+--- Move to the next entry in the clipboard chooser if visible.
+---
+--- Parameters:
+---  * None
+function obj:nextEntry()
+	if self.selectorobj:isVisible() then
+		local row = self.selectorobj:selectedRow()
+		local choices = self:_populateChooser(self.selectorobj:query() or "")
+		if row < #choices then
+			self.selectorobj:selectedRow(row + 1)
+		end
+	end
+end
+
+--- Clipboard:prevEntry()
+--- Method
+--- Move to the previous entry in the clipboard chooser if visible.
+---
+--- Parameters:
+---  * None
+function obj:prevEntry()
+	if self.selectorobj:isVisible() then
+		local row = self.selectorobj:selectedRow()
+		if row > 1 then
+			self.selectorobj:selectedRow(row - 1)
+		end
+	end
+end
+
 --- ClipboardTool:bindHotkeys(mapping)
 --- Method
 --- Binds hotkeys for ClipboardTool
@@ -524,6 +553,8 @@ function obj:bindHotkeys(mapping)
 	local def = {
 		show_clipboard = hs.fnutils.partial(self.showClipboard, self),
 		toggle_clipboard = hs.fnutils.partial(self.toggleClipboard, self),
+		next_entry = hs.fnutils.partial(self.nextEntry, self),
+		prev_entry = hs.fnutils.partial(self.prevEntry, self),
 	}
 	hs.spoons.bindHotkeysToSpec(def, mapping)
 	obj.mapping = mapping
