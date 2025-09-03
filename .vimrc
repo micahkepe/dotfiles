@@ -147,6 +147,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'machakann/vim-highlightedyank'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 let g:lightline = { 'colorscheme': 'gruvbox' }
 let g:highlightedyank_highlight_duration = 100
 call plug#end()
