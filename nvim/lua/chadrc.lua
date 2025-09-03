@@ -66,7 +66,7 @@ M.nvdash = {
     {
       txt = "  Open last session",
       keys = "l",
-      cmd = ":SessionRestore<CR>",
+      cmd = ":AutoSession restore<CR>",
     },
 
     { txt = "─", hl = "NvDashFooter", no_gap = true, rep = true },
