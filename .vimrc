@@ -94,6 +94,9 @@ nnoremap <C-c> :%y+<CR>
 " Close mapping
 nnoremap <C-x> :close<CR>
 
+" NetRW mapping
+nnoremap <leader>e :Lexplore<CR>
+
 " GitGutter mappings
 nnoremap <leader>hn :GitGutterNextHunk<CR>
 nnoremap <leader>hp :GitGutterPreviewHunk<CR>
