@@ -1,7 +1,7 @@
 # See: https://ghostty.org/docs/config/reference
 
 # Color theme
-theme = dark:catppuccin-mocha,light:catppuccin-latte
+theme = dark:Catppuccin Mocha,light:Catppuccin Latte
 background-opacity = 1
 
 # Font appearance
