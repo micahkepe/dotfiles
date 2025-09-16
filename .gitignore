@@ -38,3 +38,6 @@ Temporary Items
 
 # Fish shell
 fish/fish_variables
+
+# Karabiner automatic backups
+karabiner/automatic_backups/
