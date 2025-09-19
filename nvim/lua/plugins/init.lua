@@ -346,4 +346,10 @@ return {
       enable = false,
     },
   },
+
+  {
+    "GCBallesteros/jupytext.nvim",
+    config = true,
+    event = "VeryLazy",
+  },
 }
