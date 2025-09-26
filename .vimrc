@@ -241,3 +241,6 @@ endif
 set termguicolors
 set background=dark
 colorscheme gruvbox
+
+set cursorline
+set cursorlineopt=line,number
