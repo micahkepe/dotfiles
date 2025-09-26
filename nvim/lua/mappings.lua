@@ -314,3 +314,11 @@ map(
   ":RenderMarkdown buf_toggle<CR>",
   { desc = "Toggle Markdown Rendering for the Current Buffer" }
 )
+
+-- `rustaceannvim`
+map(
+  "n",
+  "<leader>rd",
+  ":RustLsp openDocs<CR>",
+  { desc = "Open Rust documentation for the symbol under the cursor" }
+)
