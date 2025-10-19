@@ -4,6 +4,22 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     build = ":TSUpdate",
     config = function()
+      -- Custom parsers
+      --   See: https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#adding-parsers
+      local parser_config = require "nvim-treesitter.parsers"
+      -- Strudel
+      parser_config.strudel = {
+        install_info = {
+          url = "https://github.com/pedrozappa/tree-sitter-strdl",
+          files = { "src/parser.c" },
+          -- optional entries:
+          branch = "main",
+          generate_requires_npm = false,
+          requires_generate_from_grammar = false,
+        },
+        filetype = "strudel", -- if filetype does not match the parser namen
+      }
+
       require("nvim-treesitter.configs").setup {
         highlight = {
           enable = true,
