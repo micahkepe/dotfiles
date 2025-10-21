@@ -55,4 +55,13 @@ return {
     i(1),
     t { "cm}" },
   }),
+
+  -- Hyperref
+  s({ trig = "href", desc = "Insert a hyperlink" }, {
+    t { "\\href{" },
+    i(1, "url"),
+    t "}{",
+    i(2, "display"),
+    t "}",
+  }),
 }
