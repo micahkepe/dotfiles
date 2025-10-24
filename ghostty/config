@@ -20,6 +20,9 @@ macos-option-as-alt = true
 window-theme = ghostty
 macos-titlebar-style = "native"
 
+# Graphics
+gtk-toolbar-style = "flat"
+
 # Security
 macos-auto-secure-input = true
 macos-secure-input-indication = true
@@ -30,3 +33,7 @@ confirm-close-surface = false
 quit-after-last-window-closed = true
 mouse-shift-capture = true
 link-url = true
+
+# Shell Integration
+#   https://ghostty.org/docs/config/reference#shell-integration-features
+shell-integration-features = ssh-env
