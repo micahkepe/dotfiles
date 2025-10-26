@@ -30,7 +30,7 @@
   graph = log --all --graph --decorate --oneline
   l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   ignore = "!gi() { local IFS=','; curl -sL https://www.toptal.com/developers/gitignore/api/\"$*\"; }; gi"
-  open = "!git remote -v | awk '{print $2}' | sort -u | xargs open"
+  open = "!git remote get-url origin | xargs open"
 
 [branch]
   sort = -committerdate
