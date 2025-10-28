@@ -1,5 +1,6 @@
 # PATH
 set -gx PATH \
+    /opt/homebrew/opt/coreutils/libexec/gnubin \
     /opt/homebrew/bin \
     $HOME/go/bin \
     $HOME/.pyenv/bin \
