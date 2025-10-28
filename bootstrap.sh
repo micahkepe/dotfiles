@@ -219,6 +219,6 @@ exec-dry-run curl -fLo "$HOME"/.vim/autoload/plug.vim --create-dirs \
 
 ## tpm
 echo "Step 7/7: Installing tpm package manager..."
-exex-dry-run mkdir -p "$HOME"/.tmux/plugins
+exec-dry-run mkdir -p "$HOME"/.tmux/plugins
 exec-dry-run git clone https://github.com/tmux-plugins/tpm "$HOME"/.tmux/plugins/tpm
 exec-dry-run tmux source "$HOME"/.tmux.conf
