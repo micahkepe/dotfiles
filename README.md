@@ -2,9 +2,9 @@
 
 ![Preview of my Neovim setup.](images/nvim.png)
 
-My personal dotfiles for macOS. This repository contains my configurations for
-Neovim/ Vim, Hammerspoon, and more. I have included a bootstrap script that will
-create the necessary symlinks for the configurations and install required
+My personal dotfiles for macOS/Linux. This repository contains my configurations
+for Neovim/ Vim, Hammerspoon, and more. I have included a bootstrap script that
+will create the necessary symlinks for the configurations and install required
 packages.
 
 > [!NOTE]
@@ -15,7 +15,13 @@ packages.
 <details>
 <summary>Neofetch</summary>
 
-![Neofetch output](./images/neofetch.png)
+**MacOS**:
+
+![Neofetch Mac output](./images/neofetch-macos.png)
+
+**Linux**:
+
+![Fastfetch Linux output](./images/fastfetch-omarchy.png)
 
 </details>
 
@@ -71,10 +77,11 @@ cd ~/.dotfiles && ./bootstrap.sh
 
 ## Other Goodies
 
-- [AutoRaise](https://github.com/sbmpost/AutoRaise) &rarr; FollowsFocusMouse
-  behavior for MacOS
-- [System Color Picker](https://apps.apple.com/us/app/system-color-picker/id1545870783?mt=12)
-  &rarr; color palette utility
+- MacOS:
+  - [AutoRaise](https://github.com/sbmpost/AutoRaise) &rarr; FollowsFocusMouse
+    behavior for MacOS
+  - [System Color Picker](https://apps.apple.com/us/app/system-color-picker/id1545870783?mt=12)
+    &rarr; color palette utility
 
 ---
 
