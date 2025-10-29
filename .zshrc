@@ -150,7 +150,9 @@ alias gr="git restore"
 alias gp="git push"
 alias gu="git pull"
 alias v="vim"
-alias rm="trash"
+if command -v trash &> /dev/null; then
+    alias rm="trash"
+fi
 function new_tmux_session() {
     if [ -z "$1" ]; then
         echo "Usage: new_tmux_session <session_name>"

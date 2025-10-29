@@ -36,7 +36,10 @@ function gd; git diff $argv; end
 function gr; git restore $argv; end
 function v; vim $argv; end
 function l; ls -lah; end
-function rm; trash $argv; end
+# `rm` -> `trash` (macOS), if available
+if type -q trash
+  function rm; trash $argv; end
+end
 function tn; tmux new -s $argv; end
 function ta; tmux attach $argv; end
 complete --command ta --wraps 'tmux attach'
