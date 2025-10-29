@@ -63,11 +63,12 @@ exec-dry-run() {
 trap 'echo ""; echo "Exiting bootstrap script..."; exit 130' SIGINT SIGTERM
 
 ## Prerequisites checks
-echo "Step 1/7: Checking prerequisites..."
+echo "Step 1/9: Checking prerequisites..."
 
 ### Operating system
-if ! [[ $(uname -s) == "Darwin" ]]; then
-  echo "This script only applies to Mac."
+OS=$(uname -s)
+if ! [[ "$OS" == "Darwin" || "$OS" == "Linux" ]]; then
+  echo "This script only applies to Mac and Linux."
   exit 1
 fi
 
@@ -78,41 +79,41 @@ if [[ "$backupvar" =~ ^[Nn] || -z "$backupvar" ]]; then
   exit 1
 fi
 
-### Check if brew is installed
-if ! command -v brew &>/dev/null; then
-  echo "Brew is not installed."
-  read -rp "Would you like to install Homebrew now?: [Y/n]" brewvar
+### MAC: Check if brew is installed
+if [[ "$OS" == "Darwin" ]]; then
+  if ! command -v brew &>/dev/null; then
+    echo "Brew is not installed."
+    read -rp "Would you like to install Homebrew now?: [Y/n]" brewvar
 
-  if [[ ! "$brewvar" =~ [Nn](o)? ]]; then
-    # Install Homebrew
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    if [[ ! "$brewvar" =~ [Nn](o)? ]]; then
+      # Install Homebrew
+      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-    # Source `brew` command
-    eval "$(/opt/homebrew/bin/brew shellenv)"
+      # Source `brew` command
+      eval "$(/opt/homebrew/bin/brew shellenv)"
 
-    # Check installation
-    command -v brew &>/dev/null || {
-      echo "Homebrew installation failed"
-      exit 1
-    }
-
-    echo "Homebrew installed successfully!"
+      # Check installation
+      command -v brew &>/dev/null || {
+        echo "Homebrew installation failed"
+        exit 1
+      }
+      echo "Homebrew installed successfully!"
+    fi
   fi
-fi
 
-### Check if git is installed
-if ! command -v git &>/dev/null; then
-  echo "Git is not installed."
-  read -rp "Would you like to install Xcode Command Line Tools now?: [Y/n]" xcodevar
-
-  if [[ ! "$xcodevar" =~ [Nn](o)? ]]; then
-    # install command line tools
-    command xcode-select --install
+  ### Check if git is installed
+  if ! command -v git &>/dev/null; then
+    echo "Git is not installed."
+    read -rp "Would you like to install Xcode Command Line Tools now?: [Y/n]" xcodevar
+    if [[ ! "$xcodevar" =~ [Nn](o)? ]]; then
+      # install command line tools
+      command xcode-select --install
+    fi
   fi
 fi
 
 ## Set up dotfiles repository
-echo "Step 2/7: Setting up dotfiles repository..."
+echo "Step 2/9: Setting up dotfiles repository..."
 
 # Set the dotfiles directory to `.dotfiles/` in the `$HOME` directory
 DOTFILES_DIR=$HOME/dotfiles
@@ -134,15 +135,19 @@ else
 fi
 
 ## Install Homebrew packages
-echo "Step 3/7: Installing Homebrew packages..."
+echo "Step 3/9: Installing Homebrew packages..."
 
-if command -v brew &>/dev/null; then
-  echo "Installing packages from Brewfile..."
-  exec-dry-run brew bundle --file="$DOTFILES_DIR"/Brewfile
+if [[ "$OS" == "Darwin" ]]; then
+  if command -v brew &>/dev/null; then
+    echo "Installing packages from Brewfile..."
+    exec-dry-run brew bundle --file="$DOTFILES_DIR"/Brewfile
+  fi
+else
+  echo "Skipping (not on macOS)..."
 fi
 
 ## Symlink configurations
-echo "Step 4/7: Creating symlinks..."
+echo "Step 4/9: Creating symlinks..."
 
 #######################################
 # Symlink wrapper helper function
@@ -177,12 +182,16 @@ symlink() {
 }
 
 echo "Linking dotfiles..."
+if [[ "$OS" == "Darwin" ]]; then
+  symlink "$DOTFILES_DIR"/.hammerspoon "$HOME"/.hammerspoon
+  symlink "$DOTFILES_DIR"/karabiner "$HOME"/.config/karabiner
+  symlink "$DOTFILES_DIR"/sioyek/prefs_user.config "$HOME"/Library/Application Support/sioyek/prefs_user.config
+fi
 symlink "$DOTFILES_DIR"/.bashrc "$HOME"/.bashrc
 symlink "$DOTFILES_DIR"/.gitconfig "$HOME"/.gitconfig
 symlink "$DOTFILES_DIR"/.vimrc "$HOME"/.vimrc
 symlink "$DOTFILES_DIR"/.zshrc "$HOME"/.zshrc
 symlink "$DOTFILES_DIR"/.cshrc "$HOME"/.cshrc
-symlink "$DOTFILES_DIR"/.hammerspoon "$HOME"/.hammerspoon
 symlink "$DOTFILES_DIR"/nvim "$HOME"/.config/nvim
 symlink "$DOTFILES_DIR"/fastfetch "$HOME"/.config/fastfetch
 symlink "$DOTFILES_DIR"/fish "$HOME"/.config/fish
@@ -191,8 +200,6 @@ symlink "$DOTFILES_DIR"/wezterm "$HOME"/.config/wezterm
 symlink "$DOTFILES_DIR"/spotify-player "$HOME"/.config/spotify-player
 symlink "$DOTFILES_DIR"/ghostty "$HOME"/.config/ghostty
 symlink "$DOTFILES_DIR"/yazi "$HOME"/.config/yazi
-symlink "$DOTFILES_DIR"/karabiner "$HOME"/.config/karabiner
-symlink "$DOTFILES_DIR"/sioyek/prefs_user.config "$HOME"/Library/Application Support/sioyek/prefs_user.config
 symlink "$DOTFILES_DIR"/mutt "$HOME"/.config/mutt
 symlink "$DOTFILES_DIR"/btop "$HOME"/.config/btop
 # add more here as needed
@@ -200,7 +207,7 @@ symlink "$DOTFILES_DIR"/btop "$HOME"/.config/btop
 echo "Dotfiles linked successfully!"
 
 ## Local scripts
-echo "Step 5/7: Make local scripts executeable..."
+echo "Step 5/9: Make local scripts executeable..."
 
 LOCAL_BIN="$HOME"/.local/bin
 exec-dry-run mkdir -p "$LOCAL_BIN"
@@ -213,12 +220,40 @@ exec-dry-run cp -f "$DOTFILES_DIR"/latex/latex-template.sh "$HOME"/.local/bin/la
 echo "Local scripts made executeable!"
 
 ## vim-plug
-echo "Step 6/7: Installing vim-plug package manager..."
+echo "Step 6/9: Installing vim-plug package manager..."
 exec-dry-run curl -fLo "$HOME"/.vim/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 ## tpm
-echo "Step 7/7: Installing tpm package manager..."
+echo "Step 7/9: Installing tpm package manager..."
 exec-dry-run mkdir -p "$HOME"/.tmux/plugins
 exec-dry-run git clone https://github.com/tmux-plugins/tpm "$HOME"/.tmux/plugins/tpm
 exec-dry-run tmux source "$HOME"/.tmux.conf
+
+# Catppuccin theme for tmux
+exec-dry-run mkdir -p ~/.config/tmux/plugins/catppuccin
+exec-dry-run git clone -b v2.1.3 https://github.com/catppuccin/tmux.git ~/.config/tmux/plugins/catppuccin/tmux
+
+# Rust install
+echo "Step 8/9: Installing Rust..."
+exec-dry-run curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# Pyenv install (if not installed)
+echo "Step 9/9: Checking for pyenv..."
+if ! command -v pyenv &>/dev/null; then
+  if [[ "$OS" == "Linux" ]]; then
+    exec-dry-run curl -fsSL https://pyenv.run | bash
+  elif [[ "$OS" == "Darwin" ]]; then
+    exec-dry-run brew install pyenv
+  fi
+fi
+
+if ! command -v diff-so-fancy &>/dev/null; then
+  if [[ "$OS" == "Darwin" ]]; then
+    exec-dry-run brew install diff-so-fancy
+  elif [[ "$OS" == "Linux" ]]; then
+    echo "NOTE: Install diff-so-fancy manually with your package manager."
+  fi
+fi
+
+echo "Bootstrap script complete!"
