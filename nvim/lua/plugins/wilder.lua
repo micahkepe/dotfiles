@@ -7,7 +7,7 @@ return {
     },
     config = function()
       local wilder = require "wilder"
-      wilder.setup { modes = { ":", "/", "?" } }
+      wilder.setup { modes = { ":" } }
       wilder.set_option("pipeline", {
         wilder.branch(
           wilder.python_file_finder_pipeline {
