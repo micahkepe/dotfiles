@@ -11,7 +11,7 @@ font-style-italic =  JetBrainsMonoNL NFM Italic
 font-style-bold-italic = JetBrainsMonoNL NFM Bold Italic
 font-thicken = true
 adjust-cell-width = -4%
-font-size = 14
+font-size = 10
 
 # Option key for mac
 macos-option-as-alt = true
