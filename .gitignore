@@ -37,7 +37,7 @@ Temporary Items
 # End of https://www.toptal.com/developers/gitignore/api/macos
 
 # Fish shell
-fish/fish_variables
+fish/fish_variables*
 
 # Karabiner automatic backups
 karabiner/automatic_backups/
