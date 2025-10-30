@@ -187,6 +187,9 @@ if [[ "$OS" == "Darwin" ]]; then
   symlink "$DOTFILES_DIR"/karabiner "$HOME"/.config/karabiner
   symlink "$DOTFILES_DIR"/sioyek/prefs_user.config "$HOME"/Library/Application Support/sioyek/prefs_user.config
 fi
+if [[ "$OS" == "Linux" ]]; then
+  symlink "$DOTFILES_DIR"/sioyek/prefs_user.config "$HOME"/.config/sioyek/prefs_user.config
+fi
 symlink "$DOTFILES_DIR"/.bashrc "$HOME"/.bashrc
 symlink "$DOTFILES_DIR"/.gitconfig "$HOME"/.gitconfig
 symlink "$DOTFILES_DIR"/.vimrc "$HOME"/.vimrc
