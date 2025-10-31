@@ -4,7 +4,10 @@
 ;; * CapsLock -> ESC
 ;;
 ;; See:
-;;  https://github.com/jtroo/kanata/blob/main/docs/config.adoc
+;;  - Configuration docs: https://github.com/jtroo/kanata/blob/main/docs/config.adoc
+;;  - Kanata home row mod example configs:
+;;    - https://github.com/jtroo/kanata/blob/main/cfg_samples/home-row-mod-basic.kbd
+;;    - https://github.com/jtroo/kanata/blob/main/cfg_samples/home-row-mod-advanced.kbd
 
 (defcfg
   process-unmapped-keys yes
@@ -15,15 +18,18 @@
 )
 
 (defvar
-  a_ctrl   (tap-hold 250 180 a lctrl)
-  s_alt    (tap-hold 250 180 s lalt)
-  d_super  (tap-hold 250 180 d lmet)
-  f_shift  (tap-hold 250 180 f lshift)
+  tap-time 200
+  hold-time 150
 
-  j_shift  (tap-hold 250 180 j rshift)
-  k_super  (tap-hold 250 180 k rmet)
-  l_alt    (tap-hold 250 180 l ralt)
-  sem_ctrl (tap-hold 250 180 ; rctrl)
+  a_ctrl   (tap-hold $tap-time $hold-time a lctrl)
+  s_alt    (tap-hold $tap-time $hold-time s lalt)
+  d_super  (tap-hold $tap-time $hold-time d lmet)
+  f_shift  (tap-hold $tap-time $hold-time f lshift)
+
+  j_shift  (tap-hold $tap-time $hold-time j rshift)
+  k_super  (tap-hold $tap-time $hold-time k rmet)
+  l_alt    (tap-hold $tap-time $hold-time l ralt)
+  sem_ctrl (tap-hold $tap-time $hold-time ; rctrl)
 
   ;; CapsLock -> Esc when tapped, Hold = Esc (for simplicity)
   caps_esc (tap-hold 150 100 esc esc)
