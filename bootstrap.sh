@@ -190,6 +190,7 @@ fi
 if [[ "$OS" == "Linux" ]]; then
   symlink "$DOTFILES_DIR"/sioyek/prefs_user.config "$HOME"/.config/sioyek/prefs_user.config
   symlink "$DOTFILES_DIR"/hypr "$HOME"/hypr
+  symlink "$DOTFILES_DIR"/kanata "$HOME"/kanata
 fi
 symlink "$DOTFILES_DIR"/.bashrc "$HOME"/.bashrc
 symlink "$DOTFILES_DIR"/.gitconfig "$HOME"/.gitconfig

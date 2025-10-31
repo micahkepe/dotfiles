@@ -1,0 +1,34 @@
+;; Kanata
+;;
+;; * Home row mods
+;; * CapsLock -> ESC
+;;
+;; See:
+;;  https://github.com/jtroo/kanata/blob/main/docs/config.adoc
+
+(defcfg
+  process-unmapped-keys yes
+)
+
+(defsrc
+  caps a s d f j k l ;
+)
+
+(defvar
+  a_ctrl   (tap-hold 250 180 a lctrl)
+  s_alt    (tap-hold 250 180 s lalt)
+  d_super  (tap-hold 250 180 d lmet)
+  f_shift  (tap-hold 250 180 f lshift)
+
+  j_shift  (tap-hold 250 180 j rshift)
+  k_super  (tap-hold 250 180 k rmet)
+  l_alt    (tap-hold 250 180 l ralt)
+  sem_ctrl (tap-hold 250 180 ; rctrl)
+
+  ;; CapsLock -> Esc when tapped, Hold = Esc (for simplicity)
+  caps_esc (tap-hold 150 100 esc esc)
+)
+
+(deflayer base
+  $caps_esc $a_ctrl $s_alt $d_super $f_shift $j_shift $k_super $l_alt $sem_ctrl
+)
