@@ -189,8 +189,9 @@ if [[ "$OS" == "Darwin" ]]; then
 fi
 if [[ "$OS" == "Linux" ]]; then
   symlink "$DOTFILES_DIR"/sioyek/prefs_user.config "$HOME"/.config/sioyek/prefs_user.config
-  symlink "$DOTFILES_DIR"/hypr "$HOME"/hypr
-  symlink "$DOTFILES_DIR"/kanata "$HOME"/kanata
+  symlink "$DOTFILES_DIR"/hypr "$HOME"/.config/hypr
+  symlink "$DOTFILES_DIR"/kanata "$HOME"/.config/kanata
+  symlink "$DOTFILES_DIR"/waybar "$HOME"/.config/waybar
 fi
 symlink "$DOTFILES_DIR"/.bashrc "$HOME"/.bashrc
 symlink "$DOTFILES_DIR"/.gitconfig "$HOME"/.gitconfig
