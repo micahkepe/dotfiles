@@ -13,11 +13,11 @@ packages.
 > and reviewing the code before giving them a whirl.
 
 <details>
-<summary>Neofetch</summary>
+<summary>Fastfetch</summary>
 
 **MacOS**:
 
-![Neofetch Mac output](./images/neofetch-macos.png)
+![Fastfetch Mac output](./images/fastfetch-macos.png)
 
 **Linux**:
 

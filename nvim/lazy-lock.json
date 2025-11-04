@@ -53,12 +53,12 @@
   "rust.vim": { "branch": "master", "commit": "889b9a7515db477f4cb6808bef1769e53493c578" },
   "rustaceanvim": { "branch": "master", "commit": "88575b98bb9937fb9983ddec5e532b67e75ce677" },
   "smear-cursor.nvim": { "branch": "main", "commit": "abfa5835920b1d76c0e24e1465a618ad914be90a" },
-  "snacks.nvim": { "branch": "main", "commit": "41712e3026a6d690e3c65f83b335cb34e054d2cd" },
+  "snacks.nvim": { "branch": "main", "commit": "6121b40a2d2fc07beee040209d59e579aad51d98" },
   "spellwarn.nvim": { "branch": "main", "commit": "47ada88a843f52f7aa90c018cc7ef514587bc3fd" },
   "spring-boot.nvim": { "branch": "main", "commit": "218c0c26c14d99feca778e4d13f5ec3e8b1b60f0" },
   "supermaven-nvim": { "branch": "main", "commit": "07d20fce48a5629686aefb0a7cd4b25e33947d50" },
   "tabout.nvim": { "branch": "master", "commit": "9a3499480a8e53dcaa665e2836f287e3b7764009" },
-  "telescope.nvim": { "branch": "master", "commit": "84b9ba066d1860f7a586ce9cd732fd6c4f77d1d9" },
+  "telescope.nvim": { "branch": "master", "commit": "47a8530e79a484d55ba5efa3768fc0b0c023d497" },
   "todo-comments.nvim": { "branch": "main", "commit": "411503d3bedeff88484de572f2509c248e499b38" },
   "todo.nvim": { "branch": "main", "commit": "734656875b7c475e6f689a7c68adb23f9418d673" },
   "ui": { "branch": "v3.0", "commit": "bea2af0a76c1098fac0988ad296aa028cad2a333" },
@@ -72,5 +72,5 @@
   "volt": { "branch": "main", "commit": "620de1321f275ec9d80028c68d1b88b409c0c8b1" },
   "which-key.nvim": { "branch": "main", "commit": "3aab2147e74890957785941f0c1ad87d0a44c15a" },
   "wilder.nvim": { "branch": "master", "commit": "679f348dc90d80ff9ba0e7c470c40a4d038dcecf" },
-  "yazi.nvim": { "branch": "main", "commit": "793cc0978151d139efdae12af85f675d5e53c1cc" }
+  "yazi.nvim": { "branch": "main", "commit": "08e8a671f4e66b4ee67d9e25bff1bb5aa8306d04" }
 }
