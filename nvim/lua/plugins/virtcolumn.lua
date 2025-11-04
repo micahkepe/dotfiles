@@ -1,4 +1,8 @@
 return {
-  "xiyaowong/virtcolumn.nvim",
-  event = "VeryLazy",
+  "lukas-reineke/virt-column.nvim",
+  lazy = false,
+  opts = {
+    char = "▕",
+    highlight = "ColorColumn",
+  },
 }

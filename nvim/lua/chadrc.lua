@@ -14,6 +14,9 @@ M.base46 = {
 
     -- make windows panes more distinguishable
     ["WinSeparator"] = { fg = "grey_fg2" },
+
+    -- Color column ruler
+    ["ColorColumn"] = { fg = "#676e95", bg = "none" },
   },
 }
 
