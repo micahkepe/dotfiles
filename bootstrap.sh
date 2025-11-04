@@ -202,7 +202,6 @@ symlink "$DOTFILES_DIR"/nvim "$HOME"/.config/nvim
 symlink "$DOTFILES_DIR"/fastfetch "$HOME"/.config/fastfetch
 symlink "$DOTFILES_DIR"/fish "$HOME"/.config/fish
 symlink "$DOTFILES_DIR"/tmux/.tmux.conf "$HOME"/.tmux.conf
-symlink "$DOTFILES_DIR"/wezterm "$HOME"/.config/wezterm
 symlink "$DOTFILES_DIR"/spotify-player "$HOME"/.config/spotify-player
 symlink "$DOTFILES_DIR"/ghostty "$HOME"/.config/ghostty
 symlink "$DOTFILES_DIR"/yazi "$HOME"/.config/yazi
