@@ -92,8 +92,8 @@ macro index,pager gs "<change-vfolder>Sent<enter>" "go to sent"
 macro index \Cf "<vfolder-from-query>" "show only messages matching a notmuch pattern"
 
 # URLs
-macro index,pager \cb "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs out of a message"
-macro attach,compose \cb "<pipe-entry> urlscan<Enter>" "call urlscan to extract URLs out of a message"
+macro index,pager \cb "<pipe-message> urlview<Enter>" "extract URLs out of a message"
+macro attach,compose \cb "<pipe-entry> urlsview<Enter>" "extract URLs out of a message"
 
 # Better date formatting
 set index_format='%4C %Z %<[y?%<[m?%<[d?%[%l:%M%p ]&%[%a %d ]>&%[%b %d ]>&%[%m/%y ]> %-15.15L %s %g'
