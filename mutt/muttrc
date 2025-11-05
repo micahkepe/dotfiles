@@ -58,25 +58,24 @@ folder-hook . 'push <limit>~d<30d<enter>'
 set record=""
 
 # Enable notmuch
-set nm_default_url = "notmuch://$HOME/.local/share/mail"
+set nm_default_url = "notmuch://$HOME/.local/share/mail/micahkepe@gmail.com"
+set nm_db_limit = 5000
 set virtual_spoolfile = yes
 set nm_record = yes
-set nm_record_tags = "-inbox,archive,sent"
+set nm_record_tags = "-inbox,sent"
+set mbox_type = Maildir
 
-# Virtual mailboxes (smart folders)
-virtual-mailboxes \
-    "📥 Inbox (Recent)" "notmuch://?query=tag:inbox AND date:30d.." \
-    "📥 Inbox (All)" "notmuch://?query=tag:inbox" \
-    "📬 Unread" "notmuch://?query=tag:unread" \
-    "⭐ Important" "notmuch://?query=tag:important OR tag:flagged" \
-    "💼 Work" "notmuch://?query=tag:work" \
-    "🎓 School" "notmuch://?query=to:mik3@rice.edu" \
-    "📤 Sent" "notmuch://?query=from:micahkepe@gmail.com OR from:mik3@rice.edu" \
-    "🗑️ Trash" "notmuch://?query=tag:trash OR tag:deleted" \
-    "🔍 All Mail" "notmuch://?query=*"
+set spoolfile = "Inbox"
+virtual-mailboxes "Inbox" "notmuch://?query=(tag:inbox -tag:promotions -tag:social) OR (tag:inbox and tag:flagged)"
+virtual-mailboxes "Archive" "notmuch://?query=not tag:inbox and not tag:spam"
+virtual-mailboxes "Personal" "notmuch://?query=tag:personal"
+virtual-mailboxes "Flagged" "notmuch://?query=tag:flagged"
+virtual-mailboxes "Promotions" "notmuch://?query=tag:promotions"
+virtual-mailboxes "Social" "notmuch://?query=tag:social"
+virtual-mailboxes "Sent" "notmuch://?query=tag:sent"
 
-# Start in recent inbox instead of full inbox
-set spool_file = "notmuch://?query=tag:inbox AND date:30d.."
+set sendmail = "gmi send -t -C $HOME/.local/share/mail/micahkepe@gmail.com"
+macro index o "<shell-escape>cd $HOME/.local/share/mail/micahkepe@gmail.com && gmi sync<enter>" "run lieer to sync"
 
 # Keybindings for notmuch
 macro index,pager S "<vfolder-from-query>" "notmuch search"
@@ -84,8 +83,17 @@ macro index,pager + "<modify-labels>+*<return>" "add tag"
 macro index,pager - "<modify-labels>-*<return>" "remove tag"
 
 # Quick navigation to virtual folders
-macro index,pager gi "<change-vfolder>📥 Inbox (Recent)<enter>" "go to recent inbox"
-macro index,pager gI "<change-vfolder>📥 Inbox (All)<enter>" "go to all inbox"
-macro index,pager gu "<change-vfolder>📬 Unread<enter>" "go to unread"
-macro index,pager ga "<change-vfolder>🔍 All Mail<enter>" "go to all mail"
-macro index,pager gs "<change-vfolder>📤 Sent<enter>" "go to sent"
+macro index,pager gi "<change-vfolder>Inbox<enter>" "go to recent inbox"
+macro index,pager ga "<change-vfolder>Archive<enter>" "go to archive"
+macro index,pager gf "<change-vfolder>Flagged<enter>" "go to flagged"
+macro index,pager gs "<change-vfolder>Sent<enter>" "go to sent"
+
+# Quick find
+macro index \Cf "<vfolder-from-query>" "show only messages matching a notmuch pattern"
+
+# URLs
+macro index,pager \cb "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs out of a message"
+macro attach,compose \cb "<pipe-entry> urlscan<Enter>" "call urlscan to extract URLs out of a message"
+
+# Better date formatting
+set index_format='%4C %Z %<[y?%<[m?%<[d?%[%l:%M%p ]&%[%a %d ]>&%[%b %d ]>&%[%m/%y ]> %-15.15L %s %g'
