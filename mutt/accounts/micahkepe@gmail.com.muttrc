@@ -14,6 +14,4 @@ set spool_file = "+INBOX"
 set postponed = "+Drafts"
 set trash = "+Trash"
 set record = "+Sent"
-
 macro index o "<shell-escape>mailsync micahkepe@gmail.com<enter>" "sync micahkepe@gmail.com"
-mailboxes "=INBOX" "=Notes" "=Sent" "=Trash" "=Unroll.me" "=[Gmail]/All Mail" "=[Gmail]/Drafts" "=[Gmail]/Important" "=[Gmail]/Sent Mail" "=[Gmail]/Spam" "=[Gmail]/Starred" "=[Gmail]/Trash" "=jobalerts-noreply"

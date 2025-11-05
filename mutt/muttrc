@@ -1,7 +1,6 @@
 # vim: filetype=neomuttrc
 source /usr/local/share/mutt-wizard/mutt-wizard.muttrc
 source $HOME/.config/mutt/accounts/micahkepe@gmail.com.muttrc
-macro index,pager i1 '<sync-mailbox><enter-command>source $HOME/.config/mutt/accounts/micahkepe@gmail.com.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to micahkepe@gmail.com"
 
 set header_cache_backend = "lmdb"
 set sort = reverse-date
@@ -48,11 +47,45 @@ color sidebar_new       color10 default   # Mailboxes with new mail are Green
 # Appearance
 set sidebar_format = "%D %?F? ?%?N? ?%!%n"
 
-named-mailboxes " Inbox" "=INBOX"
-named-mailboxes " All Mail" "=[Gmail]/All Mail"
-named-mailboxes " Sent" "=[Gmail]/Sent Mail"
-named-mailboxes " Trash" "=[Gmail]/Trash"
-named-mailboxes " Drafts" "=[Gmail]/Drafts"
+# Macros
+macro index,pager i1 '<sync-mailbox><enter-command>source $HOME/.config/mutt/accounts/micahkepe@gmail.com.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to micahkepe@gmail.com"
+
+# Only show last 30 days of emails on startup
+set auto_tag = yes
+folder-hook . 'push <limit>~d<30d<enter>'
 
 # Don't save sent messages locally
 set record=""
+
+# Enable notmuch
+set nm_default_url = "notmuch://$HOME/.local/share/mail"
+set virtual_spoolfile = yes
+set nm_record = yes
+set nm_record_tags = "-inbox,archive,sent"
+
+# Virtual mailboxes (smart folders)
+virtual-mailboxes \
+    "📥 Inbox (Recent)" "notmuch://?query=tag:inbox AND date:30d.." \
+    "📥 Inbox (All)" "notmuch://?query=tag:inbox" \
+    "📬 Unread" "notmuch://?query=tag:unread" \
+    "⭐ Important" "notmuch://?query=tag:important OR tag:flagged" \
+    "💼 Work" "notmuch://?query=tag:work" \
+    "🎓 School" "notmuch://?query=to:mik3@rice.edu" \
+    "📤 Sent" "notmuch://?query=from:micahkepe@gmail.com OR from:mik3@rice.edu" \
+    "🗑️ Trash" "notmuch://?query=tag:trash OR tag:deleted" \
+    "🔍 All Mail" "notmuch://?query=*"
+
+# Start in recent inbox instead of full inbox
+set spool_file = "notmuch://?query=tag:inbox AND date:30d.."
+
+# Keybindings for notmuch
+macro index,pager S "<vfolder-from-query>" "notmuch search"
+macro index,pager + "<modify-labels>+*<return>" "add tag"
+macro index,pager - "<modify-labels>-*<return>" "remove tag"
+
+# Quick navigation to virtual folders
+macro index,pager gi "<change-vfolder>📥 Inbox (Recent)<enter>" "go to recent inbox"
+macro index,pager gI "<change-vfolder>📥 Inbox (All)<enter>" "go to all inbox"
+macro index,pager gu "<change-vfolder>📬 Unread<enter>" "go to unread"
+macro index,pager ga "<change-vfolder>🔍 All Mail<enter>" "go to all mail"
+macro index,pager gs "<change-vfolder>📤 Sent<enter>" "go to sent"
