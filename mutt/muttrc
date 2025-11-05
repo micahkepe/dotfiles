@@ -97,3 +97,11 @@ macro attach,compose \cb "<pipe-entry> urlsview<Enter>" "extract URLs out of a m
 
 # Better date formatting
 set index_format='%4C %Z %<[y?%<[m?%<[d?%[%l:%M%p ]&%[%a %d ]>&%[%b %d ]>&%[%m/%y ]> %-15.15L %s %g'
+
+# Mark all as read
+macro index \\Cr "T~UN." "mark all messages as read"
+
+# GooBook
+macro index,pager a "<pipe-message>goobook add<return>" "add the sender address to Google contacts"
+bind editor <Tab> complete-query
+set query_command="goobook query %s"
