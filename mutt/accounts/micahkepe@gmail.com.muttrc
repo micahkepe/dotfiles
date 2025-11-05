@@ -4,9 +4,9 @@ set real_name = "Micah Kepe"
 set from = "micahkepe@gmail.com"
 set sendmail = "msmtp -a micahkepe@gmail.com"
 alias me micahkepe <micahkepe@gmail.com>
-set folder = "~/.local/share/mail/micahkepe@gmail.com"
-set header_cache = "~/.cache/mutt-wizard/micahkepe_gmail.com/headers"
-set message_cachedir = "~/.cache/mutt-wizard/micahkepe_gmail.com/bodies"
+set folder = "$HOME/.local/share/mail/micahkepe@gmail.com"
+set header_cache = "$HOME/.cache/mutt-wizard/micahkepe_gmail.com/headers"
+set message_cachedir = "$HOME/.cache/mutt-wizard/micahkepe_gmail.com/bodies"
 set mbox_type = Maildir
 set hostname = "gmail.com"
 source /usr/local/share/mutt-wizard/switch.muttrc
@@ -16,4 +16,4 @@ set trash = "+Trash"
 set record = "+Sent"
 
 macro index o "<shell-escape>mailsync micahkepe@gmail.com<enter>" "sync micahkepe@gmail.com"
-mailboxes "=INBOX" "=Notes" "=Unroll.me" "=[Gmail]/All Mail" "=[Gmail]/Drafts" "=[Gmail]/Important" "=[Gmail]/Sent Mail" "=[Gmail]/Spam" "=[Gmail]/Starred" "=[Gmail]/Trash"
+mailboxes "=INBOX" "=Notes" "=Sent" "=Trash" "=Unroll.me" "=[Gmail]/All Mail" "=[Gmail]/Drafts" "=[Gmail]/Important" "=[Gmail]/Sent Mail" "=[Gmail]/Spam" "=[Gmail]/Starred" "=[Gmail]/Trash" "=jobalerts-noreply"

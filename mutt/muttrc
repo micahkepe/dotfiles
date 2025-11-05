@@ -1,7 +1,8 @@
 # vim: filetype=neomuttrc
 source /usr/local/share/mutt-wizard/mutt-wizard.muttrc
-source /Users/micahkepe/.config/mutt/accounts/micahkepe@gmail.com.muttrc
-macro index,pager i1 '<sync-mailbox><enter-command>source /Users/micahkepe/.config/mutt/accounts/micahkepe@gmail.com.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to micahkepe@gmail.com"
+source $HOME/.config/mutt/accounts/micahkepe@gmail.com.muttrc
+macro index,pager i1 '<sync-mailbox><enter-command>source $HOME/.config/mutt/accounts/micahkepe@gmail.com.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to micahkepe@gmail.com"
+
 set header_cache_backend = "lmdb"
 set sort = reverse-date
 
