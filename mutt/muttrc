@@ -50,10 +50,6 @@ set sidebar_format = "%D %?F? ?%?N? ?%!%n"
 # Macros
 macro index,pager i1 '<sync-mailbox><enter-command>source $HOME/.config/mutt/accounts/micahkepe@gmail.com.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to micahkepe@gmail.com"
 
-# Only show last 30 days of emails on startup
-set auto_tag = yes
-folder-hook . 'push <limit>~d<30d<enter>'
-
 # Don't save sent messages locally
 set record=""
 
