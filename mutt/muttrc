@@ -44,3 +44,15 @@ color body		color4 default		(^|[[:space:]])/[^[:space:]]+/([[:space:]]|$)     # 
 
 color sidebar_flagged   color1 default    # Mailboxes with flagged mails are Red
 color sidebar_new       color10 default   # Mailboxes with new mail are Green
+
+# Appearance
+set sidebar_format = "%D %?F? ?%?N? ?%!%n"
+
+named-mailboxes " Inbox" "=INBOX"
+named-mailboxes " All Mail" "=[Gmail]/All Mail"
+named-mailboxes " Sent" "=[Gmail]/Sent Mail"
+named-mailboxes " Trash" "=[Gmail]/Trash"
+named-mailboxes " Drafts" "=[Gmail]/Drafts"
+
+# Don't save sent messages locally
+set record=""
