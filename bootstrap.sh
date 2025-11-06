@@ -261,4 +261,12 @@ if ! command -v diff-so-fancy &>/dev/null; then
   fi
 fi
 
+# MacOS key repeat rate
+# See:
+#   https://apple.stackexchange.com/questions/10467/how-to-increase-keyboard-key-repeat-rate-on-os-x
+if [[ "$OS" == "Darwin" ]]; then
+  defaults write -g InitialKeyRepeat -float 10.0 # normal minimum is 15 (225 ms)
+  defaults write -g KeyRepeat -float 1.0         # normal minimum is 2 (30 ms)
+fi
+
 echo "Bootstrap script complete!"
