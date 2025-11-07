@@ -85,3 +85,9 @@ end
 vim.keymap.set("n", "?", "?\\v")
 vim.keymap.set("n", "/", "/\\v")
 vim.keymap.set("c", "%s/", "%sm/")
+
+-- Logging (turn off to avoid "Large LSP log" warning)
+-- https://neovim.discourse.group/t/lsp-log-file-grows-infinitely/3596
+-- See `:h  vim.lsp.set_log_level()`
+vim.lsp.set_log_level "OFF"
+
