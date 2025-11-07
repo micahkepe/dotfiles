@@ -36,15 +36,6 @@ require("lazy").setup({
     lazy = false,
     branch = "v2.5",
     import = "nvchad.plugins",
-    config = function()
-      require "options"
-      -- Override nvim-tree settings
-      local nvim_tree_options = require "nvchad.configs.nvimtree"
-      nvim_tree_options.filters.dotfiles = false
-      nvim_tree_options.git = { enable = true }
-      nvim_tree_options.filters.git_ignored = false
-      nvim_tree_options.filters.custom = { "^\\.git$", "DS_Store" }
-    end,
   },
 
   { import = "plugins" },
@@ -56,6 +47,8 @@ dofile(vim.g.base46_cache .. "statusline")
 
 require "nvchad.autocmds"
 require "autocmds" -- additional autocommands
+
+require "options"
 
 vim.schedule(function()
   require "mappings"

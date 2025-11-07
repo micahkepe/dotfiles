@@ -90,4 +90,3 @@ vim.keymap.set("c", "%s/", "%sm/")
 -- https://neovim.discourse.group/t/lsp-log-file-grows-infinitely/3596
 -- See `:h  vim.lsp.set_log_level()`
 vim.lsp.set_log_level "OFF"
-
