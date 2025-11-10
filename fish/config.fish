@@ -34,13 +34,28 @@ function gp; git push $argv; end
 function gu; git pull $argv; end
 function gd; git diff $argv; end
 function gr; git restore $argv; end
+complete --command gs --wraps 'git status --short'
+complete --command ga --wraps 'git add'
+complete --command gap --wraps 'git add --patch'
+complete --command gi --wraps 'git init'
+complete --command gc --wraps 'git commit'
+complete --command gl --wraps 'git log'
+complete --command gcl --wraps 'git clone'
+complete --command gp --wraps 'git push'
+complete --command gu --wraps 'git pull'
+complete --command gd --wraps 'git diff'
+complete --command gr --wraps 'git restore'
+
 function v; vim $argv; end
+complete --command l --wraps 'vim'
+
 function l; ls -lah; end
 # `rm` -> `trash` (macOS), if available
 if type -q trash
   function rm; trash $argv; end
 end
 function tn; tmux new -s $argv; end
+complete --command tn --wraps 'tmux new -s'
 function ta; tmux attach $argv; end
 complete --command ta --wraps 'tmux attach'
 function tl; tmux list-session; end
