@@ -42,3 +42,5 @@ spoon.ClipboardTool:start()
 ----------------
 -- Tile management(ish) and quick window switching/focusing
 require("window")
+-- Ctrl+Option + H/J/K/L as arrows
+require("vi-arrows")
