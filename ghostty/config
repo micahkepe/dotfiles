@@ -36,4 +36,5 @@ link-url = true
 
 # Shell Integration
 #   https://ghostty.org/docs/config/reference#shell-integration-features
-shell-integration-features = ssh-env
+#   https://ghostty.org/docs/help/terminfo#sudo
+shell-integration-features = ssh-env,sudo
