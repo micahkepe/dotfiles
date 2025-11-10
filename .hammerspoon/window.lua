@@ -128,7 +128,8 @@ local appShortcuts = {
 	z = "zoom.us",
 	p = "sioyek", -- for PDF
 	m = "Spotify", -- music
-	s = "Finder", -- *s*tuff? (Cmd + Shift D is taken by the toggle menu Mac bind)
+	s = "Slack",
+	y = "Finder", -- can't think of better shortcut key oops
 }
 
 for shortcut, app in pairs(appShortcuts) do
