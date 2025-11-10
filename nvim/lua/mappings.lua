@@ -322,3 +322,15 @@ map(
   ":RustLsp openDocs<CR>",
   { desc = "Open Rust documentation for the symbol under the cursor" }
 )
+
+-- Clear all buffers except the current
+-- See: https://stackoverflow.com/a/42071865/25337875
+map(
+  "n",
+  "<leader>cb",
+  ":%bd|e#<CR>",
+  { desc = "Clear all buffers except for the current buffer" }
+)
+
+-- Clear ALL buffers
+map("n", "<leader>Cb", ":bufdo bd<CR>", { desc = "Clear all buffers" })
