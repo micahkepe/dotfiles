@@ -51,25 +51,32 @@ install Homebrew packages, and create symlinks for all configuration files:
 
 ## Manual Setup
 
-Install Xcode Command Line Tools:
+<details open>
+<summary>For macOS</summary>
+
+1. Install Xcode Command Line Tools:
 
 ```bash
 xcode-select --install
 ```
 
-Install Homebrew:
+2. Install [Homebrew](https://brew.sh/):
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-Clone this repository:
+</details>
+
+---
+
+1. Clone this repository:
 
 ```bash
 git clone https://github.com/micahkepe/dotfiles ~/.dotfiles
 ```
 
-Run the bootstrap script:
+2. Run the bootstrap script:
 
 ```bash
 cd ~/.dotfiles && ./bootstrap.sh
@@ -78,10 +85,13 @@ cd ~/.dotfiles && ./bootstrap.sh
 ## Other Goodies
 
 - MacOS:
-  - [AutoRaise](https://github.com/sbmpost/AutoRaise) &rarr; FollowsFocusMouse
-    behavior for MacOS
+  - [AutoRaise](https://github.com/sbmpost/AutoRaise) &rarr; "follows focus
+    mouse" behavior for MacOS
   - [System Color Picker](https://apps.apple.com/us/app/system-color-picker/id1545870783?mt=12)
     &rarr; color palette utility
+
+- Linux:
+  - [Omarchy](https://omarchy.org/) &rarr; opinionated tiling Arch Linux distro
 
 ---
 
