@@ -10,7 +10,6 @@ local servers = {
   "bashls",
   "pyright",
   "ruff",
-  "typescript-language-server",
   "gdscript",
   "texlab",
   "jdtls",

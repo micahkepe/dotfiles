@@ -89,4 +89,6 @@ vim.keymap.set("c", "%s/", "%sm/")
 -- Logging (turn off to avoid "Large LSP log" warning)
 -- https://neovim.discourse.group/t/lsp-log-file-grows-infinitely/3596
 -- See `:h  vim.lsp.set_log_level()`
+--
+-- When debugging a language server, comment this line out to start logging
 vim.lsp.set_log_level "OFF"

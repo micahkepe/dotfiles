@@ -185,13 +185,6 @@ return {
     end,
   },
 
-  -- Rust setup
-  {
-    "mrcjkb/rustaceanvim",
-    version = "^6",
-    ft = "rust",
-  },
-
   {
     "L3MON4D3/LuaSnip",
     dependencies = "rafamadriz/friendly-snippets",
