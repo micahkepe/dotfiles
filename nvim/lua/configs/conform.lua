@@ -8,6 +8,7 @@ local options = {
     c = { "clang-format" },
     typescript = { "prettier" },
     json = { "prettier" },
+    python = { "ruff", "black" },
   },
 
   format_on_save = {
