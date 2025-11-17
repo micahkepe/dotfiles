@@ -149,6 +149,7 @@ alias gd="git diff"
 alias gr="git restore"
 alias gp="git push"
 alias gu="git pull"
+alias gf="git fetch"
 alias v="vim"
 if command -v trash &> /dev/null; then
     alias rm="trash"
