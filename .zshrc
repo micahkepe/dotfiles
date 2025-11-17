@@ -154,6 +154,7 @@ alias v="vim"
 if command -v trash &> /dev/null; then
     alias rm="trash"
 fi
+alias c="clear"
 function new_tmux_session() {
     if [ -z "$1" ]; then
         echo "Usage: new_tmux_session <session_name>"
@@ -202,13 +203,13 @@ export NVM_DIR="$HOME/.nvm"
 eval "$(rbenv init -)"
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/micahkepe/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/micahkepe/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f "${HOME}/google-cloud-sdk/path.zsh.inc" ]; then . "${HOME}/google-cloud-sdk/path.zsh.inc"; fi
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/micahkepe/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/micahkepe/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f "${HOME}/google-cloud-sdk/completion.zsh.inc" ]; then . "${HOME}/google-cloud-sdk/completion.zsh.inc"; fi
 
 # Shell integrgation install for oh-my-zsh
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
@@ -235,14 +236,11 @@ function y() {
 	rm -f -- "$tmp"
 }
 
-
 # Use Neovim as default editor
-export EDITOR="/opt/homebrew/bin/nvim"
+export EDITOR="nvim"
 
 # Use Neovim for man pages
 export MANPAGER='nvim +Man!'
 
 # GPG
 export GPG_TTY=$(tty)
-
-export STM32CubeMX_PATH=/Applications/STMicroelectronics/STM32CubeMX.app/Contents/Resources

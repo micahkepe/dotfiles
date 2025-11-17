@@ -42,6 +42,7 @@ alias v="vim"
 if command -v trash &>/dev/null; then
   alias rm="trash"
 fi
+alias c="clear"
 
 #######################################
 # Utility function to start a new tmux
@@ -120,7 +121,7 @@ yt() {
 }
 
 # Use Neovim as default editor
-export EDITOR="/opt/homebrew/bin/nvim"
+export EDITOR="nvim"
 
 # GPG
 GPG_TTY=$(tty)

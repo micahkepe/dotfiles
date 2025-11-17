@@ -62,19 +62,29 @@ function v; vim $argv; end
 complete --command l --wraps 'vim'
 
 function l; ls -lah; end
+
 # `rm` -> `trash` (macOS), if available
 if type -q trash
   function rm; trash $argv; end
+  complete --command rm --wraps 'rm'
 end
+
 function tn; tmux new -s $argv; end
 complete --command tn --wraps 'tmux new -s'
 function ta; tmux attach $argv; end
 complete --command ta --wraps 'tmux attach'
 function tl; tmux list-session; end
+
 alias fabric="fabric-ai"
+
 function brave; open -a "Brave Browser" $argv; end
+complete --command brave --wraps 'open -a "Brave Browser"'
 function chrome; open -a "Google Chrome" $argv; end
+complete --command brave --wraps 'open -a "Google Chrome"'
 function firefox; open -a "Firefox" $argv; end
+complete --command brave --wraps 'open -a "Firebox"'
+
+function c; clear $argv; end
 
 # FABRIC
 function yt
