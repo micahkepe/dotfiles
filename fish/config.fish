@@ -75,8 +75,6 @@ function ta; tmux attach $argv; end
 complete --command ta --wraps 'tmux attach'
 function tl; tmux list-session; end
 
-alias fabric="fabric-ai"
-
 function brave; open -a "Brave Browser" $argv; end
 complete --command brave --wraps 'open -a "Brave Browser"'
 function chrome; open -a "Google Chrome" $argv; end
@@ -85,25 +83,6 @@ function firefox; open -a "Firefox" $argv; end
 complete --command brave --wraps 'open -a "Firebox"'
 
 function c; clear $argv; end
-
-# FABRIC
-function yt
-    if test (count $argv) -eq 0 -o (count $argv) -gt 2
-        echo "Usage: yt [-t | --timestamps] youtube-link"
-        echo "Use the '-t' flag to get the transcript with timestamps."
-        return 1
-    end
-
-    set transcript_flag "--transcript"
-
-    if test "$argv[1]" = "-t" -o "$argv[1]" = "--timestamps"
-        set transcript_flag "--transcript-with-timestamps"
-        set -e argv[1]
-    end
-
-    set video_link $argv[1]
-    fabric -y "$video_link" $transcript_flag
-end
 
 # KITTY SSH
 if test -n "$KITTY_WINDOW_ID"
