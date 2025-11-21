@@ -4,13 +4,13 @@
 
 [mgr]
 ratio          = [ 2, 4, 3 ]
-sort_by        = "alphabetical"
+sort_by        = "mtime"
 sort_sensitive = false
 sort_reverse 	 = false
 sort_dir_first = true
 sort_translit  = false
 linemode       = "size"
-show_hidden    = true # NOTE: changed to show hidden files
+show_hidden    = true
 show_symlink   = true
 scrolloff      = 5
 mouse_events   = [ "click", "scroll" ]
