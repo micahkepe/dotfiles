@@ -23,6 +23,10 @@ macos-titlebar-style = "native"
 # Graphics
 gtk-toolbar-style = "flat"
 
+# Colorspace
+#   https://ghostty.org/docs/config/reference#window-colorspace
+window-colorspace = display-p3
+
 # Security
 macos-auto-secure-input = true
 macos-secure-input-indication = true
