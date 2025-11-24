@@ -13,9 +13,6 @@ return {
             cargo = {
               features = "all",
             },
-            checkOnSave = {
-              enable = false, -- use "fly check" instead
-            },
             check = {
               command = "clippy",
             },
