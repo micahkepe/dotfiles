@@ -9,8 +9,6 @@ return {
       opts.git = { enable = true }
       opts.filters.git_ignored = false
       opts.filters.custom = { "^\\.git$", "DS_Store" }
-
-      return opts
     end,
   },
 }

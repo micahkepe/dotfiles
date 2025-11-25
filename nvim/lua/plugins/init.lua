@@ -169,10 +169,7 @@ return {
   -- Auto save when leaving INSERT mode
   {
     "pocco81/auto-save.nvim",
-    lazy = false,
-    config = function()
-      require("auto-save").setup {}
-    end,
+    event = "VeryLazy",
   },
 
   -- LaTeX editing in the terminal

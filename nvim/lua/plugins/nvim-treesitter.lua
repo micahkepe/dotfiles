@@ -17,7 +17,7 @@ return {
           generate_requires_npm = false,
           requires_generate_from_grammar = false,
         },
-        filetype = "strudel", -- if filetype does not match the parser namen
+        filetype = "strudel", -- if filetype does not match the parser name
       }
 
       require("nvim-treesitter.configs").setup {
@@ -55,6 +55,7 @@ return {
           "query",
           "vimdoc",
           "c",
+          "rust",
         },
         incremental_selection = {
           enable = true,

@@ -6,7 +6,6 @@ return {
     opts = function(_, opts)
       opts.cmdline = opts.cmdline or {}
       opts.cmdline.enabled = false
-      return opts
     end,
   },
 }
