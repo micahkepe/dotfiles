@@ -269,4 +269,7 @@ if [[ "$OS" == "Darwin" ]]; then
   defaults write -g KeyRepeat -float 1.0         # normal minimum is 2 (30 ms)
 fi
 
+# FNM install
+exec-dry-run curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell
+
 echo "Bootstrap script complete!"

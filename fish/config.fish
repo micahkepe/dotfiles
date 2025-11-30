@@ -21,6 +21,13 @@ set -gx PATH \
     $HOME/.local/bin \
     $PATH
 
+# FNM
+if uname -a | grep -q "Darwin";
+  set FNM_PATH "/opt/homebrew/opt/fnm/bin"
+else
+  set FNM_PATH "$HOME/.local/share/fnm"
+end
+
 # LLDB/LLVM SETUP
 set -gx LIBLLDB_PATH /opt/homebrew/opt/llvm/lib/liblldb.dylib
 set -gx DYLD_LIBRARY_PATH /opt/homebrew/opt/llvm/lib $DYLD_LIBRARY_PATH
