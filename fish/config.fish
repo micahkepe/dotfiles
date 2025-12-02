@@ -11,21 +11,23 @@
 
 # PATH
 set -gx PATH \
-    /opt/homebrew/opt/coreutils/libexec/gnubin \
-    /opt/homebrew/bin \
+    $HOME/.local/share/fnm \
     $HOME/go/bin \
     $HOME/.pyenv/bin \
-    /Library/TeX/texbin \
     $HOME/.rvm/bin \
     $HOME/.cargo/bin \
     $HOME/.local/bin \
     $PATH
 
-# FNM
-if uname -a | grep -q "Darwin";
-  set FNM_PATH "/opt/homebrew/opt/fnm/bin"
-else
-  set FNM_PATH "$HOME/.local/share/fnm"
+switch (uname)
+  case "Darwin"
+    set -gx PATH /opt/homebrew/opt/coreutils/libexec/gnubin \
+      /opt/homebrew/bin \
+      /Library/TeX/texbin \
+      $PATH
+    set -gx FNM_PATH "/opt/homebrew/opt/fnm/bin"
+  case 'Linux'
+    set -gx FNM_PATH "$HOME/.local/share/fnm"
 end
 
 # LLDB/LLVM SETUP
@@ -96,18 +98,12 @@ if test -n "$KITTY_WINDOW_ID"
     function ssh; kitty +kitten ssh $argv; end
 end
 
-# SET UP FZF KEY BINDINGS
-fzf --fish | source
-
 # FZF.FISH KEY BINDING CHANGES
 # - change variables search to Ctrl-Alt-v
 fzf_configure_bindings --variables=\e\cv
 
 # SET UP ZOXIDE
 zoxide init --cmd cd fish | source
-
-# PYENV SETUP
-pyenv init - fish | source
 
 # SET DEFAULT EDITOR
 set -gx EDITOR nvim
