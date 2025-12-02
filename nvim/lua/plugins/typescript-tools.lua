@@ -6,9 +6,18 @@ return {
   opts = {
     settings = {
       separate_diagnostic_server = true,
-      tsserver_max_memory = "auto",
+      -- https://nodejs.org/api/cli.html#--max-old-space-sizesize-in-megabytes
+      -- NOTE: "auto" does not
+      tsserver_max_memory = 12288, -- ~12 GB
       complete_function_calls = false,
       include_completions_with_insert_text = true,
+
+      -- https://github.com/microsoft/TypeScript/blob/v5.0.4/src/server/protocol.ts#L3439
+      tsserver_file_preferences = {
+        includeCompletionsForModuleExports = false,
+        includePackageJsonAutoImports = "off",
+        includeCompletionsWithSnippetText = true,
+      },
     },
   },
 }
