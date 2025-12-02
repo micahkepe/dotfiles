@@ -1,7 +1,8 @@
 ;; Kanata
 ;;
 ;; * Home row mods
-;; * CapsLock -> ESC
+;; * CapsLock -> ESC when tapped, arrow layer when held
+;; * CapsLock + hjkl -> arrow keys
 ;;
 ;; See:
 ;;  - Configuration docs: https://github.com/jtroo/kanata/blob/main/docs/config.adoc
@@ -14,27 +15,33 @@
 )
 
 (defsrc
-  caps a s d f j k l ;
+  caps a s d f h j k l ;
 )
 
 (defvar
   tap-time 200
   hold-time 150
 
+  ;; Home row mods
   a_ctrl   (tap-hold $tap-time $hold-time a lctrl)
   s_alt    (tap-hold $tap-time $hold-time s lalt)
   d_super  (tap-hold $tap-time $hold-time d lmet)
   f_shift  (tap-hold $tap-time $hold-time f lshift)
-
   j_shift  (tap-hold $tap-time $hold-time j rshift)
   k_super  (tap-hold $tap-time $hold-time k rmet)
   l_alt    (tap-hold $tap-time $hold-time l ralt)
   sem_ctrl (tap-hold $tap-time $hold-time ; rctrl)
 
-  ;; CapsLock -> Esc when tapped, Hold = Esc (for simplicity)
-  caps_esc (tap-hold 150 100 esc esc)
+  ;; CapsLock -> Esc when tapped, activates cap-mod layer when held
+  caps_esc (tap-hold 150 100 esc (layer-toggle cap-mod))
 )
 
 (deflayer base
-  $caps_esc $a_ctrl $s_alt $d_super $f_shift $j_shift $k_super $l_alt $sem_ctrl
+  $caps_esc $a_ctrl $s_alt $d_super $f_shift _ $j_shift $k_super $l_alt $sem_ctrl
+)
+
+;; Arrow key layer
+;; Adapted from: https://shom.dev/start/using-kanata-to-remap-any-keyboard/#deflayer
+(deflayer cap-mod
+  _ a s d f left down up rght ;
 )
