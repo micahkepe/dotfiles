@@ -98,6 +98,16 @@ if test -n "$KITTY_WINDOW_ID"
     function ssh; kitty +kitten ssh $argv; end
 end
 
+# PYENV
+# https://posts.michaelks.org/instant-pyenv-rbenv-startup-times-with-tmux/
+if not functions -q pyenv
+    pyenv init - --no-rehash fish | source
+    funcsave pyenv
+end
+
+# Async rehash to speed up startup
+sh -c 'command pyenv rehash 2>/dev/null &'
+
 # FZF.FISH KEY BINDING CHANGES
 # - change variables search to Ctrl-Alt-v
 fzf_configure_bindings --variables=\e\cv
