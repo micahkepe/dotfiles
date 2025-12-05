@@ -69,16 +69,17 @@ o.sessionoptions =
   "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
 -- add providers to Neovim runtime
-local enable_providers = {
-  "python3_provider",
-  "node_provider",
-  -- and so on
-}
-
-for _, plugin in pairs(enable_providers) do
-  vim.g["loaded_" .. plugin] = nil
-  vim.cmd("runtime " .. plugin)
-end
+vim.schedule(function()
+  local enable_providers = {
+    "python3_provider",
+    "node_provider",
+    -- and so on
+  }
+  for _, plugin in pairs(enable_providers) do
+    vim.g["loaded_" .. plugin] = nil
+    vim.cmd("runtime " .. plugin)
+  end
+end)
 
 -- "very magic" (less escaping needed) regexes by default
 -- Taken from: https://github.com/jonhoo/configs/blob/master/editor/.config/nvim/init.lua

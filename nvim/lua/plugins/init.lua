@@ -220,7 +220,7 @@ return {
   -- Kitty-like cursor trail
   {
     "sphamba/smear-cursor.nvim",
-    event = "VeryLazy",
+    event = "CursorMoved",
     opts = {
       -- Smear cursor when switching buffers or windows.
       smear_between_buffers = true,
@@ -257,6 +257,7 @@ return {
   -- Some semblance of Java support (just use IntelliJ)
   {
     "nvim-java/nvim-java",
+    ft = "java",
   },
 
   {
@@ -275,7 +276,7 @@ return {
 
   {
     "m4xshen/hardtime.nvim",
-    lazy = false,
+    cmd = "Hardtime",
     dependencies = { "MunifTanjim/nui.nvim" },
     opts = {
       enabled = false,
@@ -295,10 +296,8 @@ return {
   },
 
   -- Some gems from the the Vim plugin wizard
-  { "tpope/vim-repeat", event = "VeryLazy" },
-  { "tpope/vim-speeddating", event = "VeryLazy" },
-
-  { "Eandrju/cellular-automaton.nvim", event = "VeryLazy" },
+  { "tpope/vim-repeat", event = "BufReadPost" },
+  { "tpope/vim-speeddating", event = "BufReadPost" },
 
   -- Code completion (no native `autotrigger` option, so just use `cmd`
   -- so that it is not triggered automatically on Neovim startup)
