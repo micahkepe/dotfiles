@@ -9,6 +9,9 @@ o.undodir = os.getenv "HOME" .. "/.vim/undodir"
 -- Auto restore and save undo history on buffer reads and writes
 o.undofile = true
 
+-- :h fuzzy-matching
+vim.cmd "set completeopt+=fuzzy"
+
 -- Git diff
 o.diffopt = "algorithm:histogram"
 

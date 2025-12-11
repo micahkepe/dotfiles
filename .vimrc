@@ -28,6 +28,9 @@ set shortmess+=I
 set number
 set relativenumber
 
+" Enable fuzzy matching
+set completeopt+=fuzzy
+
 " Always show the status line at the bottom, even if you only have one window
 " open.
 set laststatus=2
