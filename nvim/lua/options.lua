@@ -40,6 +40,13 @@ opt.inccommand = "split" -- show live preview of substitute commands
 -- disable swapfile
 opt.swapfile = false
 
+-- use visual bell over beeping because why would I want that ¯\_(ツ)_/¯
+o.visualbell = true
+
+opt.listchars = "tab:^ ,nbsp:¬,extends:»,precedes:«,trail:•"
+
+o.signcolumn = "yes"
+
 -- clipboard
 opt.clipboard:append "unnamedplus"
 
