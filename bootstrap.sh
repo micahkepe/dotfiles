@@ -204,7 +204,6 @@ symlink "$DOTFILES_DIR"/fish "$HOME"/.config/fish
 symlink "$DOTFILES_DIR"/tmux/.tmux.conf "$HOME"/.tmux.conf
 symlink "$DOTFILES_DIR"/spotify-player "$HOME"/.config/spotify-player
 symlink "$DOTFILES_DIR"/ghostty "$HOME"/.config/ghostty
-symlink "$DOTFILES_DIR"/yazi "$HOME"/.config/yazi
 symlink "$DOTFILES_DIR"/mutt "$HOME"/.config/mutt
 symlink "$DOTFILES_DIR"/btop "$HOME"/.config/btop
 # add more here as needed
