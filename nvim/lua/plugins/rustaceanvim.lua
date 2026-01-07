@@ -15,6 +15,10 @@ return {
             },
             check = {
               command = "clippy",
+              workspace = false,
+              -- Uncomment to for larger repositories since clippy is slower than check
+              -- command = "check",
+              -- workspace = false,
             },
           },
         },
