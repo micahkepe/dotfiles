@@ -130,6 +130,7 @@ local appShortcuts = {
 	m = "Spotify", -- music
 	s = "Slack",
 	y = "Finder", -- can't think of better shortcut key oops
+	t = "Notion", -- "todos"
 }
 
 for shortcut, app in pairs(appShortcuts) do
