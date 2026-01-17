@@ -59,6 +59,7 @@ Pseudocode
 QoL
 README
 REPL
+RGB
 RSA
 RStudio
 Recurse
@@ -79,6 +80,7 @@ UI
 URI
 URIs
 Unary
+Uncomment
 Unterminated
 Untracked
 VM
@@ -141,6 +143,7 @@ enums
 et al.
 et. al
 exponentiations
+extensibility
 factorizations
 favicon
 favicons
@@ -153,6 +156,7 @@ frontend
 gif
 github
 gitignore
+glyphs
 hashable
 hodge-podge
 https
@@ -175,6 +179,7 @@ latencies
 latexmk
 lexicographically
 lexing
+lifecycle
 lookahead
 lookarounds
 lookbehind
@@ -208,6 +213,7 @@ parsers
 pdflatex
 plaintext
 png
+polygons
 polymorphism
 postfix
 powerset
@@ -222,15 +228,19 @@ quadratically
 qubit
 qubit's
 qubits
+rasterizing
 raycast's
 raycasts
 reachability
 rebalance
+rebase
 reflexivity
 rematerializable
 rematerialization
 represents
 reproducibility
+resize
+resizing
 runnable
 runtime
 satisfiability
@@ -274,6 +284,7 @@ treesitter
 truncatable
 unary
 unescaped
+unintuitive
 unitarity
 unoptimized
 unordered
@@ -292,15 +303,5 @@ whitespace
 wikipedia
 wildcard
 wildcards
-x86
-unintuitive
-Uncomment
 workspace
-extensibility
-lifecycle
-polygons
-rasterizing
-glyphs
-RGB
-resize
-resizing
+x86
