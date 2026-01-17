@@ -13,4 +13,9 @@ return {
     i(2, "email@example.com"),
     t { ">" },
   }),
+
+  -- that's a me
+  s({ trig = "me", desc = "well, of course i know him. he's me." }, {
+    t { "micahkepe <micahkepe@gmail.com>" },
+  }),
 }
