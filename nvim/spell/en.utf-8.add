@@ -93,6 +93,7 @@ Workspaces
 XPath
 YouCompleteMe
 Zsh
+affine
 algorithmically
 allocator
 ancilla
@@ -137,6 +138,7 @@ didn’t
 disambiguates
 disjunction
 dotfiles
+draggable
 enqueue
 enum
 enums
@@ -228,6 +230,7 @@ quadratically
 qubit
 qubit's
 qubits
+radians
 rasterizing
 raycast's
 raycasts

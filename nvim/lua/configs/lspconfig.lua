@@ -13,6 +13,7 @@ local servers = {
   "gdscript",
   "texlab",
   "jdtls",
+  "wgsl-analyzer",
 }
 
 for _, lsp in ipairs(servers) do
