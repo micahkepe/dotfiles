@@ -14,6 +14,7 @@ local servers = {
   "texlab",
   "jdtls",
   "wgsl-analyzer",
+  "protols",
 }
 
 for _, lsp in ipairs(servers) do
