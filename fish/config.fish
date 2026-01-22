@@ -126,6 +126,9 @@ export MANPAGER='nvim +Man!'
 # GPG
 export GPG_TTY=$(tty)
 
+# Show color for ANSI color escapes
+export LESS='-R'
+
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH

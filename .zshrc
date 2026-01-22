@@ -213,5 +213,8 @@ export EDITOR="nvim"
 # Use Neovim for man pages
 export MANPAGER='nvim +Man!'
 
+# Show color for ANSI color escapes
+export LESS='-R'
+
 # GPG
 export GPG_TTY=$(tty)

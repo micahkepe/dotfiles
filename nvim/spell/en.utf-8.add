@@ -55,6 +55,7 @@ OpenAI
 OpenAPI
 Popup
 Postfix
+ProtoBuf
 Pseudocode
 QoL
 README
@@ -99,6 +100,7 @@ allocator
 ancilla
 ansatz
 async
+autofill
 automata
 backend
 backends
@@ -132,6 +134,7 @@ decrypts
 deque
 dequeue
 dereference
+deserializer
 determinization
 determinized
 didn’t
@@ -164,6 +167,7 @@ hodge-podge
 https
 if
 ignorecase
+implementers
 inclusive
 init
 injective
@@ -249,6 +253,7 @@ runtime
 satisfiability
 schemas
 selectivity
+serializer
 shader
 shaders
 sioyek

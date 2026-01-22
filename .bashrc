@@ -97,5 +97,8 @@ export EDITOR="nvim"
 GPG_TTY=$(tty)
 export GPG_TTY
 
+# Show color for ANSI color escapes
+export LESS='-R'
+
 # Use Neovim for man pages
 export MANPAGER='nvim +Man!'
