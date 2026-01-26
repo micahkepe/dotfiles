@@ -16,7 +16,7 @@
 #   tmux-sessionizer.sh
 #
 #  Effects:
-#   - prompted with fzf menu to select the target diretory if not passed in
+#   - prompted with fzf menu to select the target directory if not passed in
 #   - a new tmux session will be created with the truncated path as the name
 
 if [[ $# -eq 1 ]]; then

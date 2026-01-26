@@ -219,6 +219,7 @@ exec-dry-run chmod +x "$DOTFILES_DIR"/tmux/tmux-sessionizer.sh
 exec-dry-run chmod +x "$DOTFILES_DIR"/tmux/session-fzf.sh
 exec-dry-run chmod +x "$DOTFILES_DIR"/tmux/is-vim.sh
 exec-dry-run symlink "$DOTFILES_DIR"/tmux/tmux-sessionizer.sh "$HOME"/.local/bin/tmux-sessionizer
+exec-dry-run symlink "$DOTFILES_DIR"/tmux/tmux-worktreeizer.sh "$HOME"/.local/bin/tmux-worktreeizer
 exec-dry-run chmod +x "$DOTFILES_DIR"/latex/latex-template.sh
 exec-dry-run symlink "$DOTFILES_DIR"/latex/latex-template.sh "$HOME"/.local/bin/latex-template
 echo "Local scripts made executeable!"
