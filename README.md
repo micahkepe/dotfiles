@@ -84,6 +84,9 @@ cd ~/.dotfiles && ./bootstrap.sh
 
 ## Other Goodies
 
+- [Stylus](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne?hl=en)
+  - [Catppuccin Gmail](https://userstyles.world/style/16722/catppuccin-gmail)
+
 - MacOS:
   - [AutoRaise](https://github.com/sbmpost/AutoRaise) &rarr; "follows focus
     mouse" behavior for MacOS
