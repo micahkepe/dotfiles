@@ -272,4 +272,10 @@ fi
 # FNM install
 exec-dry-run curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell
 
+# uv install
+exec-dry-run curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# pynvim install
+exec-dry-run uv tool install --upgrade pynvim
+
 echo "Bootstrap script complete!"
