@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 # Create a new tmux session for a chosen worktree.
+#
+# TODO:
+# - Nice preview of branches
+# - Idempotent worktree switching --> if select worktree already in use, just
+#   switch to it
+# - Display remote branches as well in picker, and if selected, it "just works"
+#   --> set up refs behind the scenes
 
 if ! (git rev-parse --is-inside-worktree) >/dev/null 2>&1; then
   echo "Error: Not inside of a git directory."
