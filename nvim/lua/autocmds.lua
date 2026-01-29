@@ -29,3 +29,17 @@ autocmd("TextYankPost", {
     vim.hl.on_yank()
   end,
 })
+
+-- Enable treesitter highlighting on file open
+-- See: https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#highlighting
+autocmd("FileType", {
+  callback = function(args)
+    -- Disable on large files
+    local max_filesize = 100 * 1024 -- 100 KB
+    local ok, stats = pcall(vim.uv.fs_stat, vim.api.nvim_buf_get_name(args.buf))
+    if ok and stats and stats.size > max_filesize then
+      return
+    end
+    pcall(vim.treesitter.start)
+  end,
+})
