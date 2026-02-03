@@ -36,8 +36,9 @@ macos-secure-input-indication = true
 clipboard-trim-trailing-spaces = true
 confirm-close-surface = false
 quit-after-last-window-closed = true
-mouse-shift-capture = true
+mouse-shift-capture = false
 link-url = true
+link-previews = true
 
 # Shell Integration
 #   https://ghostty.org/docs/config/reference#shell-integration-features
