@@ -327,4 +327,9 @@ return {
     config = true,
     event = "VeryLazy",
   },
+
+  {
+    "nvim-tree/nvim-tree.lua",
+    enabled = false,
+  },
 }

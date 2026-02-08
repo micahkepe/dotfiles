@@ -1,6 +1,11 @@
 require "nvchad.mappings"
 
 local map = vim.keymap.set
+local del = vim.keymap.del
+
+-- remove nvim-tree mappings from NvChad defaults
+del("n", "<C-n>")
+del("n", "<leader>e")
 
 -- override NvChad mappings for window navigation so I can use them for
 -- vim-tmux-navigator
