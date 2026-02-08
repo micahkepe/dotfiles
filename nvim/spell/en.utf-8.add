@@ -25,6 +25,7 @@ Decrypted
 Destructor
 Determinization
 Determinize
+Determinizing
 Djikstra's
 GDScript
 Glushkov
@@ -138,6 +139,8 @@ dereference
 deserializer
 determinization
 determinized
+determinizes
+determinizing
 didn’t
 disambiguates
 disjunction
@@ -244,6 +247,7 @@ reachability
 rebalance
 rebase
 reflexivity
+regexes
 rematerializable
 rematerialization
 represents
@@ -266,6 +270,7 @@ stateful
 strategy
 struct
 structs
+subcommand
 subformulas
 submodules
 subschemas
