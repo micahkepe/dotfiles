@@ -10,19 +10,10 @@ return {
       wilder.setup { modes = { ":" } }
       wilder.set_option("pipeline", {
         wilder.branch(
-          wilder.python_file_finder_pipeline {
-            file_command = function(_, arg)
-              if string.find(arg, ".") ~= nil then
-                return { "fd", "-tf", "-H" }
-              else
-                return { "fd", "-tf" }
-              end
-            end,
-            dir_command = { "fd", "-td" },
-            filters = { "fuzzy_filter", "difflib_sorter" },
+          wilder.cmdline_pipeline {
+            fuzzy = 1,
           },
-          wilder.cmdline_pipeline(),
-          wilder.python_search_pipeline()
+          wilder.vim_search_pipeline()
         ),
       })
 

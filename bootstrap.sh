@@ -1,5 +1,4 @@
-#!/bin/bash
-
+#!/usr/bin/env bash
 # DESCRIPTION : Sets up dotfiles repository with symlinks. Additionally, gives
 # prompts for installing Homebrew and Git.
 #
@@ -12,9 +11,7 @@
 # Usage:
 #   ./bootstrap.sh [--dry-run]
 #
-# AUTHOR      : Micah Kepe
-# DATE        : 2024-12-26
-# UPDATED     : 2025-08-22
+# AUTHOR: Micah Kepe <micahkepe@gmail.com>
 
 DRY_RUN=false
 
@@ -115,7 +112,7 @@ fi
 ## Set up dotfiles repository
 echo "Step 2/9: Setting up dotfiles repository..."
 
-# Set the dotfiles directory to `.dotfiles/` in the `$HOME` directory
+# Set the dotfiles directory to `dotfiles/` in the `$HOME` directory
 DOTFILES_DIR=$HOME/dotfiles
 
 # Creating the dotfiles repository if it doesn't exist
@@ -274,8 +271,5 @@ exec-dry-run curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell
 
 # uv install
 exec-dry-run curl -LsSf https://astral.sh/uv/install.sh | sh
-
-# pynvim install
-exec-dry-run uv tool install --upgrade pynvim
 
 echo "Bootstrap script complete!"
