@@ -30,8 +30,36 @@ if [[ -z $branch ]]; then
   exit 0
 fi
 
-WORKTREE_NAME="$REPO_NAME-$(echo "$branch" | tr / -)"
-WORKTREE_PATH="$GIT_DIR/../$WORKTREE_NAME"
+# Setup the worktree name
+base="${branch##*/}"
+
+# Grab a leading ticket like ENG-1234 / eng-1234
+ticket="$(printf '%s\n' "$base" | grep -oE '^[[:alpha:]]+-[0-9]+' || true)"
+
+if [[ -n "$ticket" ]]; then
+  # Remove "<ticket>-" prefix
+  rest="${base#"$ticket"-}"
+
+  # Take first 3 dash-separated words
+  short_rest="$(printf '%s\n' "$rest" | cut -d- -f1-3)"
+
+  WORKTREE_NAME="${ticket}-${short_rest}"
+else
+  # No ticket: just take first 4 words of base (or cap length)
+  WORKTREE_NAME="$(printf '%s\n' "$base" | cut -d- -f1-4)"
+fi
+
+# Normalize to lowercase
+WORKTREE_NAME="$(printf '%s\n' "$WORKTREE_NAME" | tr '[:upper:]' '[:lower:]')"
+
+# Truncate to 40 characters
+WORKTREE_NAME="${WORKTREE_NAME:0:40}"
+
+# Store worktrees in a separate directory alongside the git repo
+WORKTREES_DIR="$GIT_DIR/../$REPO_NAME-worktrees/"
+mkdir -p "$WORKTREES_DIR"
+
+WORKTREE_PATH="$WORKTREES_DIR/$WORKTREE_NAME"
 
 OUTPUT=$(git worktree add "$WORKTREE_PATH" "$branch" 2>&1) || {
   echo "Error: unable to create worktree."
