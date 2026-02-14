@@ -56,19 +56,46 @@ WORKTREE_NAME="$(printf '%s\n' "$WORKTREE_NAME" | tr '[:upper:]' '[:lower:]')"
 WORKTREE_NAME="${WORKTREE_NAME:0:40}"
 
 # Store worktrees in a separate directory alongside the git repo
-WORKTREES_DIR="$GIT_DIR/../$REPO_NAME-worktrees/"
+WORKTREES_DIR=$(realpath "$GIT_DIR/../$REPO_NAME-worktrees/")
 mkdir -p "$WORKTREES_DIR"
 
-WORKTREE_PATH="$WORKTREES_DIR/$WORKTREE_NAME"
+CANONICAL_WORKTREE_PATH="$WORKTREES_DIR/$WORKTREE_NAME"
 
-OUTPUT=$(git worktree add "$WORKTREE_PATH" "$branch" 2>&1) || {
-  echo "Error: unable to create worktree."
-  echo ""
-  echo "$OUTPUT"
-  exit 1
-}
+# ---- Idempotent worktree switching ----
+# If a worktree already exists for this branch, reuse it.
+# git worktree list --porcelain has repeated blocks like:
+# worktree <path>
+# HEAD <sha>
+# branch refs/heads/<name>
+existing_path="$(
+  git worktree list --porcelain |
+    awk -v want="refs/heads/$branch" '
+      $1=="worktree" { wt=$2 }
+      $1=="branch" && $2==want { print wt; exit }
+    '
+)"
 
-tmux_running=$(pgrep tmux)
+if [[ -n "$existing_path" ]]; then
+  WORKTREE_PATH="$existing_path"
+else
+  WORKTREE_PATH="$CANONICAL_WORKTREE_PATH"
+
+  # If directory exists but isn't a registered worktree, fail loudly to avoid clobbering.
+  if [[ -e "$WORKTREE_PATH" ]]; then
+    echo "Error: $WORKTREE_PATH exists but is not an existing worktree for $branch."
+    echo "Move/remove it, or pick a different naming scheme."
+    exit 1
+  fi
+
+  OUTPUT=$(git worktree add "$WORKTREE_PATH" "$branch" 2>&1) || {
+    echo "Error: unable to create worktree."
+    echo ""
+    echo "$OUTPUT"
+    exit 1
+  }
+fi
+
+tmux_running=$(pgrep tmux || true)
 
 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
   tmux new-session -s "$WORKTREE_NAME" -c "$WORKTREE_PATH"
