@@ -1,6 +1,47 @@
 #!/usr/bin/env bash
 
-# Create a new tmux session for a chosen worktree.
+# Auto-magical tmux session creation for a chosen worktree.
+#
+# Usage:
+#   $ tmux-worktreeizer.sh
+#
+# Description:
+#
+#   For ease of use, symlink this script to a directory in your PATH, e.g.:
+#
+#   $ ln -s ~/path/to/tmux-worktreeizer ~/.local/bin/tmux-worktreeizer
+#
+#   Then you can simply run with `tmux-worktreeizer`
+#
+# Effects:
+#   - prompted with fzf menu to select the target branch
+#   - a new tmux session will be created with the truncated branch name as the
+#     name
+#
+# Example:
+#
+#   Say we are currently in the repo root at ~/my-repo and we are on `main`
+#   branch.
+#
+#   $ tmux-worktreeizer
+#
+#   You will then be prompted with fzf to select the branch you want to work on:
+#
+#   ```
+#   main
+#   feature/foo
+#   feature/bar
+#   ...
+#   worktree branch> ▮
+#   ```
+#
+#   You can then select the branch you want to work on, and a new tmux session
+#   will be created with the truncated branch name as the name.
+#
+#   The worktree will be created in a directory next to the repo root, e.g.:
+#   ~/my-repo/my-repo-worktrees/main
+#
+#   If the worktree already exists, it will be reused (idempotent switching).
 
 if ! (git rev-parse --is-inside-worktree) >/dev/null 2>&1; then
   echo "Error: Not inside of a git directory."
@@ -14,11 +55,9 @@ COMMON_GIT_DIR="$(git rev-parse --path-format=absolute --git-common-dir)"
 REPO_ROOT="$(cd "$COMMON_GIT_DIR/.." && pwd)"
 REPO_NAME="$(basename "$REPO_ROOT")"
 
-current_branch="$(git branch --show-current)"
-
 # ---- Build branch list: local + remote-only ----
 # Single-pass: collect local and remote branches, diff them with comm
-local_branches="$(git branch --format='%(refname:short)' | grep -v -x "$current_branch" || true)"
+local_branches="$(git branch --format='%(refname:short)' || true)"
 
 remote_only="$(
   comm -23 \
@@ -28,8 +67,6 @@ remote_only="$(
       sort -u) \
     <(git branch --format='%(refname:short)' | sort -u)
 )"
-# Also exclude current branch from remote-only
-remote_only="$(printf '%s\n' "$remote_only" | grep -v -x "$current_branch" || true)"
 
 branches="$(
   {
@@ -46,11 +83,9 @@ if [[ -z $selection ]]; then
   exit 0
 fi
 
-# Strip the "remote: " prefix if present and note it was remote-only
-is_remote=false
+# Strip the "remote: " prefix if present
 if [[ "$selection" == remote:\ * ]]; then
   branch="${selection#remote: }"
-  is_remote=true
 else
   branch="$selection"
 fi
