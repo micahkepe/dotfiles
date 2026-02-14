@@ -48,6 +48,9 @@ if ! (git rev-parse --is-inside-worktree) >/dev/null 2>&1; then
   exit 1
 fi
 
+# Update/cleanup refs
+git fetch --quiet --prune
+
 # Stable base: the common git dir (shared across worktrees)
 COMMON_GIT_DIR="$(git rev-parse --path-format=absolute --git-common-dir)"
 
