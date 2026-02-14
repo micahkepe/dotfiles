@@ -4,6 +4,8 @@ vim.g.mapleader = " "
 -- bootstrap lazy and all plugins
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
+-- Taken from: https://lazy.folke.io/installation
+---@diagnostic disable-next-line: undefined-field
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
   local out = vim.fn.system {
@@ -30,6 +32,7 @@ vim.opt.rtp:prepend(lazypath)
 local lazy_config = require "configs.lazy"
 
 -- load plugins
+---@diagnostic disable-next-line: different-requires
 require("lazy").setup({
   {
     "NvChad/NvChad",
@@ -57,6 +60,6 @@ end)
 -- allow external applications to connect to Neovim
 -- taken from: https://ericlathrop.com/2024/02/configuring-neovim-s-lsp-to-work-with-godot/
 local pipepath = vim.fn.stdpath "cache" .. "/server.pipe"
-if not vim.loop.fs_stat(pipepath) then
+if not vim.uv.fs_stat(pipepath) then
   vim.fn.serverstart(pipepath)
 end

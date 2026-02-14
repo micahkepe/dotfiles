@@ -176,6 +176,7 @@ fixpoint
 formalisms
 foundational
 frontend
+fzf
 gif
 github
 gitignore
@@ -296,6 +297,7 @@ subsubsection
 subtree
 subtrees
 swapfile
+symlink
 symlinks
 syntex
 technicals
@@ -340,5 +342,6 @@ wikipedia
 wildcard
 wildcards
 workspace
+worktree
 worktrees
 x86

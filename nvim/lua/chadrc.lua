@@ -76,6 +76,7 @@ M.nvdash = {
 
     {
       txt = function()
+        ---@diagnostic disable-next-line: different-requires
         local stats = require("lazy").stats()
         local ms = math.floor(stats.startuptime) .. " ms"
         return "  Loaded "
