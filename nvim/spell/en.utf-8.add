@@ -1,3 +1,4 @@
+2D
 8-bit
 AST
 AVL
@@ -10,6 +11,7 @@ Bitmask
 Brewfile
 CLI
 CSV
+Caddyfile
 Catppuccin
 Cityspace
 Codegen
@@ -27,6 +29,8 @@ Determinization
 Determinize
 Determinizing
 Djikstra's
+Downsampling
+Femtofarads
 GDScript
 Glushkov
 Glushkov's
@@ -50,19 +54,24 @@ Multivariable
 Mutexes
 NFA
 NFAs
+Nanometers
 Neovim
 NvChad
 Ok
 OpenAI
 OpenAPI
+Picofarads
 Popup
 Postfix
+Preprocess
 ProtoBuf
 Pseudocode
 QoL
+Quantization
 README
 REPL
 RGB
+RGBA
 RSA
 RStudio
 Recurse
@@ -84,12 +93,12 @@ URI
 URIs
 Unary
 Uncomment
+Unprocessable
 Unterminated
 Untracked
 VM
 VSCode
 VimTeX
-VimTex
 Vundle
 Whiteboarding
 Workspaces
@@ -137,6 +146,7 @@ deque
 dequeue
 dereference
 deserializer
+despawned
 determinization
 determinized
 determinizes
@@ -145,7 +155,10 @@ didn’t
 disambiguates
 disjunction
 dotfiles
+downsample
+downsampled
 draggable
+dropdown
 enqueue
 enum
 enums
@@ -156,6 +169,7 @@ extensibility
 factorizations
 favicon
 favicons
+filename
 filetype
 filetypes
 fixpoint
@@ -236,6 +250,8 @@ projective
 pseudocode
 pushdown
 quadratically
+quantize
+quantized
 qubit
 qubit's
 qubits
@@ -250,6 +266,7 @@ reflexivity
 regexes
 rematerializable
 rematerialization
+reparent
 represents
 reproducibility
 resize
@@ -290,11 +307,13 @@ textbf
 there
 throughput
 timestamp
+timestamped
 timestamps
 tmux
 tokenization
 tokenizer
 tokenizers
+tooltip
 treesitter
 truncatable
 unary
@@ -307,8 +326,10 @@ unresolvable
 unsized
 utf
 validator
+validators
 variational
 venv
+versioning
 viewport
 vimtex
 walkthrough
@@ -319,4 +340,5 @@ wikipedia
 wildcard
 wildcards
 workspace
+worktrees
 x86
