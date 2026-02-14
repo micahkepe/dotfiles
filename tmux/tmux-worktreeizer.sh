@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
+
 # Create a new tmux session for a chosen worktree.
 #
 # TODO:
-# - Nice preview of branches
-# - Idempotent worktree switching --> if select worktree already in use, just
-#   switch to it
 # - Display remote branches as well in picker, and if selected, it "just works"
 #   --> set up refs behind the scenes
 
@@ -13,18 +11,16 @@ if ! (git rev-parse --is-inside-worktree) >/dev/null 2>&1; then
   exit 1
 fi
 
-GIT_DIR=$(git rev-parse --show-toplevel)
-REPO_NAME=$(basename "$GIT_DIR")
+# Stable base: the common git dir (shared across worktrees)
+COMMON_GIT_DIR="$(git rev-parse --path-format=absolute --git-common-dir)"
 
-# Update from the remote to ensure up-to-date
-git fetch --quiet
+# Repo "root" is the parent of the common .git dir
+REPO_ROOT="$(cd "$COMMON_GIT_DIR/.." && pwd)"
+REPO_NAME="$(basename "$REPO_ROOT")"
 
-current_branch=$(git branch --show-current)
-branch=$(
-  FZF_TMUX=1 git branch --format='%(refname:short)' |
-    grep -v "^$current_branch$" |
-    fzf
-)
+current_branch="$(git branch --show-current)"
+branches="$(git branch --format='%(refname:short)' | grep -v -x "$current_branch" || true)"
+branch="$(printf '%s\n' "$branches" | fzf)"
 
 if [[ -z $branch ]]; then
   exit 0
@@ -55,8 +51,8 @@ WORKTREE_NAME="$(printf '%s\n' "$WORKTREE_NAME" | tr '[:upper:]' '[:lower:]')"
 # Truncate to 40 characters
 WORKTREE_NAME="${WORKTREE_NAME:0:40}"
 
-# Store worktrees in a separate directory alongside the git repo
-WORKTREES_DIR=$(realpath "$GIT_DIR/../$REPO_NAME-worktrees/")
+# Store worktrees next to the repo root (stable across worktrees)
+WORKTREES_DIR="$(cd "$REPO_ROOT/.." && pwd)/${REPO_NAME}-worktrees"
 mkdir -p "$WORKTREES_DIR"
 
 CANONICAL_WORKTREE_PATH="$WORKTREES_DIR/$WORKTREE_NAME"
@@ -95,21 +91,35 @@ else
   }
 fi
 
+# ---- Find or create tmux session for this worktree ----
+
+# Check if any existing tmux session is already rooted at this worktree path.
+# This handles the case where e.g. main is checked out at REPO_ROOT itself.
+existing_session="$(
+  tmux list-sessions -F '#{session_name}:#{session_path}' 2>/dev/null |
+    while IFS=: read -r sname spath; do
+      if [[ "$(cd "$spath" 2>/dev/null && pwd)" == "$(cd "$WORKTREE_PATH" 2>/dev/null && pwd)" ]]; then
+        printf '%s' "$sname"
+        break
+      fi
+    done
+)" || true
+
+SESSION_NAME="${existing_session:-$WORKTREE_NAME}"
+
 tmux_running=$(pgrep tmux || true)
 
 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-  tmux new-session -s "$WORKTREE_NAME" -c "$WORKTREE_PATH"
+  tmux new-session -s "$SESSION_NAME" -c "$WORKTREE_PATH"
   exit 0
 fi
 
-# create new session if name doesn't exist
-if ! tmux has-session -t="$WORKTREE_NAME" 2>/dev/null; then
-  tmux new-session -ds "$WORKTREE_NAME" -c "$WORKTREE_PATH"
+if ! tmux has-session -t="$SESSION_NAME" 2>/dev/null; then
+  tmux new-session -ds "$SESSION_NAME" -c "$WORKTREE_PATH"
 fi
 
 if [[ -n $TMUX ]]; then
-  tmux switch-client -t "$WORKTREE_NAME"
+  tmux switch-client -t "$SESSION_NAME"
 else
-  # if running outside of tmux, attach to the new session
-  tmux attach-session -t "$WORKTREE_NAME"
+  tmux attach-session -t "$SESSION_NAME"
 fi
