@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
 
 # Create a new tmux session for a chosen worktree.
-#
-# TODO:
-# - Display remote branches as well in picker, and if selected, it "just works"
-#   --> set up refs behind the scenes
 
 if ! (git rev-parse --is-inside-worktree) >/dev/null 2>&1; then
   echo "Error: Not inside of a git directory."
@@ -19,8 +15,45 @@ REPO_ROOT="$(cd "$COMMON_GIT_DIR/.." && pwd)"
 REPO_NAME="$(basename "$REPO_ROOT")"
 
 current_branch="$(git branch --show-current)"
-branches="$(git branch --format='%(refname:short)' | grep -v -x "$current_branch" || true)"
-branch="$(printf '%s\n' "$branches" | fzf)"
+
+# ---- Build branch list: local + remote-only ----
+# Single-pass: collect local and remote branches, diff them with comm
+local_branches="$(git branch --format='%(refname:short)' | grep -v -x "$current_branch" || true)"
+
+remote_only="$(
+  comm -23 \
+    <(git branch -r --format='%(refname:short)' |
+      sed 's|^[^/]*/||' |
+      grep -v '^HEAD$' |
+      sort -u) \
+    <(git branch --format='%(refname:short)' | sort -u)
+)"
+# Also exclude current branch from remote-only
+remote_only="$(printf '%s\n' "$remote_only" | grep -v -x "$current_branch" || true)"
+
+branches="$(
+  {
+    printf '%s\n' "$local_branches"
+    if [[ -n "$remote_only" ]]; then
+      printf '%s\n' "$remote_only" | sed 's/^/remote: /'
+    fi
+  } | grep -v '^$'
+)"
+
+selection="$(printf '%s\n' "$branches" | fzf --prompt="worktree branch> ")"
+
+if [[ -z $selection ]]; then
+  exit 0
+fi
+
+# Strip the "remote: " prefix if present and note it was remote-only
+is_remote=false
+if [[ "$selection" == remote:\ * ]]; then
+  branch="${selection#remote: }"
+  is_remote=true
+else
+  branch="$selection"
+fi
 
 if [[ -z $branch ]]; then
   exit 0
