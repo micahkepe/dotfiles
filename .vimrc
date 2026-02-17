@@ -154,6 +154,8 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'machakann/vim-highlightedyank'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 let g:lightline = { 'colorscheme': 'gruvbox' }
 let g:highlightedyank_highlight_duration = 100
 call plug#end()
