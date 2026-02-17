@@ -325,11 +325,17 @@ return {
   {
     "GCBallesteros/jupytext.nvim",
     config = true,
-    event = "VeryLazy",
+    ft = "*.ipynb",
+  },
+
+  -- NvChad default plugins I don't use -> disable to clean up plugin table
+  {
+    "nvim-tree/nvim-tree.lua",
+    enabled = false,
   },
 
   {
-    "nvim-tree/nvim-tree.lua",
+    "nvim-telescope/telescope.nvim",
     enabled = false,
   },
 }
