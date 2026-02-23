@@ -155,11 +155,6 @@ return {
     "kylechui/nvim-surround",
     version = "*", -- latest version
     event = "VeryLazy",
-    config = function()
-      require("nvim-surround").setup {
-        -- Configuration here, or leave empty to use defaults
-      }
-    end,
   },
 
   { "mbbill/undotree", lazy = true, cmd = "UndotreeToggle" }, -- see undo tree
