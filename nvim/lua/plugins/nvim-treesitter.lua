@@ -19,6 +19,7 @@ return {
       }
     end,
     opts = {
+      highlight = { enable = false },
       ensure_installed = {
         "json",
         "javascript",
