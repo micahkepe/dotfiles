@@ -5,7 +5,7 @@ local M = {}
 
 -- colorscheme
 M.base46 = {
-  theme = "palenight",
+  theme = "gruvbox",
   transparency = false,
   hl_override = {
     -- override comment highlighting to be more visible
@@ -17,6 +17,11 @@ M.base46 = {
 
     -- Color column ruler
     ["ColorColumn"] = { fg = "#676e95", bg = "none" },
+  },
+
+  -- snacks.nvim w/ gruvbox has atrocious contrast in the file listing
+  hl_add = {
+    ["SnacksPickerDir"] = { fg = "#a89984" },
   },
 }
 

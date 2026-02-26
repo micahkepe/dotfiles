@@ -333,4 +333,6 @@ return {
     "nvim-telescope/telescope.nvim",
     enabled = false,
   },
+
+  { "itchyny/lightline.vim", event = "VeryLazy" },
 }

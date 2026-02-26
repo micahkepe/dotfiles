@@ -93,3 +93,16 @@ vim.keymap.set("c", "%s/", "%sm/")
 --
 -- When debugging a language server, comment this line out to start logging
 vim.lsp.set_log_level "OFF"
+
+-- add providers to Neovim runtime
+vim.schedule(function()
+  local enable_providers = {
+    "python3_provider",
+    "node_provider",
+    -- and so on
+  }
+  for _, plugin in pairs(enable_providers) do
+    vim.g["loaded_" .. plugin] = nil
+    vim.cmd("runtime " .. plugin)
+  end
+end)
