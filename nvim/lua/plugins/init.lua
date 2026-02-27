@@ -335,4 +335,6 @@ return {
   },
 
   { "itchyny/lightline.vim", event = "VeryLazy" },
+
+  { "tpope/vim-fugitive", event = "VeryLazy" },
 }
