@@ -9,92 +9,92 @@
 ##
 ################################################################################
 [user]
-  name = Micah Kepe
-  email = micahkepe@gmail.com
-  signingkey = 0CA0E777FE959BE23D99563A290BC0FA832F2CBF
+	name = Micah Kepe
+	email = micahkepe@gmail.com
+	signingkey = 0CA0E777FE959BE23D99563A290BC0FA832F2CBF
 
 [commit]
-  gpgSign = true
-  verbose = true
+	gpgSign = true
+	verbose = true
 
 [core]
-  autocrlf = input
-  excludesfile = ~/.gitignore_global
-  editor = nvim
-  pager = diff-so-fancy | less --tabs=4 -RF
-  preloadIndex = true
-  compression = 9
-  whitespace = trailing-space
+	autocrlf = input
+	excludesfile = ~/.gitignore_global
+	editor = nvim
+	pager = diff-so-fancy | less --tabs=4 -RF
+	preloadIndex = true
+	compression = 9
+	whitespace = trailing-space
 
 [alias]
-  graph = log --all --graph --decorate --oneline
-  l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-  ignore = "!gi() { local IFS=','; curl -sL https://www.toptal.com/developers/gitignore/api/\"$*\"; }; gi"
-  open = "!git remote get-url origin | xargs open"
+	graph = log --all --graph --decorate --oneline
+	l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	ignore = "!gi() { local IFS=','; curl -sL https://www.toptal.com/developers/gitignore/api/\"$*\"; }; gi"
+	open = "!git remote get-url origin | xargs open"
 
 [branch]
-  sort = -committerdate
+	sort = -committerdate
 
 [tag]
-  sort = -version:refname
+	sort = -version:refname
 
 [column]
-  ui = auto
+	ui = auto
 
 [diff]
-  algorithm = histogram
-  mnemonicPrefix = true
+	algorithm = histogram
+	mnemonicPrefix = true
 	tool = vimdiff
 
 [fetch]
-  prune = true
+	prune = true
 
 [pull]
-  rebase = true
+	rebase = true
 
 [rebase]
-  missingCommitsCheck = warn
-  autoSquash = true
+	missingCommitsCheck = warn
+	autoSquash = true
 
 [init]
-  defaultBranch = main
+	defaultBranch = main
 
 [push]
-  autoSetupRemote = true
+	autoSetupRemote = true
 
 [http]
-  postBuffer = 157286400
+	postBuffer = 157286400
 
 [status]
-  branch = true
-  showStash = true
+	branch = true
+	showStash = true
 
 [filter "lfs"]
-  required = true
-  clean = git-lfs clean -- %f
-  smudge = git-lfs smudge -- %f
-  process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
 
 [interactive]
-  diffFilter = diff-so-fancy --patch
-  singlekey = true
+	diffFilter = diff-so-fancy --patch
+	singlekey = true
 
 [credential "https://git.overleaf.com"]
-  username = micahkepe@gmail.com
-  helper = store
+	username = micahkepe@gmail.com
+	helper = store
 
 [maintenance]
-  auto = true
-  strategy = incremental
+	auto = true
+	strategy = incremental
 
 [rerere]
-  enabled = true
+	enabled = true
 
 [help]
-  autocorrect = prompt
+	autocorrect = prompt
 
 [credential "https://github.com"]
-	helper = !gh auth git-credential
+  helper = !gh auth git-credential
 
 [credential "https://gist.github.com"]
 	helper = !gh auth git-credential
