@@ -336,3 +336,6 @@ map(
 
 -- Clear ALL buffers
 map("n", "<leader>Cb", ":bufdo bd<CR>", { desc = "Clear all buffers" })
+
+-- Zen mode (w/ Goyo)
+map("n", "<leader>z", ":Goyo<CR>", { desc = "Toggle Zen mode" })
