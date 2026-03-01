@@ -152,8 +152,12 @@ return {
   },
 
   {
+    "tpope/vim-surround",
+    event = "VeryLazy",
+  },
+
+  {
     "kylechui/nvim-surround",
-    version = "*", -- latest version
     event = "VeryLazy",
   },
 
