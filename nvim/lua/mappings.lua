@@ -189,11 +189,11 @@ map("n", "<leader>u", ":UndotreeToggle<cr>", { desc = "Toggle undo tree" })
 map("n", "j", "(v:count ? 'j' : 'gj')", { expr = true })
 map("n", "k", "(v:count ? 'k' : 'gk')", { expr = true })
 
--- Autosession mappings
+-- AutoSession mappings
 map(
   "n",
   "<leader>ws",
-  "<cmd>SessionSave<CR>",
+  "<cmd>AutoSession save<CR>",
   { desc = "Save session for auto session root dir" }
 )
 map(
