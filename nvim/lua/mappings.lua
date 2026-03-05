@@ -26,8 +26,24 @@ map("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 -- Map <C-s> to save
 map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
--- Map mp to open markdown preview
-map("n", "<leader>mp", "<cmd>MarkdownPreview<cr>")
+-- Markdown previewing
+map(
+  "n",
+  "<leader>mp",
+  "<cmd>MarkdownPreview<cr>",
+  { desc = "Markdown Preview" }
+)
+
+-- Supermaven toggle
+map("n", "<leader>ai", function()
+  vim.cmd "SupermavenToggle"
+  local api = require "supermaven-nvim.api"
+  if api.is_running() then
+    vim.notify("Supermaven ON ✔", vim.log.levels.INFO)
+  else
+    vim.notify("Supermaven OFF ✘", vim.log.levels.INFO)
+  end
+end, { desc = "Toggle Supermaven completions" })
 
 -- Debugger mappings
 local dap_ok, dap = pcall(require, "dap")

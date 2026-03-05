@@ -287,7 +287,7 @@ return {
   -- so that it is not triggered automatically on Neovim startup)
   {
     "supermaven-inc/supermaven-nvim",
-    cmd = "SupermavenStart",
+    cmd = { "SupermavenStart", "SupermavenToggle" },
     config = function()
       require("supermaven-nvim").setup {
         keymaps = {
