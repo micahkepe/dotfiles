@@ -34,7 +34,7 @@
       url=$(git remote get-url origin); \
       url=$(echo \"$url\" \
         | sed -E 's#^git@([^:]+):#https://\\1/#; \
-                  s#^ssh://git@([^/]+)/#https://\\1/#; \
+                  s#^ssh://git@([^:/]+)(:[0-9]+)?/#https://\\1/#; \
                   s#\\.git$##'); \
       open \"$url\"; \
     }; f"
