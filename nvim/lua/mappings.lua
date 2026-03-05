@@ -6,6 +6,7 @@ local del = vim.keymap.del
 -- remove nvim-tree mappings from NvChad defaults
 del("n", "<C-n>")
 del("n", "<leader>e")
+del("n", "<leader>h")
 
 -- override NvChad mappings for window navigation so I can use them for
 -- vim-tmux-navigator
@@ -126,7 +127,6 @@ map(
 map("n", "<leader>v", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
 map("n", "<leader>sd", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
 map("n", "<leader>se", "<C-w>=", { desc = "Equalize splits" }) -- equalize split layouts
-map("n", "<leader>h", "<cmd>split<CR>", { desc = "Split window horizontally" }) -- split window horizontally
 
 -- maintain visual context on page navigation and searching
 map("n", "<C-d>", "<C-d>zz") -- Keeps cursor centered when going down the page
