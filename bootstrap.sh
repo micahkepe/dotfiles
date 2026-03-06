@@ -232,10 +232,6 @@ exec-dry-run mkdir -p "$HOME"/.tmux/plugins
 exec-dry-run git clone https://github.com/tmux-plugins/tpm "$HOME"/.tmux/plugins/tpm
 exec-dry-run tmux source "$HOME"/.tmux.conf
 
-# Catppuccin theme for tmux
-exec-dry-run mkdir -p ~/.config/tmux/plugins/catppuccin
-exec-dry-run git clone -b v2.1.3 https://github.com/catppuccin/tmux.git ~/.config/tmux/plugins/catppuccin/tmux
-
 # Rust install
 echo "Step 8/9: Installing Rust..."
 exec-dry-run curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
