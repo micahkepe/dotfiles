@@ -43,11 +43,6 @@ return {
         vim.o.linebreak = saved_opts.linebreak
         vim.o.textwidth = saved_opts.textwidth
 
-        -- Close any extra tabs Goyo left behind
-        while vim.fn.tabpagenr "$" > saved_opts.tabcount do
-          vim.cmd "tabclose"
-        end
-
         -- Reload NvChad highlights (clears the colorscheme damage),
         -- then re-setup ibl autocmds so ColorScheme works again.
         require("base46").load_all_highlights()
