@@ -16,10 +16,6 @@ defaults write com.apple.finder QuitMenuItem -bool true            # Show "Quit 
 defaults write com.apple.finder DisableAllAnimations -bool true    # Disable all animations
 defaults write com.apple.finder _FXSortFoldersFirst -bool true     # Sort folders before files
 
-# Keyboard
-defaults write -g InitialKeyRepeat -float 10.0 # normal minimum is 15 (225 ms)
-defaults write -g KeyRepeat -float 1.0         # normal minimum is 2 (30 ms)
-
 # Auto-hide Dock
 defaults write com.apple.dock autohide -bool true
 
@@ -38,6 +34,9 @@ defaults write com.apple.lookup.shared LookupSuggestionsDisabled -bool true
 
 # Disable crash reporter dialog
 defaults write com.apple.CrashReporter DialogType -string "none"
+
+# Disable accent/diacritic picker
+defaults write -g ApplePressAndHoldEnabled -bool false
 
 # Restart affected services
 for app in "Finder" "Dock" "SystemUIServer" "WindowManager"; do
