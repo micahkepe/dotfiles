@@ -92,7 +92,7 @@ vim.keymap.set("c", "%s/", "%sm/")
 -- See `:h  vim.lsp.set_log_level()`
 --
 -- When debugging a language server, comment this line out to start logging
-vim.lsp.set_log_level "OFF"
+vim.lsp.log.set_level "OFF"
 
 -- add providers to Neovim runtime
 vim.schedule(function()

@@ -17,6 +17,7 @@ set -gx PATH \
     $HOME/.rvm/bin \
     $HOME/.cargo/bin \
     $HOME/.local/bin \
+    $HOME/.local/share/bob/nvim-bin \
     $PATH
 
 switch (uname)
