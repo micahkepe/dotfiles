@@ -33,7 +33,19 @@ return {
   -- use treesitter to auto close and/or rename HTML tags
   {
     "windwp/nvim-ts-autotag",
-    event = { "BufRead", "BufNewFile" },
+    -- Workaround until this PR lands: https://github.com/windwp/nvim-ts-autotag/pull/259
+    ft = {
+      "html",
+      "xml",
+      "javascript",
+      "javascriptreact",
+      "typescriptreact",
+      "svelte",
+      "vue",
+      "tsx",
+      "jsx",
+      "markdown",
+    },
     config = function()
       require("nvim-ts-autotag").setup()
     end,
