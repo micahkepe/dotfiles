@@ -38,6 +38,10 @@ defaults write com.apple.CrashReporter DialogType -string "none"
 # Disable accent/diacritic picker
 defaults write -g ApplePressAndHoldEnabled -bool false
 
+# Enable developer mode for terminal applications
+# See: https://nexte.st/docs/installation/macos/#gatekeeper
+sudo spctl developer-mode enable-terminal
+
 # Restart affected services
 for app in "Finder" "Dock" "SystemUIServer" "WindowManager"; do
   killall "${app}" &>/dev/null || true
