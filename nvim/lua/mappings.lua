@@ -324,6 +324,15 @@ map(
   ":lua<CR>",
   { desc = "Execute the visually selected Lua line(s)" }
 )
+map("n", "<leader>cl", function()
+  vim.lsp.codelens.enable(not vim.lsp.codelens.is_enabled { bufnr = 0 })
+  local cl_enabled = vim.lsp.codelens.is_enabled { bufnr = 0 }
+  if cl_enabled then
+    vim.notify("CodeLens ON ✔", vim.log.levels.INFO)
+  else
+    vim.notify("CodeLens OFF ✘", vim.log.levels.INFO)
+  end
+end, { desc = "Toggle CodeLens for the current buffer" })
 
 -- RenderMarkdown mappings
 map(

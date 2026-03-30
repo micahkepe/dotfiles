@@ -12,12 +12,12 @@ autocmd("TermOpen", {
   end,
 })
 
-autocmd("Filetype", { pattern = "rust", command = "setl colorcolumn=100" })
+autocmd("FileType", { pattern = "rust", command = "setl colorcolumn=100" })
 
 autocmd("CursorHold", {
   desc = "Open diagnostics menu on CursorHold",
   callback = function()
-    vim.diagnostic.open_float(nil, { focus = false })
+    vim.diagnostic.open_float { focus = false }
   end,
 })
 
@@ -41,5 +41,15 @@ autocmd("FileType", {
       return
     end
     pcall(vim.treesitter.start)
+  end,
+})
+
+-- Codelens goodies (:h grx)
+autocmd("LspAttach", {
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if client and client:supports_method "textDocument/codeLens" then
+      vim.lsp.codelens.enable(true, { bufnr = args.buf })
+    end
   end,
 })
