@@ -173,8 +173,6 @@ return {
     event = "VeryLazy",
   },
 
-  { "mbbill/undotree", lazy = true, cmd = "UndotreeToggle" }, -- see undo tree
-
   -- Auto save when leaving INSERT mode
   {
     "pocco81/auto-save.nvim",

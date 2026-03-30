@@ -197,7 +197,10 @@ map(
 )
 
 -- undo tree
-map("n", "<leader>u", ":UndotreeToggle<cr>", { desc = "Toggle undo tree" })
+map("n", "<leader>u", function()
+  vim.cmd.packadd "nvim.undotree"
+  vim.cmd.Undotree()
+end, { desc = "Toggle undo tree" })
 
 -- Better navigation when lines are wrapped
 -- When a count is provided (e.g., '5j'), then move by physical lines,
