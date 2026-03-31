@@ -2,7 +2,6 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     event = { "BufReadPre", "BufNewFile" },
-    build = ":TSUpdate",
     config = function()
       -- Custom parsers
       --   See: https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#adding-parsers
@@ -17,6 +16,9 @@ return {
         },
         filetype = "strudel",
       }
+    end,
+    build = function()
+      require("nvim-treesitter.install").ensure_installed_sync()
     end,
     opts = {
       highlight = { enable = false },
