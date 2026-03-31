@@ -70,7 +70,16 @@ return {
         },
         fuzzy = { implementation = "prefer_rust_with_warning" },
       }
-      return vim.tbl_deep_extend("force", opts, mods)
+      opts = vim.tbl_deep_extend("force", opts, mods)
+
+      -- override NvChad simple `true` setting for cmdline opt
+      opts.cmdline.sources = function()
+        if vim.fn.getcmdtype() == ":" then
+          return { "cmdline" }
+        end
+        return {}
+      end
+      return opts
     end,
   },
 }
