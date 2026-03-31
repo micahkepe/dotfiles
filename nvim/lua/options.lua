@@ -56,7 +56,7 @@ o.wrap = false
 -- ensure wild menu is set (plugin or otherwise)
 o.wildmenu = true
 opt.wildmode = { "longest:full", "full" }
-opt.wildoptions = { "pum" }
+opt.wildoptions = { "pum", "fuzzy" }
 opt.wildignorecase = true
 
 -- appearance

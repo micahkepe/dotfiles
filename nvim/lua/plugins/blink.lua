@@ -22,7 +22,16 @@ return {
     -- blink.cmp options: https://cmp.saghen.dev/configuration/general.html
     opts = function(_, opts)
       local mods = {
-        cmdline = { enabled = false },
+        cmdline = {
+          enabled = true,
+          completion = {
+            menu = {
+              auto_show = function()
+                return vim.fn.getcmdtype() == ":"
+              end,
+            },
+          },
+        },
         completion = {
           documentation = {
             auto_show = true,
