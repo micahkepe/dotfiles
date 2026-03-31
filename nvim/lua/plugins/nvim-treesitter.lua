@@ -1,28 +1,29 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    event = { "BufReadPre", "BufNewFile" },
+    lazy = false,
+    build = ":TSUpdate",
+    init = function()
+      -- Custom parsers must be registered before TSUpdate fires
+      vim.api.nvim_create_autocmd("User", {
+        pattern = "TSUpdate",
+        callback = function()
+          require("nvim-treesitter.parsers").strudel = {
+            tier = 2,
+            install_info = {
+              url = "https://github.com/pedrozappa/tree-sitter-strdl",
+              branch = "main",
+              generate = false,
+            },
+          }
+        end,
+      })
+      vim.treesitter.language.register("strudel", { "strudel" })
+    end,
     config = function()
-      -- Custom parsers
-      --   See: https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#adding-parsers
-      local parser_config = require "nvim-treesitter.parsers"
-      parser_config.strudel = {
-        install_info = {
-          url = "https://github.com/pedrozappa/tree-sitter-strdl",
-          files = { "src/parser.c" },
-          branch = "main",
-          generate_requires_npm = false,
-          requires_generate_from_grammar = false,
-        },
-        filetype = "strudel",
-      }
-    end,
-    build = function()
-      require("nvim-treesitter.install").ensure_installed_sync()
-    end,
-    opts = {
-      highlight = { enable = false },
-      ensure_installed = {
+      require("nvim-treesitter").setup()
+
+      local ensure_installed = {
         "json",
         "javascript",
         "typescript",
@@ -44,7 +45,14 @@ return {
         "vimdoc",
         "c",
         "rust",
-      },
-    },
+      }
+      local installed = require("nvim-treesitter.config").get_installed()
+      local missing = vim.tbl_filter(function(p)
+        return not vim.tbl_contains(installed, p)
+      end, ensure_installed)
+      if #missing > 0 then
+        require("nvim-treesitter").install(missing)
+      end
+    end,
   },
 }
