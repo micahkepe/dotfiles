@@ -24,12 +24,22 @@ return {
       local mods = {
         cmdline = {
           enabled = true,
+          keymap = {
+            ["<Tab>"] = { "show", "select_next", "fallback" },
+            ["<S-Tab>"] = { "show", "select_prev", "fallback" },
+            ["<CR>"] = { "accept", "fallback" },
+          },
           completion = {
             menu = {
-              auto_show = function()
-                return vim.fn.getcmdtype() == ":"
-              end,
+              auto_show = true,
             },
+            list = {
+              selection = {
+                preselect = false,
+                auto_insert = true,
+              },
+            },
+            ghost_text = { enabled = true },
           },
         },
         completion = {
