@@ -1,7 +1,7 @@
 return {
   "mrcjkb/rustaceanvim",
-  version = "^8",
-  ft = "rust",
+  branch = "main",
+  ft = { "rust", "toml" },
   init = function()
     -- Default config:
     --   https://github.com/mrcjkb/rustaceanvim/blob/6bd02e97a1f3102f06a72726764f24d3b3a33a85/lua/rustaceanvim/config/internal.lua#L94
