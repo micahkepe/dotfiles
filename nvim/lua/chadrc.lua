@@ -9,8 +9,9 @@ M.base46 = {
   transparency = false,
   hl_override = {
     -- override comment highlighting to be more visible
-    ["@comment"] = { italic = true, fg = "nord_blue" }, -- treesitter comment highlighting
-    ["Comment"] = { italic = true, fg = "nord_blue" }, -- NVChad comment group
+    ["@comment"] = { italic = true, fg = "yellow" },
+    ["Comment"] = { italic = true, fg = "yellow" },
+    ["@lsp.type.comment"] = { italic = true, fg = "yellow" },
 
     -- make windows panes more distinguishable
     ["WinSeparator"] = { fg = "grey_fg2" },
@@ -22,6 +23,7 @@ M.base46 = {
   -- snacks.nvim w/ gruvbox has atrocious contrast in the file listing
   hl_add = {
     ["SnacksPickerDir"] = { fg = "#a89984" },
+    ["SpellBad"] = { undercurl = true, sp = "red" },
   },
 }
 
