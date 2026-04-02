@@ -1,6 +1,6 @@
 return {
   "mrcjkb/rustaceanvim",
-  branch = "main",
+  version = "^8",
   ft = { "rust", "toml" },
   init = function()
     -- Default config:
@@ -12,7 +12,7 @@ return {
           ["rust-analyzer"] = {
             cargo = {
               features = "all",
-              -- Uncomment for when working with Wasm
+              -- Uncomment for when working with WASM
               -- target = "wasm32-unknown-unknown",
             },
             check = {
