@@ -1,0 +1,9 @@
+# Patched tmux-256color terminfo with undercurl (Smulx) and underline
+# color (Setulc) support. macOS ships ancient ncurses that lacks these
+# capabilities, so Neovim inside tmux won't render undercurl without this.
+#
+# Compile with: /usr/bin/tic -x <this-file>
+tmux-256color|tmux with 256 colors,
+	use=tmux-256color,
+	Smulx=\E[4:%p1%dm,
+	Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{255}%&%d::%p1%{255}%&%d%;m,

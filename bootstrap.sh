@@ -232,6 +232,11 @@ exec-dry-run mkdir -p "$HOME"/.tmux/plugins
 exec-dry-run git clone https://github.com/tmux-plugins/tpm "$HOME"/.tmux/plugins/tpm
 exec-dry-run tmux source "$HOME"/.tmux.conf
 
+# Compile patched terminfo for undercurl support in tmux
+# (macOS ncurses lacks Smulx/Setulc in tmux-256color)
+echo "Compiling patched tmux-256color terminfo..."
+exec-dry-run /usr/bin/tic -x "$DOTFILES_DIR"/tmux/tmux-256color.terminfo
+
 # Rust install
 echo "Step 8/9: Installing Rust..."
 exec-dry-run curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
