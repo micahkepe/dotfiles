@@ -56,6 +56,7 @@ function gd; git diff $argv; end
 function gr; git restore $argv; end
 function gf; git fetch $argv; end
 function gco; git checkout $argv; end
+function gb; git branch $argv; end
 complete --command gs --wraps 'git status --short'
 complete --command ga --wraps 'git add'
 complete --command gap --wraps 'git add --patch'
@@ -69,6 +70,7 @@ complete --command gd --wraps 'git diff'
 complete --command gr --wraps 'git restore'
 complete --command gf --wraps 'git fetch'
 complete --command gco --wraps 'git checkout'
+complete --command gb --wraps 'git branch'
 
 function v; vim $argv; end
 complete --command l --wraps 'vim'

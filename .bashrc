@@ -39,6 +39,7 @@ alias gp="git push"
 alias gu="git pull"
 alias gf="git fetch"
 alias gco="git checkout"
+alias gb="git branch"
 alias v="vim"
 if command -v trash &>/dev/null; then
   alias rm="trash"
