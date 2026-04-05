@@ -54,10 +54,13 @@
 [column]
 	ui = auto
 
+[difftool "nvim_difftool"]
+  cmd = nvim -c \"packadd nvim.difftool\" -d \"$LOCAL\" \"$REMOTE\"
+
 [diff]
 	algorithm = histogram
 	mnemonicPrefix = true
-	tool = vimdiff
+	tool = nvim_difftool
 
 [fetch]
 	prune = true
