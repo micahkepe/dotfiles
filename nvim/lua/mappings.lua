@@ -25,7 +25,12 @@ map(
 map("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 -- Map <C-s> to save
-map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
+map(
+  { "n", "i", "v" },
+  "<C-s>",
+  "<cmd> w <cr>",
+  { desc = "Save the current buffer " }
+)
 
 -- Markdown previewing
 map(
@@ -196,6 +201,7 @@ map(
   { desc = "Reset buffer index" }
 )
 
+-- New v0.12 Nvim tools (:h news)
 -- undo tree
 map("n", "<leader>u", function()
   vim.cmd.packadd "nvim.undotree"
