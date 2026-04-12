@@ -64,6 +64,9 @@ o.termguicolors = true
 o.background = "dark"
 opt.colorcolumn = "80"
 
+-- new Neovim UI module (replaces builtin message + cmdline)
+require("vim._core.ui2").enable {}
+
 -- retain yank register contents when pasting over visual selected content
 keyset("x", "<leader>p", [["_dP"]])
 
