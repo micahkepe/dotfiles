@@ -1,13 +1,14 @@
 local options = {
+  -- For Biome language support, see: https://biomejs.dev/internals/language-support/
   formatters_by_ft = {
     lua = { "stylua" },
-    css = { "prettier" },
-    html = { "prettier" },
+    css = { "biome", "prettier" },
+    html = { "biome", "prettier" },
     markdown = { "prettier" },
     c = { "clang-format" },
     javascript = { "biome" },
     typescript = { "biome" },
-    json = { "prettier" },
+    json = { "biome", "prettier" },
     python = { "ruff", "black" },
   },
 
