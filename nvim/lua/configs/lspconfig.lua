@@ -7,7 +7,6 @@ local capabilities = require("nvchad.configs.lspconfig").capabilities
 local servers = {
   "bashls",
   "biome",
-  "cssls",
   "gdscript",
   "html",
   "jdtls",
@@ -25,6 +24,17 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   })
 end
+
+-- CSS LSP — silence Tailwind v4 at-rule warnings
+vim.lsp.config("cssls", {
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+  settings = {
+    css = { lint = { unknownAtRules = "ignore" } },
+  },
+})
+vim.lsp.enable "cssls"
 
 -- Enable all the servers
 vim.lsp.enable(servers)
@@ -65,18 +75,21 @@ vim.lsp.config("tailwindcss", {
   on_init = on_init,
   capabilities = capabilities,
   filetypes = {
+    "css",
     "html",
-    "javascriptreact",
-    "typescriptreact",
     "javascript",
-    "typescript",
-    "vue",
+    "javascriptreact",
+    "rust",
     "svelte",
+    "typescript",
+    "typescriptreact",
+    "vue",
   },
   init_options = {
     userLanguages = {
       eelixir = "html-eex",
       eruby = "erb",
+      rust = "html",
     },
   },
   settings = {
