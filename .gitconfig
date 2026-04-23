@@ -101,7 +101,10 @@
 
 [maintenance]
 	auto = true
-	strategy = incremental
+	strategy = geometric
+
+[maintenance "worktree-prune"]
+	auto = -1
 
 [rerere]
 	enabled = true
