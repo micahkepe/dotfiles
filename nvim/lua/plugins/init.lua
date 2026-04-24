@@ -340,4 +340,11 @@ return {
   { "tpope/vim-fugitive", event = "VeryLazy" },
 
   { "dlyongemallo/diffview.nvim", event = "VeryLazy" },
+
+  {
+    "stevearc/oil.nvim",
+    opts = {},
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    lazy = false,
+  },
 }
