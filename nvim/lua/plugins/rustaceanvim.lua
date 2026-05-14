@@ -13,6 +13,7 @@ return {
               features = "all",
               -- Uncomment for when working with WASM
               -- target = "wasm32-unknown-unknown",
+              targetDir = true,
             },
             check = {
               command = "clippy",
