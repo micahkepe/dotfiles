@@ -46,7 +46,7 @@ return {
         "c",
         "rust",
       }
-      local installed = require("nvim-treesitter.configs").get_installed()
+      local installed = require("nvim-treesitter.config").get_installed()
       local missing = vim.tbl_filter(function(p)
         return not vim.tbl_contains(installed, p)
       end, ensure_installed)
