@@ -8,6 +8,10 @@
 -- Viewer options: One may configure the viewer either by specifying a built-in
 -- viewer method:
 vim.g.vimtex_view_method = "sioyek"
+if vim.uv.os_uname().sysname == "Darwin" then
+  vim.g.vimtex_view_sioyek_exe =
+    "/Applications/sioyek.app/Contents/MacOS/sioyek"
+end
 
 -- Ensure that forward searching is enabled
 vim.g.vimtex_view_forward_search_on_start = 1
