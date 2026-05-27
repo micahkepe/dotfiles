@@ -44,7 +44,6 @@ brew "pngquant"
 brew "poppler"
 brew "postgresql@16", link: true
 brew "protobuf"
-brew "pyenv"
 brew "resvg"
 brew "ripgrep"
 brew "ruby"

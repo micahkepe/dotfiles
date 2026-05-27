@@ -241,16 +241,6 @@ exec-dry-run /usr/bin/tic -x "$DOTFILES_DIR"/tmux/tmux-256color.terminfo
 echo "Step 8/9: Installing Rust..."
 exec-dry-run curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-# Pyenv install (if not installed)
-echo "Step 9/9: Checking for pyenv..."
-if ! command -v pyenv &>/dev/null; then
-  if [[ "$OS" == "Linux" ]]; then
-    exec-dry-run curl -fsSL https://pyenv.run | bash
-  elif [[ "$OS" == "Darwin" ]]; then
-    exec-dry-run brew install pyenv
-  fi
-fi
-
 if ! command -v diff-so-fancy &>/dev/null; then
   if [[ "$OS" == "Darwin" ]]; then
     exec-dry-run brew install diff-so-fancy
