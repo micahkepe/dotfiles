@@ -7,12 +7,11 @@ local capabilities = require("nvchad.configs.lspconfig").capabilities
 local servers = {
   "bashls",
   "biome",
-  "gdscript",
-  "html",
   "jdtls",
   "protols",
   "pyright",
   "ruff",
+  "tailwindcss-language-server",
   "texlab",
   "wgsl-analyzer",
 }
