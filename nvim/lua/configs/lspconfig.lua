@@ -11,7 +11,7 @@ local servers = {
   "protols",
   "pyright",
   "ruff",
-  "tailwindcss-language-server",
+  "tailwindcss",
   "texlab",
   "wgsl-analyzer",
 }
