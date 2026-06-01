@@ -21,11 +21,29 @@ return {
     "mason-org/mason.nvim",
     opts = {
       ensure_installed = {
-        "lua-language-server",
-        "stylua",
-        "html-lsp",
+        -- LSP servers
+        "bash-language-server",
+        "biome",
+        "clangd",
         "css-lsp",
+        "gopls",
+        "harper-ls",
+        "haskell-language-server",
+        "html-lsp",
+        "jdtls",
+        "lua-language-server",
+        "protols",
+        "pyright",
+        "ruff",
+        "tailwindcss-language-server",
+        "texlab",
+        "wgsl-analyzer",
+
+        -- Formatters
+        "black",
+        "clang-format",
         "prettier",
+        "stylua",
       },
     },
   },

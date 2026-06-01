@@ -5,14 +5,24 @@ local capabilities = require("nvchad.configs.lspconfig").capabilities
 -- LSP Servers with no configuration needed
 -- NOTE: Rust LSP setup managed by `mrcjkb/rustaceanvim` plugin
 local servers = {
+  "bash-language-server",
   "bashls",
   "biome",
+  "cpptools",
+  "gopls",
+  "harper-ls",
+  "haskell-language-server",
+  "hls",
   "jdtls",
+  "lua-language-server",
   "protols",
   "pyright",
   "ruff",
-  "tailwindcss",
+  "shellcheck",
+  "shfmt",
+  "tailwindcss-language-server",
   "texlab",
+  "typescript-language-server",
   "wgsl-analyzer",
 }
 
