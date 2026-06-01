@@ -4,11 +4,6 @@ local o = vim.o
 local opt = vim.opt
 local keyset = vim.keymap.set
 
--- Undo directory to persistent undo tree
-o.undodir = os.getenv "HOME" .. "/.vim/undodir"
--- Auto restore and save undo history on buffer reads and writes
-o.undofile = true
-
 -- :h fuzzy-matching
 vim.cmd "set completeopt+=fuzzy"
 
@@ -75,6 +70,7 @@ keyset("n", "<leader>Y", [["+Y]])
 
 -- undo history
 opt.undofile = true
+o.undodir = os.getenv "HOME" .. "/.vim/undodir"
 keyset("i", ",", ",<C-g>U")
 keyset("i", ".", ".<C-g>U")
 keyset("i", "!", "!<C-g>U")
@@ -95,7 +91,7 @@ vim.keymap.set("c", "%s/", "%sm/")
 -- See `:h  vim.lsp.set_log_level()`
 --
 -- When debugging a language server, comment this line out to start logging
-vim.lsp.log.set_level "OFF"
+vim.lsp.log.set_level "WARN"
 
 -- add providers to Neovim runtime
 vim.schedule(function()

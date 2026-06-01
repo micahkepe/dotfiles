@@ -28,6 +28,9 @@ M.base46 = {
 }
 
 M.ui = {
+  statusline = {
+    enabled = false,
+  },
   cmp = {
     format_colors = {
       tailwind = true,

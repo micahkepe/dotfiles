@@ -169,16 +169,10 @@ return {
   },
 
   {
-    "tpope/vim-surround",
-    event = "VeryLazy",
-  },
-
-  {
     "kylechui/nvim-surround",
     event = "VeryLazy",
   },
 
-  -- Auto save when leaving INSERT mode
   {
     "pocco81/auto-save.nvim",
     event = "VeryLazy",
@@ -245,6 +239,78 @@ return {
     "lewis6991/gitsigns.nvim",
     opts = {
       sign_priority = 10, -- increased from default value so Harper doesn't interfere
+      on_attach = function(bufnr)
+        local gitsigns = require "gitsigns"
+
+        local function map(mode, l, r, opts)
+          opts = opts or {}
+          opts.buffer = bufnr
+          vim.keymap.set(mode, l, r, opts)
+        end
+
+        -- Navigation
+        map("n", "]c", function()
+          if vim.wo.diff then
+            vim.cmd.normal { "]c", bang = true }
+          else
+            gitsigns.nav_hunk "next"
+          end
+        end)
+        map("n", "<leader>hn", function()
+          if vim.wo.diff then
+            vim.cmd.normal { "]c", bang = true }
+          else
+            gitsigns.nav_hunk "next"
+          end
+        end)
+
+        map("n", "[c", function()
+          if vim.wo.diff then
+            vim.cmd.normal { "[c", bang = true }
+          else
+            gitsigns.nav_hunk "prev"
+          end
+        end)
+
+        -- Actions
+        map("n", "<leader>hs", gitsigns.stage_hunk)
+        map("n", "<leader>hr", gitsigns.reset_hunk)
+
+        map("v", "<leader>hs", function()
+          gitsigns.stage_hunk { vim.fn.line ".", vim.fn.line "v" }
+        end)
+
+        map("v", "<leader>hr", function()
+          gitsigns.reset_hunk { vim.fn.line ".", vim.fn.line "v" }
+        end)
+
+        map("n", "<leader>hS", gitsigns.stage_buffer)
+        map("n", "<leader>hR", gitsigns.reset_buffer)
+        map("n", "<leader>hp", gitsigns.preview_hunk)
+        map("n", "<leader>hi", gitsigns.preview_hunk_inline)
+
+        map("n", "<leader>hb", function()
+          gitsigns.blame_line { full = true }
+        end)
+
+        map("n", "<leader>hd", gitsigns.diffthis)
+
+        map("n", "<leader>hD", function()
+          gitsigns.diffthis "~"
+        end)
+
+        map("n", "<leader>hQ", function()
+          gitsigns.setqflist "all"
+        end)
+        map("n", "<leader>hq", gitsigns.setqflist)
+
+        -- Toggles
+        map("n", "<leader>tb", gitsigns.toggle_current_line_blame)
+        map("n", "<leader>tw", gitsigns.toggle_word_diff)
+
+        -- Text object
+        map({ "o", "x" }, "ih", gitsigns.select_hunk)
+      end,
     },
   },
 
@@ -294,24 +360,7 @@ return {
     opts = {},
   },
 
-  -- Some gems from the the Vim plugin wizard
   { "tpope/vim-repeat", event = "BufReadPost" },
-  { "tpope/vim-speeddating", event = "BufReadPost" },
-
-  -- Code completion (no native `autotrigger` option, so just use `cmd`
-  -- so that it is not triggered automatically on Neovim startup)
-  {
-    "supermaven-inc/supermaven-nvim",
-    cmd = { "SupermavenStart", "SupermavenToggle" },
-    config = function()
-      require("supermaven-nvim").setup {
-        keymaps = {
-          accept_suggestion = "<M-l>",
-          accept_word = "<M-w>", -- accept until end of next word
-        },
-      }
-    end,
-  },
 
   -- Markdown rendering
   {
@@ -354,8 +403,6 @@ return {
   },
 
   { "itchyny/lightline.vim", event = "VeryLazy" },
-
-  { "tpope/vim-fugitive", event = "VeryLazy" },
 
   { "dlyongemallo/diffview.nvim", event = "VeryLazy" },
 
