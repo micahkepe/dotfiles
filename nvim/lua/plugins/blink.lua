@@ -68,10 +68,6 @@ return {
             },
           },
         },
-        signature = {
-          enabled = true,
-          window = { border = "single" },
-        },
         fuzzy = { implementation = "prefer_rust_with_warning" },
       }
       opts = vim.tbl_deep_extend("force", opts, mods)
