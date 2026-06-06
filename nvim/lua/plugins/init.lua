@@ -292,6 +292,12 @@ return {
         map("n", "<leader>hb", function()
           gitsigns.blame_line { full = true }
         end)
+        map(
+          "n",
+          "<leader>gb",
+          gitsigns.blame_line,
+          { desc = "Show short blame for line under cursor." }
+        )
 
         map("n", "<leader>hd", gitsigns.diffthis)
 
