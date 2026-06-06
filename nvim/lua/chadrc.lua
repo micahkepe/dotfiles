@@ -77,7 +77,7 @@ M.nvdash = {
     },
     { txt = "  Mappings", keys = "ch", cmd = "NvCheatsheet" },
     {
-      txt = "  Open last session",
+      txt = "⏲  Open last session",
       keys = "l",
       cmd = ":AutoSession restore<CR>",
     },
