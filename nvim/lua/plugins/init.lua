@@ -70,9 +70,6 @@ return {
     end,
   },
 
-  -- Neovim async functions in lua
-  { "nvim-lua/plenary.nvim", lazy = true },
-
   -- Golang support
   {
     "ray-x/go.nvim",
@@ -88,28 +85,6 @@ return {
     ft = { "go", "gomod" },
     build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
   },
-
-  -- debuggers
-  {
-    "rcarriga/nvim-dap-ui",
-    cmd = "DapToggleUI",
-    lazy = true,
-    dependencies = {
-      "mfussenegger/nvim-dap",
-      "nvim-neotest/nvim-nio",
-    },
-    config = function()
-      require "configs.dap"
-    end,
-  },
-
-  {
-    "mfussenegger/nvim-dap",
-    "jay-babu/mason-nvim-dap.nvim",
-  },
-
-  -- for better visuals on debugger UI
-  { "theHamsta/nvim-dap-virtual-text", event = "VeryLazy", opts = {} },
 
   -- Highlighting tags like `TODO`, `FIX`, `NOTE` etc.
   {
@@ -379,15 +354,6 @@ return {
     opts = {
       enabled = false, -- off by default
       latex = { enabled = false },
-    },
-  },
-
-  {
-    "ravibrock/spellwarn.nvim",
-    event = "VeryLazy",
-    opts = {
-      -- don't enable diagnostics on startup
-      enable = false,
     },
   },
 
