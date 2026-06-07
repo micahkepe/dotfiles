@@ -295,11 +295,6 @@ return {
     },
   },
 
-  {
-    "rust-lang/rust.vim",
-    ft = "rust",
-  },
-
   -- Some semblance of Java support (just use IntelliJ)
   {
     "nvim-java/nvim-java",

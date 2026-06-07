@@ -156,6 +156,7 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'rust-lang/rust.vim'
 let g:lightline = { 'colorscheme': 'gruvbox' }
 let g:highlightedyank_highlight_duration = 100
 call plug#end()
