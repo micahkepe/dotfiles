@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+help() {
+  echo "Usage: $0 <URL>"
+}
+
+if ! command -v yt-dlp >/dev/null; then
+  echo "install yt-dlp first"
+  exit 1
+fi
+
+if [ $# -ne 1 ]; then
+  help
+  exit 1
+fi
+
+yt-dlp -f bestaudio \
+  --extract-audio --audio-format mp3 \
+  --audio-quality 0 --embed-thumbnail \
+  --no-keep-video "$1"

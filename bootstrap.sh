@@ -259,9 +259,14 @@ if [[ "$OS" == "Darwin" ]]; then
 fi
 
 # FNM install
+echo "Installing fnm..."
 exec-dry-run curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell
 
 # uv install
+echo "Installing uv..."
 exec-dry-run curl -LsSf https://astral.sh/uv/install.sh | sh
+
+echo "Step 9/9 Local scripts..."
+exec-dry-run cp -r "$DOTFILES_DIR"/scripts/. "$HOME"/.local/bin/
 
 echo "Bootstrap script complete!"
