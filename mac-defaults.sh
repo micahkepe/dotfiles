@@ -16,9 +16,6 @@ defaults write com.apple.finder QuitMenuItem -bool true            # Show "Quit 
 defaults write com.apple.finder DisableAllAnimations -bool true    # Disable all animations
 defaults write com.apple.finder _FXSortFoldersFirst -bool true     # Sort folders before files
 
-# Auto-hide Dock
-defaults write com.apple.dock autohide -bool true
-
 # Fast Dock animations
 defaults write com.apple.dock autohide-time-modifier -float 0.15
 defaults write com.apple.dock autohide-delay -float 0

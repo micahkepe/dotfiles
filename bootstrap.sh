@@ -241,6 +241,7 @@ exec-dry-run /usr/bin/tic -x "$DOTFILES_DIR"/tmux/tmux-256color.terminfo
 echo "Step 8/9: Installing Rust..."
 exec-dry-run curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
+echo "Installing diff-so-fancy..."
 if ! command -v diff-so-fancy &>/dev/null; then
   if [[ "$OS" == "Darwin" ]]; then
     exec-dry-run brew install diff-so-fancy
@@ -250,6 +251,7 @@ if ! command -v diff-so-fancy &>/dev/null; then
 fi
 
 # MacOS default changes
+echo "Better macOS defaults because I'm a g..."
 if [[ "$OS" == "Darwin" ]]; then
   if [[ -f $DOTFILES_DIR/mac-defaults.sh ]]; then
     exec-dry-run "$DOTFILES_DIR"/mac-defaults.sh
