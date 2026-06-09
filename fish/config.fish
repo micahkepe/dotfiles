@@ -30,10 +30,6 @@ switch (uname)
     set -gx FNM_PATH "$HOME/.local/share/fnm"
 end
 
-# LLDB/LLVM SETUP
-set -gx LIBLLDB_PATH /opt/homebrew/opt/llvm/lib/liblldb.dylib
-set -gx DYLD_LIBRARY_PATH /opt/homebrew/opt/llvm/lib $DYLD_LIBRARY_PATH
-
 # Set JAVA_HOME environment variable
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-24.jdk/Contents/Home
 set -gx PATH $JAVA_HOME/bin $PATH
@@ -96,11 +92,6 @@ function firefox; open -a "Firefox" $argv; end
 complete --command brave --wraps 'open -a "Firebox"'
 
 function c; clear $argv; end
-
-# KITTY SSH
-if test -n "$KITTY_WINDOW_ID"
-    function ssh; kitty +kitten ssh $argv; end
-end
 
 # FZF.FISH KEY BINDING CHANGES
 # - change variables search to Ctrl-Alt-v

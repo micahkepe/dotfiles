@@ -30,8 +30,6 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-export DYLD_LIBRARY_PATH="$(brew --prefix)/lib:$DYLD_LIBRARY_PATH"
-
 export GOBIN=$HOME/go/bin
 export PATH=$PATH:$GOBIN
 
