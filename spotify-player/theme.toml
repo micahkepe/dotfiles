@@ -1,0 +1,1330 @@
+[[themes]]
+name = "Amber Monochrome"
+[themes.palette]
+background = "#0a0a0a"
+foreground = "#ffb000"
+black = "#0a0a0a"
+red = "#ffb000"
+green = "#ffb000"
+yellow = "#ffb000"
+blue = "#ffb000"
+magenta = "#ffb000"
+cyan = "#ffb000"
+white = "#ffb000"
+bright_black = "#333300"
+bright_red = "#ffcc00"
+bright_green = "#ffcc00"
+bright_yellow = "#ffcc00"
+bright_blue = "#ffcc00"
+bright_magenta = "#ffcc00"
+bright_cyan = "#ffcc00"
+bright_white = "#ffff00"
+
+[themes.component_style]
+selection = { bg = "#333300", modifiers = ["Bold"] }
+block_title = { fg = "#ffcc00", modifiers = ["Bold"] }
+playback_track = { fg = "#ffb000", modifiers = ["Bold"] }
+playback_album = { fg = "#ffb000" }
+playback_metadata = { fg = "#996600" }
+playback_progress_bar = { bg = "#333300", fg = "#ffb000" }
+current_playing = { fg = "#ffff00", modifiers = ["Bold"] }
+page_desc = { fg = "#ffcc00", modifiers = ["Bold"] }
+table_header = { fg = "#ffcc00", modifiers = ["Bold"] }
+border = { fg = "#333300" }
+playback_status = { fg = "#ffb000", modifiers = ["Bold"] }
+playback_artists = { fg = "#ffb000", modifiers = ["Bold"] }
+playlist_desc = { fg = "#996600" }
+
+[[themes]]
+name = "Apple Music"
+[themes.palette]
+background = "#1a1a1a"
+foreground = "#ffffff"
+black = "#1a1a1a"
+red = "#fc3c44"
+green = "#32d74b"
+yellow = "#ffd60a"
+blue = "#0a84ff"
+magenta = "#bf5af2"
+cyan = "#64d2ff"
+white = "#ffffff"
+bright_black = "#323232"
+bright_red = "#fc3c44"
+bright_green = "#32d74b"
+bright_yellow = "#ffd60a"
+bright_blue = "#0a84ff"
+bright_magenta = "#bf5af2"
+bright_cyan = "#64d2ff"
+bright_white = "#ffffff"
+
+[themes.component_style]
+selection = { bg = "#323232", modifiers = ["Bold"] }
+block_title = { fg = "#fc3c44", modifiers = ["Bold"] }
+playback_track = { fg = "#ffffff", modifiers = ["Bold"] }
+playback_album = { fg = "#0a84ff" }
+playback_metadata = { fg = "#86868b" }
+playback_progress_bar = { bg = "#323232", fg = "#fc3c44" }
+current_playing = { fg = "#fc3c44", modifiers = ["Bold"] }
+page_desc = { fg = "#0a84ff", modifiers = ["Bold"] }
+table_header = { fg = "#86868b", modifiers = ["Bold"] }
+border = { fg = "#323232" }
+playback_status = { fg = "#32d74b", modifiers = ["Bold"] }
+playback_artists = { fg = "#bf5af2", modifiers = ["Bold"] }
+playlist_desc = { fg = "#86868b" }
+
+[[themes]]
+name = "Autumn"
+[themes.palette]
+background = "#1a1510"
+foreground = "#e8d5b7"
+black = "#1a1510"
+red = "#d45d3c"
+green = "#a67c52"
+yellow = "#d4a574"
+blue = "#8b4513"
+magenta = "#cd853f"
+cyan = "#deb887"
+white = "#e8d5b7"
+bright_black = "#2d251f"
+bright_red = "#e8794b"
+bright_green = "#c4a574"
+bright_yellow = "#deb887"
+bright_blue = "#a0522d"
+bright_magenta = "#daa520"
+bright_cyan = "#e8d5b7"
+bright_white = "#f5deb3"
+
+[themes.component_style]
+selection = { bg = "#2d251f", modifiers = ["Bold"] }
+block_title = { fg = "#d45d3c", modifiers = ["Bold"] }
+playback_track = { fg = "#e8d5b7", modifiers = ["Bold"] }
+playback_album = { fg = "#d4a574" }
+playback_metadata = { fg = "#8b7355" }
+playback_progress_bar = { bg = "#2d251f", fg = "#d45d3c" }
+current_playing = { fg = "#d45d3c", modifiers = ["Bold"] }
+page_desc = { fg = "#d4a574", modifiers = ["Bold"] }
+table_header = { fg = "#a0522d", modifiers = ["Bold"] }
+border = { fg = "#2d251f" }
+playback_status = { fg = "#d4a574", modifiers = ["Bold"] }
+playback_artists = { fg = "#deb887", modifiers = ["Bold"] }
+playlist_desc = { fg = "#8b7355" }
+
+[[themes]]
+name = "Cassette Tape"
+[themes.palette]
+background = "#2c2c54"
+foreground = "#ff6b6b"
+black = "#2c2c54"
+red = "#ff6b6b"
+green = "#4ecdc4"
+yellow = "#ffe66d"
+blue = "#1a1a2e"
+magenta = "#ff6b6b"
+cyan = "#4ecdc4"
+white = "#f7f1e3"
+bright_black = "#474787"
+bright_red = "#ff6b6b"
+bright_green = "#4ecdc4"
+bright_yellow = "#ffe66d"
+bright_blue = "#4ecdc4"
+bright_magenta = "#ff6b6b"
+bright_cyan = "#4ecdc4"
+bright_white = "#ffffff"
+
+[themes.component_style]
+selection = { bg = "#474787", modifiers = ["Bold"] }
+block_title = { fg = "#ff6b6b", modifiers = ["Bold"] }
+playback_track = { fg = "#ff6b6b", modifiers = ["Bold"] }
+playback_album = { fg = "#ffe66d" }
+playback_metadata = { fg = "#706fd3" }
+playback_progress_bar = { bg = "#474787", fg = "#4ecdc4" }
+current_playing = { fg = "#ff6b6b", modifiers = ["Bold"] }
+page_desc = { fg = "#ff6b6b", modifiers = ["Bold"] }
+table_header = { fg = "#4ecdc4", modifiers = ["Bold"] }
+border = { fg = "#474787" }
+playback_status = { fg = "#4ecdc4", modifiers = ["Bold"] }
+playback_artists = { fg = "#ffe66d", modifiers = ["Bold"] }
+playlist_desc = { fg = "#706fd3" }
+
+[[themes]]
+name = "Catppuccin Frappé"
+[themes.palette]
+background = "#303446"
+foreground = "#c6d0f5"
+black = "#51576d"
+red = "#e78284"
+green = "#a6d189"
+yellow = "#e5c890"
+blue = "#8caaee"
+magenta = "#f4b8e4"
+cyan = "#81c8be"
+white = "#a5adce"
+bright_black = "#626880"
+bright_red = "#e67172"
+bright_green = "#8ec772"
+bright_yellow = "#d9ba73"
+bright_blue = "#7b9ef0"
+bright_magenta = "#f2a4db"
+bright_cyan = "#5abfb5"
+bright_white = "#b5bfe2"
+
+[themes.component_style]
+selection = { bg = "#414559", modifiers = ["Bold"] }
+block_title = { fg = "#babbf1", modifiers = ["Bold"] }
+playback_track = { fg = "#c6d0f5", modifiers = ["Bold"] }
+playback_album = { fg = "#f2d5cf" }
+playback_metadata = { fg = "#838ba7" }
+playback_progress_bar = { bg = "#414559", fg = "#ca9ee6" }
+current_playing = { fg = "#a6d189", modifiers = ["Bold"] }
+page_desc = { fg = "#babbf1", modifiers = ["Bold"] }
+table_header = { fg = "#babbf1", modifiers = ["Bold"] }
+border = { fg = "#737994" }
+playback_status = { fg = "#ca9ee6", modifiers = ["Bold"] }
+playback_artists = { fg = "#8caaee", modifiers = ["Bold"] }
+playlist_desc = { fg = "#838ba7" }
+
+[[themes]]
+name = "Catppuccin Latte"
+[themes.palette]
+background = "#eff1f5"
+foreground = "#4c4f69"
+black = "#5c5f77"
+red = "#d20f39"
+green = "#40a02b"
+yellow = "#df8e1d"
+blue = "#1e66f5"
+magenta = "#ea76cb"
+cyan = "#179299"
+white = "#acb0be"
+bright_black = "#6c6f85"
+bright_red = "#de293e"
+bright_green = "#49af3d"
+bright_yellow = "#eea02d"
+bright_blue = "#456eff"
+bright_magenta = "#fe85d8"
+bright_cyan = "#2d9fa8"
+bright_white = "#bcc0cc"
+
+[themes.component_style]
+selection = { bg = "#ccd0da", modifiers = ["Bold"] }
+block_title = { fg = "#7287fd", modifiers = ["Bold"] }
+playback_track = { fg = "#4c4f69", modifiers = ["Bold"] }
+playback_album = { fg = "#dc8a78" }
+playback_metadata = { fg = "#8c8fa1" }
+playback_progress_bar = { bg = "#ccd0da", fg = "#8839ef" }
+current_playing = { fg = "#40a02b", modifiers = ["Bold"] }
+page_desc = { fg = "#7287fd", modifiers = ["Bold"] }
+table_header = { fg = "#7287fd", modifiers = ["Bold"] }
+border = { fg = "#9ca0b0" }
+playback_status = { fg = "#8839ef", modifiers = ["Bold"] }
+playback_artists = { fg = "#1e66f5", modifiers = ["Bold"] }
+playlist_desc = { fg = "#8c8fa1" }
+
+[[themes]]
+name = "Catppuccin Macchiato"
+[themes.palette]
+background = "#24273a"
+foreground = "#cad3f5"
+black = "#494d64"
+red = "#ed8796"
+green = "#a6da95"
+yellow = "#eed49f"
+blue = "#8aadf4"
+magenta = "#f5bde6"
+cyan = "#8bd5ca"
+white = "#a5adcb"
+bright_black = "#5b6078"
+bright_red = "#ec7486"
+bright_green = "#8ccf7f"
+bright_yellow = "#e1c682"
+bright_blue = "#78a1f6"
+bright_magenta = "#f2a9dd"
+bright_cyan = "#63cbc0"
+bright_white = "#b8c0e0"
+
+[themes.component_style]
+selection = { bg = "#363a4f", modifiers = ["Bold"] }
+block_title = { fg = "#b7bdf8", modifiers = ["Bold"] }
+playback_track = { fg = "#cad3f5", modifiers = ["Bold"] }
+playback_album = { fg = "#f4dbd6" }
+playback_metadata = { fg = "#8087a2" }
+playback_progress_bar = { bg = "#363a4f", fg = "#c6a0f6" }
+current_playing = { fg = "#a6da95", modifiers = ["Bold"] }
+page_desc = { fg = "#b7bdf8", modifiers = ["Bold"] }
+table_header = { fg = "#b7bdf8", modifiers = ["Bold"] }
+border = { fg = "#6e738d" }
+playback_status = { fg = "#c6a0f6", modifiers = ["Bold"] }
+playback_artists = { fg = "#8aadf4", modifiers = ["Bold"] }
+playlist_desc = { fg = "#8087a2" }
+
+[[themes]]
+name = "Catppuccin Mocha"
+[themes.palette]
+background = "#1e1e2e"
+foreground = "#cdd6f4"
+black = "#45475a"
+red = "#f38ba8"
+green = "#a6e3a1"
+yellow = "#f9e2af"
+blue = "#89b4fa"
+magenta = "#f5c2e7"
+cyan = "#94e2d5"
+white = "#a6adc8"
+bright_black = "#585b70"
+bright_red = "#f37799"
+bright_green = "#89d88b"
+bright_yellow = "#ebd391"
+bright_blue = "#74a8fc"
+bright_magenta = "#f2aede"
+bright_cyan = "#6bd7ca"
+bright_white = "#bac2de"
+
+[themes.component_style]
+selection = { bg = "#313244", modifiers = ["Bold"] }
+block_title = { fg = "#b4befe", modifiers = ["Bold"] }
+playback_track = { fg = "#cdd6f4", modifiers = ["Bold"] }
+playback_album = { fg = "#f5e0dc" }
+playback_metadata = { fg = "#7f849c" }
+playback_progress_bar = { bg = "#313244", fg = "#cba6f7" }
+current_playing = { fg = "#a6e3a1", modifiers = ["Bold"] }
+page_desc = { fg = "#b4befe", modifiers = ["Bold"] }
+table_header = { fg = "#b4befe", modifiers = ["Bold"] }
+border = { fg = "#6c7086" }
+playback_status = { fg = "#cba6f7", modifiers = ["Bold"] }
+playback_artists = { fg = "#89b4fa", modifiers = ["Bold"] }
+playlist_desc = { fg = "#7f849c" }
+[[themes]]
+name = "Cyberpunk 2077"
+[themes.palette]
+background = "#121212"
+foreground = "#f0f0f0"
+black = "#121212"
+red = "#ff003c"
+green = "#ffee00"
+yellow = "#ff003c"
+blue = "#00f0ff"
+magenta = "#ff003c"
+cyan = "#00f0ff"
+white = "#f0f0f0"
+bright_black = "#262626"
+bright_red = "#ff003c"
+bright_green = "#ffee00"
+bright_yellow = "#ffee00"
+bright_blue = "#00f0ff"
+bright_magenta = "#ff003c"
+bright_cyan = "#00f0ff"
+bright_white = "#ffffff"
+
+[themes.component_style]
+selection = { bg = "#262626", modifiers = ["Bold"] }
+block_title = { fg = "#ff003c", modifiers = ["Bold"] }
+playback_track = { fg = "#f0f0f0", modifiers = ["Bold"] }
+playback_album = { fg = "#00f0ff" }
+playback_metadata = { fg = "#ff003c" }
+playback_progress_bar = { bg = "#262626", fg = "#ffee00" }
+current_playing = { fg = "#ff003c", modifiers = ["Bold"] }
+page_desc = { fg = "#00f0ff", modifiers = ["Bold"] }
+table_header = { fg = "#ff003c", modifiers = ["Bold"] }
+border = { fg = "#262626" }
+playback_status = { fg = "#ffee00", modifiers = ["Bold"] }
+playback_artists = { fg = "#00f0ff", modifiers = ["Bold"] }
+playlist_desc = { fg = "#ff003c" }
+
+[[themes]]
+name = "Disco"
+[themes.palette]
+background = "#0a0a0a"
+foreground = "#ff00ff"
+black = "#0a0a0a"
+red = "#ff0066"
+green = "#00ff66"
+yellow = "#ffff00"
+blue = "#00ffff"
+magenta = "#ff00ff"
+cyan = "#00ffcc"
+white = "#ffffff"
+bright_black = "#1a1a1a"
+bright_red = "#ff3366"
+bright_green = "#33ff99"
+bright_yellow = "#ffff66"
+bright_blue = "#66ffff"
+bright_magenta = "#ff66ff"
+bright_cyan = "#66ffcc"
+bright_white = "#ffffff"
+
+[themes.component_style]
+selection = { bg = "#1a1a1a", modifiers = ["Bold"] }
+block_title = { fg = "#ff00ff", modifiers = ["Bold"] }
+playback_track = { fg = "#00ffff", modifiers = ["Bold"] }
+playback_album = { fg = "#ff0066" }
+playback_metadata = { fg = "#9966ff" }
+playback_progress_bar = { bg = "#1a1a1a", fg = "#00ff66" }
+current_playing = { fg = "#ffff00", modifiers = ["Bold"] }
+page_desc = { fg = "#ff00ff", modifiers = ["Bold"] }
+table_header = { fg = "#ff0066", modifiers = ["Bold"] }
+border = { fg = "#1a1a1a" }
+playback_status = { fg = "#00ff66", modifiers = ["Bold"] }
+playback_artists = { fg = "#ff00ff", modifiers = ["Bold"] }
+playlist_desc = { fg = "#9966ff" }
+
+[[themes]]
+name = "Dracula"
+[themes.palette]
+background = "#282a36"
+foreground = "#f8f8f2"
+black = "#282a36"
+red = "#ff5555"
+green = "#50fa7b"
+yellow = "#f1fa8c"
+blue = "#bd93f9"
+magenta = "#ff79c6"
+cyan = "#8be9fd"
+white = "#bfbfbf"
+bright_black = "#44475a"
+bright_red = "#ff5555"
+bright_green = "#50fa7b"
+bright_yellow = "#f1fa8c"
+bright_blue = "#bd93f9"
+bright_magenta = "#ff79c6"
+bright_cyan = "#8be9fd"
+bright_white = "#ffffff"
+
+[themes.component_style]
+selection = { bg = "#44475a", modifiers = ["Bold"] }
+block_title = { fg = "#bd93f9", modifiers = ["Bold"] }
+playback_track = { fg = "#f8f8f2", modifiers = ["Bold"] }
+playback_album = { fg = "#ff79c6" }
+playback_metadata = { fg = "#6272a4" }
+playback_progress_bar = { bg = "#44475a", fg = "#50fa7b" }
+current_playing = { fg = "#50fa7b", modifiers = ["Bold"] }
+page_desc = { fg = "#bd93f9", modifiers = ["Bold"] }
+table_header = { fg = "#ff79c6", modifiers = ["Bold"] }
+border = { fg = "#44475a" }
+playback_status = { fg = "#50fa7b", modifiers = ["Bold"] }
+playback_artists = { fg = "#ff79c6", modifiers = ["Bold"] }
+playlist_desc = { fg = "#6272a4" }
+
+[[themes]]
+name = "Green Phosphor"
+[themes.palette]
+background = "#001100"
+foreground = "#00ff00"
+black = "#001100"
+red = "#00aa00"
+green = "#00ff00"
+yellow = "#00ff00"
+blue = "#00aa00"
+magenta = "#00aa00"
+cyan = "#00ff00"
+white = "#00aa00"
+bright_black = "#003300"
+bright_red = "#00cc00"
+bright_green = "#00ff00"
+bright_yellow = "#00ff00"
+bright_blue = "#00cc00"
+bright_magenta = "#00cc00"
+bright_cyan = "#00ff00"
+bright_white = "#00ff00"
+
+[themes.component_style]
+selection = { bg = "#003300", modifiers = ["Bold"] }
+block_title = { fg = "#00ff00", modifiers = ["Bold"] }
+playback_track = { fg = "#00ff00", modifiers = ["Bold"] }
+playback_album = { fg = "#00cc00" }
+playback_metadata = { fg = "#006600" }
+playback_progress_bar = { bg = "#003300", fg = "#00ff00" }
+current_playing = { fg = "#00ff00", modifiers = ["Bold"] }
+page_desc = { fg = "#00ff00", modifiers = ["Bold"] }
+table_header = { fg = "#00ff00", modifiers = ["Bold"] }
+border = { fg = "#003300" }
+playback_status = { fg = "#00ff00", modifiers = ["Bold"] }
+playback_artists = { fg = "#00ff00", modifiers = ["Bold"] }
+playlist_desc = { fg = "#006600" }
+
+[[themes]]
+name = "Gruvbox"
+[themes.palette]
+background = "#282828"
+foreground = "#ebdbb2"
+black = "#282828"
+red = "#cc241d"
+green = "#98971a"
+yellow = "#d79921"
+blue = "#458588"
+magenta = "#b16286"
+cyan = "#689d6a"
+white = "#a89984"
+bright_black = "#928374"
+bright_red = "#fb4934"
+bright_green = "#b8bb26"
+bright_yellow = "#fabd2f"
+bright_blue = "#83a598"
+bright_magenta = "#d3869b"
+bright_cyan = "#8ec07c"
+bright_white = "#ebdbb2"
+
+[themes.component_style]
+selection = { bg = "#3c3836", modifiers = ["Bold"] }
+block_title = { fg = "#d79921", modifiers = ["Bold"] }
+playback_track = { fg = "#ebdbb2", modifiers = ["Bold"] }
+playback_album = { fg = "#d79921" }
+playback_metadata = { fg = "#928374" }
+playback_progress_bar = { bg = "#3c3836", fg = "#98971a" }
+current_playing = { fg = "#98971a", modifiers = ["Bold"] }
+page_desc = { fg = "#fb4934", modifiers = ["Bold"] }
+table_header = { fg = "#d79921", modifiers = ["Bold"] }
+border = { fg = "#3c3836" }
+playback_status = { fg = "#98971a", modifiers = ["Bold"] }
+playback_artists = { fg = "#fabd2f", modifiers = ["Bold"] }
+playlist_desc = { fg = "#928374" }
+
+[[themes]]
+name = "Jazz Club"
+[themes.palette]
+background = "#0f0f12"
+foreground = "#d4af37"
+black = "#0f0f12"
+red = "#8b4513"
+green = "#4a4a4a"
+yellow = "#d4af37"
+blue = "#5c4033"
+magenta = "#704214"
+cyan = "#a0522d"
+white = "#c9c0bb"
+bright_black = "#1f1f22"
+bright_red = "#a0522d"
+bright_green = "#5a5a5a"
+bright_yellow = "#daa520"
+bright_blue = "#6b4423"
+bright_magenta = "#8b4513"
+bright_cyan = "#cd853f"
+bright_white = "#d4af37"
+
+[themes.component_style]
+selection = { bg = "#1f1f22", modifiers = ["Bold"] }
+block_title = { fg = "#d4af37", modifiers = ["Bold"] }
+playback_track = { fg = "#c9c0bb", modifiers = ["Bold"] }
+playback_album = { fg = "#d4af37" }
+playback_metadata = { fg = "#4a4a4a" }
+playback_progress_bar = { bg = "#1f1f22", fg = "#d4af37" }
+current_playing = { fg = "#d4af37", modifiers = ["Bold"] }
+page_desc = { fg = "#cd853f", modifiers = ["Bold"] }
+table_header = { fg = "#cd853f", modifiers = ["Bold"] }
+border = { fg = "#1f1f22" }
+playback_status = { fg = "#d4af37", modifiers = ["Bold"] }
+playback_artists = { fg = "#c9c0bb", modifiers = ["Bold"] }
+playlist_desc = { fg = "#4a4a4a" }
+
+[[themes]]
+name = "MS-DOS"
+[themes.palette]
+background = "#000000"
+foreground = "#c0c0c0"
+black = "#000000"
+red = "#800000"
+green = "#008000"
+yellow = "#808000"
+blue = "#000080"
+magenta = "#800080"
+cyan = "#008080"
+white = "#c0c0c0"
+bright_black = "#808080"
+bright_red = "#ff0000"
+bright_green = "#00ff00"
+bright_yellow = "#ffff00"
+bright_blue = "#0000ff"
+bright_magenta = "#ff00ff"
+bright_cyan = "#00ffff"
+bright_white = "#ffffff"
+
+[themes.component_style]
+selection = { bg = "#000080", modifiers = ["Bold"] }
+block_title = { fg = "#ffffff", modifiers = ["Bold"] }
+playback_track = { fg = "#ffffff", modifiers = ["Bold"] }
+playback_album = { fg = "#c0c0c0" }
+playback_metadata = { fg = "#808080" }
+playback_progress_bar = { bg = "#000080", fg = "#c0c0c0" }
+current_playing = { fg = "#00ff00", modifiers = ["Bold"] }
+page_desc = { fg = "#ffffff", modifiers = ["Bold"] }
+table_header = { fg = "#ffffff", modifiers = ["Bold"] }
+border = { fg = "#c0c0c0" }
+playback_status = { fg = "#00ff00", modifiers = ["Bold"] }
+playback_artists = { fg = "#ffffff", modifiers = ["Bold"] }
+playlist_desc = { fg = "#808080" }
+
+[[themes]]
+name = "Minecraft"
+[themes.palette]
+background = "#1a1a1a"
+foreground = "#a8a8a8"
+black = "#1a1a1a"
+red = "#a12727"
+green = "#5e8c5e"
+yellow = "#d4b873"
+blue = "#7a8a9a"
+magenta = "#9e6b7a"
+cyan = "#5e7e8e"
+white = "#c8c8c8"
+bright_black = "#3a3a3a"
+bright_red = "#d45757"
+bright_green = "#7ebc7e"
+bright_yellow = "#e6d893"
+bright_blue = "#9aabc4"
+bright_magenta = "#be8baa"
+bright_cyan = "#7eaebc"
+bright_white = "#f8f8f8"
+
+[themes.component_style]
+selection = { bg = "#3a3a3a", modifiers = ["Bold"] }
+block_title = { fg = "#a12727", modifiers = ["Bold"] }
+playback_track = { fg = "#c8c8c8", modifiers = ["Bold"] }
+playback_album = { fg = "#d4b873" }
+playback_metadata = { fg = "#5a5a5a" }
+playback_progress_bar = { bg = "#3a3a3a", fg = "#5e8c5e" }
+current_playing = { fg = "#a12727", modifiers = ["Bold"] }
+page_desc = { fg = "#5e8c5e", modifiers = ["Bold"] }
+table_header = { fg = "#7a8a9a", modifiers = ["Bold"] }
+border = { fg = "#3a3a3a" }
+playback_status = { fg = "#5e8c5e", modifiers = ["Bold"] }
+playback_artists = { fg = "#d4b873", modifiers = ["Bold"] }
+playlist_desc = { fg = "#5a5a5a" }
+
+[[themes]]
+name = "Monokai"
+[themes.palette]
+background = "#272822"
+foreground = "#f8f8f2"
+black = "#272822"
+red = "#f92672"
+green = "#a6e22e"
+yellow = "#f4bf75"
+blue = "#66d9ef"
+magenta = "#ae81ff"
+cyan = "#a1efe4"
+white = "#f8f8f2"
+bright_black = "#75715e"
+bright_red = "#f92672"
+bright_green = "#a6e22e"
+bright_yellow = "#f4bf75"
+bright_blue = "#66d9ef"
+bright_magenta = "#ae81ff"
+bright_cyan = "#a1efe4"
+bright_white = "#f9f8f5"
+
+[themes.component_style]
+selection = { bg = "#3e3d32", modifiers = ["Bold"] }
+block_title = { fg = "#f92672", modifiers = ["Bold"] }
+playback_track = { fg = "#f8f8f2", modifiers = ["Bold"] }
+playback_album = { fg = "#f4bf75" }
+playback_metadata = { fg = "#75715e" }
+playback_progress_bar = { bg = "#3e3d32", fg = "#a6e22e" }
+current_playing = { fg = "#a6e22e", modifiers = ["Bold"] }
+page_desc = { fg = "#66d9ef", modifiers = ["Bold"] }
+table_header = { fg = "#ae81ff", modifiers = ["Bold"] }
+border = { fg = "#3e3d32" }
+playback_status = { fg = "#a6e22e", modifiers = ["Bold"] }
+playback_artists = { fg = "#f92672", modifiers = ["Bold"] }
+playlist_desc = { fg = "#75715e" }
+
+[[themes]]
+name = "Nord"
+[themes.palette]
+background = "#2e3440"
+foreground = "#eceff4"
+black = "#3b4252"
+red = "#bf616a"
+green = "#a3be8c"
+yellow = "#ebcb8b"
+blue = "#81a1c1"
+magenta = "#b48ead"
+cyan = "#88c0d0"
+white = "#d8dee9"
+bright_black = "#4c566a"
+bright_red = "#bf616a"
+bright_green = "#a3be8c"
+bright_yellow = "#ebcb8b"
+bright_blue = "#81a1c1"
+bright_magenta = "#b48ead"
+bright_cyan = "#8fbcbb"
+bright_white = "#eceff4"
+
+[themes.component_style]
+selection = { bg = "#3b4252", modifiers = ["Bold"] }
+block_title = { fg = "#88c0d0", modifiers = ["Bold"] }
+playback_track = { fg = "#eceff4", modifiers = ["Bold"] }
+playback_album = { fg = "#ebcb8b" }
+playback_metadata = { fg = "#4c566a" }
+playback_progress_bar = { bg = "#3b4252", fg = "#88c0d0" }
+current_playing = { fg = "#88c0d0", modifiers = ["Bold"] }
+page_desc = { fg = "#81a1c1", modifiers = ["Bold"] }
+table_header = { fg = "#b48ead", modifiers = ["Bold"] }
+border = { fg = "#3b4252" }
+playback_status = { fg = "#a3be8c", modifiers = ["Bold"] }
+playback_artists = { fg = "#88c0d0", modifiers = ["Bold"] }
+playlist_desc = { fg = "#4c566a" }
+
+[[themes]]
+name = "One Dark"
+[themes.palette]
+background = "#282c34"
+foreground = "#abb2bf"
+black = "#282c34"
+red = "#e06c75"
+green = "#98c379"
+yellow = "#e5c07b"
+blue = "#61afef"
+magenta = "#c678dd"
+cyan = "#56b6c2"
+white = "#abb2bf"
+bright_black = "#5c6370"
+bright_red = "#e06c75"
+bright_green = "#98c379"
+bright_yellow = "#e5c07b"
+bright_blue = "#61afef"
+bright_magenta = "#c678dd"
+bright_cyan = "#56b6c2"
+bright_white = "#ffffff"
+
+[themes.component_style]
+selection = { bg = "#3e4451", modifiers = ["Bold"] }
+block_title = { fg = "#c678dd", modifiers = ["Bold"] }
+playback_track = { fg = "#abb2bf", modifiers = ["Bold"] }
+playback_album = { fg = "#e5c07b" }
+playback_metadata = { fg = "#5c6370" }
+playback_progress_bar = { bg = "#3e4451", fg = "#98c379" }
+current_playing = { fg = "#98c379", modifiers = ["Bold"] }
+page_desc = { fg = "#61afef", modifiers = ["Bold"] }
+table_header = { fg = "#e06c75", modifiers = ["Bold"] }
+border = { fg = "#3e4451" }
+playback_status = { fg = "#98c379", modifiers = ["Bold"] }
+playback_artists = { fg = "#c678dd", modifiers = ["Bold"] }
+playlist_desc = { fg = "#5c6370" }
+
+[[themes]]
+name = "Piano"
+[themes.palette]
+background = "#000000"
+foreground = "#ffffff"
+black = "#000000"
+red = "#ffffff"
+green = "#ffffff"
+yellow = "#ffffff"
+blue = "#ffffff"
+magenta = "#ffffff"
+cyan = "#ffffff"
+white = "#ffffff"
+bright_black = "#333333"
+bright_red = "#ffffff"
+bright_green = "#ffffff"
+bright_yellow = "#ffffff"
+bright_blue = "#ffffff"
+bright_magenta = "#ffffff"
+bright_cyan = "#ffffff"
+bright_white = "#ffffff"
+
+[themes.component_style]
+selection = { bg = "#333333", modifiers = ["Bold"] }
+block_title = { fg = "#ffffff", modifiers = ["Bold"] }
+playback_track = { fg = "#ffffff", modifiers = ["Bold"] }
+playback_album = { fg = "#cccccc" }
+playback_metadata = { fg = "#666666" }
+playback_progress_bar = { bg = "#333333", fg = "#ffffff" }
+current_playing = { fg = "#ffffff", modifiers = ["Bold", "Underlined"] }
+page_desc = { fg = "#ffffff", modifiers = ["Bold"] }
+table_header = { fg = "#ffffff", modifiers = ["Bold"] }
+border = { fg = "#333333" }
+playback_status = { fg = "#ffffff", modifiers = ["Bold"] }
+playback_artists = { fg = "#ffffff", modifiers = ["Bold"] }
+playlist_desc = { fg = "#666666" }
+
+[[themes]]
+name = "Portal"
+[themes.palette]
+background = "#1a1a1a"
+foreground = "#ffffff"
+black = "#1a1a1a"
+red = "#ff6600"
+green = "#00a2ff"
+yellow = "#ffcc00"
+blue = "#00a2ff"
+magenta = "#ff6600"
+cyan = "#00a2ff"
+white = "#cccccc"
+bright_black = "#333333"
+bright_red = "#ff6600"
+bright_green = "#00a2ff"
+bright_yellow = "#ffcc00"
+bright_blue = "#00a2ff"
+bright_magenta = "#ff6600"
+bright_cyan = "#00a2ff"
+bright_white = "#ffffff"
+
+[themes.component_style]
+selection = { bg = "#333333", modifiers = ["Bold"] }
+block_title = { fg = "#ff6600", modifiers = ["Bold"] }
+playback_track = { fg = "#ffffff", modifiers = ["Bold"] }
+playback_album = { fg = "#00a2ff" }
+playback_metadata = { fg = "#999999" }
+playback_progress_bar = { bg = "#333333", fg = "#ff6600" }
+current_playing = { fg = "#ff6600", modifiers = ["Bold"] }
+page_desc = { fg = "#00a2ff", modifiers = ["Bold"] }
+table_header = { fg = "#00a2ff", modifiers = ["Bold"] }
+border = { fg = "#333333" }
+playback_status = { fg = "#00a2ff", modifiers = ["Bold"] }
+playback_artists = { fg = "#ff6600", modifiers = ["Bold"] }
+playlist_desc = { fg = "#999999" }
+
+[[themes]]
+name = "Rock Concert"
+[themes.palette]
+background = "#0d0d0d"
+foreground = "#ff4500"
+black = "#0d0d0d"
+red = "#ff4500"
+green = "#ff6347"
+yellow = "#ff8c00"
+blue = "#dc143c"
+magenta = "#ff1493"
+cyan = "#ff7f50"
+white = "#ffa07a"
+bright_black = "#1a1a1a"
+bright_red = "#ff6347"
+bright_green = "#ff7f50"
+bright_yellow = "#ffa500"
+bright_blue = "#ff4500"
+bright_magenta = "#ff1493"
+bright_cyan = "#ff7f50"
+bright_white = "#ff6347"
+
+[themes.component_style]
+selection = { bg = "#1a1a1a", modifiers = ["Bold"] }
+block_title = { fg = "#ff4500", modifiers = ["Bold"] }
+playback_track = { fg = "#ffffff", modifiers = ["Bold"] }
+playback_album = { fg = "#ff6347" }
+playback_metadata = { fg = "#ff8c00" }
+playback_progress_bar = { bg = "#1a1a1a", fg = "#ff4500" }
+current_playing = { fg = "#ff4500", modifiers = ["Bold"] }
+page_desc = { fg = "#ff4500", modifiers = ["Bold"] }
+table_header = { fg = "#ff6347", modifiers = ["Bold"] }
+border = { fg = "#1a1a1a" }
+playback_status = { fg = "#ff8c00", modifiers = ["Bold"] }
+playback_artists = { fg = "#ff4500", modifiers = ["Bold"] }
+playlist_desc = { fg = "#dc143c" }
+
+[[themes]]
+name = "Rose Pine"
+[themes.palette]
+background = "#191724"
+foreground = "#e0def4"
+black = "#191724"
+red = "#eb6f92"
+green = "#31748f"
+yellow = "#f6c177"
+blue = "#9ccfd8"
+magenta = "#c4a7e7"
+cyan = "#ebbcba"
+white = "#e0def4"
+bright_black = "#26233a"
+bright_red = "#eb6f92"
+bright_green = "#31748f"
+bright_yellow = "#f6c177"
+bright_blue = "#9ccfd8"
+bright_magenta = "#c4a7e7"
+bright_cyan = "#ebbcba"
+bright_white = "#e0def4"
+
+[themes.component_style]
+selection = { bg = "#26233a", modifiers = ["Bold"] }
+block_title = { fg = "#c4a7e7", modifiers = ["Bold"] }
+playback_track = { fg = "#e0def4", modifiers = ["Bold"] }
+playback_album = { fg = "#f6c177" }
+playback_metadata = { fg = "#6e6a86" }
+playback_progress_bar = { bg = "#26233a", fg = "#9ccfd8" }
+current_playing = { fg = "#eb6f92", modifiers = ["Bold"] }
+page_desc = { fg = "#c4a7e7", modifiers = ["Bold"] }
+table_header = { fg = "#ebbcba", modifiers = ["Bold"] }
+border = { fg = "#26233a" }
+playback_status = { fg = "#31748f", modifiers = ["Bold"] }
+playback_artists = { fg = "#c4a7e7", modifiers = ["Bold"] }
+playlist_desc = { fg = "#6e6a86" }
+
+[[themes]]
+name = "Solarized Dark"
+[themes.palette]
+background = "#002b36"
+foreground = "#839496"
+black = "#073642"
+red = "#dc322f"
+green = "#859900"
+yellow = "#b58900"
+blue = "#268bd2"
+magenta = "#d33682"
+cyan = "#2aa198"
+white = "#93a1a1"
+bright_black = "#002b36"
+bright_red = "#cb4b16"
+bright_green = "#586e75"
+bright_yellow = "#657b83"
+bright_blue = "#839496"
+bright_magenta = "#6c71c4"
+bright_cyan = "#93a1a1"
+bright_white = "#fdf6e3"
+
+[themes.component_style]
+selection = { bg = "#073642", modifiers = ["Bold"] }
+block_title = { fg = "#2aa198", modifiers = ["Bold"] }
+playback_track = { fg = "#839496", modifiers = ["Bold"] }
+playback_album = { fg = "#b58900" }
+playback_metadata = { fg = "#586e75" }
+playback_progress_bar = { bg = "#073642", fg = "#859900" }
+current_playing = { fg = "#859900", modifiers = ["Bold"] }
+page_desc = { fg = "#268bd2", modifiers = ["Bold"] }
+table_header = { fg = "#d33682", modifiers = ["Bold"] }
+border = { fg = "#073642" }
+playback_status = { fg = "#859900", modifiers = ["Bold"] }
+playback_artists = { fg = "#2aa198", modifiers = ["Bold"] }
+playlist_desc = { fg = "#586e75" }
+
+[[themes]]
+name = "SoundCloud"
+[themes.palette]
+background = "#111111"
+foreground = "#ffffff"
+black = "#111111"
+red = "#ff5500"
+green = "#ff5500"
+yellow = "#ff7700"
+blue = "#ff5500"
+magenta = "#ff5500"
+cyan = "#ff5500"
+white = "#999999"
+bright_black = "#333333"
+bright_red = "#ff5500"
+bright_green = "#ff5500"
+bright_yellow = "#ff7700"
+bright_blue = "#ff5500"
+bright_magenta = "#ff5500"
+bright_cyan = "#ff5500"
+bright_white = "#ffffff"
+
+[themes.component_style]
+selection = { bg = "#333333", modifiers = ["Bold"] }
+block_title = { fg = "#ff5500", modifiers = ["Bold"] }
+playback_track = { fg = "#ffffff", modifiers = ["Bold"] }
+playback_album = { fg = "#ff7700" }
+playback_metadata = { fg = "#666666" }
+playback_progress_bar = { bg = "#333333", fg = "#ff5500" }
+current_playing = { fg = "#ff5500", modifiers = ["Bold"] }
+page_desc = { fg = "#ff5500", modifiers = ["Bold"] }
+table_header = { fg = "#999999", modifiers = ["Bold"] }
+border = { fg = "#333333" }
+playback_status = { fg = "#ff5500", modifiers = ["Bold"] }
+playback_artists = { fg = "#ff7700", modifiers = ["Bold"] }
+playlist_desc = { fg = "#666666" }
+
+[[themes]]
+name = "Spotify"
+[themes.palette]
+background = "#121212"
+foreground = "#FFFFFF"
+black = "#121212"
+red = "#E91429"
+green = "#1DB954"
+yellow = "#FFFFFF"
+blue = "#1DB954"
+magenta = "#1DB954"
+cyan = "#1DB954"
+white = "#B3B3B3"
+bright_black = "#282828"
+bright_red = "#E91429"
+bright_green = "#1DB954"
+bright_yellow = "#FFFFFF"
+bright_blue = "#1DB954"
+bright_magenta = "#1DB954"
+bright_cyan = "#1DB954"
+bright_white = "#FFFFFF"
+
+[themes.component_style]
+selection = { bg = "#282828", modifiers = ["Bold"] }
+block_title = { fg = "#1DB954", modifiers = ["Bold"] }
+playback_track = { fg = "#FFFFFF", modifiers = ["Bold"] }
+playback_album = { fg = "#B3B3B3" }
+playback_metadata = { fg = "#535353" }
+playback_progress_bar = { bg = "#282828", fg = "#1DB954" }
+current_playing = { fg = "#1DB954", modifiers = ["Bold"] }
+page_desc = { fg = "#1DB954", modifiers = ["Bold"] }
+table_header = { fg = "#B3B3B3", modifiers = ["Bold"] }
+border = { fg = "#282828" }
+playback_status = { fg = "#1DB954", modifiers = ["Bold"] }
+playback_artists = { fg = "#B3B3B3", modifiers = ["Bold"] }
+playlist_desc = { fg = "#535353" }
+
+[[themes]]
+name = "Spring"
+[themes.palette]
+background = "#f0fff4"
+foreground = "#2d3436"
+black = "#2d3436"
+red = "#e17055"
+green = "#00b894"
+yellow = "#fdcb6e"
+blue = "#0984e3"
+magenta = "#6c5ce7"
+cyan = "#00cec9"
+white = "#636e72"
+bright_black = "#636e72"
+bright_red = "#ff7675"
+bright_green = "#55efc4"
+bright_yellow = "#ffeaa7"
+bright_blue = "#74b9ff"
+bright_magenta = "#a29bfe"
+bright_cyan = "#81ecec"
+bright_white = "#dfe6e9"
+
+[themes.component_style]
+selection = { bg = "#00b894", fg = "#ffffff", modifiers = ["Bold"] }
+block_title = { fg = "#6c5ce7", modifiers = ["Bold"] }
+playback_track = { fg = "#2d3436", modifiers = ["Bold"] }
+playback_album = { fg = "#e17055" }
+playback_metadata = { fg = "#b2bec3" }
+playback_progress_bar = { bg = "#00b894", fg = "#ffffff" }
+current_playing = { fg = "#00b894", modifiers = ["Bold"] }
+page_desc = { fg = "#6c5ce7", modifiers = ["Bold"] }
+table_header = { fg = "#0984e3", modifiers = ["Bold"] }
+border = { fg = "#00b894" }
+playback_status = { fg = "#00b894", modifiers = ["Bold"] }
+playback_artists = { fg = "#fdcb6e", modifiers = ["Bold"] }
+playlist_desc = { fg = "#b2bec3" }
+
+[[themes]]
+name = "Summer"
+[themes.palette]
+background = "#fff9e6"
+foreground = "#2d2d2d"
+black = "#2d2d2d"
+red = "#ff6b6b"
+green = "#51cf66"
+yellow = "#ffd43b"
+blue = "#339af0"
+magenta = "#cc5de8"
+cyan = "#22b8cf"
+white = "#495057"
+bright_black = "#343a40"
+bright_red = "#ff8787"
+bright_green = "#69db7c"
+bright_yellow = "#ffe066"
+bright_blue = "#4dabf7"
+bright_magenta = "#da77f2"
+bright_cyan = "#38d9a9"
+bright_white = "#f8f9fa"
+
+[themes.component_style]
+selection = { bg = "#ffd43b", fg = "#2d2d2d", modifiers = ["Bold"] }
+block_title = { fg = "#ff6b6b", modifiers = ["Bold"] }
+playback_track = { fg = "#2d2d2d", modifiers = ["Bold"] }
+playback_album = { fg = "#ff6b6b" }
+playback_metadata = { fg = "#868e96" }
+playback_progress_bar = { bg = "#ffd43b", fg = "#ff6b6b" }
+current_playing = { fg = "#ff6b6b", modifiers = ["Bold"] }
+page_desc = { fg = "#339af0", modifiers = ["Bold"] }
+table_header = { fg = "#cc5de8", modifiers = ["Bold"] }
+border = { fg = "#ffd43b" }
+playback_status = { fg = "#51cf66", modifiers = ["Bold"] }
+playback_artists = { fg = "#cc5de8", modifiers = ["Bold"] }
+playlist_desc = { fg = "#868e96" }
+
+[[themes]]
+name = "Synthwave"
+[themes.palette]
+background = "#0d0221"
+foreground = "#ffffff"
+black = "#0d0221"
+red = "#ff6ec7"
+green = "#00d9ff"
+yellow = "#ff9f43"
+blue = "#ff00ff"
+magenta = "#c71585"
+cyan = "#00ffff"
+white = "#f8f8f2"
+bright_black = "#2a2a40"
+bright_red = "#ff6ec7"
+bright_green = "#00d9ff"
+bright_yellow = "#ffcc00"
+bright_blue = "#ff00ff"
+bright_magenta = "#c71585"
+bright_cyan = "#00ffff"
+bright_white = "#ffffff"
+
+[themes.component_style]
+selection = { bg = "#2a2a40", modifiers = ["Bold"] }
+block_title = { fg = "#ff00ff", modifiers = ["Bold"] }
+playback_track = { fg = "#00d9ff", modifiers = ["Bold"] }
+playback_album = { fg = "#ff6ec7" }
+playback_metadata = { fg = "#9d4edd" }
+playback_progress_bar = { bg = "#2a2a40", fg = "#00d9ff" }
+current_playing = { fg = "#ff6ec7", modifiers = ["Bold"] }
+page_desc = { fg = "#00ffff", modifiers = ["Bold"] }
+table_header = { fg = "#ff00ff", modifiers = ["Bold"] }
+border = { fg = "#2a2a40" }
+playback_status = { fg = "#00d9ff", modifiers = ["Bold"] }
+playback_artists = { fg = "#ff6ec7", modifiers = ["Bold"] }
+playlist_desc = { fg = "#9d4edd" }
+
+[[themes]]
+name = "Tetris"
+[themes.palette]
+background = "#000000"
+foreground = "#ffffff"
+black = "#000000"
+red = "#ff0000"
+green = "#00ff00"
+yellow = "#ffff00"
+blue = "#0000ff"
+magenta = "#ff00ff"
+cyan = "#00ffff"
+white = "#ffffff"
+bright_black = "#333333"
+bright_red = "#ff6666"
+bright_green = "#66ff66"
+bright_yellow = "#ffff66"
+bright_blue = "#6666ff"
+bright_magenta = "#ff66ff"
+bright_cyan = "#66ffff"
+bright_white = "#ffffff"
+
+[themes.component_style]
+selection = { bg = "#333333", modifiers = ["Bold"] }
+block_title = { fg = "#ff00ff", modifiers = ["Bold"] }
+playback_track = { fg = "#ffffff", modifiers = ["Bold"] }
+playback_album = { fg = "#ff0000" }
+playback_metadata = { fg = "#666666" }
+playback_progress_bar = { bg = "#333333", fg = "#00ff00" }
+current_playing = { fg = "#ffff00", modifiers = ["Bold"] }
+page_desc = { fg = "#00ffff", modifiers = ["Bold"] }
+table_header = { fg = "#0000ff", modifiers = ["Bold"] }
+border = { fg = "#333333" }
+playback_status = { fg = "#00ff00", modifiers = ["Bold"] }
+playback_artists = { fg = "#ff00ff", modifiers = ["Bold"] }
+playlist_desc = { fg = "#666666" }
+[[themes]]
+name = "Tidal"
+[themes.palette]
+background = "#000000"
+foreground = "#ffffff"
+black = "#000000"
+red = "#ff0050"
+green = "#00ffaa"
+yellow = "#ffffff"
+blue = "#00ffaa"
+magenta = "#ff0050"
+cyan = "#00ffaa"
+white = "#ffffff"
+bright_black = "#1a1a1a"
+bright_red = "#ff0050"
+bright_green = "#00ffaa"
+bright_yellow = "#ffffff"
+bright_blue = "#00ffaa"
+bright_magenta = "#ff0050"
+bright_cyan = "#00ffaa"
+bright_white = "#ffffff"
+
+[themes.component_style]
+selection = { bg = "#1a1a1a", modifiers = ["Bold"] }
+block_title = { fg = "#ff0050", modifiers = ["Bold"] }
+playback_track = { fg = "#ffffff", modifiers = ["Bold"] }
+playback_album = { fg = "#00ffaa" }
+playback_metadata = { fg = "#666666" }
+playback_progress_bar = { bg = "#1a1a1a", fg = "#00ffaa" }
+current_playing = { fg = "#00ffaa", modifiers = ["Bold"] }
+page_desc = { fg = "#ff0050", modifiers = ["Bold"] }
+table_header = { fg = "#ffffff", modifiers = ["Bold"] }
+border = { fg = "#1a1a1a" }
+playback_status = { fg = "#00ffaa", modifiers = ["Bold"] }
+playback_artists = { fg = "#ff0050", modifiers = ["Bold"] }
+playlist_desc = { fg = "#666666" }
+
+[[themes]]
+name = "Tokyo Night"
+[themes.palette]
+background = "#1a1b26"
+foreground = "#c0caf5"
+black = "#15161e"
+red = "#f7768e"
+green = "#9ece6a"
+yellow = "#e0af68"
+blue = "#7aa2f7"
+magenta = "#bb9af7"
+cyan = "#7dcfff"
+white = "#a9b1d6"
+bright_black = "#414868"
+bright_red = "#f7768e"
+bright_green = "#9ece6a"
+bright_yellow = "#e0af68"
+bright_blue = "#7aa2f7"
+bright_magenta = "#bb9af7"
+bright_cyan = "#7dcfff"
+bright_white = "#c0caf5"
+
+[themes.component_style]
+selection = { bg = "#414868", modifiers = ["Bold"] }
+block_title = { fg = "#bb9af7", modifiers = ["Bold"] }
+playback_track = { fg = "#c0caf5", modifiers = ["Bold"] }
+playback_album = { fg = "#e0af68" }
+playback_metadata = { fg = "#565f89" }
+playback_progress_bar = { bg = "#414868", fg = "#7aa2f7" }
+current_playing = { fg = "#9ece6a", modifiers = ["Bold"] }
+page_desc = { fg = "#7dcfff", modifiers = ["Bold"] }
+table_header = { fg = "#f7768e", modifiers = ["Bold"] }
+border = { fg = "#414868" }
+playback_status = { fg = "#9ece6a", modifiers = ["Bold"] }
+playback_artists = { fg = "#bb9af7", modifiers = ["Bold"] }
+playlist_desc = { fg = "#565f89" }
+
+[[themes]]
+name = "Vinyl Record"
+[themes.palette]
+background = "#1a0f0a"
+foreground = "#d4a574"
+black = "#1a0f0a"
+red = "#8b4513"
+green = "#cd853f"
+yellow = "#daa520"
+blue = "#8b7355"
+magenta = "#a0522d"
+cyan = "#deb887"
+white = "#d4a574"
+bright_black = "#2d1f1a"
+bright_red = "#cd853f"
+bright_green = "#deb887"
+bright_yellow = "#ffd700"
+bright_blue = "#cd853f"
+bright_magenta = "#cd853f"
+bright_cyan = "#deb887"
+bright_white = "#f5deb3"
+
+[themes.component_style]
+selection = { bg = "#2d1f1a", modifiers = ["Bold"] }
+block_title = { fg = "#daa520", modifiers = ["Bold"] }
+playback_track = { fg = "#d4a574", modifiers = ["Bold"] }
+playback_album = { fg = "#8b4513" }
+playback_metadata = { fg = "#6b4423" }
+playback_progress_bar = { bg = "#2d1f1a", fg = "#cd853f" }
+current_playing = { fg = "#daa520", modifiers = ["Bold"] }
+page_desc = { fg = "#daa520", modifiers = ["Bold"] }
+table_header = { fg = "#8b4513", modifiers = ["Bold"] }
+border = { fg = "#2d1f1a" }
+playback_status = { fg = "#cd853f", modifiers = ["Bold"] }
+playback_artists = { fg = "#cd853f", modifiers = ["Bold"] }
+playlist_desc = { fg = "#6b4423" }
+
+[[themes]]
+name = "Windows 95"
+[themes.palette]
+background = "#c0c0c0"
+foreground = "#000000"
+black = "#000000"
+red = "#800000"
+green = "#008000"
+yellow = "#808000"
+blue = "#000080"
+magenta = "#800080"
+cyan = "#008080"
+white = "#c0c0c0"
+bright_black = "#808080"
+bright_red = "#ff0000"
+bright_green = "#00ff00"
+bright_yellow = "#ffff00"
+bright_blue = "#0000ff"
+bright_magenta = "#ff00ff"
+bright_cyan = "#00ffff"
+bright_white = "#ffffff"
+
+[themes.component_style]
+selection = { bg = "#000080", fg = "#ffffff", modifiers = ["Bold"] }
+block_title = { fg = "#000080", modifiers = ["Bold"] }
+playback_track = { fg = "#000000", modifiers = ["Bold"] }
+playback_album = { fg = "#000080" }
+playback_metadata = { fg = "#808080" }
+playback_progress_bar = { bg = "#808080", fg = "#000080" }
+current_playing = { fg = "#000080", modifiers = ["Bold"] }
+page_desc = { fg = "#000000", modifiers = ["Bold"] }
+table_header = { fg = "#000080", modifiers = ["Bold"] }
+border = { fg = "#ffffff" }
+playback_status = { fg = "#008000", modifiers = ["Bold"] }
+playback_artists = { fg = "#800000", modifiers = ["Bold"] }
+playlist_desc = { fg = "#808080" }
+
+[[themes]]
+name = "Winter"
+[themes.palette]
+background = "#0a1628"
+foreground = "#e8f4f8"
+black = "#0a1628"
+red = "#5b9bd5"
+green = "#70ad47"
+yellow = "#ffc000"
+blue = "#002060"
+magenta = "#7030a0"
+cyan = "#00b0f0"
+white = "#c8d8e8"
+bright_black = "#1a2e48"
+bright_red = "#4aa3df"
+bright_green = "#8bc34a"
+bright_yellow = "#ffca28"
+bright_blue = "#003090"
+bright_magenta = "#9040b0"
+bright_cyan = "#20c5f0"
+bright_white = "#e8f4f8"
+
+[themes.component_style]
+selection = { bg = "#1a2e48", modifiers = ["Bold"] }
+block_title = { fg = "#00b0f0", modifiers = ["Bold"] }
+playback_track = { fg = "#e8f4f8", modifiers = ["Bold"] }
+playback_album = { fg = "#5b9bd5" }
+playback_metadata = { fg = "#3d5c7c" }
+playback_progress_bar = { bg = "#1a2e48", fg = "#00b0f0" }
+current_playing = { fg = "#5b9bd5", modifiers = ["Bold"] }
+page_desc = { fg = "#00b0f0", modifiers = ["Bold"] }
+table_header = { fg = "#7030a0", modifiers = ["Bold"] }
+border = { fg = "#1a2e48" }
+playback_status = { fg = "#70ad47", modifiers = ["Bold"] }
+playback_artists = { fg = "#5b9bd5", modifiers = ["Bold"] }
+playlist_desc = { fg = "#3d5c7c" }
+
+[[themes]]
+name = "YouTube Music"
+[themes.palette]
+background = "#0f0f0f"
+foreground = "#ffffff"
+black = "#0f0f0f"
+red = "#ff0000"
+green = "#ffffff"
+yellow = "#ff0000"
+blue = "#3ea6ff"
+magenta = "#ff0000"
+cyan = "#3ea6ff"
+white = "#aaaaaa"
+bright_black = "#272727"
+bright_red = "#ff4e45"
+bright_green = "#ffffff"
+bright_yellow = "#ff4e45"
+bright_blue = "#3ea6ff"
+bright_magenta = "#ff4e45"
+bright_cyan = "#3ea6ff"
+bright_white = "#ffffff"
+
+[themes.component_style]
+selection = { bg = "#272727", modifiers = ["Bold"] }
+block_title = { fg = "#ff0000", modifiers = ["Bold"] }
+playback_track = { fg = "#ffffff", modifiers = ["Bold"] }
+playback_album = { fg = "#3ea6ff" }
+playback_metadata = { fg = "#606060" }
+playback_progress_bar = { bg = "#272727", fg = "#ff0000" }
+current_playing = { fg = "#ff0000", modifiers = ["Bold"] }
+page_desc = { fg = "#ff0000", modifiers = ["Bold"] }
+table_header = { fg = "#aaaaaa", modifiers = ["Bold"] }
+border = { fg = "#272727" }
+playback_status = { fg = "#ff0000", modifiers = ["Bold"] }
+playback_artists = { fg = "#3ea6ff", modifiers = ["Bold"] }
+playlist_desc = { fg = "#606060" }
+

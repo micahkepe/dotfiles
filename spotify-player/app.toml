@@ -1,4 +1,4 @@
-theme = "dracula"
+theme = "Gruvbox"
 client_id = "417a4ce230ba43e68cedac66317f7c66"
 client_port = 8080
 login_redirect_uri = "http://127.0.0.1:8989/login"
