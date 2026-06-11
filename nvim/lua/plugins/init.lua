@@ -1,3 +1,15 @@
+---Disabled transitive plugins.
+---@return table
+local function disabled_plugins()
+  local no_thanks =
+    { "nvim-telescope/telescope.nvim", "nvim-tree/nvim-tree.lua" }
+  local res = {}
+  for _, plugin in ipairs(no_thanks) do
+    res[#res + 1] = { plugin, enabled = false }
+  end
+  return res
+end
+
 return {
   {
     "stevearc/conform.nvim",
@@ -316,21 +328,6 @@ return {
   },
 
   {
-    "m4xshen/hardtime.nvim",
-    cmd = "Hardtime",
-    dependencies = { "MunifTanjim/nui.nvim" },
-    opts = {
-      enabled = false,
-      disable_mouse = false,
-      restriction_mode = "hint", -- non-blocking on violations
-      disabled_keys = {
-        ["<Up>"] = false,
-        ["<Down>"] = false,
-      },
-    },
-  },
-
-  {
     "ibhagwan/fzf-lua",
     dependencies = { "echasnovski/mini.icons" },
     opts = {},
@@ -358,17 +355,6 @@ return {
     ft = "*.ipynb",
   },
 
-  -- NvChad default plugins I don't use -> disable to clean up plugin table
-  {
-    "nvim-tree/nvim-tree.lua",
-    enabled = false,
-  },
-
-  {
-    "nvim-telescope/telescope.nvim",
-    enabled = false,
-  },
-
   { "itchyny/lightline.vim", event = "VeryLazy" },
 
   { "dlyongemallo/diffview.nvim", event = "VeryLazy" },
@@ -379,4 +365,6 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     lazy = false,
   },
+
+  disabled_plugins(),
 }
