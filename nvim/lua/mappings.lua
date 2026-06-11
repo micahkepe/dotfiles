@@ -166,13 +166,6 @@ end, { desc = "Search History" })
 map("n", "<leader>sc", function()
   snacks.picker.command_history()
 end, { desc = "Command History" })
--- Lazygit
-map("n", "<leader>lg", function()
-  snacks.lazygit.open()
-end, { desc = "Open Lazygit" })
-map("n", "<leader>ht", function()
-  snacks.terminal()
-end, { desc = "terminal new horizontal term" })
 -- Open references in Snack's picker instead of Quickfix menu
 map("n", "grr", function()
   snacks.picker.lsp_references()
