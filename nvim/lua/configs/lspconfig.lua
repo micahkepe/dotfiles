@@ -3,7 +3,6 @@ local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 -- LSP Servers with no configuration needed
--- NOTE: Rust LSP setup managed by `mrcjkb/rustaceanvim` plugin
 local servers = {
   "bash-language-server",
   "bashls",
@@ -11,8 +10,6 @@ local servers = {
   "cpptools",
   "gopls",
   "harper-ls",
-  "haskell-language-server",
-  "hls",
   "jdtls",
   "lua-language-server",
   "protols",
