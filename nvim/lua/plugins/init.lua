@@ -68,20 +68,6 @@ return {
     end,
   },
 
-  -- Markdown preview
-  {
-    "iamcco/markdown-preview.nvim",
-    ft = "markdown",
-    lazy = true,
-    cmd = "MarkdownPreview",
-    build = function()
-      vim.fn["mkdp#util#install"]()
-    end,
-    config = function()
-      vim.g.mkdp_filetypes = { "markdown" }
-    end,
-  },
-
   -- Golang support
   {
     "ray-x/go.nvim",
@@ -334,20 +320,6 @@ return {
   },
 
   { "tpope/vim-repeat", event = "BufReadPost" },
-
-  -- Markdown rendering
-  {
-    "MeanderingProgrammer/render-markdown.nvim",
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-      "echasnovski/mini.icons",
-    },
-    ft = { "markdown", "quarto" }, -- lazy-load on filetype
-    opts = {
-      enabled = false, -- off by default
-      latex = { enabled = false },
-    },
-  },
 
   {
     "GCBallesteros/jupytext.nvim",

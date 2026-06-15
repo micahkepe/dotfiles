@@ -32,14 +32,6 @@ map(
   { desc = "Save the current buffer " }
 )
 
--- Markdown previewing
-map(
-  "n",
-  "<leader>mp",
-  "<cmd>MarkdownPreview<cr>",
-  { desc = "Markdown Preview" }
-)
-
 -- Adjust color column
 map("n", "<leader>er", ":set colorcolumn=", { desc = "Adjust colorcolumn" })
 
@@ -216,14 +208,6 @@ map("n", "<leader>cl", function()
     vim.notify("CodeLens OFF ✘", vim.log.levels.INFO)
   end
 end, { desc = "Toggle CodeLens for the current buffer" })
-
--- RenderMarkdown mappings
-map(
-  "n",
-  "<leader>rmd",
-  ":RenderMarkdown buf_toggle<CR>",
-  { desc = "Toggle Markdown Rendering for the Current Buffer" }
-)
 
 -- `rustaceannvim`
 map(

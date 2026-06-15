@@ -1,27 +1,17 @@
 # Micah's Dotfiles
 
-![Preview of my Neovim setup.](images/nvim.png)
-
 My personal dotfiles for macOS/Linux. This repository contains my configurations
 for Neovim/ Vim, Hammerspoon, and more. I have included a bootstrap script that
 will create the necessary symlinks for the configurations and install required
 packages.
 
 > [!NOTE]
-> This repository is a work in progress and is constantly being updated.
-> Additionally, if you want to give these dotfiles a try, I recommend forking
-> and reviewing the code before giving them a whirl.
+> This probably won't work on your system `¯\_(ツ)_/¯`.
+>
+> If you want to give these dotfiles a try, I recommend forking and reviewing
+> the code before giving them a whirl.
 
 <details>
-<summary>Fastfetch</summary>
-
-**MacOS**:
-
-![Fastfetch Mac output](./images/fastfetch-macos.png)
-
-**Linux**:
-
-![Fastfetch Linux output](./images/fastfetch-omarchy.png)
 
 </details>
 
@@ -95,8 +85,3 @@ cd ~/.dotfiles && ./bootstrap.sh
 
 - Linux:
   - [Omarchy](https://omarchy.org/) &rarr; opinionated tiling Arch Linux distro
-
----
-
-And that's it! If you have any suggestions or questions feel free to open an
-issue or contact me.
