@@ -25,7 +25,6 @@ return {
         exclude = { "*.rs" }, -- tabout will ignore these filetypes
       }
     end,
-    opt = true, -- Set this to true if the plugin is optional
     event = "InsertCharPre", -- Set the event to 'InsertCharPre' for better compatibility
   },
 }
