@@ -12,6 +12,7 @@ return {
     picker = { enabled = true },
     quickfile = { enabled = true },
     image = {
+      enabled = true,
       doc = {
         float = true,
         inline = false,
