@@ -2,25 +2,19 @@ local on_attach = require("nvchad.configs.lspconfig").on_attach
 local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
--- LSP Servers with no configuration needed
+-- LSP Servers with no additional configuration needed
+-- NOTE: servers configured explicitly below (gopls, clangd, cssls,
+-- tailwindcss, harper_ls, lua_ls) are NOT listed here to avoid
+-- double-config. typescript-tools.nvim manages the TS server.
 local servers = {
-  "bash-language-server",
   "bashls",
   "biome",
-  "cpptools",
-  "gopls",
-  "harper-ls",
   "jdtls",
-  "lua-language-server",
   "protols",
   "pyright",
   "ruff",
-  "shellcheck",
-  "shfmt",
-  "tailwindcss-language-server",
   "texlab",
-  "typescript-language-server",
-  "wgsl-analyzer",
+  "wgsl_analyzer",
 }
 
 for _, lsp in ipairs(servers) do
@@ -52,7 +46,6 @@ vim.lsp.config("gopls", {
   on_attach = on_attach,
   on_init = on_init,
   capabilities = capabilities,
-  cmd = { "gopls" },
   settings = {
     gopls = {
       analyses = {
