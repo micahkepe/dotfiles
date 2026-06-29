@@ -196,7 +196,10 @@ return {
       smear_between_neighbor_lines = true,
 
       -- Draw the smear in buffer space instead of screen space when scrolling
-      scroll_buffer_space = true,
+      scroll_buffer_space = false,
+
+      -- Skip smear animation on large vertical jumps (page up/down)
+      min_vertical_distance_smear = 3,
 
       -- Set to `true` if your font supports legacy computing symbols (block unicode symbols).
       -- Smears will blend better on all backgrounds.

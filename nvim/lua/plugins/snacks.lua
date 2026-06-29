@@ -8,7 +8,6 @@ return {
   ---@type snacks.Config
   opts = {
     bigfile = { enabled = true },
-    scroll = { enabled = true },
     gitbrowse = { enabled = true },
     picker = { enabled = true },
     quickfile = { enabled = true },
