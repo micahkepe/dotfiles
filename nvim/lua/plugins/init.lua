@@ -179,7 +179,18 @@ return {
     lazy = true,
     config = function()
       vim.g.better_whitespace_enabled = 1
-      vim.g.strip_whitespace_on_save = 0 -- LSP should handle on save
+      vim.g.strip_whitespace_on_save = 0
+      vim.g.better_whitespace_filetypes_blacklist = {
+        "diff",
+        "git",
+        "gitcommit",
+        "help",
+        "TelescopePrompt",
+        "TelescopeResults",
+        "blink-cmp-menu",
+        "blink-cmp-documentation",
+        "blink-cmp-signature",
+      }
     end,
   },
 
