@@ -22,7 +22,12 @@ map(
 )
 
 -- tmux-sessionizer
-map("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+map(
+  "n",
+  "<C-f>",
+  "<cmd>silent !tmux neww tmux-sessionizer<CR>",
+  { desc = "Launch `tmux-sessionizer`" }
+)
 
 -- Map <C-s> to save
 map(
@@ -228,6 +233,12 @@ map(
 
 -- Clear ALL buffers
 map("n", "<leader>Cb", ":bufdo bd<CR>", { desc = "Clear all buffers" })
+
+-- Copy absolute filepath to system clipboard
+map("n", "<leader>cc", function()
+  local fp = vim.api.nvim_buf_get_name(0)
+  vim.fn.setreg("+", fp)
+end, { desc = "Copy filepath to system clipboard" })
 
 -- Zen mode (w/ Goyo)
 map("n", "<leader>z", ":Goyo<CR>", { desc = "Toggle Zen mode" })
