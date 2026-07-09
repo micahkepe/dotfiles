@@ -10,6 +10,7 @@ local options = {
     typescript = { "biome" },
     json = { "biome", "prettier" },
     python = { "ruff", "black" },
+    rust = { "rustfmt" },
     haskell = { "fourmolu" },
   },
 
