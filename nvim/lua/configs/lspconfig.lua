@@ -14,7 +14,6 @@ local servers = {
   "pyright",
   "ruff",
   "texlab",
-  "wgsl_analyzer",
 }
 
 for _, lsp in ipairs(servers) do
@@ -24,6 +23,16 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   })
 end
+
+-- wgsl_analyzer
+-- https://github.com/wgsl-analyzer/wgsl-analyzer/blob/main/docs/book/src/other_editors.md#vimneovim
+vim.lsp.config("wgsl_analyzer", {
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+  filetypes = { "wgsl", "wesl" },
+})
+vim.lsp.enable "wgsl_analyzer"
 
 -- CSS LSP — silence Tailwind v4 at-rule warnings
 vim.lsp.config("cssls", {
