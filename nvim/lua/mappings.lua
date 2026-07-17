@@ -240,5 +240,22 @@ map("n", "<leader>cc", function()
   vim.fn.setreg("+", fp)
 end, { desc = "Copy filepath to system clipboard" })
 
+-- Copy relative filepath from the git repository root to system clipboard
+map("n", "<leader>cr", function()
+  local fp = vim.api.nvim_buf_get_name(0)
+  local handle = io.popen "git rev-parse --show-toplevel"
+  if not handle then
+    vim.notify(
+      "Unable to execute `git rev-parse --show-toplevel`",
+      vim.log.levels.ERROR
+    )
+    return
+  end
+  local git_root = handle:read("*a"):gsub("%s+$", "")
+  handle:close()
+  local rel = fp:sub(#git_root + 2)
+  vim.fn.setreg("+", rel)
+end, { desc = "Copy relative filepath from Git repo root to system clipboard" })
+
 -- Zen mode (w/ Goyo)
 map("n", "<leader>z", ":Goyo<CR>", { desc = "Toggle Zen mode" })
