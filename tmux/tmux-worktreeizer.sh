@@ -3,7 +3,8 @@
 # Auto-magical tmux session creation for a chosen worktree.
 #
 # Usage:
-#   $ tmux-worktreeizer.sh
+#   $ tmux-worktreeizer.sh           # pick a branch, create/attach worktree session
+#   $ tmux-worktreeizer.sh cleanup   # remove worktrees whose tmux session is gone
 #
 # Description:
 #
@@ -42,6 +43,101 @@
 #   ~/my-repo/my-repo-worktrees/main
 #
 #   If the worktree already exists, it will be reused (idempotent switching).
+#
+# Cleanup:
+#
+#   Every session this script creates is recorded in a state file
+#   ($XDG_STATE_HOME/tmux-worktreeizer/sessions.tsv). The `cleanup` mode sweeps
+#   that file: for each recorded session that no longer exists, the worktree is
+#   removed (`git worktree remove` -- refuses if dirty, so uncommitted work is
+#   safe) and `git worktree prune` is run. Wire it to tmux so killing a session
+#   deletes its worktree automatically:
+#
+#   set-hook -g session-closed 'run-shell "~/dotfiles/tmux/tmux-worktreeizer.sh cleanup"'
+
+STATE_DIR="${XDG_STATE_HOME:-$HOME/.local/state}/tmux-worktreeizer"
+STATE_FILE="$STATE_DIR/sessions.tsv"
+
+# Remember that $1 (session) owns worktree $2 belonging to repo $3.
+record_session() {
+  mkdir -p "$STATE_DIR"
+  touch "$STATE_FILE"
+  local tmpfile
+  tmpfile="$(mktemp)"
+  awk -F'\t' -v s="$1" '$1 != s' "$STATE_FILE" >"$tmpfile"
+  printf '%s\t%s\t%s\n' "$1" "$2" "$3" >>"$tmpfile"
+  mv "$tmpfile" "$STATE_FILE"
+}
+
+# Sweep state file: remove worktrees for sessions that no longer exist.
+# Dirty worktrees are kept (entry stays, retried on the next sweep).
+cleanup() {
+  [[ -f "$STATE_FILE" ]] || return 0
+  local tmpfile sname wtpath repo
+  tmpfile="$(mktemp)"
+  while IFS=$'\t' read -r sname wtpath repo; do
+    [[ -z "$sname" || -z "$wtpath" || -z "$repo" ]] && continue
+
+    if tmux has-session -t "=$sname" 2>/dev/null; then
+      printf '%s\t%s\t%s\n' "$sname" "$wtpath" "$repo" >>"$tmpfile"
+      continue
+    fi
+
+    if [[ -d "$wtpath" ]]; then
+      if ! git -C "$repo" worktree remove "$wtpath" 2>/dev/null; then
+        tmux display-message "worktreeizer: $wtpath dirty; not removed" 2>/dev/null || true
+        printf '%s\t%s\t%s\n' "$sname" "$wtpath" "$repo" >>"$tmpfile"
+        continue
+      fi
+      # Drop the shared <repo>-worktrees dir once it's empty
+      rmdir "$(dirname "$wtpath")" 2>/dev/null || true
+    fi
+    git -C "$repo" worktree prune 2>/dev/null || true
+  done <"$STATE_FILE"
+  mv "$tmpfile" "$STATE_FILE"
+}
+
+usage() {
+  cat <<EOF
+Usage: ${0##*/} [-h|--help] [cleanup]
+
+Create (or switch to) a tmux session for a git worktree, picked via fzf.
+Worktrees live next to the repo root in <repo>-worktrees/.
+
+Commands:
+  cleanup     Remove worktrees whose tmux session no longer exists, then
+              run 'git worktree prune'. Dirty worktrees are left alone.
+              Intended to be run from a tmux hook:
+                set-hook -g session-closed 'run-shell "${0} cleanup"'
+
+Options:
+  -h, --help  Show this help and exit.
+EOF
+}
+
+MODE="worktreeize"
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+  -h | --help)
+    usage
+    exit 0
+    ;;
+  cleanup)
+    MODE="cleanup"
+    shift
+    ;;
+  *)
+    echo "Error: unknown argument: $1" >&2
+    usage >&2
+    exit 1
+    ;;
+  esac
+done
+
+if [[ "$MODE" == "cleanup" ]]; then
+  cleanup
+  exit 0
+fi
 
 if ! (git rev-parse --is-inside-worktree) >/dev/null 2>&1; then
   echo "Error: Not inside of a git directory."
@@ -177,6 +273,12 @@ existing_session="$(
 )" || true
 
 SESSION_NAME="${existing_session:-$WORKTREE_NAME}"
+
+# Register for auto-cleanup, but only worktrees this script manages (inside
+# WORKTREES_DIR) -- never the repo root or manually-placed worktrees.
+case "$WORKTREE_PATH" in
+"$WORKTREES_DIR"/*) record_session "$SESSION_NAME" "$WORKTREE_PATH" "$REPO_ROOT" ;;
+esac
 
 tmux_running=$(pgrep tmux || true)
 
