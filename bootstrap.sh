@@ -182,10 +182,12 @@ echo "Linking dotfiles..."
 if [[ "$OS" == "Darwin" ]]; then
   symlink "$DOTFILES_DIR"/.hammerspoon "$HOME"/.hammerspoon
   symlink "$DOTFILES_DIR"/karabiner "$HOME"/.config/karabiner
-  symlink "$DOTFILES_DIR"/sioyek/prefs_user.config "$HOME"/Library/Application Support/sioyek/prefs_user.config
+  symlink "$DOTFILES_DIR"/sioyek/prefs_user.config "$HOME/Library/Application Support/sioyek/prefs_user.config"
+  symlink "$DOTFILES_DIR"/sioyek/keys_user.config "$HOME/Library/Application Support/sioyek/keys_user.config"
 fi
 if [[ "$OS" == "Linux" ]]; then
   symlink "$DOTFILES_DIR"/sioyek/prefs_user.config "$HOME"/.config/sioyek/prefs_user.config
+  symlink "$DOTFILES_DIR"/sioyek/keys_user.config "$HOME"/.config/sioyek/keys_user.config
   symlink "$DOTFILES_DIR"/hypr "$HOME"/.config/hypr
   symlink "$DOTFILES_DIR"/kanata "$HOME"/.config/kanata
   symlink "$DOTFILES_DIR"/waybar "$HOME"/.config/waybar
