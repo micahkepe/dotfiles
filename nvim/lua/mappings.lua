@@ -259,3 +259,18 @@ end, { desc = "Copy relative filepath from Git repo root to system clipboard" })
 
 -- Zen mode (w/ Goyo)
 map("n", "<leader>z", ":Goyo<CR>", { desc = "Toggle Zen mode" })
+
+-- Diffview
+map("n", "<leader>dv", "<cmd>DiffviewToggle<cr>", { desc = "Toggle Diffview" })
+map(
+  "n",
+  "<leader>dh",
+  "<cmd>DiffviewFileHistory %<cr>",
+  { desc = "File history (current file)" }
+)
+map(
+  "n",
+  "<leader>dH",
+  "<cmd>DiffviewFileHistory<cr>",
+  { desc = "File history (repo)" }
+)

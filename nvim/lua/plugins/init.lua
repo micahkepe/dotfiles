@@ -343,8 +343,6 @@ return {
 
   { "itchyny/lightline.vim", event = "VeryLazy" },
 
-  { "dlyongemallo/diffview.nvim", event = "VeryLazy" },
-
   {
     "stevearc/oil.nvim",
     opts = {},
