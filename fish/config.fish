@@ -21,8 +21,7 @@ set -gx PATH \
 
 switch (uname)
   case "Darwin"
-    set -gx PATH /opt/homebrew/opt/coreutils/libexec/gnubin \
-      /opt/homebrew/bin \
+    set -gx PATH /opt/homebrew/bin \
       /Library/TeX/texbin \
       $PATH
     set -gx FNM_PATH "/opt/homebrew/opt/fnm/bin"
