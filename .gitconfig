@@ -117,3 +117,22 @@
 
 [credential "https://gist.github.com"]
   helper = !gh auth git-credential
+
+# Yoinked from: https://github.com/so-fancy/diff-so-fancy/blob/next/docs/pro-tips.md#improved-colors-for-the-highlighted-bits
+[color]
+  ui = true
+
+[color "diff-highlight"]
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
+
+[color "diff"]
+  meta = 11
+  frag = magenta bold
+  func = 146 bold
+  commit = yellow bold
+  old = red bold
+  new = green bold
+  whitespace = red reverse
