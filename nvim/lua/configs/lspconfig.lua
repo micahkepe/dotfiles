@@ -10,10 +10,12 @@ local servers = {
   "bashls",
   "biome",
   "jdtls",
+  "nil_ls",
   "protols",
   "pyright",
   "ruff",
   "texlab",
+  "zls",
 }
 
 for _, lsp in ipairs(servers) do
