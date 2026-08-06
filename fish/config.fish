@@ -67,9 +67,12 @@ complete --command gco --wraps 'git checkout'
 complete --command gb --wraps 'git branch'
 
 function v; vim $argv; end
-complete --command l --wraps 'vim'
+complete --command v --wraps 'vim'
 
-function l; ls -lah; end
+function l; exa -lah; end
+complete --command v --wraps 'exa -lah'
+
+function l; exa -lah; end
 
 # `rm` -> `trash` (macOS), if available
 if type -q trash
