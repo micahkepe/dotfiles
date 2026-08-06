@@ -1,17 +1,18 @@
 local options = {
   -- For Biome language support, see: https://biomejs.dev/internals/language-support/
   formatters_by_ft = {
-    lua = { "stylua" },
-    css = { "biome" },
-    html = { "biome" },
-    markdown = { "prettier" },
     c = { "clang-format" },
+    css = { "biome" },
+    haskell = { "fourmolu" },
+    html = { "biome" },
     javascript = { "biome" },
-    typescript = { "biome" },
     json = { "biome", "prettier" },
+    lua = { "stylua" },
+    markdown = { "prettier" },
+    nix = { "alejandra " },
     python = { "ruff", "black" },
     rust = { "rustfmt" },
-    haskell = { "fourmolu" },
+    typescript = { "biome" },
   },
 
   format_on_save = {
