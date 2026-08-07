@@ -252,12 +252,16 @@ if ! command -v diff-so-fancy &>/dev/null; then
 fi
 
 # MacOS default changes
-echo "Better macOS defaults because I'm a g..."
+echo "Setting up better macOS defaults..."
 if [[ "$OS" == "Darwin" ]]; then
   if [[ -f $DOTFILES_DIR/mac-defaults.sh ]]; then
     exec-dry-run "$DOTFILES_DIR"/mac-defaults.sh
   fi
 fi
+
+# starship prompt
+echo "Installing starship prompt..."
+exec-dry-run curl -sS https://starship.rs/install.sh | sh
 
 # FNM install
 echo "Installing fnm..."

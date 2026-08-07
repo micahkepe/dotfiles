@@ -69,10 +69,11 @@ complete --command gb --wraps 'git branch'
 function v; vim $argv; end
 complete --command v --wraps 'vim'
 
-function l; exa -lah; end
-complete --command v --wraps 'exa -lah'
+function n; nvim $argv; end
+complete --command n --wraps 'nvim'
 
 function l; exa -lah; end
+complete --command l --wraps 'exa -lah'
 
 # `rm` -> `trash` (macOS), if available
 if type -q trash
@@ -110,6 +111,9 @@ export MANPAGER='nvim +Man!'
 
 # GPG
 export GPG_TTY=$(tty)
+
+# Prompt
+starship init fish | source
 
 # Show color for ANSI color escapes
 export LESS='-R'
