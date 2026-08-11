@@ -12,8 +12,6 @@ autocmd("TermOpen", {
   end,
 })
 
-autocmd("FileType", { pattern = "rust", command = "setl colorcolumn=100" })
-
 autocmd("CursorHold", {
   desc = "Open diagnostics menu on CursorHold",
   callback = function()
