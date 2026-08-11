@@ -72,7 +72,7 @@ complete --command v --wraps 'vim'
 function n; nvim $argv; end
 complete --command n --wraps 'nvim'
 
-function l; exa -lah; end
+function l; exa -lah $argv; end
 complete --command l --wraps 'exa -lah'
 
 # `rm` -> `trash` (macOS), if available
