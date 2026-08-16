@@ -190,20 +190,6 @@ map({ "x", "o" }, "<BS>", function()
   end
 end, { desc = "Shrink to child node" })
 
--- little Lua goodies a la teej
-map(
-  "n",
-  "<leader><leader>x",
-  "<cmd>source %<CR>",
-  { desc = "Execute the current Lua file" }
-)
-map("n", "<leader>lx", ":.lua<CR>", { desc = "Execute the current Lua line" })
-map(
-  "v",
-  "<leader>x",
-  ":lua<CR>",
-  { desc = "Execute the visually selected Lua line(s)" }
-)
 map("n", "<leader>cl", function()
   vim.lsp.codelens.enable(not vim.lsp.codelens.is_enabled { bufnr = 0 })
   local cl_enabled = vim.lsp.codelens.is_enabled { bufnr = 0 }
