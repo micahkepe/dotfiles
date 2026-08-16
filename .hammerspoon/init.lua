@@ -3,11 +3,6 @@ hs.autoLaunch(true)
 hs.automaticallyCheckForUpdates(true)
 hs.ipc.cliInstall()
 
--- Reloading config keybind
-hs.hotkey.bind({ "ctrl", "shift" }, "r", function()
-	hs.reload()
-end)
-
 ----------------
 -- SPOONS
 ----------------

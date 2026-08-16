@@ -137,7 +137,8 @@ for shortcut, app in pairs(appShortcuts) do
 	hs.hotkey.bind({ "cmd", "alt" }, shortcut, function()
 		local success = hs.application.launchOrFocus(app)
 		if not success then
-			hs.alert.show("Failed to launch '" .. app .. "'.")
+			local logger = require("logger")
+			logger.w("Failed to launch '" .. app .. "'.")
 		end
 	end)
 end
