@@ -94,3 +94,6 @@ vim.keymap.set("c", "%s/", "%sm/")
 --
 -- When debugging a language server, comment this line out to start logging
 vim.lsp.log.set_level "WARN"
+
+-- Use ripgrep for :grep
+vim.opt.grepprg = "rg --vimgrep"

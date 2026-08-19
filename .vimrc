@@ -145,6 +145,12 @@ if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
   runtime! macros/matchit.vim
 endif
 
+" ripgrep for :grep
+if executable("rg")
+  set grepprg=rg\ --vimgrep\ --smart-case\ --hidden
+  set grepformat=%f:%l:%c:%m
+endif
+
 " vim-plug
 call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
