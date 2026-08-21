@@ -29,13 +29,8 @@ map(
   { desc = "Launch `tmux-sessionizer`" }
 )
 
--- Map <C-s> to save
-map(
-  { "n", "i", "v" },
-  "<C-s>",
-  "<cmd> w <cr>",
-  { desc = "Save the current buffer " }
-)
+-- Map <C-s> to save in normal mode.
+map({ "n" }, "<C-s>", "<cmd> w <cr>", { desc = "Save the current buffer " })
 
 -- Adjust color column
 map("n", "<leader>er", ":set colorcolumn=", { desc = "Adjust colorcolumn" })
