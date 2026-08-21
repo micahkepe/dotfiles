@@ -55,6 +55,7 @@ return {
         "black",
         "clang-format",
         "prettier",
+        "shfmt",
         "stylua",
       },
     },

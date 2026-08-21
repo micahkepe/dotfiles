@@ -1,6 +1,7 @@
 local options = {
   -- For Biome language support, see: https://biomejs.dev/internals/language-support/
   formatters_by_ft = {
+    bash = { "shfmt" },
     c = { "clang-format" },
     css = { "biome" },
     haskell = { "fourmolu" },
@@ -12,6 +13,7 @@ local options = {
     nix = { "alejandra " },
     python = { "ruff", "black" },
     rust = { "rustfmt" },
+    sh = { "shfmt" },
     typescript = { "biome" },
   },
 
