@@ -6,4 +6,4 @@ map("n", "<leader>fc", function()
 end, { desc = "Run Rust Fly Check", silent = true, buffer = bufnr })
 
 vim.bo.textwidth = 80
-vim.wo.colorcolumn = "100"
+vim.cmd "setl colorcolumn=100"
