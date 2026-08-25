@@ -195,22 +195,6 @@ map("n", "<leader>cl", function()
   end
 end, { desc = "Toggle CodeLens for the current buffer" })
 
-map("n", "<leader>qd", function()
-  local diagnostics_count = #vim.diagnostic.get(nil)
-  if diagnostics_count == 0 then
-    vim.notify "No results found for `diagnostics`"
-    return
-  end
-  local is_open = vim.iter(vim.fn.getwininfo()):any(function(w)
-    return w.quickfix == 1
-  end)
-  if is_open then
-    vim.cmd "cclose"
-  else
-    vim.diagnostic.setqflist { open = true }
-  end
-end, { desc = "Toggle diagnostics quickfix list" })
-
 -- `rustaceannvim`
 map(
   "n",
