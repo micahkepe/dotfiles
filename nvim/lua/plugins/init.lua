@@ -147,7 +147,6 @@ return {
     event = "VeryLazy",
   },
 
-  -- LaTeX editing in the terminal
   {
     "lervag/vimtex",
     ft = { "tex" },
@@ -155,18 +154,6 @@ return {
     init = function()
       require "configs.vimtex"
     end,
-  },
-
-  -- PlantUML syntax highlighting + preview
-  {
-    "weirongxu/plantuml-previewer.vim",
-    dependencies = {
-      "tyru/open-browser.vim",
-      "aklt/plantuml-syntax",
-    },
-    ft = "plantuml",
-    cmd = "PlantUMLOpen",
-    lazy = true,
   },
 
   {
@@ -190,7 +177,6 @@ return {
     end,
   },
 
-  -- Kitty-like cursor trail
   {
     "sphamba/smear-cursor.nvim",
     event = "CursorMoved",
@@ -310,32 +296,12 @@ return {
   },
 
   {
-    "micahkepe/todo.nvim",
-    opts = {},
-    cmd = "Todo",
-    keys = {
-      {
-        "<leader>td",
-        ":Todo<CR>",
-        mode = "n",
-        { desc = "Open Todos scratch file" },
-      },
-    },
-  },
-
-  {
     "ibhagwan/fzf-lua",
     dependencies = { "echasnovski/mini.icons" },
     opts = {},
   },
 
   { "tpope/vim-repeat", event = "BufReadPost" },
-
-  {
-    "GCBallesteros/jupytext.nvim",
-    config = true,
-    ft = "*.ipynb",
-  },
 
   { "itchyny/lightline.vim", event = "VeryLazy" },
 
