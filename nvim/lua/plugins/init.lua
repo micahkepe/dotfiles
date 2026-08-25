@@ -13,7 +13,7 @@ end
 return {
   {
     "stevearc/conform.nvim",
-    event = "BufWritePre", -- format on save
+    event = "BufWritePre",
     config = function()
       require "configs.conform"
     end,
@@ -144,11 +144,6 @@ return {
 
   {
     "kylechui/nvim-surround",
-    event = "VeryLazy",
-  },
-
-  {
-    "pocco81/auto-save.nvim",
     event = "VeryLazy",
   },
 
