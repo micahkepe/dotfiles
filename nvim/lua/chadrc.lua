@@ -18,12 +18,25 @@ M.base46 = {
 
     -- Color column ruler
     ["ColorColumn"] = { fg = "#676e95", bg = "none" },
+
+    -- Diff highlighting is background only: syntax keeps the foreground, so an
+    -- fg here would fight the colorscheme. base46's git integration also gives
+    -- DiffChange and DiffText the same bg, which hides within-line diffs.
+    -- One hue per state, and DiffText a lighter DiffChange.
+    ["DiffAdd"] = { fg = "NONE", bg = { "green", "black", 85 } },
+    ["DiffDelete"] = { fg = "NONE", bg = { "red", "black", 85 } },
+    ["DiffChange"] = { fg = "NONE", bg = { "blue", "black", 88 } },
+    ["DiffText"] = { fg = "NONE", bg = { "blue", "black", 65 } },
   },
 
   -- snacks.nvim w/ gruvbox has atrocious contrast in the file listing
   hl_add = {
     ["SnacksPickerDir"] = { fg = "#a89984" },
     ["SpellBad"] = { undercurl = true, sp = "red" },
+
+    -- Diffview paints the rows padding one side of a diff with this, and only
+    -- links it to Comment as a default, so defining it here wins.
+    ["DiffviewDiffDeleteDim"] = { fg = "NONE", bg = { "red", "black", 93 } },
   },
 }
 

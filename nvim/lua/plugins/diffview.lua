@@ -1,6 +1,5 @@
 return {
   "dlyongemallo/diffview.nvim",
-  dependencies = { "rickhowe/diffchar.vim" },
   event = "VeryLazy",
   config = function()
     require("diffview").setup {
@@ -33,7 +32,6 @@ return {
           },
         },
       },
-      diffopt = { algorithm = "histogram" },
     }
   end,
 }

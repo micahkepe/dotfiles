@@ -8,7 +8,16 @@ local keyset = vim.keymap.set
 vim.cmd "set completeopt+=fuzzy"
 
 -- Git diff
-o.diffopt = "algorithm:histogram"
+opt.diffopt = {
+  "internal",
+  "filler",
+  "closeoff",
+  "indent-heuristic",
+  "algorithm:histogram",
+  "linematch:60",
+  "inline:simple",
+}
+opt.fillchars:append "diff: "
 
 -- Cursorline
 o.cursorlineopt = "both"
