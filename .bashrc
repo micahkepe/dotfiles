@@ -68,10 +68,6 @@ alias tl="tmux list-session"
 #  MISC.
 #######################
 
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
 # Set up fzf key bindings and fuzzy completion
 eval "$(fzf --bash)"
 

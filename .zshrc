@@ -172,21 +172,11 @@ export NVM_DIR="$HOME/.nvm"
 
 eval "$(rbenv init -)"
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f "${HOME}/google-cloud-sdk/path.zsh.inc" ]; then . "${HOME}/google-cloud-sdk/path.zsh.inc"; fi
-
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
-# The next line enables shell command completion for gcloud.
-if [ -f "${HOME}/google-cloud-sdk/completion.zsh.inc" ]; then . "${HOME}/google-cloud-sdk/completion.zsh.inc"; fi
-
 # Shell integrgation install for oh-my-zsh
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
