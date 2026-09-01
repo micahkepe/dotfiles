@@ -50,6 +50,7 @@ return {
         "tailwindcss-language-server",
         "texlab",
         "wgsl-analyzer",
+        "yaml-language-server",
 
         -- Formatters
         "black",

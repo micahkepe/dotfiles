@@ -15,6 +15,7 @@ local servers = {
   "pyright",
   "ruff",
   "texlab",
+  "yamlls",
   "zls",
 }
 
