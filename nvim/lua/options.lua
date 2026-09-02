@@ -28,6 +28,7 @@ o.winborder = "rounded"
 opt.relativenumber = true
 
 -- Spelling
+o.spell = true
 o.spelllang = "en_us"
 
 -- Confirmation dialog prompt
