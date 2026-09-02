@@ -2,7 +2,6 @@ require "nvchad.options"
 
 local o = vim.o
 local opt = vim.opt
-local keyset = vim.keymap.set
 
 -- :h fuzzy-matching
 vim.cmd "set completeopt+=fuzzy"
@@ -73,29 +72,13 @@ opt.colorcolumn = "80"
 -- new Neovim UI module (replaces builtin message + cmdline)
 require("vim._core.ui2").enable {}
 
--- retain yank register contents when pasting over visual selected content
-keyset("x", "<leader>p", [["_dP"]])
-
--- yank from cursor position to end of line
-keyset("n", "<leader>Y", [["+Y]])
-
 -- undo history
 opt.undofile = true
 o.undodir = os.getenv "HOME" .. "/.vim/undodir"
-keyset("i", ",", ",<C-g>U")
-keyset("i", ".", ".<C-g>U")
-keyset("i", "!", "!<C-g>U")
-keyset("i", "?", "?<C-g>U")
 
 -- Recommended options for `auto-session` plugin
 o.sessionoptions =
   "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
-
--- "very magic" (less escaping needed) regexes by default
--- Taken from: https://github.com/jonhoo/configs/blob/master/editor/.config/nvim/init.lua
-vim.keymap.set("n", "?", "?\\v")
-vim.keymap.set("n", "/", "/\\v")
-vim.keymap.set("c", "%s/", "%sm/")
 
 -- Logging (turn off to avoid "Large LSP log" warning)
 -- https://neovim.discourse.group/t/lsp-log-file-grows-infinitely/3596

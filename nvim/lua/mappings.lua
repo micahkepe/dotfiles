@@ -32,9 +32,6 @@ map(
 -- Map <C-s> to save in normal mode.
 map({ "n" }, "<C-s>", "<cmd> w <cr>", { desc = "Save the current buffer " })
 
--- Adjust color column
-map("n", "<leader>er", ":set colorcolumn=", { desc = "Adjust colorcolumn" })
-
 -- Remove whitespace in buffer
 map(
   "n",
@@ -66,20 +63,6 @@ end, { desc = "Toggle undo tree" })
 -- otherwise default to move by display lines
 map("n", "j", "(v:count ? 'j' : 'gj')", { expr = true })
 map("n", "k", "(v:count ? 'k' : 'gk')", { expr = true })
-
--- AutoSession mappings
-map(
-  "n",
-  "<leader>ws",
-  "<cmd>AutoSession save<CR>",
-  { desc = "Save session for auto session root dir" }
-)
-map(
-  "n",
-  "<leader>wr",
-  "<cmd>SessionRestore<CR>",
-  { desc = "Restore session for cwd" }
-)
 
 -- Toggle auto-saving
 map("n", "<leader>as", ":ASToggle<CR>", { desc = "Toggle auto-saving" })
@@ -238,20 +221,20 @@ map("n", "<leader>cr", function()
   vim.fn.setreg("+", rel)
 end, { desc = "Copy relative filepath from Git repo root to system clipboard" })
 
--- Zen mode (w/ Goyo)
-map("n", "<leader>z", ":Goyo<CR>", { desc = "Toggle Zen mode" })
+-- QoL
+map("x", "<leader>p", [["_dP"]], {
+  desc = "retain yank register contents when pasting over visual selected content",
+})
 
--- Diffview
-map("n", "<leader>dv", "<cmd>DiffviewToggle<cr>", { desc = "Toggle Diffview" })
 map(
   "n",
-  "<leader>dh",
-  "<cmd>DiffviewFileHistory %<cr>",
-  { desc = "File history (current file)" }
+  "<leader>Y",
+  [["+Y]],
+  { desc = "yank from cursor position to end of line" }
 )
-map(
-  "n",
-  "<leader>dH",
-  "<cmd>DiffviewFileHistory<cr>",
-  { desc = "File history (repo)" }
-)
+
+-- "very magic" (less escaping needed) regexes by default
+-- Taken from: https://github.com/jonhoo/configs/blob/master/editor/.config/nvim/init.lua
+map("n", "?", "?\\v")
+map("n", "/", "/\\v")
+map("c", "%s/", "%sm/")
