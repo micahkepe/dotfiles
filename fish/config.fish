@@ -91,9 +91,6 @@ function c; clear $argv; end
 # - change variables search to Ctrl-Alt-v
 fzf_configure_bindings --variables=\e\cv
 
-# SET UP ZOXIDE
-zoxide init --cmd cd fish | source
-
 # SET DEFAULT EDITOR
 set -gx EDITOR nvim
 
