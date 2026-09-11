@@ -145,7 +145,7 @@ if ! (git rev-parse --is-inside-worktree) >/dev/null 2>&1; then
 fi
 
 # Update/cleanup refs
-git fetch --quiet --prune
+timeout 3s git fetch --quiet --prune
 
 # Stable base: the common git dir (shared across worktrees)
 COMMON_GIT_DIR="$(git rev-parse --path-format=absolute --git-common-dir)"
@@ -160,7 +160,7 @@ local_branches="$(git branch --format='%(refname:short)' || true)"
 
 remote_only="$(
   comm -23 \
-    <(git branch -r --format='%(refname:short)' |
+    <("$(timeout 3s git branch -r --format='%(refname:short)' || true)" |
       sed 's|^[^/]*/||' |
       grep -v '^HEAD$' |
       sort -u) \
