@@ -10,6 +10,7 @@ local servers = {
   "bashls",
   "biome",
   "jdtls",
+  "just",
   "nil_ls",
   "protols",
   "pyright",

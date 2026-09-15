@@ -43,6 +43,7 @@ return {
         "haskell-language-server",
         "html-lsp",
         "jdtls",
+        "just-lsp",
         "lua-language-server",
         "protols",
         "pyright",
