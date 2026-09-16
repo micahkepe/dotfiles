@@ -16,6 +16,7 @@ set -gx PATH \
     $HOME/.rvm/bin \
     $HOME/.cargo/bin \
     $HOME/.local/bin \
+    $HOME/.nix-profile/bin \
     $HOME/.local/share/bob/nvim-bin \
     $PATH
 
@@ -119,3 +120,6 @@ set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; se
 # WASM
 set -gx WASMTIME_HOME "$HOME/.wasmtime"
 string match -r ".wasmtime" "$PATH" > /dev/null; or set -gx PATH "$WASMTIME_HOME/bin" $PATH
+
+# direnv
+direnv hook fish | source
