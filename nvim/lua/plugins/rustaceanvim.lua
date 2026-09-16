@@ -11,8 +11,6 @@ return {
           ["rust-analyzer"] = {
             cargo = {
               features = "all",
-              -- Uncomment for when working with WASM
-              -- target = "wasm32-unknown-unknown",
             },
             check = {
               command = "clippy",
