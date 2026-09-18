@@ -7,13 +7,13 @@ local capabilities = require("nvchad.configs.lspconfig").capabilities
 -- tailwindcss, harper_ls, lua_ls) are NOT listed here to avoid
 -- double-config. typescript-tools.nvim manages the TS server.
 local servers = {
+  "basedpyright",
   "bashls",
   "biome",
   "jdtls",
   "just",
   "nil_ls",
   "protols",
-  "pyright",
   "ruff",
   "texlab",
   "yamlls",
@@ -27,6 +27,7 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   })
 end
+vim.lsp.enable(servers)
 
 -- wgsl_analyzer
 -- https://github.com/wgsl-analyzer/wgsl-analyzer/blob/main/docs/book/src/other_editors.md#vimneovim
@@ -48,11 +49,6 @@ vim.lsp.config("cssls", {
   },
 })
 vim.lsp.enable "cssls"
-
--- Enable all the servers
-vim.lsp.enable(servers)
-
--- Finicky LSPs that have additional configuration
 
 -- Golang LSP
 vim.lsp.config("gopls", {
