@@ -27,6 +27,7 @@ return {
         "bash",
         "c",
         "css",
+        "devicetree",
         "dockerfile",
         "gitignore",
         "go",
