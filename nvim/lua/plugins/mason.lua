@@ -19,6 +19,7 @@ return {
       "pyright",
       "ruff",
       "tailwindcss-language-server",
+      "tombi",
       "texlab",
       "wgsl-analyzer",
       "yaml-language-server",

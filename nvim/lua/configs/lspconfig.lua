@@ -16,6 +16,7 @@ local servers = {
   "protols",
   "ruff",
   "texlab",
+  "tombi",
   "yamlls",
   "zls",
 }
