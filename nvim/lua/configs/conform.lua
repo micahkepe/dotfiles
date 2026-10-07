@@ -12,7 +12,7 @@ local options = {
     markdown = { "prettier" },
     nix = { "alejandra" },
     python = { "ruff_format", "ruff_organize_imports", "ruff_fix" },
-    rust = { "rustfmt" },
+    rust = { "rustfmt", lsp_format = "fallback" },
     sh = { "shfmt" },
     typescript = { "biome" },
   },
@@ -20,7 +20,6 @@ local options = {
   format_on_save = {
     -- These options will be passed to conform.format()
     timeout_ms = 2500,
-    lsp_fallback = true,
   },
 }
 
