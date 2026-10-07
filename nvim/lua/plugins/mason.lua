@@ -8,6 +8,7 @@ return {
       "biome",
       "clangd",
       "css-lsp",
+      "fourmolu",
       "gopls",
       "harper-ls",
       "haskell-language-server",

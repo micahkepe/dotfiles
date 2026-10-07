@@ -7,14 +7,19 @@ local options = {
     haskell = { "fourmolu" },
     html = { "biome" },
     javascript = { "biome" },
-    json = { "biome", "prettier" },
+    json = { "biome" },
     lua = { "stylua" },
     markdown = { "prettier" },
     nix = { "alejandra" },
     python = { "ruff_format", "ruff_organize_imports", "ruff_fix" },
     rust = { "rustfmt", lsp_format = "fallback" },
     sh = { "shfmt" },
+    toml = { lsp_format = "never" },
     typescript = { "biome" },
+  },
+
+  default_format_opts = {
+    lsp_format = "fallback",
   },
 
   format_on_save = {
