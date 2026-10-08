@@ -242,9 +242,19 @@ map("c", "%s/", "%sm/")
 -- Pseudo Emacs
 
 -- Normal mode
-vim.keymap.set("n", "<A-j>", ":m .+1<CR>==")
-vim.keymap.set("n", "<A-k>", ":m .-2<CR>==")
+map("n", "<A-j>", ":m .+1<CR>==")
+map("n", "<A-k>", ":m .-2<CR>==")
 
 -- Visual mode
-vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv")
+map("v", "<A-j>", ":m '>+1<CR>gv=gv")
+map("v", "<A-k>", ":m '<-2<CR>gv=gv")
+
+map("n", "<leader>co", function()
+  local qf = vim.fn.getqflist { winid = 0 }
+
+  if qf.winid ~= 0 then
+    vim.cmd "cclose"
+  else
+    vim.cmd "copen"
+  end
+end, { desc = "Toggle quickfix window" })
