@@ -8,6 +8,7 @@ return {
       "biome",
       "clangd",
       "css-lsp",
+      "fish-lsp",
       "fourmolu",
       "gopls",
       "harper-ls",

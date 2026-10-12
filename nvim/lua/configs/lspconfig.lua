@@ -10,6 +10,7 @@ local servers = {
   "basedpyright",
   "bashls",
   "biome",
+  "fish_lsp",
   "jdtls",
   "just",
   "nil_ls",
