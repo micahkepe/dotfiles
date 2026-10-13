@@ -16,6 +16,9 @@ local options = {
     sh = { "shfmt" },
     toml = { lsp_format = "never" },
     typescript = { "biome" },
+    -- wgsl_analyzer's formatter mangles shaders; keep it off save
+    wesl = { lsp_format = "never" },
+    wgsl = { lsp_format = "never" },
   },
 
   default_format_opts = {

@@ -19,6 +19,8 @@ return {
         end,
       })
       vim.treesitter.language.register("strudel", { "strudel" })
+      -- No WESL grammar yet; WGSL covers everything but `import` and `@if` on statements
+      vim.treesitter.language.register("wgsl", { "wesl" })
     end,
     config = function()
       require("nvim-treesitter").setup()
