@@ -21,12 +21,25 @@
 #   - prompted with fzf menu to select the target directory if not passed in
 #   - a new tmux session will be created with the truncated path as the name
 
+declare -a TARGETS=(
+  "$HOME"
+  "$HOME/coding"
+  "$HOME/Desktop/"
+)
+SEARCH_DIRS=()
+
+for dir in "${TARGETS[@]}"; do
+  if [[ -d "$dir" ]]; then
+    SEARCH_DIRS+=("$dir")
+  fi
+done
+
 if [[ $# -eq 1 ]]; then
   selected=$1
 else
   # if no directory is passed in, use fzf to select one
   # NOTE: change the directories to search in the find command as you wish
-  selected=$(FZF_TMUX=1 find ~/coding ~ ~/rice/* ~/Desktop/ -mindepth 0 -maxdepth 2 -type d |
+  selected=$(FZF_TMUX=1 find "${SEARCH_DIRS[@]}" -mindepth 0 -maxdepth 2 -type d |
     sort -u |
     fzf)
 fi
