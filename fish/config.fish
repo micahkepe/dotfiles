@@ -30,10 +30,6 @@ switch (uname)
     set -gx FNM_PATH "$HOME/.local/share/fnm"
 end
 
-# Set JAVA_HOME environment variable
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-24.jdk/Contents/Home
-set -gx PATH $JAVA_HOME/bin $PATH
-
 # SNACKS.NVIM
 set -gx SNACKS_GHOSTTY true
 
@@ -110,9 +106,6 @@ export LESS='-R'
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
-
-# opencode
-fish_add_path /Users/micahkepe/.opencode/bin
 
 # Haskell
 set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin /Users/micahkepe/.ghcup/bin $PATH # ghcup-env
