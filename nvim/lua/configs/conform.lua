@@ -4,6 +4,7 @@ local options = {
     bash = { "shfmt" },
     c = { "clang-format" },
     css = { "biome" },
+    fish = { lsp_format = "never" },
     haskell = { "fourmolu" },
     html = { "biome" },
     javascript = { "biome" },
@@ -19,6 +20,7 @@ local options = {
     -- wgsl_analyzer's formatter mangles shaders; keep it off save
     wesl = { lsp_format = "never" },
     wgsl = { lsp_format = "never" },
+    yaml = { "prettier" },
   },
 
   default_format_opts = {
