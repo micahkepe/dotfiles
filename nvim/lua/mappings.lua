@@ -258,3 +258,12 @@ map("n", "<leader>co", function()
     vim.cmd "copen"
   end
 end, { desc = "Toggle quickfix window" })
+
+-- Quick Markdown throwaway buffer
+map("n", "<leader>md", function()
+  vim.cmd "enew"
+  vim.bo.buftype = "nofile"
+  vim.bo.bufhidden = "wipe"
+  vim.bo.swapfile = false
+  vim.bo.filetype = "markdown"
+end, { desc = "Create a throwaway Markdown buffer for editing" })
