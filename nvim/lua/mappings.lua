@@ -116,12 +116,6 @@ end, { desc = "Buffers" })
 map("n", "<leader>fr", function()
   snacks.picker.recent()
 end, { desc = "Recent Files" })
-map("n", "<leader>fc", function()
-  snacks.picker.files { cwd = vim.fn.stdpath "config" }
-end, { desc = "Find Config Files" })
-map("n", "<leader>fo", function()
-  snacks.picker.oldfiles()
-end, { desc = "Old Files" })
 map("n", "<leader>fw", function()
   snacks.picker.grep_word()
 end, { desc = "Find Word" })
@@ -131,16 +125,6 @@ end, { desc = "Find Diagnostics" })
 map("n", "<leader>fh", function()
   snacks.picker.help()
 end, { desc = "Find Help" })
--- search (prefixed with `s`)
-map("n", "<leader>sm", function()
-  snacks.picker.marks()
-end, { desc = "Search Marks" })
-map("n", "<leader>sh", function()
-  snacks.picker.search_history()
-end, { desc = "Search History" })
-map("n", "<leader>sc", function()
-  snacks.picker.command_history()
-end, { desc = "Command History" })
 -- Open references in Snack's picker instead of Quickfix menu
 map("n", "grr", function()
   snacks.picker.lsp_references()
@@ -205,7 +189,7 @@ map("n", "<leader>cc", function()
 end, { desc = "Copy filepath to system clipboard" })
 
 -- Copy relative filepath from the git repository root to system clipboard
-map("n", "<leader>cr", function()
+local function relative_git_top_path()
   local fp = vim.api.nvim_buf_get_name(0)
   local handle = io.popen "git rev-parse --show-toplevel"
   if not handle then
@@ -217,9 +201,22 @@ map("n", "<leader>cr", function()
   end
   local git_root = handle:read("*a"):gsub("%s+$", "")
   handle:close()
-  local rel = fp:sub(#git_root + 2)
+  return fp:sub(#git_root + 2)
+end
+
+map("n", "<leader>cr", function()
+  local rel = relative_git_top_path()
   vim.fn.setreg("+", rel)
 end, { desc = "Copy relative filepath from Git repo root to system clipboard" })
+
+map("n", "<leader>crl", function()
+  local path = relative_git_top_path()
+    .. ":"
+    .. vim.api.nvim_win_get_cursor(0)[1]
+  vim.fn.setreg("+", path)
+end, {
+  desc = "Copy relative filepath (with line number `:n` appended) from Git repo root to system clipboard",
+})
 
 -- QoL
 map("x", "<leader>p", [["_dP"]], {
