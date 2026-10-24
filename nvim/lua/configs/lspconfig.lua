@@ -31,6 +31,26 @@ for _, lsp in ipairs(servers) do
 end
 vim.lsp.enable(servers)
 
+vim.lsp.config("ocamllsp", {
+  cmd = { "ocamllsp" },
+  filetypes = {
+    "ocaml",
+    "ocaml.interface",
+    "ocaml.menhir",
+    "ocaml.ocamllex",
+    "dune",
+    "reason",
+  },
+  root_markers = {
+    { "dune-project", "dune-workspace" },
+    { "*.opam", "esy.json", "package.json" },
+    ".git",
+  },
+  settings = {},
+})
+
+vim.lsp.enable "ocamllsp"
+
 -- wgsl_analyzer
 -- https://github.com/wgsl-analyzer/wgsl-analyzer/blob/main/docs/book/src/other_editors.md#vimneovim
 vim.lsp.config("wgsl_analyzer", {
