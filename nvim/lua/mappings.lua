@@ -182,11 +182,17 @@ map(
 -- Clear ALL buffers
 map("n", "<leader>Cb", ":bufdo bd<CR>", { desc = "Clear all buffers" })
 
--- Copy absolute filepath to system clipboard
 map("n", "<leader>cc", function()
   local fp = vim.api.nvim_buf_get_name(0)
   vim.fn.setreg("+", fp)
 end, { desc = "Copy filepath to system clipboard" })
+
+map("n", "<leader>ccl", function()
+  local fp = vim.api.nvim_buf_get_name(0)
+    .. ":"
+    .. vim.api.nvim_win_get_cursor(0)[1]
+  vim.fn.setreg("+", fp)
+end, { desc = "Copy filepath to system clipboard with line number appended" })
 
 -- Copy relative filepath from the git repository root to system clipboard
 local function relative_git_top_path()
