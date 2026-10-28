@@ -34,55 +34,35 @@ end
 set -gx SNACKS_GHOSTTY true
 
 # ALIASES
-function gs; git status --short $argv; end
-function ga; git add $argv; end
-function gap; git add --patch $argv; end
-function gi; git init $argv; end
-function gc; git commit $argv; end
-function gl; git log $argv; end
-function gcl; git clone $argv; end
-function gp; git push $argv; end
-function gu; git pull $argv; end
-function gd; git diff $argv; end
-function gr; git restore $argv; end
-function gf; git fetch $argv; end
-function gco; git checkout $argv; end
-function gb; git branch $argv; end
-complete --command gs --wraps 'git status --short'
-complete --command ga --wraps 'git add'
-complete --command gap --wraps 'git add --patch'
-complete --command gi --wraps 'git init'
-complete --command gc --wraps 'git commit'
-complete --command gl --wraps 'git log'
-complete --command gcl --wraps 'git clone'
-complete --command gp --wraps 'git push'
-complete --command gu --wraps 'git pull'
-complete --command gd --wraps 'git diff'
-complete --command gr --wraps 'git restore'
-complete --command gf --wraps 'git fetch'
-complete --command gco --wraps 'git checkout'
-complete --command gb --wraps 'git branch'
+alias gs="git status --short"
+alias ga="git add"
+alias gap="git add --patch"
+alias gi="git init"
+alias gc="git commit"
+alias gl="git log"
+alias gcl="git clone"
+alias gp="git push"
+alias gu="git pull"
+alias gd="git diff"
+alias gr="git restore"
+alias gf="git fetch"
+alias gco="git checkout"
+alias gb="git branch"
+
+alias ssh="ghostty +ssh --"
 
 # `rm` -> `trash` (macOS), if available
 if type -q trash
-  function rm; trash $argv; end
-  complete --command rm --wraps 'rm'
+  alias rm="trash"
 end
 
-function tn; tmux new -s $argv; end
-complete --command tn --wraps 'tmux new -s'
-function ta; tmux attach $argv; end
-complete --command ta --wraps 'tmux attach'
-function tl; tmux list-session; end
+alias ta="tmux attach"
 
-function brave; open -a "Brave Browser" $argv; end
-complete --command brave --wraps 'open -a "Brave Browser"'
-function chrome; open -a "Google Chrome" $argv; end
-complete --command brave --wraps 'open -a "Google Chrome"'
-function firefox; open -a "Firefox" $argv; end
-complete --command brave --wraps 'open -a "Firebox"'
+alias brave="open -a 'Brave Browser'"
+alias chrome="open -a 'Google Chrome'"
+alias firefox="open -a 'Firefox'"
 
-function c; clear $argv; end
+alias c="clear"
 
 # FZF.FISH KEY BINDING CHANGES
 # - change variables search to Ctrl-Alt-v
