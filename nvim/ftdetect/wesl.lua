@@ -1,4 +1,5 @@
-vim.api.nvim_create_autocmd(
-  { "BufRead", "BufNewFile" },
-  { pattern = "*.wesl", command = "setfiletype wesl" }
-)
+vim.filetype.add {
+  extension = {
+    wesl = "wesl",
+  },
+}
