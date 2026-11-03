@@ -23,6 +23,7 @@ return {
       "tailwindcss-language-server",
       "tombi",
       "texlab",
+      "typos-lsp",
       "wgsl-analyzer",
       "yaml-language-server",
 

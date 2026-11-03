@@ -18,6 +18,7 @@ local servers = {
   "ruff",
   "texlab",
   "tombi",
+  "typos_lsp",
   "yamlls",
   "zls",
 }
