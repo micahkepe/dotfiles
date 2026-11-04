@@ -209,7 +209,7 @@ symlink "$DOTFILES_DIR"/btop "$HOME"/.config/btop
 echo "Dotfiles linked successfully!"
 
 ## Local scripts
-echo "Step 5/9: Make local scripts executeable..."
+echo "Step 5/9: Make local scripts executable..."
 
 LOCAL_BIN="$HOME"/.local/bin
 exec-dry-run mkdir -p "$LOCAL_BIN"
@@ -220,7 +220,7 @@ exec-dry-run symlink "$DOTFILES_DIR"/tmux/tmux-sessionizer.sh "$HOME"/.local/bin
 exec-dry-run symlink "$DOTFILES_DIR"/tmux/tmux-worktreeizer.sh "$HOME"/.local/bin/tmux-worktreeizer
 exec-dry-run chmod +x "$DOTFILES_DIR"/latex/latex-template.sh
 exec-dry-run symlink "$DOTFILES_DIR"/latex/latex-template.sh "$HOME"/.local/bin/latex-template
-echo "Local scripts made executeable!"
+echo "Local scripts made executable!"
 
 ## vim-plug
 echo "Step 6/9: Installing vim-plug package manager..."
