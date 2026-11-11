@@ -30,6 +30,7 @@ opt.relativenumber = true
 -- Spelling
 o.spell = true
 o.spelllang = "en_us"
+o.spellfile = vim.fn.stdpath "config" .. "/spell/en.utf-8.add"
 
 -- Confirmation dialog prompt
 o.confirm = true
