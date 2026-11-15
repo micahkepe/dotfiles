@@ -262,6 +262,17 @@ map("n", "<leader>co", function()
   end
 end, { desc = "Toggle quickfix window" })
 
+-- Browser searching alternative for `gx`
+map("v", "<leader>sb", function()
+  local selected =
+    table.concat(vim.fn.getregion(vim.fn.getpos "v", vim.fn.getpos "."), " ")
+  local url = string.format(
+    "https://search.brave.com/search?q=%s",
+    vim.uri_encode(selected)
+  )
+  vim.ui.open(url)
+end)
+
 -- Quick Markdown throwaway buffer
 map("n", "<leader>md", function()
   vim.cmd "enew"
