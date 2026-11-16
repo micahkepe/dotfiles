@@ -130,6 +130,9 @@ map("n", "grr", function()
   snacks.picker.lsp_references()
 end, { nowait = true, desc = "Goto References" })
 
+-- fzf-lua options.
+map("n", "<leader>fz", "<cmd>FzfLua<cr>", { desc = "Open FzfLua menu" })
+
 -- LSP
 map("n", "<leader>ca", function()
   vim.lsp.buf.code_action()
